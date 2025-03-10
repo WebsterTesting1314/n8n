@@ -254,12 +254,684 @@
           }
         ]
       ]
+    },
+    "Find database page": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Edit issue",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Delete issue",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Close issue",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Reopen issue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Create database page",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create custom Notion filters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create custom Notion filters": {
+      "main": [
+        [
+          {
+            "node": "Find database page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Trigger on issues": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split In Batches": {
+      "main": [
+        [
+          {
+            "node": "API Auth",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Headers": {
+      "main": [
+        [
+          {
+            "node": "Parse headers",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Meta tags Scraper - dub.sh",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenGraph API": {
+      "main": [
+        [
+          {
+            "node": "IF OpenGraph invaild",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get Headers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Meta tags Scraper - dub.sh": {
+      "main": [
+        [
+          {
+            "node": "IF dub invaild",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF OpenGraph invaild": {
+      "main": [
+        [
+          {
+            "node": "Method 1 - META",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get Headers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse headers": {
+      "main": [
+        [
+          {
+            "node": "Method 2 - META",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If - Enable ScreenShots (yes to enable)": {
+      "main": [
+        [
+          {
+            "node": "Method 1 - SCR",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "API Auth": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Method 1 - META": {
+      "main": [
+        [
+          {
+            "node": "Final Meta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Final SCR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Final Data": {
+      "main": [
+        [
+          {
+            "node": "CREATE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CREATE": {
+      "main": [
+        [
+          {
+            "node": "IF Slug available",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "UPDATE": {
+      "main": [
+        [
+          {
+            "node": "Shortened URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF Slug available": {
+      "main": [
+        [
+          {
+            "node": "Shortened URL",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "UPDATE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Final Meta": {
+      "main": [
+        [
+          {
+            "node": "If - Enable ScreenShots (yes to enable)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Host Screenshot": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Host OGImage": {
+      "main": [
+        [
+          {
+            "node": "Download Favicon",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Host Favicon": {
+      "main": [
+        [
+          {
+            "node": "Final Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Download final OG",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download final OG": {
+      "main": [
+        [
+          {
+            "node": "Host OGImage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Favicon": {
+      "main": [
+        [
+          {
+            "node": "Host Favicon",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Method 2 - META": {
+      "main": [
+        [
+          {
+            "node": "IF GH invaild",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Method 3 - META1": {
+      "main": [
+        [
+          {
+            "node": "Final Meta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Method 1 - SCR": {
+      "main": [
+        [
+          {
+            "node": "Final SCR",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Method 2 - SCR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Method 2 - SCR": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop And Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Final SCR": {
+      "main": [
+        [
+          {
+            "node": "Host Screenshot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shortened URL": {
+      "main": [
+        [
+          {
+            "node": "Split In Batches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "n8n Form Trigger": {
+      "main": [
+        [
+          {
+            "node": "Split In Batches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scan URL (Community)": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "PhishTank",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Check Reviews (Community)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Norton",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Reviews (Community)": {
+      "main": [
+        [
+          {
+            "node": "Norton",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Norton": {
+      "main": [
+        [
+          {
+            "node": "PhishTank",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "bitdefender": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML": {
+      "main": [
+        [
+          {
+            "node": "bitdefender",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(Fraud Check)": {
+      "main": [
+        [
+          {
+            "node": "(Others)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(Others)": {
+      "main": [
+        [
+          {
+            "node": "HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "OpenGraph API",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "set unsafe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "set unsafe": {
+      "main": [
+        [
+          {
+            "node": "Split In Batches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Scan URL (Community)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "OpenGraph API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PhishTank": {
+      "main": [
+        [
+          {
+            "node": "(Fraud Check)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF GH invaild": {
+      "main": [
+        [
+          {
+            "node": "Meta tags Scraper - dub.sh",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Final Meta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Method 4 - META": {
+      "main": [
+        [
+          {
+            "node": "Final Meta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF dub invaild": {
+      "main": [
+        [
+          {
+            "node": "Method 4 - META",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Method 3 - META1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-03-10T14:24:29.428Z",
   "id": "HOe1bMHArQ8nkrhH",
   "meta": null,
-  "name": "GITHUB 專家",
+  "name": "GITHUB notion 專家",
   "nodes": [
     {
       "parameters": {
@@ -914,6 +1586,2490 @@
         1540
       ],
       "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": "5026700b-6693-473a-8100-8cc6ddef62a6",
+        "title": "={{$json[\"body\"][\"issue\"][\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Issue ID|number",
+              "numberValue": "={{$node[\"Trigger on issues\"].json[\"body\"][\"issue\"][\"id\"]}}"
+            },
+            {
+              "key": "Link|url",
+              "urlValue": "={{$node[\"Trigger on issues\"].json[\"body\"][\"issue\"][\"html_url\"]}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b093025e-2248-4b6b-b635-ad29deed5124",
+      "name": "Create database page",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        2940,
+        580
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "content": "## IF & Switch\nDepends on what action was taken on an issue in GitHub."
+      },
+      "id": "03a01315-371e-4972-a54b-78c5743ec8f6",
+      "name": "Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2940,
+        980
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": "5026700b-6693-473a-8100-8cc6ddef62a6",
+        "returnAll": true,
+        "filterType": "json",
+        "filterJson": "={{$node[\"Create custom Notion filters\"].json[\"notionfilter\"]}}",
+        "options": {}
+      },
+      "id": "817d21e3-a643-4505-be18-3042134efb2c",
+      "name": "Find database page",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        3120,
+        780
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{$node[\"Trigger on issues\"].json[\"body\"][\"action\"]}}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "edited"
+            },
+            {
+              "value2": "deleted",
+              "output": 1
+            },
+            {
+              "value2": "closed",
+              "output": 2
+            },
+            {
+              "value2": "reopened",
+              "output": 3
+            }
+          ]
+        }
+      },
+      "id": "6bb9e05f-99b7-49ac-ad5f-100692761953",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        3300,
+        780
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$node[\"Trigger on issues\"].json[\"body\"][\"action\"]}}",
+              "value2": "opened"
+            }
+          ]
+        }
+      },
+      "id": "7c840772-6594-4c9a-bf63-13b4c9cf07ca",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        2760,
+        680
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": "={{ $node[\"Find database page\"].json[\"id\"] }}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Issue|title",
+              "title": "={{$node[\"Trigger on issues\"].json[\"body\"][\"issue\"][\"title\"]}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f8ce3f86-2101-429a-b15c-f30a0fb3dd24",
+      "name": "Edit issue",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        3480,
+        540
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "operation": "archive",
+        "pageId": "={{$node[\"Find database page\"].json[\"id\"]}}"
+      },
+      "id": "fcf43322-f977-40d7-badc-dc60458f3b13",
+      "name": "Delete issue",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        3480,
+        700
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "functionCode": "const new_items = [];\nfor (item of $items(\"Trigger on issues\")) {\n\n  // do not process this item if action is created\n  if (item.json[\"body\"][\"action\"] == \"opened\") {\n    continue;\n  }\n\n  // build the output template\n  var new_item = {\n    \"json\": {\n      \"notionfilter\": \"\"\n    }\n  };\n  new_item = JSON.stringify(new_item);\n  new_item = JSON.parse(new_item);\n  new_items.push(new_item);\n\n  // create Notion filter to find specific database page by issue ID\n  notionfilter = {\n    or: [],\n  }\n\n  const filter = {\n    property: 'Issue ID',\n    number: {\n      equals: parseInt(item.json[\"body\"][\"issue\"][\"id\"])\n    }\n  }\n  notionfilter[\"or\"].push(filter);\n\n  new_item.json.notionfilter = JSON.stringify(notionfilter); \n}\n\nreturn new_items;"
+      },
+      "id": "5562578c-88d9-4e85-97bb-f55ffef94d54",
+      "name": "Create custom Notion filters",
+      "type": "n8n-nodes-base.function",
+      "position": [
+        2940,
+        780
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": "={{$node[\"Find database page\"].json[\"id\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Closed|checkbox",
+              "checkboxValue": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1830decc-acd2-432c-bc6f-80ee2cae3bd8",
+      "name": "Close issue",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        3480,
+        860
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": "={{$node[\"Find database page\"].json[\"id\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Closed|checkbox"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "06742531-69e9-4978-bb1e-9ff5c1d93b91",
+      "name": "Reopen issue",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        3480,
+        1020
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "owner": {
+          "__rl": true,
+          "value": "WebsterTesting1314",
+          "mode": "list",
+          "cachedResultName": "WebsterTesting1314",
+          "cachedResultUrl": "https://github.com/WebsterTesting1314"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "webster_bot",
+          "mode": "list",
+          "cachedResultName": "webster_bot",
+          "cachedResultUrl": "https://github.com/WebsterTesting1314/webster_bot"
+        },
+        "events": [
+          "repository"
+        ],
+        "options": {
+          "insecureSSL": false
+        }
+      },
+      "id": "7513f813-9ac3-4a40-887f-589bfd5c109a",
+      "name": "Trigger on issues",
+      "type": "n8n-nodes-base.githubTrigger",
+      "position": [
+        2580,
+        680
+      ],
+      "webhookId": "bc0a0a44-00db-473b-8746-b60b3b36039c",
+      "typeVersion": 1,
+      "notesInFlow": true,
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "wUGwIzmTNGNdVMka",
+          "name": "GitHub account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "name": "Split In Batches",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        920,
+        -1540
+      ],
+      "typeVersion": 2,
+      "id": "1b1180e6-04ed-494f-a092-b13f631c689a"
+    },
+    {
+      "parameters": {
+        "content": "## URL META TAGS DATA\n**This part** is used to parse long link data like title, descraption, image all them served in header with tags called. [URL metadata](https://ogp.me/)",
+        "height": 685.2594193361641,
+        "width": 1249.1706015670397
+      },
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        860,
+        -1140
+      ],
+      "typeVersion": 1,
+      "id": "8384a01c-c315-42a6-ac26-6bd13be51592"
+    },
+    {
+      "parameters": {
+        "content": "## Switchy API Limits:\n- 10.000 links/day.\n- 1.000 links/hour max.\n- 16 links /minute max.",
+        "height": 241.68171599985524,
+        "width": 346.4519761795601,
+        "color": 4
+      },
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3020,
+        -700
+      ],
+      "typeVersion": 1,
+      "id": "664d7575-65e7-4a52-969c-7c1d197ccf72"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('API Auth').item.json.LongURL }}",
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "redirect": {
+            "redirect": {}
+          },
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "name": "Get Headers",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        940,
+        -800
+      ],
+      "typeVersion": 4.1,
+      "id": "6ceb8777-f782-455a-b883-5061fd70ece3",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "url": "=https://www.opengraph.xyz/api/metadata/{{ $('API Auth').item.json.LongURL.urlEncode()}}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.5"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Referer",
+              "value": "=https://www.opengraph.xyz/url/{{ $('API Auth').item.json.LongURL.urlEncode()}}"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-origin"
+            },
+            {
+              "name": "Sec-GPC",
+              "value": "1"
+            },
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "name": "cookie",
+              "value": "crisp-client%2Fsession%2Fbb1ac897-aa52-4f90-b0e1-e191cb403caf=session_a7a69e83-51f6-4a3b-a101-68fc6d33aca7;"
+            }
+          ]
+        },
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "redirect": {
+            "redirect": {}
+          },
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "name": "OpenGraph API",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        940,
+        -1000
+      ],
+      "typeVersion": 4.1,
+      "id": "33630843-9e28-4543-b474-e97a11cc0c1f",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "url": "https://app.dub.co/api/edge/metatags",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $item(\"0\").$node[\"API Auth\"].json[\"LongURL\"] }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "authority",
+              "value": "app.dub.co"
+            },
+            {
+              "name": "accept",
+              "value": "*/*"
+            },
+            {
+              "name": "accept-language",
+              "value": "en-GB,en;q=0.9,en-US;q=0.8"
+            },
+            {
+              "name": "cache-control",
+              "value": "no-cache"
+            },
+            {
+              "name": "dnt",
+              "value": "1"
+            },
+            {
+              "name": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"120\", \"Microsoft Edge\";v=\"120\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Windows\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "same-origin"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Meta tags Scraper - dub.sh",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        940,
+        -620
+      ],
+      "notesInFlow": true,
+      "typeVersion": 4.1,
+      "id": "312b2861-7d7f-4bf7-b323-050d7320af6a",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "or",
+          "conditions": [
+            {
+              "id": "b9f7d88d-4626-4e2c-a04c-ae8f9d4aed93",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              },
+              "leftValue": "={{ $ifEmpty($json.data,'Unauthorized access') }}",
+              "rightValue": "Unauthorized access"
+            },
+            {
+              "id": "046b5c40-b6a4-434e-aa8e-d3b6c601f16d",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.body.error }}",
+              "rightValue": ""
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "IF OpenGraph invaild",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1180,
+        -1020
+      ],
+      "typeVersion": 2,
+      "id": "0e5eec31-959d-4620-8425-48c942e12039"
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "ogTitle",
+              "cssSelector": "meta[property^=\"og:title\"], meta[name=\"og:title\"], meta[property=\"twitter:title\"], meta[name=\"twitter:title\"]",
+              "returnValue": "attribute",
+              "attribute": "content"
+            },
+            {
+              "key": "ogDescription",
+              "cssSelector": "meta[name=\"description\"], meta[property=\"og:description\"], meta[property=\"twitter:description\"]",
+              "returnValue": "attribute",
+              "attribute": "content"
+            },
+            {
+              "key": "ogImage",
+              "cssSelector": "meta[property^=\"og:image\"], meta[name=\"og:image\"], meta[property=\"twitter:image\"], meta[name=\"twitter:image\"]",
+              "returnValue": "attribute",
+              "attribute": "content"
+            },
+            {
+              "key": "favicon",
+              "cssSelector": "link[rel=\"shortcut icon\"], link[rel=\"icon\"], link[rel=\"apple-touch-icon\"], link[rel=\"apple-touch-startup-image\"]",
+              "returnValue": "attribute",
+              "attribute": "href"
+            },
+            {
+              "key": "Image",
+              "cssSelector": "link[rel=\"preload\"][as=\"image\"],link[as=\"image\"]",
+              "returnValue": "attribute",
+              "attribute": "href"
+            },
+            {
+              "key": "ogTitle",
+              "cssSelector": "title",
+              "returnValue": "html"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Parse headers",
+      "type": "n8n-nodes-base.html",
+      "position": [
+        1140,
+        -840
+      ],
+      "typeVersion": 1,
+      "id": "31867b07-5401-4b13-b34b-4531eb5d03a7"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "cfcdcf45-822e-4e7a-bd7f-5fb321f96acd",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ ($if(\n  $('API Auth').item.json[\"OpenGraph Image Mode\"] = 'screenshot',\n  \"screenshot\")) }}",
+              "rightValue": "=screenshot"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "If - Enable ScreenShots (yes to enable)",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1820,
+        -860
+      ],
+      "typeVersion": 2,
+      "id": "88949a2d-8412-461b-bf3a-1b1c819bf700"
+    },
+    {
+      "parameters": {
+        "content": "# Screenshot stack",
+        "height": 682.7545654243127,
+        "width": 885.4276629872791,
+        "color": 3
+      },
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2120,
+        -1140
+      ],
+      "typeVersion": 1,
+      "id": "cb160185-e7b0-4763-b43f-01c8c2077bff"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "OpenGraph Image Mode",
+              "stringValue": "={{ $json['What\\'s OG Image method you like ?'].toLowerCase() }}"
+            },
+            {
+              "name": "Dark Mode ?",
+              "type": "booleanValue",
+              "booleanValue": "={{ $json['With your brand, Do you Like dark mode ?'].replace('no','false').replace('yes','true') }}"
+            },
+            {
+              "name": "Brand Name",
+              "stringValue": "NodeMation"
+            },
+            {
+              "name": "Switchy API Key",
+              "stringValue": "={{ $json['What\\'s your Switchy API Key'] }}"
+            },
+            {
+              "name": "LongURL",
+              "stringValue": "={{ $json['What\\'s Your LongURL ?'].match(/\\b((?:https?|ftp):\\/\\/[^\\s/$.?#].[^\\s]*)/g)[0] }}"
+            },
+            {
+              "name": "Scan LongURL",
+              "stringValue": "={{ $json['scan Long URLs from virus/Phishing ? (Shorting a phishing URL will ban your domain from SEO)'] }}"
+            },
+            {
+              "name": "Custom slug",
+              "stringValue": "=<Optional: Slug is the path of shortened URL - default is random 5 chars> "
+            },
+            {
+              "name": "tags",
+              "stringValue": "=<Optional: Add tags if you need, each keyword seperated by \",\" for example: Marketing, Media, Shortened> "
+            },
+            {
+              "name": "Switchy Folder ID",
+              "stringValue": "<Optional: Enter Your Switchy Folder ID>"
+            },
+            {
+              "name": "Custom Domain (CNAME)",
+              "stringValue": "=<Optional: Use your custom domain linked to Switchy, otherwise keep it empty to use default domain swiy.co>"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "name": "API Auth",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1380,
+        -1780
+      ],
+      "typeVersion": 3.2,
+      "id": "dae0455d-1364-46fc-9f12-d35f0134f8ba"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ogTitle",
+              "stringValue": "={{\n      // We used IFempty of title then use descraption, if the title giving no title output value then replace with descraption value, if no value for both then use empty value output.\n      // The domain name (Host)\n      // if the image url not found then use long URL host.\n \n($ifEmpty($json[\"body\"][\"metadata\"][\"ogTitle\"], ($json[\"body\"][\"metadata\"][\"domain\"], $(\"API Auth\").item.json[\"LongURL\"])\n        // This Regex to delete Any https:// or path from the url.\n        .match(/https?:\\/\\/[^\\/]+/)[0]\n        .replace(/https?:\\/\\//, \"\")\n      ))\n }}"
+            },
+            {
+              "name": "ogDescription",
+              "stringValue": "=  {{\n    // We used IFempty of descraption then use title, if the descraption giving no descraption output value then replace with title value, if no value for both then use empty value output.\n    $ifEmpty(\n      $json[\"body\"][\"metadata\"][\"ogDescription\"],\n      $json[\"body\"][\"metadata\"][\"ogSiteName\"]\n    ) || \"\"\n  }}"
+            },
+            {
+              "name": "ogImage",
+              "stringValue": "={{\n  // Constructing the base URL for the CDN\n  \"https://ogcdn.net/6064b869-74ed-4eb9-b76c-0b701ffe7e6b/v4/\" +\n  // Adding the title, URL encoded\n  ($ifEmpty($json[\"body\"][\"metadata\"][\"ogTitle\"], $json[\"body\"][\"metadata\"][\"ogSiteName\"]).urlEncode() || \"\") +\n  \"/\" +\n  // Adding the description, URL encoded\n  ($ifEmpty($json[\"body\"][\"metadata\"][\"ogDescription\"], $json[\"body\"][\"metadata\"][\"ogTitle\"]).urlEncode() || \"\") +\n  \"/\" +\n  // Handling different OpenGraph Image Modes\n  (\n    $if($('API Auth').item.json[\"OpenGraph Image Mode\"] === 'screenshot',\n      \"<SCR>\",\n      $if($('API Auth').item.json[\"OpenGraph Image Mode\"] === 'brand',\n        (\n          \"https://cdn.statically.io/og/theme=\" +\n          ($item(\"0\").$node[\"API Auth\"].json[\"Dark Mode ?\"] + \"\")\n            .replace(\"false\", \"white/\")\n            .replace(\"true\", \"dark/\") +\n          (\n            (`%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20`+ $(\"API Auth\").item.json[\"Brand Name\"].slice(0,18) + '%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C') ||\n            $json[\"body\"][\"metadata\"][\"ogTitle\"].toUpperCase() ||\n            $json[\"body\"][\"metadata\"][\"ogDescription\"].toUpperCase() ||\n            \"Short Link\"\n          ) + '.jpg'\n        ).urlEncode(),\n        $ifEmpty(\n          $json[\"body\"][\"metadata\"][\"ogImage\"][\"url\"] || $json[\"body\"][\"metadata\"][\"image\"],\n          \"https://cdn.statically.io/og/theme=\" +\n            ($item(\"0\").$node[\"API Auth\"].json[\"Dark Mode ?\"] + \"\")\n              .replace(\"false\", \"white/\")\n              .replace(\"true\", \"dark/\") +\n            \"Default.jpg\"\n        ).urlEncode()\n      )\n    )\n  ) +\n  \"/og.png\"\n}}"
+            },
+            {
+              "name": "Favicon",
+              "stringValue": "={{ $ifEmpty($json[\"body\"][\"metadata\"][\"favicon\"],\n(\n      // Get the Favicon url, if not available then generate api request to get it with:\n      \"https://favicone.com/\" +\n        // Get the image failed to export how from it if not found then use LongURL.\n        $ifEmpty(\n          $json[\"body\"][\"metadata\"][\"fullUrl\"],\n          $('API Auth').item.json[\"LongURL\"]\n        )\n          // This Regex to delete Any https:// or path from the url.\n          .match(/https?:\\/\\/[^\\/]+/)[0]\n          .replace(/https?:\\/\\//, \"\") +\n        // This Parameter to resize the favicon into 32pixels.\n        \"?s=32\"\n)) }}"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "name": "Method 1 - META",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1400,
+        -1000
+      ],
+      "typeVersion": 3.2,
+      "id": "52c99e0b-e8f8-47a6-b155-13fe0a6c9f24"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "data",
+        "options": {
+          "dataIsBase64": true
+        }
+      },
+      "name": "Convert to File",
+      "type": "n8n-nodes-base.convertToFile",
+      "position": [
+        2220,
+        -660
+      ],
+      "typeVersion": 1,
+      "id": "6deacd7b-8235-4858-aa27-de2745be0e1d"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "Title",
+              "stringValue": "={{ $item(\"0\").$node[\"Final Meta\"].json[\"data\"][\"0\"][\"ogTitle\"] }}"
+            },
+            {
+              "name": "Description",
+              "stringValue": "={{ $item(\"0\").$node[\"Final Meta\"].json[\"data\"][\"0\"][\"ogDescription\"].replace(/\\s{2,}/g, ' ').replace(/^\\s+|\\s{3,}/g, '') }}"
+            },
+            {
+              "name": "ogImage",
+              "stringValue": "={{ ($('Host OGImage').item.json[\"content\"][\"download_url\"]||'').replace('https://raw.githubusercontent.com/','https://cdn.statically.io/gh/')}}"
+            },
+            {
+              "name": "Favicon",
+              "stringValue": "={{ ($item(\"0\").$node[\"Host Favicon\"].json[\"content\"][\"download_url\"]||'').replace('https://raw.githubusercontent.com/','https://cdn.statically.io/gh/')}}"
+            },
+            {
+              "name": "=url",
+              "stringValue": "={{ $('API Auth').item.json.LongURL }}"
+            },
+            {
+              "name": "slug",
+              "stringValue": "={{ $('API Auth').item.json[\"Custom slug\"] }}"
+            },
+            {
+              "name": "tags",
+              "stringValue": "={{ $('API Auth').item.json.tags }}"
+            },
+            {
+              "name": "folderId",
+              "stringValue": "={{ $('API Auth').item.json[\"Switchy Folder ID\"] }}"
+            },
+            {
+              "name": "api",
+              "stringValue": "={{ $('API Auth').item.json[\"Switchy API Key\"] }}"
+            },
+            {
+              "name": "name",
+              "stringValue": "={{ $('API Auth').item.json[\"Brand Name\"] }}"
+            },
+            {
+              "name": "domain",
+              "stringValue": "={{ $('API Auth').item.json['Custom Domain (CNAME)'] }}"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {
+          "ignoreConversionErrors": true,
+          "dotNotation": true
+        }
+      },
+      "name": "Final Data",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2760,
+        -1040
+      ],
+      "typeVersion": 3.2,
+      "id": "70ea3352-1566-47e3-8f08-9d506d67aeb6"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.switchy.io/v1/links/create",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Authorization",
+              "value": "={{ $item(\"0\").$node[\"Final Data\"].json[\"api\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={  \"link\": {\n    \"url\": \"{{ $json[\"url\"] }}\",\n\n    {{($ifEmpty(('\"tags\": \"' + $json[\"tags\"]+'\",'),'')\n// Replace Undefiend with default one, and default template texts with none.\n.replace('\"tags\": \"undefined\",','')\n.replace('\"tags\": \"<Optional: Add tags if you need, each keyword seperated by \",\" for example: Marketing, Media, Shortened> \",','')\n) }}\n\n    {{($ifEmpty(('\"domain\": \"' + $json[\"domain\"]+'\",'),'')\n// Replace Undefiend with default one, and default template texts with none.\n.replace('\"undefined\",','\"swiy.co\",')\n.replace('\"<Optional: Use your custom domain linked to Switchy, otherwise keep it empty to use default domain swiy.co>\",','\"swiy.co\",')) }}\n\n    \"title\": \"{{$json[\"Title\"].slice(0,60)}}\",\n\n    {{($ifEmpty(('\"description\": \"' + $json[\"Description\"].slice(0,62)+'...\",'),'')\n.replace('\"description\": \"undefined\",','')) }}\n\n    {{($ifEmpty(('\"image\": \"' + $json[\"ogImage\"]+'\",'),'')\n.replace('\"image\": \"undefined\",','')) }}\n\n    \"id\": \"{{$ifEmpty($json[\"slug\"].replace('<Optional: Slug is the path of shortened URL - default is random 5 chars> ',''),Array.from({ length: 5 }, () => String.fromCharCode(Math.floor(Math.random() * 26) + 97)).join(''))}}\",\n\n    {{($ifEmpty(('\"folderId\": \"' + $json[\"folderId\"]+'\",'),'')\n.replace('\"folderId\": undefined,','')\n.replace('\"folderId\": \"<Optional: Enter Your Switchy Folder ID>\",','')) }}\n\n    \"favicon\": \"{{$json[\"Favicon\"]}}\",\n\n    \"note\": \"{{ 'Created through N8N.io Workflow name: ' + $workflow.name }}\"  }}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 15,
+              "batchInterval": 60000
+            }
+          },
+          "allowUnauthorizedCerts": true,
+          "redirect": {
+            "redirect": {}
+          },
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "name": "CREATE",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        3060,
+        -1040
+      ],
+      "notesInFlow": true,
+      "typeVersion": 4.1,
+      "alwaysOutputData": true,
+      "id": "57e58adb-5829-4fac-9a14-37dca63d6cf9",
+      "notes": "Create Link"
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.switchy.io/v1/links/by-domain/{{ $json.body.domain }}/{{ $json.body.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Authorization",
+              "value": "={{ $item(\"0\").$node[\"Final Data\"].json[\"api\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={  \"link\": {\n    \"url\": \"{{ $item(\"0\").$node[\"Final Data\"].json[\"url\"] }}\",\n\n    {{($ifEmpty(('\"tags\": \"' + $json[\"tags\"]+'\",'),'')\n// Replace Undefiend with default one, and default template texts with none.\n.replace('\"tags\": \"undefined\",','')\n.replace('\"tags\": \"<Optional: Add tags if you need, each keyword seperated by \",\" for example: Marketing, Media, Shortened> \",','')\n) }}\n\n    {{($ifEmpty(('\"domain\": \"' + $json[\"domain\"]+'\",'),'')\n// Replace Undefiend with default one, and default template texts with none.\n.replace('\"undefined\",','\"swiy.co\",')\n.replace('\"<Optional: Use your custom domain linked to Switchy, otherwise keep it empty to use default domain swiy.co>\",','\"swiy.co\",')) }}\n\n    \"title\": \"{{ $item(\"0\").$node[\"Final Data\"].json[\"Title\"].slice(0,60) }}\",\n\n    {{($ifEmpty(('\"description\": \"' + $item(\"0\").$node[\"Final Data\"].json[\"Description\"].slice(0,62)+'...\",'),'')\n.replace('\"description\": \"undefined\",','')) }}\n\n    {{($ifEmpty(('\"image\": \"' + $json[\"ogImage\"]+'\",'),'')\n.replace('\"image\": \"undefined\",','')) }}\n\n    {{($ifEmpty(('\"folderId\": \"' + $json[\"folderId\"]+'\",'),'')\n.replace('\"folderId\": undefined,','')\n.replace('\"folderId\": \"<Optional: Enter Your Switchy Folder ID>\",','')) }}\n\n    \"favicon\": \"{{$item(\"0\").$node[\"Final Data\"].json[\"Favicon\"]}}\",\n\n    \"note\": \"{{ 'Created through N8N.io Workflow name: ' + $workflow.name }}\"  }}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 15,
+              "batchInterval": 60000
+            }
+          },
+          "allowUnauthorizedCerts": true,
+          "redirect": {
+            "redirect": {}
+          },
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "name": "UPDATE",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        3060,
+        -880
+      ],
+      "typeVersion": 4.1,
+      "alwaysOutputData": true,
+      "id": "ded9c145-472e-402a-aead-f165882ef689"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.statusCode }}",
+              "operation": "regex",
+              "value2": "201"
+            }
+          ]
+        }
+      },
+      "name": "IF Slug available",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        3200,
+        -1040
+      ],
+      "typeVersion": 1,
+      "id": "709db399-fa4a-49f2-9198-5ee6ca3c6fa0"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {
+          "includeBinaries": true
+        }
+      },
+      "name": "Final Meta",
+      "type": "n8n-nodes-base.aggregate",
+      "position": [
+        1660,
+        -860
+      ],
+      "typeVersion": 1,
+      "id": "1bed4598-6ffd-4ec6-959c-01f67fd8276b"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "mode": "list",
+          "value": "ARHAEEM",
+          "cachedResultUrl": "https://github.com/ARHAEEM",
+          "cachedResultName": "ARHAEEM"
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "list",
+          "value": "n8n-templates-demos",
+          "cachedResultUrl": "https://github.com/ARHAEEM/n8n-templates-demos",
+          "cachedResultName": "n8n-templates-demos"
+        },
+        "filePath": "=screenshots/{{$(\"API Auth\").item.json[\"LongURL\"].match(/https?:\\/\\/[^\\/]+/)[0].replace(/https?:\\/\\//, \"\")}}/scr/{{(Array.from({ length: 5 }, () => String.fromCharCode(Math.floor(Math.random() * 26) + 97)).join(''))}}.png",
+        "binaryData": true,
+        "binaryPropertyName": "=data",
+        "commitMessage": "={{ $('API Auth').item.json.LongURL }}"
+      },
+      "name": "Host Screenshot",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        2600,
+        -1040
+      ],
+      "typeVersion": 1,
+      "id": "f90a8464-ddcc-49ab-979c-6cb5bb17f7cf"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "mode": "list",
+          "value": "ARHAEEM",
+          "cachedResultUrl": "https://github.com/ARHAEEM",
+          "cachedResultName": "ARHAEEM"
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "list",
+          "value": "n8n-templates-demos",
+          "cachedResultUrl": "https://github.com/ARHAEEM/n8n-templates-demos",
+          "cachedResultName": "n8n-templates-demos"
+        },
+        "filePath": "=screenshots/{{$(\"API Auth\").item.json[\"LongURL\"].match(/https?:\\/\\/[^\\/]+/)[0].replace(/https?:\\/\\//, \"\")}}/og/{{(Array.from({ length: 5 }, () => String.fromCharCode(Math.floor(Math.random() * 26) + 97)).join(''))}}.png",
+        "binaryData": true,
+        "binaryPropertyName": "=data",
+        "commitMessage": "={{ $('API Auth').item.json.LongURL }}"
+      },
+      "name": "Host OGImage",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        2440,
+        -700
+      ],
+      "typeVersion": 1,
+      "id": "266dc965-226b-49e7-a013-93ce888b2ded"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "mode": "list",
+          "value": "ARHAEEM",
+          "cachedResultUrl": "https://github.com/ARHAEEM",
+          "cachedResultName": "ARHAEEM"
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "list",
+          "value": "n8n-templates-demos",
+          "cachedResultUrl": "https://github.com/ARHAEEM/n8n-templates-demos",
+          "cachedResultName": "n8n-templates-demos"
+        },
+        "filePath": "=screenshots/{{$(\"API Auth\").item.json[\"LongURL\"].match(/https?:\\/\\/[^\\/]+/)[0].replace(/https?:\\/\\//, \"\")}}/icon/{{(Array.from({ length: 5 }, () => String.fromCharCode(Math.floor(Math.random() * 26) + 97)).join(''))}}.png",
+        "binaryData": true,
+        "binaryPropertyName": "=data",
+        "commitMessage": "={{ $('API Auth').item.json.LongURL }}"
+      },
+      "name": "Host Favicon",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        2760,
+        -700
+      ],
+      "typeVersion": 1,
+      "id": "5e7125a1-f572-4f82-a6bf-d5f2abb70c6a"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "download_url",
+              "stringValue": "={{ $json.content.download_url }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2600,
+        -860
+      ],
+      "typeVersion": 3.2,
+      "id": "86e3c039-ce20-460d-85a0-42173aac0fce"
+    },
+    {
+      "parameters": {
+        "url": "={{\n  // The expression checks if $json.data[0].data[0].ogImage exists.\n  // It then attempts to replace '<SCR>' with the encoded download URL.\n  // If $json.data[0].content.download_url does not exist or is empty,\n  // '<SCR>' is replaced with an empty string.\n  ($item(\"0\").$node[\"Final Meta\"].json[\"data\"][\"0\"][\"ogImage\"]).replace('<SCR>', \n    $ifEmpty(\n       $json[\"download_url\"], \n      (\n        // If the image URL or its components don't exist, construct a default image URL based on other JSON values\n        // Get the \"Dark Mode\" setting from the API Auth node\n        \"https://cdn.statically.io/og/theme=\" +\n          ($item(\"0\").$node[\"API Auth\"].json[\"Dark Mode ?\"] + \"\")\n            .replace(\"false\", \"white/\")\n            .replace(\"true\", \"dark/\")+\n          \".jpg\"\n      )\n    ).urlEncode()\n  )\n  }}",
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "name": "Download final OG",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2760,
+        -860
+      ],
+      "notesInFlow": true,
+      "typeVersion": 4.1,
+      "id": "f13866c5-2e6a-427e-aad8-71704bf64d88",
+      "notes": "Download Final OGI"
+    },
+    {
+      "parameters": {
+        "url": "={{ $item(\"0\").$node[\"Final Meta\"].json[\"data\"][\"0\"][\"Favicon\"] }}",
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "name": "Download Favicon",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2600,
+        -700
+      ],
+      "typeVersion": 4.1,
+      "id": "ad45d16d-970a-4fe6-8936-2622af733cf5"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ogTitle",
+              "stringValue": "={{\n      // We used IFempty of title then use descraption, if the title giving no title output value then replace with descraption value, if no value for both then use empty value output.\n      // The domain name (Host)\n      // if the image url not found then use long URL host.\n \n($ifEmpty($json[\"ogTitle\"], ($(\"API Auth\").item.json[\"LongURL\"])\n        // This Regex to delete Any https:// or path from the url.\n        .match(/https?:\\/\\/[^\\/]+/)[0]\n        .replace(/https?:\\/\\//, \"\")\n      ))\n }}"
+            },
+            {
+              "name": "ogDescription",
+              "stringValue": "={{ (($ifEmpty($json.ogDescription , $json[\"ogTitle\"])) || 'Visit Now') }}"
+            },
+            {
+              "name": "ogImage",
+              "stringValue": "={{  // Constructing the base URL for the CDN\n  \"https://ogcdn.net/6064b869-74ed-4eb9-b76c-0b701ffe7e6b/v4/\" +\n  // Adding the title, URL encoded\n  ($ifEmpty($json[\"ogTitle\"], $('API Auth').item.json[\"Brand Name\"]).urlEncode() || \"\") +\n  \"/\" +\n  // Adding the description, URL encoded\n  ($ifEmpty($json[\"ogDescription\"], $json[\"ogTitle\"]).urlEncode() || \"\") +\n  \"/\" +\n  // Handling different OpenGraph Image Modes\n  (\n    $if($('API Auth').item.json[\"OpenGraph Image Mode\"] === 'screenshot',\n      \"<SCR>\",\n      $if($('API Auth').item.json[\"OpenGraph Image Mode\"] === 'brand',\n        (\n          \"https://cdn.statically.io/og/theme=\" +\n          ($item(\"0\").$node[\"API Auth\"].json[\"Dark Mode ?\"] + \"\")\n            .replace(\"false\", \"white/\")\n            .replace(\"true\", \"dark/\") +\n          (\n            (`%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20`+ $(\"API Auth\").item.json[\"Brand Name\"].slice(0,18) + '%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C') ||\n            $json[\"ogTitle\"].toUpperCase() ||\n            $json[\"ogDescription\"].toUpperCase() ||\n            \"Short Link\"\n          ) + '.jpg'\n        ).urlEncode(),\n        $ifEmpty(\n          $json[\"ogImage\"] || $json[\"Image\"],\n          \"https://cdn.statically.io/og/theme=\" +\n            ($item(\"0\").$node[\"API Auth\"].json[\"Dark Mode ?\"] + \"\")\n              .replace(\"false\", \"white/\")\n              .replace(\"true\", \"dark/\") +\n            \"Default.jpg\"\n        ).urlEncode()\n      )\n    )\n  ) +\n  \"/og.png\"\n}}"
+            },
+            {
+              "name": "Favicon",
+              "stringValue": "={{ $ifEmpty($json[\"favicon\"],\n(\n// Get the Favicon url, if not available then generate api request to get it with:\n\"https://favicone.com/\" +\n// Get the image failed to export how from it if not found then use LongURL.\n$ifEmpty($('API Auth').item.json[\"LongURL\"],\n''\n)\n// This Regex to delete Any https:// or path from the url.\n.match(/https?:\\/\\/[^\\/]+/)[0]\n.replace(/https?:\\/\\//, \"\") +\n// This Parameter to resize the favicon into 32pixels.\n\"?s=32\"\n)) }}"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "name": "Method 2 - META",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1280,
+        -840
+      ],
+      "typeVersion": 3.2,
+      "id": "fe80d3eb-bddc-488c-b9c6-8950dfea3bdf"
+    },
+    {
+      "parameters": {
+        "errorMessage": "META Stack need fix, report to creator through n8n community 'Ans'."
+      },
+      "name": "Stop and Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "position": [
+        1820,
+        -620
+      ],
+      "typeVersion": 1,
+      "id": "6939fa78-5207-4387-8778-e856951cbf4a"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ogTitle",
+              "stringValue": "={{\n      // We used IFempty of title then use descraption, if the title giving no title output value then replace with descraption value, if no value for both then use empty value output.\n      // The domain name (Host)\n      // if the image url not found then use long URL host.\n \n($ifEmpty($json[\"title\"], ($(\"API Auth\").item.json[\"LongURL\"])\n        // This Regex to delete Any https:// or path from the url.\n        .match(/https?:\\/\\/[^\\/]+/)[0]\n        .replace(/https?:\\/\\//, \"\")\n      ))\n }}"
+            },
+            {
+              "name": "ogDescription",
+              "stringValue": "={{ (($ifEmpty($json.description , $json[\"title\"])) || 'Visit Now') }}"
+            },
+            {
+              "name": "ogImage",
+              "stringValue": "={{  // Constructing the base URL for the CDN\n  \"https://ogcdn.net/6064b869-74ed-4eb9-b76c-0b701ffe7e6b/v4/\" +\n  // Adding the title, URL encoded\n  ($ifEmpty($json[\"title\"], $('API Auth').item.json[\"Brand Name\"]).urlEncode() || \"\") +\n  \"/\" +\n  // Adding the description, URL encoded\n  ($ifEmpty($json[\"description\"], $json[\"title\"]).urlEncode() || \"\") +\n  \"/\" +\n  // Handling different OpenGraph Image Modes\n  (\n    $if($('API Auth').item.json[\"OpenGraph Image Mode\"] === 'screenshot',\n      \"<SCR>\",\n      $if($('API Auth').item.json[\"OpenGraph Image Mode\"] === 'brand',\n        (\n          \"https://cdn.statically.io/og/theme=\" +\n          ($item(\"0\").$node[\"API Auth\"].json[\"Dark Mode ?\"] + \"\")\n            .replace(\"false\", \"white/\")\n            .replace(\"true\", \"dark/\") +\n          (\n            (`%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20`+ $(\"API Auth\").item.json[\"Brand Name\"].slice(0,18) + '%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C') ||\n            $json[\"title\"].toUpperCase() ||\n            $json[\"description\"].toUpperCase() ||\n            \"Short Link\"\n          ) + '.jpg'\n        ).urlEncode(),\n        $ifEmpty(\n          $json[\"image\"],\n          \"https://cdn.statically.io/og/theme=\" +\n            ($item(\"0\").$node[\"API Auth\"].json[\"Dark Mode ?\"] + \"\")\n              .replace(\"false\", \"white/\")\n              .replace(\"true\", \"dark/\") +\n            \"Default.jpg\"\n        ).urlEncode()\n      )\n    )\n  ) +\n  \"/og.png\"\n}}"
+            },
+            {
+              "name": "Favicon",
+              "stringValue": "={{ $ifEmpty($json[\"favicon\"],\n(\n// Get the Favicon url, if not available then generate api request to get it with:\n\"https://favicone.com/\" +\n// Get the image failed to export how from it if not found then use LongURL.\n$ifEmpty($('API Auth').item.json[\"LongURL\"],\n''\n)\n// This Regex to delete Any https:// or path from the url.\n.match(/https?:\\/\\/[^\\/]+/)[0]\n.replace(/https?:\\/\\//, \"\") +\n// This Parameter to resize the favicon into 32pixels.\n\"?s=32\"\n)) }}"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "name": "Method 3 - META1",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1400,
+        -640
+      ],
+      "typeVersion": 3.2,
+      "id": "80d147ad-90f3-475b-9f09-4e47906644ba"
+    },
+    {
+      "parameters": {
+        "url": "https://api.switchy.io/v1/proxy/proxy",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "=https://api.microlink.io?url={{ $item(\"0\").$node[\"API Auth\"].json[\"LongURL\"].urlEncode() }}&screenshot=true&meta=true&embed=screenshot.url"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.5"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Origin",
+              "value": "https://www.switchy.io"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Referer",
+              "value": "https://www.switchy.io/"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "Sec-GPC",
+              "value": "1"
+            },
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Method 1 - SCR",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2220,
+        -1060
+      ],
+      "notesInFlow": true,
+      "typeVersion": 4.1,
+      "id": "9f90020e-a04e-48cb-8fe0-e0fe6c026414",
+      "onError": "continueErrorOutput",
+      "notes": "SCR API"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://app.pxl.to/api/public/tools/screenshot",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.5"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Origin",
+              "value": "https://www.pxl.to"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-site"
+            },
+            {
+              "name": "Sec-GPC",
+              "value": "1"
+            },
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "destination",
+              "value": "={{ $item(\"0\").$node[\"API Auth\"].json[\"LongURL\"] }}"
+            },
+            {
+              "name": "size",
+              "value": "meta"
+            },
+            {
+              "name": "width",
+              "value": 1200
+            },
+            {
+              "name": "height",
+              "value": 628
+            },
+            {
+              "name": "full",
+              "value": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Method 2 - SCR",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2220,
+        -840
+      ],
+      "notesInFlow": true,
+      "typeVersion": 4.1,
+      "id": "259f236e-936c-4128-b71a-6b0d36db1400",
+      "onError": "continueErrorOutput",
+      "notes": "Optional "
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {
+          "includeBinaries": true
+        }
+      },
+      "name": "Final SCR",
+      "type": "n8n-nodes-base.aggregate",
+      "position": [
+        2440,
+        -1040
+      ],
+      "typeVersion": 1,
+      "id": "8e18ba6b-61b3-4685-9980-352eb835c080"
+    },
+    {
+      "parameters": {
+        "errorMessage": "SCR Stack need fix, report to creator through n8n community 'Ans'."
+      },
+      "name": "Stop And Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "position": [
+        2440,
+        -860
+      ],
+      "typeVersion": 1,
+      "id": "e6ee69ae-30e7-4536-825a-72c2f95d9c1a"
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "Shortened URL",
+              "value": "=https://{{ $json.body.domain }}/{{ $json.body.id }}"
+            },
+            {
+              "name": "OG Method",
+              "value": "={{ $('API Auth').item.json['OpenGraph Image Mode'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Shortened URL",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        3200,
+        -880
+      ],
+      "typeVersion": 2,
+      "id": "d5d8d369-deb5-4a98-89a4-2ffff6fdaeb1"
+    },
+    {
+      "parameters": {
+        "path": "switchy",
+        "formTitle": "Switchy URL Shortener",
+        "formDescription": "This is demo simple of Switchy URL shortener.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "What's your Switchy API Key",
+              "fieldType": "textarea",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "What's Your LongURL ?",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "What's OG Image method you like ?",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Screenshot"
+                  },
+                  {
+                    "option": "Source"
+                  },
+                  {
+                    "option": "brand"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "With your brand, Do you Like dark mode ?",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "no"
+                  },
+                  {
+                    "option": "yes"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "scan Long URLs from virus/Phishing ? (Shorting a phishing URL will ban your domain from SEO)",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "No, Skip Scan part."
+                  },
+                  {
+                    "option": "Yes, Scan all Links."
+                  }
+                ]
+              },
+              "requiredField": true
+            }
+          ]
+        },
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "name": "n8n Form Trigger",
+      "type": "n8n-nodes-base.formTrigger",
+      "position": [
+        1000,
+        -1660
+      ],
+      "webhookId": "4d7636c2-aa25-4a90-8f9c-e421166d21ab",
+      "typeVersion": 2,
+      "id": "415b67c4-82b8-4e1b-9d39-160c84158009"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json['Shortened URL'] }}",
+        "options": {}
+      },
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        920,
+        -1320
+      ],
+      "typeVersion": 1,
+      "id": "ef48797f-e960-4231-ba2e-a9a37cc473c2"
+    },
+    {
+      "parameters": {
+        "content": "## URL Preparing And Scanning\n",
+        "height": 698.8834639756606,
+        "width": 365.4663416508872
+      },
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        860,
+        -1860
+      ],
+      "typeVersion": 1,
+      "id": "f61391e2-cb0a-4515-9203-4e4a531d9de9"
+    },
+    {
+      "parameters": {
+        "url": "https://safeweb.norton.com/safeweb/sites/v1/details",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $('API Auth').item.json.LongURL.match(/^(?:https?:\\/\\/)?(?:[^@\\n]+@)?(?:www\\.)?([^:\\/\\n?]+)/im)[1] }}"
+            },
+            {
+              "name": "insert",
+              "value": "0"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.5"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Referer",
+              "value": "https://safeweb.norton.com/"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-origin"
+            },
+            {
+              "name": "Sec-GPC",
+              "value": "1"
+            },
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ]
+        },
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "redirect": {
+            "redirect": {}
+          },
+          "response": {
+            "response": {}
+          }
+        }
+      },
+      "name": "Scan URL (Community)",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1680,
+        -1760
+      ],
+      "typeVersion": 4.1,
+      "id": "25b85edb-b635-4dc9-9378-3dcd207d581a"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "or",
+          "conditions": [
+            {
+              "id": "4b55880c-53dc-47d3-acc5-ecf5166bcce5",
+              "operator": {
+                "name": "filter.operator.equals",
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.rating }}",
+              "rightValue": "g"
+            },
+            {
+              "id": "c412970c-402b-4ae1-ad36-385ecc563d7a",
+              "operator": {
+                "name": "filter.operator.equals",
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.rating }}",
+              "rightValue": "r"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1840,
+        -1780
+      ],
+      "typeVersion": 2,
+      "id": "47896250-c09d-4e21-a019-2cc2dfdcfee2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "4b55880c-53dc-47d3-acc5-ecf5166bcce5",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              },
+              "leftValue": "={{ $('Scan URL (Community)').item.json.reviewCount }}",
+              "rightValue": 1
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "If1",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1680,
+        -1600
+      ],
+      "typeVersion": 2,
+      "id": "c4c3266b-82e6-4f54-8b76-165fb86162d4"
+    },
+    {
+      "parameters": {
+        "url": "=https://safeweb.norton.com/safeweb/sites/v1/{{ $('Scan URL (Community)').item.json.id }}/reviews",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "sortType",
+              "value": "1"
+            },
+            {
+              "name": "pageNo",
+              "value": "1"
+            },
+            {
+              "name": "pageSize",
+              "value": "2"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.5"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Referer",
+              "value": "=https://safeweb.norton.com/report?url={{ $('Scan URL (Community)').item.json.url }}"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-origin"
+            },
+            {
+              "name": "Sec-GPC",
+              "value": "1"
+            },
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ]
+        },
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "redirect": {
+            "redirect": {}
+          },
+          "response": {
+            "response": {}
+          }
+        }
+      },
+      "name": "Check Reviews (Community)",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1680,
+        -1420
+      ],
+      "typeVersion": 4.1,
+      "id": "95db896c-b82c-43ff-b9c3-ce9e1df10981"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "Risk Rate",
+              "stringValue": "={{ $('Scan URL (Community)').item.json.rating }}"
+            },
+            {
+              "name": "Community Rating",
+              "stringValue": "={{ $('Scan URL (Community)').item.json.userRating+'\\/5' }}"
+            },
+            {
+              "name": "Ban",
+              "type": "booleanValue",
+              "booleanValue": "={{ $('Scan URL (Community)').item.json.globalRestriction }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Norton",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1840,
+        -1600
+      ],
+      "typeVersion": 3.2,
+      "id": "384af3c9-2efd-48ed-b2d5-51a8e346f505"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "safe",
+              "type": "booleanValue",
+              "booleanValue": "={{ $json.safe.is }}"
+            },
+            {
+              "name": "blocklist score",
+              "stringValue": "={{ $item(\"0\").$node[\"HTML\"].json[\"result\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "bitdefender",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2200,
+        -1580
+      ],
+      "typeVersion": 3.2,
+      "id": "c36e1193-ef11-4c83-bb9d-7260117e87dd"
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "result",
+              "cssSelector": ".label"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "HTML",
+      "type": "n8n-nodes-base.html",
+      "position": [
+        2040,
+        -1580
+      ],
+      "typeVersion": 1,
+      "id": "20dda2ed-9b7d-4dc8-a2a4-afb0a8d0552c"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://nimbus.bitdefender.net/url/fraud_info",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.5"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Referer",
+              "value": "https://trafficlight.bitdefender.com/"
+            },
+            {
+              "name": "Origin",
+              "value": "https://trafficlight.bitdefender.com"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "empty"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "cors"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "cross-site"
+            },
+            {
+              "name": "Sec-GPC",
+              "value": "1"
+            },
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $('API Auth').item.json.LongURL.match(/^(?:https?:\\/\\/)?(?:[^@\\n]+@)?(?:www\\.)?([^:\\/\\n?]+)/im)[1] }}"
+            }
+          ]
+        },
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "redirect": {
+            "redirect": {}
+          },
+          "response": {
+            "response": {}
+          }
+        }
+      },
+      "name": "(Fraud Check)",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2040,
+        -1760
+      ],
+      "notesInFlow": true,
+      "typeVersion": 4.1,
+      "id": "1172897c-0c33-4ed3-af05-ea11a73417a9",
+      "notes": "Bitdefender"
+    },
+    {
+      "parameters": {
+        "url": "=https://www.urlvoid.com/scan/{{ $('API Auth').item.json.LongURL.match(/^(?:https?:\\/\\/)?(?:[^@\\n]+@)?(?:www\\.)?([^:\\/\\n?]+)/im)[1] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.5"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "Referer",
+              "value": "https://www.urlvoid.com/"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0"
+            },
+            {
+              "name": "DNT",
+              "value": "1"
+            },
+            {
+              "name": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Upgrade-Insecure-Requests",
+              "value": "1"
+            },
+            {
+              "name": "Sec-Fetch-Dest",
+              "value": "document"
+            },
+            {
+              "name": "Sec-Fetch-Mode",
+              "value": "navigate"
+            },
+            {
+              "name": "Sec-Fetch-Site",
+              "value": "same-origin"
+            },
+            {
+              "name": "Sec-Fetch-User",
+              "value": "?1"
+            },
+            {
+              "name": "Sec-GPC",
+              "value": "1"
+            },
+            {
+              "name": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "name": "TE",
+              "value": "trailers"
+            }
+          ]
+        },
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "redirect": {
+            "redirect": {}
+          },
+          "response": {
+            "response": {}
+          }
+        }
+      },
+      "name": "(Others)",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2200,
+        -1760
+      ],
+      "typeVersion": 4.1,
+      "id": "7dd50136-c19e-4c49-a37a-90d99d909799"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "loose"
+          },
+          "combinator": "or",
+          "conditions": [
+            {
+              "id": "c409582d-b8b3-409f-a7af-7dcccb6f6beb",
+              "operator": {
+                "type": "number",
+                "operation": "lte"
+              },
+              "leftValue": "={{ ($json.result.match(/.*\\//)[0].replace('/','')).toDecimalNumber() }}",
+              "rightValue": "=5"
+            },
+            {
+              "id": "f27aa777-2b4e-4bb9-8d0b-0de58283cc01",
+              "operator": {
+                "name": "filter.operator.equals",
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $('If').item.json.rating }}",
+              "rightValue": "g"
+            },
+            {
+              "id": "cbf7378d-c023-4de4-897d-e8c2e14bc08b",
+              "operator": {
+                "name": "filter.operator.equals",
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $('If').item.json.rating }}",
+              "rightValue": "r"
+            },
+            {
+              "id": "b240a351-6b68-4eac-a19e-383c44bbf721",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.safe }}",
+              "rightValue": ""
+            }
+          ]
+        },
+        "options": {
+          "looseTypeValidation": true
+        }
+      },
+      "name": "If2",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        2040,
+        -1420
+      ],
+      "typeVersion": 2,
+      "id": "ed7c4d5f-8596-478d-8518-ee6dcd757f09"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "Shortened URL",
+              "stringValue": "=Unsafe / Skipped getting {{ $item(\"0\").$node[\"HTML\"].json[\"result\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "set unsafe",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2200,
+        -1400
+      ],
+      "typeVersion": 3.2,
+      "id": "55487f01-47dc-41c9-90d1-3e56d4b903b5"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "or",
+          "conditions": [
+            {
+              "id": "4b55880c-53dc-47d3-acc5-ecf5166bcce5",
+              "operator": {
+                "type": "string",
+                "operation": "startsWith"
+              },
+              "leftValue": "={{ $json['Scan LongURL'] }}",
+              "rightValue": "Yes,"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "If3",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1380,
+        -1560
+      ],
+      "typeVersion": 2,
+      "id": "a704540d-e1ec-4b2b-849c-7ac213b8fb5f"
+    },
+    {
+      "parameters": {
+        "url": "=https://checkurl.phishtank.com/checkurl/index.php?url={{ $('API Auth').item.json.LongURL.match(/^(?:https?:\\/\\/)?(?:[^@\\n]+@)?(?:www\\.)?([^:\\/\\n?]+)/im)[1] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "phishtank/anestooo"
+            }
+          ]
+        },
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "name": "PhishTank",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1840,
+        -1420
+      ],
+      "typeVersion": 4.1,
+      "id": "f46f2a29-7666-486c-9a4d-4caec2b18e30"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": false,
+            "typeValidation": "strict"
+          },
+          "combinator": "or",
+          "conditions": [
+            {
+              "id": "3c8cc92c-7232-4e30-b06b-3d8a57d80303",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.ogTitle }}",
+              "rightValue": ""
+            },
+            {
+              "id": "14329807-37fc-4265-beac-fff5bc4dda23",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.ogDescription }}",
+              "rightValue": ""
+            },
+            {
+              "id": "355ab988-c784-4fc3-8991-f5b0ab4b732a",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.ogImage }}",
+              "rightValue": ""
+            },
+            {
+              "id": "1f85c367-6270-42c2-b109-0a66ece133dc",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              },
+              "leftValue": "={{ $json.ogTitle + $json.ogDescription }}",
+              "rightValue": "Error"
+            }
+          ]
+        },
+        "options": {
+          "ignoreCase": true
+        }
+      },
+      "name": "IF GH invaild",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1420,
+        -840
+      ],
+      "typeVersion": 2,
+      "id": "7d0e1e07-bb53-42cf-a810-558bf37f74b2"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ogTitle",
+              "stringValue": "={{\n      // We used IFempty of title then use descraption, if the title giving no title output value then replace with descraption value, if no value for both then use empty value output.\n      // The domain name (Host)\n      // if the image url not found then use long URL host.\n \n($ifEmpty($json[\"title\"].replace('Error',$('API Auth').item.json[\"Brand Name\"].replaceAll('  ','')), ($(\"API Auth\").item.json[\"LongURL\"])\n        // This Regex to delete Any https:// or path from the url.\n        .match(/https?:\\/\\/[^\\/]+/)[0]\n        .replace(/https?:\\/\\//, \"\")\n      ))\n }}"
+            },
+            {
+              "name": "ogDescription",
+              "stringValue": "={{ (($ifEmpty($json.description , $json[\"title\"])) || 'Visit Now') }}"
+            },
+            {
+              "name": "ogImage",
+              "stringValue": "={{  // Constructing the base URL for the CDN\n  \"https://ogcdn.net/6064b869-74ed-4eb9-b76c-0b701ffe7e6b/v4/\" +\n  // Adding the title, URL encoded\n  ($ifEmpty($json[\"title\"].replace('Error',''), $('API Auth').item.json[\"Brand Name\"].replaceAll('  ','')).urlEncode() || \"\") +\n  \"/\" +\n  // Adding the description, URL encoded\n  ($ifEmpty($json[\"description\"].replace('No description',''), $json[\"title\"].replace('Error',$('API Auth').item.json[\"Brand Name\"].replaceAll('  ',''))).urlEncode() || \"\") +\n  \"/\" +\n  // Handling different OpenGraph Image Modes\n  (\n    $if($('API Auth').item.json[\"OpenGraph Image Mode\"] === 'screenshot',\n      \"<SCR>\",\n      $if($('API Auth').item.json[\"OpenGraph Image Mode\"] === 'brand',\n        (\n          \"https://cdn.statically.io/og/theme=\" +\n          ($item(\"0\").$node[\"API Auth\"].json[\"Dark Mode ?\"] + \"\")\n            .replace(\"false\", \"white/\")\n            .replace(\"true\", \"dark/\") +\n          (\n            (`%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20`+ $(\"API Auth\").item.json[\"Brand Name\"].slice(0,18) + '%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C%20%E2%80%8C') ||\n            $json[\"title\"].toUpperCase() ||\n            $json[\"description\"].toUpperCase() ||\n            \"Short Link\"\n          ) + '.jpg'\n        ).urlEncode(),\n        $ifEmpty(\n          $json[\"image\"],\n          \"https://cdn.statically.io/og/theme=\" +\n            ($item(\"0\").$node[\"API Auth\"].json[\"Dark Mode ?\"] + \"\")\n              .replace(\"false\", \"white/\")\n              .replace(\"true\", \"dark/\") +\n            \"Default.jpg\"\n        ).urlEncode()\n      )\n    )\n  ) +\n  \"/og.png\"\n}}"
+            },
+            {
+              "name": "Favicon",
+              "stringValue": "={{ $ifEmpty($json[\"favicon\"],\n(\n// Get the Favicon url, if not available then generate api request to get it with:\n\"https://favicone.com/\" +\n// Get the image failed to export how from it if not found then use LongURL.\n$ifEmpty($('API Auth').item.json[\"LongURL\"],\n''\n)\n// This Regex to delete Any https:// or path from the url.\n.match(/https?:\\/\\/[^\\/]+/)[0]\n.replace(/https?:\\/\\//, \"\") +\n// This Parameter to resize the favicon into 32pixels.\n\"?s=32\"\n)) }}"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "name": "Method 4 - META",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1620,
+        -620
+      ],
+      "typeVersion": 3.2,
+      "id": "f93b1542-1a6d-4690-ad53-c5f8ce2713ae"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": false,
+            "typeValidation": "strict"
+          },
+          "combinator": "or",
+          "conditions": [
+            {
+              "id": "3c8cc92c-7232-4e30-b06b-3d8a57d80303",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.title }}",
+              "rightValue": "No title"
+            },
+            {
+              "id": "14329807-37fc-4265-beac-fff5bc4dda23",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.description }}",
+              "rightValue": "No description"
+            },
+            {
+              "id": "355ab988-c784-4fc3-8991-f5b0ab4b732a",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.image }}",
+              "rightValue": "No image"
+            },
+            {
+              "id": "1f85c367-6270-42c2-b109-0a66ece133dc",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              },
+              "leftValue": "={{ $json.title + $json.description }}",
+              "rightValue": "Error"
+            }
+          ]
+        },
+        "options": {
+          "ignoreCase": true
+        }
+      },
+      "name": "IF dub invaild",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1160,
+        -640
+      ],
+      "typeVersion": 2,
+      "id": "5717207f-b139-44f9-9270-2b3b442d4717"
+    },
+    {
+      "parameters": {
+        "content": "## Switchy API\n**Create or Update** Link. [Based on their API docs](https://google.com)",
+        "height": 418.2992490141105,
+        "width": 344.6623616873581,
+        "color": 4
+      },
+      "name": "Sticky Note10",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3180,
+        -980
+      ],
+      "typeVersion": 1,
+      "id": "8c2f1924-85d2-4477-a624-7bdb69ada91c",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "# README\n## N8N META Config\n### 1- **Opengraph Image mode**: `screenshot` or `source` or `brand`\n### - **screenshot**: _take a screenshot for web page based on longurl._\n[![Screenshort Mode Demo](https://live.staticflickr.com/65535/53485029368_917acda850_o.png)](https://cdn.statically.io/gh/ARHAEEM/n8n-templates-demos/main/screenshots/n8n.io/og/mefwo.png)\n### - **source**: _scrape the source longurl og image and use it_\n[![Source Mode Demo](https://live.staticflickr.com/65535/53485194899_d6141292eb_o.png)](https://cdn.statically.io/gh/ARHAEEM/n8n-templates-demos/main/screenshots/n8n.io/og/cowyl.png)\n### -  **brand**: _Generate blank background, color based on `Dark Mode` option_\n[![Brand Mode Demo Dark](https://live.staticflickr.com/65535/53484898721_94e15670b0_o.png)](https://cdn.statically.io/gh/ARHAEEM/n8n-templates-demos/main/screenshots/n8n.io/og/gvhok.png) [![Brand Mode Demo White](https://live.staticflickr.com/65535/53485202839_680a5e825b_o.png)](https://cdn.statically.io/gh/ARHAEEM/n8n-templates-demos/main/screenshots/n8n.io/og/yguse.png)\n### 2- **Dark Mode**: `true` or `false` (_Working with `brand` OGI mode only._)\n- **true**: generate **black** patteren as background og image for the texts.\n- **false**: generate **white** patteren as background og image for the texts.\n### 3- **Brand Name**: Used for `brand` ogi background. The limit of brand name is 18 characters total.\n\n\n## Switchy API Workflow Configuration\n### This is part of Switchy API config i covered in this workflow.\n| Input Field           | Description                                      |\n|-----------------------|--------------------------------------------------|\n| **`Switchy API Key`**       | _API Key for Switchy integration._                 |\n| **`LongURL`**               | _The long URL to be shortened._                    |\n| **`Custom slug`**           | _Custom slug for the shortened URL._               |\n| **`tags`**                  | _Tags associated with the link._                   |\n| **`Switchy Folder ID`**     | _ID of the Switchy folder to use._                 |\n| **`Custom Domain (CNAME)`** | _Custom domain linked to Switchy._                 |\n\n\n### This is public APIs I've Used in Workflow\n#### Meta Data Stack\n- **Manual Get Headers**: Custom HTTP request to fetch headers.\n- **Dub.sh**: Scraping meta tags from web pages.\n- **OpenGraph API**: Using OpenGraph to retrieve meta information.\n#### Screenshot Stack\n- **Method 1 - SCR**: First method for taking screenshots (API name microlink).\n- **Method 2 - SCR**: Second method for taking screenshots (API name pxl.to).",
+        "height": 1405.2214458171302,
+        "width": 682.2425599837106
+      },
+      "name": "Sticky Note11",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        160,
+        -1880
+      ],
+      "typeVersion": 1,
+      "id": "48bc2e0f-46e1-4993-ac3a-56e0406edb5d"
+    },
+    {
+      "parameters": {
+        "content": "## URL Preparing\nWe're using this side to control everything.",
+        "height": 698.8834639756606,
+        "width": 1102.2526655123636
+      },
+      "name": "Sticky Note12",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1240,
+        -1860
+      ],
+      "typeVersion": 1,
+      "id": "7eeb4802-0996-47f6-bd43-0f592e388f24"
+    },
+    {
+      "parameters": {
+        "content": "‌ ‌ ‌‌ ‌ ‌ ‌ ‌‌ ‌ ‌ ‌ ‌‌ ‌ ‌ ‌‌ ‌ ‌‌ ‌  ‌‌ ‌ ‌ ‌ ‌‌ ‌ ![Safe Web](https://static.nortoncdn.com/safeweb/prod/417315/assets/images/logo/norton_logo.svg)‌ ‌ ‌‌ ‌ ‌‌ ‌ ‌‌![Safe Web](https://static.nortoncdn.com/safeweb/prod/417315/assets/images/logo/safeweb_logo.svg) ‌ ‌‌ ‌ ‌‌ ‌ ‌‌![Safe Web](https://upload.wikimedia.org/wikipedia/commons/3/35/Bitdefender_logo.svg)",
+        "height": 698.8834639756606,
+        "width": 732.5923943084913,
+        "color": 7
+      },
+      "name": "Sticky Note13",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1620,
+        -1860
+      ],
+      "typeVersion": 1,
+      "id": "3a48ccd2-ca49-4c01-ab9a-5b8bf2da8711"
+    },
+    {
+      "parameters": {
+        "content": "\n\n\n\n‌\n‌\n‌\n‌\n‌\n# 💡FYI:-\n- ### **This workflow can be for any URL Shortener by just changing the API Services for the shortener SaaS.**\n- ### **Do not use it for spam purposes as the used APIs is mostly workaround methods and not for \"Big Use Cases\".**\n- ### **Breaking the APIs will force me to not share them free. and yes this workflow not for productions.**\n- ### **Support 1:1 not included with this workflow. post anything you have** [here](https://community.n8n.io) and mention my account @Nskha.\n- ### **Follow my new templates updates** [on telegram](https://nodemation.t.me).\n\n‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌[![N8N Creator Profile - Nskha](https://cdn.statically.io/gh/Automations-Project/n8n-templates/main/stats.min.svg)](https://n8n.io/creators/nskha)",
+        "height": 700.251847890049,
+        "width": 1000.9922558475889
+      },
+      "name": "Sticky Note14",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2360,
+        -1880
+      ],
+      "typeVersion": 1,
+      "id": "427e9e86-dd2a-4c58-a98a-87ecf5f45ef4"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1520,
+        -1480
+      ],
+      "typeVersion": 1,
+      "id": "1001dfd1-6666-469f-aaee-bd2855db0cdf",
+      "name": "Sticky Note15"
+    },
+    {
+      "parameters": {
+        "content": "## 進階 URL 解析與縮短工作流程 - Switchy.io 整合 概述\n\n此 N8N 工作流程旨在協助進階的 URL 解析與縮短流程，整合了元數據提取、OpenGraph 標籤處理，並與 Switchy API 進行連結管理。它運用多種節點來進行 URL 處理、元數據提取，以及建立或更新具有豐富元數據的縮短連結。\n\n**主要特色：**\n\n*   **URL 元數據提取：** 解析 URL 以提取重要元數據，例如標題、描述、圖像和網站圖示。\n*   **OpenGraph API 整合：** 利用 OpenGraph API 進行更深入的元數據檢索。\n*   **Switchy API 整合：** 透過 Switchy API 實現便捷的縮短連結管理。\n*   **GitHub API 整合：** 使用 GitHub 儲存庫託管與 URL 相關的圖像。\n*   **截圖功能：** 擷取網頁截圖作為元數據的一部分，提供視覺參考。\n*   **API 授權與配置：** 管理外部服務集成的 API 金鑰和配置，確保順利運行。\n\n**工作流程結構：**\n\n*   **分批處理：** 將 URL 分批處理，提高效率。\n*   **API 驗證：** 配置 API 授權，確保所有 API 呼叫的有效性。\n*   **URL 處理節點：** 使用多個節點（例如 Get Headers、OpenGraph API 和 Meta tags Scraper）提取元數據。\n*   **條件節點：** 包含 IF OpenGraph Invalid 和 If - Enable ScreenShots 等條件節點，進行邏輯處理，處理不同情境。\n*   **數據聚合：** 使用 Method 1 - META 等節點進行最終的元數據聚合，確保資訊完整。\n*   **Switchy API：** 處理連結建立與更新，簡化連結管理流程。\n*   **GitHub 整合：** 在個人 GitHub 儲存庫上託管截圖和圖像，方便管理。\n*   **最終輸出：** 提供處理後的縮短 URL，方便分享和追蹤。\n\n**API 堆疊：**\n\n| API       | 描述                                                         |\n| --------- | ------------------------------------------------------------ |\n| switchy   | 用於建立和更新縮短的連結。                                       |\n| opengraph | 用於使用 OpenGraph 標籤檢索 URL 元數據。                         |\n| dub.sh    | 用於從網頁抓取 Meta 標籤。                                   |\n| microlink | 擷取網頁截圖。                                                  |\n| pxl.to    | 用於擷取截圖的替代服務。                                         |\n| favicone  | 檢索給定 URL 的網站圖示。                                       |\n| github    | 在 GitHub 儲存庫上託管圖像和截圖。                                |\n| statically| 用於 CDN 服務和圖像託管。                                     |\n| Other APIs| 用於各種目的的其他 API。                                       |\n\n**GitHub 儲存庫設定：**\n\n若要使用此工作流程，請確保您的 GitHub API 已連結以託管圖像。設定一個儲存庫，工作流程可以在其中上傳截圖和其他相關圖像。此儲存庫將在處理圖像的工作流程節點中被引用。\n\n**配置：**\n\n在執行工作流程之前，請務必在 API Auth 節點中設定必要的 API 金鑰和配置。根據實際需求調整批次大小和其他參數，優化工作流程。\n\n**錯誤處理：**\n\n此工作流程包含 Stop 和 Error 等節點，用於強大的錯誤處理機制。若發生錯誤，將發布問題並使用 N8N 社群提及創建者。\n\n**貢獻：**\n\n此工作流程開放給社群貢獻，歡迎增強和改進，一起打造更完善的解決方案。",
+        "height": 1280,
+        "width": 1300
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1000,
+        -1540
+      ],
+      "typeVersion": 1,
+      "id": "0cb4a4f7-f9aa-4c62-86d3-e2e49f808521",
+      "name": "Sticky Note16"
     }
   ],
   "pinData": {},
@@ -923,6 +4079,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-10T15:43:19.000Z",
-  "versionId": "33d54541-4d2b-462c-8c81-d225d2368bb5"
+  "updatedAt": "2025-03-10T16:29:07.000Z",
+  "versionId": "3a6565ff-ca1a-4063-82a1-40649d3ca0f5"
 }
