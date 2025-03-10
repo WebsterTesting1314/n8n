@@ -1,77 +1,498 @@
 {
   "active": false,
   "connections": {
-    "Set Track ID": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
       "main": [
         [
           {
-            "node": "Get Song Details",
+            "node": "Slack1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Set Fields - Relevant Articles",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Get Song Details": {
+    "Schedule Trigger": {
       "main": [
         [
           {
-            "node": "Extract Song URL",
+            "node": "Google Sheets - Get article monitored database",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Extract Song URL": {
+    "RSS Read": {
       "main": [
         [
           {
-            "node": "Fetch Lyrics Page",
+            "node": "Code",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Fetch Lyrics Page": {
+    "Relevance Classification for Topic Monitoring": {
       "main": [
         [
           {
-            "node": "Parse Lyrics",
+            "node": "Jina AI - Read URL",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set fields - Not relevant articles",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Parse Lyrics": {
+    "Google Sheets - Get RSS Feed url followed": {
       "main": [
         [
           {
-            "node": "Send to OpenAI",
+            "node": "RSS Read",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Send to OpenAI": {
+    "Google Sheets - Get article monitored database": {
       "main": [
         [
           {
-            "node": "Translate Lyrics (Optional)",
+            "node": "Set field - existing_url",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Translate Lyrics (Optional)": {
+    "Code": {
       "main": [
         [
           {
-            "node": "Save Lyrics",
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Relevance Classification for Topic Monitoring",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Jina AI - Read URL": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set field - existing_url": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Get RSS Feed url followed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Relevance Classification for Topic Monitoring",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set fields - Not relevant articles": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Add relevant articles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Fields - Relevant Articles": {
+      "main": [
+        [
+          {
+            "node": "Google 表格 - 添加相關文章 📑",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "setVars",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "SetPrompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "setVars": {
+      "main": [
+        [
+          {
+            "node": "GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "replace variables": {
+      "main": [
+        [
+          {
+            "node": "Set Completed Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check All Prompt Vars Present": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SetPrompt": {
+      "main": [
+        [
+          {
+            "node": "Check All Prompt Vars Present",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Completed Prompt": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Prompt Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "replace variables",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion": {
+      "main": [
+        [
+          {
+            "node": "standardize schema",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return error to chat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Auto-fixing Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Generate Workflow Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Generate Workflow Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set schema for eval": {
+      "main": [
+        [
+          {
+            "node": "Check for WF JSON errors",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Auto-fixing Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "standardize schema": {
+      "main": [
+        [
+          {
+            "node": "Simplify properties object",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simplify properties object": {
+      "main": [
+        [
+          {
+            "node": "Set input data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Auto-fixing Output Parser",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set input data": {
+      "main": [
+        [
+          {
+            "node": "Generate Workflow Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set schem for rerun": {
+      "main": [
+        [
+          {
+            "node": "Set input data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add feedback prompt": {
+      "main": [
+        [
+          {
+            "node": "Set schem for rerun",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check for WF JSON errors": {
+      "main": [
+        [
+          {
+            "node": "Add feedback prompt",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Valid n8n workflow JSON?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Workflow Agent": {
+      "main": [
+        [
+          {
+            "node": "Set schema for eval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Valid n8n workflow JSON?",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Valid n8n workflow JSON?": {
+      "main": [
+        [
+          {
+            "node": "Set schem for rerun",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return success to chat",
             "type": "main",
             "index": 0
           }
@@ -81,138 +502,1845 @@
   },
   "createdAt": "2024-12-06T10:18:19.132Z",
   "id": "m3n0XyECSdvyWwm0",
-  "meta": null,
-  "name": "My workflow 2",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "爬蟲專家兼任LLM專家",
   "nodes": [
     {
       "parameters": {
-        "functionCode": "return [{ json: { trackId: \"[TRACK_ID]\" } }];"
+        "options": {}
       },
-      "name": "Set Track ID",
-      "type": "n8n-nodes-base.function",
-      "typeVersion": 1,
+      "id": "c6e4b92c-68c7-4c84-804d-2fc8fba461bf",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "position": [
-        460,
-        460
+        6120,
+        1100
       ],
-      "id": "3c143973-60d7-40b5-bfbf-b0e4ef7e9c8f"
+      "typeVersion": 1.1,
+      "notesInFlow": true,
+      "credentials": {
+        "openAiApi": {
+          "id": "LWMmTM4qwRGakUnF",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
     },
     {
       "parameters": {
-        "url": "https://api.genius.com/songs/{{$json[\"trackId\"]}}",
-        "options": {},
-        "headerParametersUi": {
-          "parameter": [
+        "promptType": "define",
+        "text": "={{ $json.data }}",
+        "messages": {
+          "messageValues": [
             {
-              "name": "Authorization",
-              "value": "Bearer [YOUR_ACCESS_TOKEN]"
+              "message": "=You are an AI assistant responsible for summarizing articles **in English** and formatting them into Slack-compatible messages.  \nYour job is to create a clear and concise summary following the guidelines below and format it in Slack-specific Markdown format.  \n\n---\n\n## 1. Title with Link  \n\n- Format the article title as a **clickable link** using Slack's Markdown syntax:  \n  `<URL|*Title of the article*>`.  \n- The title should be clear and engaging to encourage readers to click.  \n\n---\n\n## 2. Section Headings  \n\n- Use **bold text** to introduce different sections of the summary by wrapping the text with `*` symbols.  \n- Ensure headings are descriptive and guide the reader through the content effectively.  \n\n---\n\n## 3. Key Points  \n\n- Present key insights using **bullet points**, using the `•` symbol for listing important information.  \n- Each point should be concise, informative, and directly related to the article's topic.  \n\n---\n\n## 4. Content Summary  \n\n- Provide a brief but comprehensive overview of the article's content.  \n- Use plain text and line breaks to separate paragraphs for improved readability.  \n- Focus on the most important aspects without unnecessary details.  \n\n---\n\n## 5. Context and Relevance  \n\n- Explain why the article is important and how it relates to the reader's interests.  \n- Highlight its relevance to ongoing trends or industry developments.  \n\n---\n\n## Message Structure  \n\nThe output should follow this structured format:  \n\n1. **Title with link** – Present the article as a clickable link formatted in Slack Markdown.  \n2. **Summary sections** – Organized under clear headings to enhance readability.  \n3. **Key insights** – Presented as bullet points for quick scanning.  \n4. **Contextual analysis** – A brief explanation of the article's relevance and importance.  \n\n---\n\n## Slack Markdown Formatting Guide  \n\nEnsure the message follows Slack's Markdown syntax for proper display:  \n\n- **Bold text:** Use `*bold text*`.  \n- **Italic text:** Use `_italic text_`.  \n- **Bullet points:** Use `•` or `-` for lists.  \n- **Links:** Format as `<URL|*text*>` to create clickable links.  \n- **Line breaks:** Use a blank line to separate paragraphs for readability.  \n\n---\n\n## Example of Slack-formatted Output  \n\n🔔 *New article from n8n Blog*  \n\n<https://blog.n8n.io/self-hosted-ai/|*Introducing the Self-hosted AI Starter Kit: Run AI locally for privacy-first solutions*>  \n\n*Summary of the article*  \nn8n has launched the Self-hosted AI Starter Kit, a Docker Compose template designed to simplify the deployment of local AI tools. This initiative addresses the growing need for on-premise AI solutions that enhance data privacy and reduce reliance on external APIs. The starter kit includes tools like Ollama, Qdrant, and PostgreSQL, providing a foundation for building self-hosted AI workflows. While it's tailored for proof-of-concept projects, users can customize it to fit specific requirements.  \n\n*Key Points*  \n• The Self-hosted AI Starter Kit facilitates quick setup of local AI environments using Docker Compose.  \n• It includes preconfigured AI workflow templates and essential tools such as Ollama, Qdrant, and PostgreSQL.  \n• Running AI on-premise offers benefits like improved data privacy and cost savings by minimizing dependence on external API calls.  \n• The kit is designed for easy deployment on local machines or personal cloud instances like Digital Ocean and runpod.io.  \n• n8n emphasizes the flexibility of their platform, allowing integration with over 400 services, including Google, Slack, Twilio, and JIRA, to streamline AI application development.  \n\n*Context and Relevance*  \nThis article introduces a practical solution for organizations and developers seeking to implement AI workflows locally. By providing a ready-to-use starter kit, n8n addresses common challenges associated with setting up and maintaining on-premise AI systems, promoting greater control over data and potential cost efficiencies.\n \n---\n\nEnsure that the message is formatted according to Slack's requirements to improve readability and engagement.  \n"
             }
           ]
         }
       },
-      "name": "Get Song Details",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 1,
+      "id": "6f3d34f7-ca81-4984-a751-30298e0ede63",
+      "name": "Basic LLM Chain",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "position": [
-        660,
-        460
+        6080,
+        600
       ],
-      "id": "f9da637b-a8ff-4a7a-a666-25c204098778"
+      "typeVersion": 1.5,
+      "alwaysOutputData": true,
+      "notesInFlow": true
     },
     {
       "parameters": {
-        "functionCode": "return [{ json: { songUrl: $json[\"response\"][\"song\"][\"url\"] } }];"
-      },
-      "name": "Extract Song URL",
-      "type": "n8n-nodes-base.function",
-      "typeVersion": 1,
-      "position": [
-        860,
-        460
-      ],
-      "id": "55e80dd0-e9b0-4d7f-a36b-33f929d4fcfe"
-    },
-    {
-      "parameters": {
-        "url": "={{$json[\"songUrl\"]}}",
-        "options": {
-          "fullResponse": true
-        },
-        "headerParametersUi": {
-          "parameter": [
+        "rule": {
+          "interval": [
             {
-              "name": "User-Agent",
-              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+              "field": "minutes",
+              "minutesInterval": 15
             }
           ]
         }
       },
-      "name": "Fetch Lyrics Page",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 1,
+      "id": "0dbb25d0-e6ec-4bff-a333-35f29c2732c3",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
       "position": [
         1060,
-        460
+        840
       ],
-      "id": "7ad0e9c0-d302-4048-a344-dd1b13e835d1"
+      "typeVersion": 1.2
     },
     {
       "parameters": {
-        "functionCode": "const cheerio = require('cheerio');\nconst $ = cheerio.load($json[\"body\"]);\nconst lyrics = $(\".lyrics\").text().trim();\nreturn [{ json: { lyrics } }];"
+        "url": "={{ $json.rss_feed_url }}",
+        "options": {
+          "ignoreSSL": false
+        }
       },
-      "name": "Parse Lyrics",
-      "type": "n8n-nodes-base.function",
-      "typeVersion": 1,
+      "id": "c19257ad-0a9d-44fd-9792-16f845270ce4",
+      "name": "RSS Read",
+      "type": "n8n-nodes-base.rssFeedRead",
       "position": [
-        1260,
-        460
+        2700,
+        840
       ],
-      "id": "e6a638f8-25c7-4b5e-835e-560a1f62e557"
+      "executeOnce": false,
+      "typeVersion": 1.1,
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
-        "authentication": "headerAuth",
-        "url": "https://api.openai.com/v1/chat/completions",
-        "jsonParameters": true,
+        "inputText": "={{ $json.title }}\n{{ $json.contentSnippet }}",
+        "categories": {
+          "categories": [
+            {
+              "category": "relevant",
+              "description": "Articles related to artificial intelligence (AI), data science, machine learning, algorithms, big data, or innovations in these fields."
+            },
+            {
+              "category": "not_relevant",
+              "description": "Articles not directly related to  artificial intelligence (AI), data science, machine learning, algorithms, big data, or innovations in these fields."
+            }
+          ]
+        },
+        "options": {
+          "fallback": "discard"
+        }
+      },
+      "id": "e2329608-98c7-42c6-9e6e-4a7ac6cfd856",
+      "name": "Relevance Classification for Topic Monitoring",
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "position": [
+        4280,
+        700
+      ],
+      "typeVersion": 1,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "content": "# 3️⃣ LLM 文章主題相關性分類 🤖\n\n此 **LLM 調用**用於**分類**網站上發布的文章是否與您要監控的**主題和興趣**相關。\n它分析從 **RSS 讀取**節點檢索的**標題**和**內容片段**。\n\n### 分類類別\n- **相關**：與[您要監控的主題]相關的文章\n- **不相關**：與[您要監控的主題]無直接關係的文章\n\n預設監控主題包括：人工智能、數據科學、機器學習、演算法、大數據等領域的創新。\n\n---\n",
+        "height": 960,
+        "width": 600,
+        "color": 3
+      },
+      "id": "e1a044b0-4cc4-4c91-afaa-1bc9b8b4c33a",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4140,
+        240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "# 1️⃣ LLM 文章總結與 Slack 格式化 📝\n\n## 主要功能\n- 使用 **OpenAI GPT-4o-mini 模型**\n- 總結 Jina AI 提供的 **Markdown 格式**文章內容\n- 轉換為 **Slack Markdown** 格式提升可讀性 ✨\n\n## 客製化建議\n### 語言設定\n- 可修改 System Prompt 指定輸出語言\n- 建議：若需要高品質翻譯，考慮添加專門的翻譯節點 🌐\n\n### 摘要結構\n- 可調整提示詞以符合偏好的格式和風格\n- 確保輸出結構符合需求 📋\n\n---\n",
+        "height": 680,
+        "width": 600,
+        "color": 2
+      },
+      "id": "a901e127-1db7-48b1-a139-953fda553e5e",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5920,
+        60
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1F2FzWt9FMkA5V5i9d_hBJRahLDvxs3DQBOLkLYowXbY",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F2FzWt9FMkA5V5i9d_hBJRahLDvxs3DQBOLkLYowXbY/edit?usp=drivesdk",
+          "cachedResultName": "Template - AI-Powered Information Monitoring"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gid=0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F2FzWt9FMkA5V5i9d_hBJRahLDvxs3DQBOLkLYowXbY/edit#gid=0",
+          "cachedResultName": "rss_feed"
+        },
         "options": {}
       },
-      "name": "Send to OpenAI",
+      "id": "296f83f8-c84c-4449-b8d8-86c828f3f2c9",
+      "name": "Google Sheets - Get RSS Feed url followed",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        2160,
+        840
+      ],
+      "executeOnce": true,
+      "typeVersion": 4.5,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "xQDHYwcef9Hk8aIC",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Google Sheets RSS訂閱源管理指南 📰\n\n## 主要功能\n此節點從 Google 表格中**檢索**包含您關注的 **RSS 訂閱源 URL** 的資料列。🔄\n\n## 執行特性\n- 每次工作流程中**僅執行一次**\n- 即使前一個節點輸出多個項目，本節點也只會執行一次 ⚡\n\n## 重要注意事項\n### RSS 訂閱管理 📝\n- 您可以向表格中**添加更多 URL**\n- 請注意：訂閱**更多 RSS 源**會增加 LLM API（如 OpenAI）的使用成本 💰\n\n### 模板設定 📋\n- [點此訪問 Google 表格模板](https://docs.google.com/spreadsheets/d/1F2FzWt9FMkA5V5i9d_hBJRahLDvxs3DQBOLkLYowXbY/)\n- *此模板與前一個節點使用的是相同模板*\n\n## 設定步驟\n1. 在您複製的 Google 表格模板中\n2. 選擇 **\"rss_feed\"** 工作表\n3. 確認工作表包含需處理的 RSS 訂閱源 URL 列表 ✅\n",
+        "height": 1120,
+        "width": 460,
+        "color": 5
+      },
+      "id": "c247cfe0-6309-4b14-be18-ba1dacbf6437",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2040,
+        60
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "# 1️⃣ RSS 讀取節點說明 📖\n\n這個節點負責**讀取 RSS 訂閱源**的內容。訂閱源 URL 是從您在 **Google Sheets** 中輸入的數據中檢索的，因此請確保提供的 URL 確實是**有效的 RSS 訂閱源**。\n\n### RSS 訂閱源簡介\nRSS 訂閱源是一種**網路訂閱格式**，它允許用戶：\n- 自動接收網站更新\n- 適用於新聞網站或部落格\n- 以標準化的格式接收內容\n",
+        "height": 960,
+        "width": 460,
+        "color": 6
+      },
+      "id": "8269e60a-c80a-4589-87a1-1a63f903a816",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2520,
+        240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "\n# 4️⃣ Jina AI URL 讀取 📥\n\n此節點**使用 Jina AI API** 來**檢索**在前一步被分類為**\"相關\"**的文章內容。\n由於這個過程**涉及網頁爬取**，請確保符合您所在國家的**爬取規範**。\n\n### Jina AI 介紹\n**Jina AI** 是一個允許您：\n- 提取網頁內容\n- 轉換為 LLM 可處理的格式（如 Markdown）\n- 提供 100 萬個免費測試 tokens\n- 支援無 API key 使用（限速）\n\n---\n",
+        "height": 500,
+        "width": 960,
+        "color": 4
+      },
+      "id": "3978475f-9881-4048-8fb9-d673c4fa1fa3",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4840,
+        240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C08A6R965H7",
+          "mode": "list",
+          "cachedResultName": "code"
+        },
+        "text": "={{ $json.text }}",
+        "otherOptions": {
+          "includeLinkToWorkflow": true
+        }
+      },
+      "id": "3a47356a-dcd4-4fd6-8ff5-794691298a08",
+      "name": "Slack1",
+      "type": "n8n-nodes-base.slack",
+      "position": [
+        6840,
+        520
+      ],
+      "webhookId": "1337f624-eded-42ba-bf27-ffed28af5ad6",
+      "typeVersion": 2.3,
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "L1fBsYCGqxgEdff7",
+          "name": "Slack account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Google 表格監控資料庫設定指南 📊\n\n## 主要功能\n這個節點從 Google 表格中檢索已監控和摘要的文章列表。根據 RSS 訂閱的特性，URL 可能會長期保留，系統設計上需避免重複監控。✨\n\n## 前置準備\n1. 準備一份 Google 表格範本\n2. 複製範本到您的 Google Drive\n3. 在工作流程中設定相關連結 📑\n\n## 重要設定步驟\n### 1. 選擇正確的工作表\n- 定位到您複製的範本\n- 選擇 `article_database` 工作表\n- 確認表單結構完整 📋\n\n### 2. existing_url 欄位配置\n#### 設定方式\n- 系統自動從 `article_url` 欄位獲取值\n- 用於追蹤已處理的文章 🔗\n\n#### 初次執行注意事項\n- 欄位初始值為空\n- 可能出現預期內的錯誤提示\n- 工作流程會正常繼續執行 ⚙️\n\n## 補充說明\n系統具備自動容錯機制，即使初次執行時資料表為空，整個工作流程仍可正常運作。💪\n\n---\n_需要更詳細說明或遇到問題，歡迎隨時提問！_ 😊\n",
+        "height": 1360,
+        "width": 700,
+        "color": 3
+      },
+      "id": "7682ff1c-11be-408f-9484-fd91b96dfef2",
+      "name": "Sticky Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1340,
+        -220
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "\n---\n\n# 2️⃣ URL 過濾代碼節點 🔍\n\n此代碼節點用於過濾**尚未經 AI 總結**的 URL。\n輸出結果包含：\n\n- 符合 RSS 讀取架構的**新 URL 列表**\n- 如果 RSS 訂閱中沒有新文章，則輸出包含值為 **\"No new articles found\"** 的 **\"message\"** 項目\n\n### IF 節點條件\n條件設置：`{{ $json.message }}` *不等於* **\"No new articles found\"**\n- **False** → 執行\"無操作\"節點\n- **True** → 繼續處理網頁開發產業監控的新文章\n\n---\n\n",
+        "height": 960,
+        "width": 980
+      },
+      "id": "ec7b62bd-f6a4-47fd-bcf5-9899ade6e62d",
+      "name": "Sticky Note9",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3080,
+        240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "\n# 5️⃣ 不相關文章欄位設置 📊\n\n此節點通過定義以下欄位來準備要添加到 Google Sheet 的數據：\n\n### 欄位定義\n- **`article_url`**：文章的 URL\n- **`summarized`**：固定設為 `\"NO (not relevant)\"`\n- **`website`**：文章發布網站\n- **`fetched_at`**：工作流程處理時間戳\n- **`publish_date`**：文章發布日期\n\n> 註：時間戳反映的是**排程觸發**節點的觸發時間，而非實際獲取時間。\n",
+        "height": 580,
+        "width": 960,
+        "color": 2
+      },
+      "id": "c18752b8-c2ed-4f62-8ab9-4144676d8d82",
+      "name": "Sticky Note10",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4840,
+        780
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "\n# 2️⃣ OpenAI 聊天模型設置 🤖\n\n## 模型選擇\n- 預設使用 **GPT-4o-mini**\n- 經過測試驗證，適合此任務\n- 成本效益高，適合常規使用 💰\n",
+        "height": 440,
+        "width": 600,
+        "color": 5
+      },
+      "id": "582a2ee3-77aa-4a5f-831e-e3b8cb76a334",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5920,
+        800
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "\n---\n\n# 3️⃣ Slack 文章摘要發送 📢\n\n## 功能說明\n- 將 LLM 生成的輸出發送到指定 Slack 頻道\n- 建議使用專門頻道進行主題監控\n- 確保團隊成員易於訪問相關摘要 📨\n\n## 技術說明\n- 無需使用 Slack Tool Calling\n- 現有輸出流程效果良好\n- 簡化工作流程，減少複雜度 ⚡\n\n---\n",
+        "height": 680,
+        "width": 600,
+        "color": 6
+      },
+      "id": "bde5858d-7f9f-4bf2-8b46-dc0cfedee57d",
+      "name": "Sticky Note11",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        6580,
+        80
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "\n# 4️⃣ 相關文章資料處理 📊\n\n## 欄位設置\n- **`article_url`**：文章連結\n- **`summarized`**：固定為 `\"YES\"`（相關路徑）\n- **`summary`**：發布到 Slack 的文章摘要\n- **`website`**：文章來源網站\n- **`fetched_at`**：處理時間戳\n- **`publish_date`**：發布日期 📅\n\n## Google Sheets 整合\n- 資料添加至 **\"article_database\"** 工作表\n- 設定時需正確選擇目標工作表\n- 確保數據準確同步 💾\n\n> 註：時間戳反映數據添加到 Google Sheets 的時間，而非實際獲取時間。\n\n_需要更詳細說明或客製化建議，歡迎提問！_ 😊\n",
+        "height": 560,
+        "width": 1260,
+        "color": 2
+      },
+      "id": "35a47b63-e7e8-4420-8ddc-16ae8e580920",
+      "name": "Sticky Note12",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        6600,
+        800
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 排程器\n\n** 🎉😊 \"這個排程觸發器定義了工作流程的執行頻率。 預設情況下，它設定為每小時運行一次，檢查關注的 RSS feed 中是否有新文章。\"**",
+        "height": 600,
+        "width": 460,
+        "color": 4
+      },
+      "id": "876efe27-4fd1-4986-aa33-3f2cd5b08d71",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        900,
+        440
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "# 工作流程概述\n\n## 檢查法律規範： 這個工作流程涉及網路爬取，所以在開始之前，請務必遵守您所在國家/地區的法律規範。安全第一！\n\n## 📌 目的\n\n這個工作流程能實現自動化和人工智慧驅動的主題監控，將簡潔的文章摘要直接以結構化且易於閱讀的格式傳送到 Slack 頻道。\n\n它讓使用者能輕鬆掌握感興趣的特定主題的最新資訊，無需手動檢查多個來源，確保時間效率和專注的監控體驗。\n\n要開始使用，請從這裡複製這個工作流程所需的 Google Sheets 範本。\n\n## 🎯 目標受眾\n\n這個工作流程的設計對象包括：\n\n希望追蹤其領域關鍵發展的行業專業人士。\n需要特定主題的最新資訊的研究團隊。\n旨在讓團隊隨時掌握相關內容的公司。\n## ⚙️ 運作方式\n\n觸發器： 排程器 (Scheduler) 以規律的間隔啟動工作流程 (預設：每小時)。\n資料擷取：\n使用 RSS 讀取 (RSS Read) 節點擷取 RSS Feed。\n在 Google Sheets 中檢查先前監控的文章，以避免重複。\n內容處理：\n使用 OpenAI (GPT-4o-mini) 評估文章的相關性。\n使用 Jina AI 爬取相關文章以提取內容。\n產生摘要並格式化為 Slack 可讀的格式。\n輸出：\n摘要發佈到指定的 Slack 頻道。\n文章元資料儲存在 Google Sheets 中以供追蹤。\n## 🛠️ 使用的關鍵 API 和節點\n\n排程器節點 (Scheduler Node): 定期觸發工作流程。\nRSS 讀取 (RSS Read): 從定義的 RSS Feed 擷取最新的文章。\nGoogle Sheets: 儲存監控的文章並管理 Feed URL。\nOpenAI API (GPT-4o-mini): 對文章相關性進行分類並產生摘要。\nJina AI API: 提取相關文章的完整內容。\nSlack API: 將格式化的訊息發佈到 Slack 頻道。\n",
+        "height": 1300,
+        "width": 780,
+        "color": 6
+      },
+      "id": "f2aed861-6ca9-4866-b921-8a7a05f2fdea",
+      "name": "Sticky Note7",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        140,
+        0
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1F2FzWt9FMkA5V5i9d_hBJRahLDvxs3DQBOLkLYowXbY",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F2FzWt9FMkA5V5i9d_hBJRahLDvxs3DQBOLkLYowXbY/edit?usp=drivesdk",
+          "cachedResultName": "Template - AI-Powered Information Monitoring"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": 1966921272,
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1F2FzWt9FMkA5V5i9d_hBJRahLDvxs3DQBOLkLYowXbY/edit#gid=1966921272",
+          "cachedResultName": "article_database"
+        },
+        "options": {}
+      },
+      "id": "290afbee-959b-4513-9684-4ede78ca7dd3",
+      "name": "Google Sheets - Get article monitored database",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        1480,
+        760
+      ],
+      "executeOnce": true,
+      "typeVersion": 4.5,
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "xQDHYwcef9Hk8aIC",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Retrieve data from RSS feed and Google Sheets\nconst rssItems = items; // Contains RSS articles\nconst sheetItems = $items(\"Set field - existing_url\", 0);\n\n// Extract the links of articles present in Google Sheets\nconst existingUrls = sheetItems.map(entry => entry.json.existing_url);\n\n// Filter RSS articles to keep only those not present in Google Sheets\nconst newArticles = rssItems.filter(rssItem => {\n    return !existingUrls.includes(rssItem.json.link);\n});\n\n// If new articles are found, return them\nif (newArticles.length > 0) {\n    return newArticles;\n}\n\n// If no new articles, return an informational message\nreturn [{ json: { message: \"No new articles found.\" } }];\n\n"
+      },
+      "id": "fe5a7649-5a28-4612-86f8-b097fb925e3b",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        3180,
+        840
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {},
+      "id": "b60d7b3e-dfbc-43cf-b7dd-6dec0392110b",
+      "name": "No Operation, do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        3860,
+        960
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "bad6fc33-2e1e-4169-9893-d284c6c68288",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              },
+              "leftValue": "={{ $json.message }}",
+              "rightValue": "No new articles found."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d88710a4-e0ca-43c8-8e11-1d1d9bec3d8e",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        3540,
+        840
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.jina.ai/v1/embeddings",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer jina_d3ab906778b444fbaf63223b23913793vjgwugFT33tcfnjGCsEbYc-_wyKE"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"model\": \"jina-embeddings-v2-base-code\",\n  \"normalized\": true,\n  \"embedding_type\": \"float\",\n  \"input\": [\n    \"Calculates the square of a number. Parameters: number (int or float) - The number to square. Returns: int or float - The square of the number.\",\n    \"This function calculates the square of a number you give it.\",\n    \"def square(number): return number ** 2\",\n    \"print(square(5))\",\n    \"Output: 25\",\n    \"Each text can be up to 8192 tokens long\"\n  ]\n}",
+        "options": {}
+      },
+      "id": "edb0db7b-d24a-4bb2-9f87-46ce6730e558",
+      "name": "Jina AI - Read URL",
       "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 1,
       "position": [
-        1460,
-        460
+        5140,
+        600
       ],
-      "id": "4996d98c-954a-4d18-89c1-c336361be520"
+      "retryOnFail": true,
+      "typeVersion": 4.2,
+      "waitBetweenTries": 5000,
+      "alwaysOutputData": true
     },
     {
       "parameters": {
-        "authentication": "headerAuth",
-        "url": "https://api-free.deepl.com/v2/translate",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "07799638-55d7-42a9-b1f7-fea762cfa2f1",
+              "name": "existing_url",
+              "type": "string",
+              "value": "={{ $json.article_url.extractUrl() }}"
+            }
+          ]
+        },
         "options": {}
       },
-      "name": "Translate Lyrics (Optional)",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 1,
-      "position": [
-        1660,
-        460
-      ],
-      "id": "cc25ed0e-cc14-42b0-b01e-130d9c96b370"
-    },
-    {
-      "parameters": {
-        "fileName": "Translated_Lyrics.txt",
-        "options": {}
-      },
-      "name": "Save Lyrics",
-      "type": "n8n-nodes-base.writeBinaryFile",
-      "typeVersion": 1,
+      "id": "c49af229-2bde-4910-9380-754a40ac1994",
+      "name": "Set field - existing_url",
+      "type": "n8n-nodes-base.set",
       "position": [
         1860,
-        460
+        780
       ],
-      "id": "5627df51-fffe-41c7-8f79-3b22d0a5518b"
+      "typeVersion": 3.4,
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "b0cf3656-55a1-4216-bbe2-daa49f2e76d3",
+      "name": "OpenAI Chat Model1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        4300,
+        1020
+      ],
+      "typeVersion": 1.1,
+      "credentials": {
+        "openAiApi": {
+          "id": "LWMmTM4qwRGakUnF",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3fbf5256-f06b-450a-adf7-65591a19c7dd",
+              "name": "article_url",
+              "type": "string",
+              "value": "={{ $json.link }}"
+            },
+            {
+              "id": "02f506cf-28fe-46ef-b97e-7ec938805151",
+              "name": "summarized",
+              "type": "string",
+              "value": "NO (not relevant)"
+            },
+            {
+              "id": "552efef4-63cb-448b-bb0c-30ae9666f310",
+              "name": "website",
+              "type": "string",
+              "value": "={{ $('Google Sheets - Get RSS Feed url followed').item.json.website }}"
+            },
+            {
+              "id": "096acb35-4e9e-48fd-8e61-8ceb525591fa",
+              "name": "fetched_at",
+              "type": "string",
+              "value": "={{$now}}"
+            },
+            {
+              "id": "427243d1-01c4-458a-9626-75366e4264cd",
+              "name": "publish_date",
+              "type": "string",
+              "value": "={{ $('Relevance Classification for Topic Monitoring').item.json.pubDate.toDateTime().format('yyyy-MM-dd') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "63fadd78-4138-4f23-9d0c-2371a95df960",
+      "name": "Set fields - Not relevant articles",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        4960,
+        1200
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1ZQxlZSRFp5O-md0C6bmrcmA-Y0q3SJDzuO8VaN5Ymjo",
+          "mode": "list",
+          "cachedResultName": "未命名的試算表",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ZQxlZSRFp5O-md0C6bmrcmA-Y0q3SJDzuO8VaN5Ymjo/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "工作表1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ZQxlZSRFp5O-md0C6bmrcmA-Y0q3SJDzuO8VaN5Ymjo/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "待辦事項名稱",
+              "displayName": "待辦事項名稱",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "日期",
+              "displayName": "日期",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "時間",
+              "displayName": "時間",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "API 回應",
+              "displayName": "API 回應",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "article_url",
+              "displayName": "article_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "summarized",
+              "displayName": "summarized",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "website",
+              "displayName": "website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "fetched_at",
+              "displayName": "fetched_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "publish_date",
+              "displayName": "publish_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "id": "d6365423-75eb-43bb-af44-11cb733115e9",
+      "name": "Google Sheets - Add relevant articles",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        5380,
+        1200
+      ],
+      "typeVersion": 4.5,
+      "alwaysOutputData": true,
+      "notesInFlow": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "xQDHYwcef9Hk8aIC",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3fbf5256-f06b-450a-adf7-65591a19c7dd",
+              "name": "article_url",
+              "type": "string",
+              "value": "={{ $('Relevance Classification for Topic Monitoring').item.json.link }}"
+            },
+            {
+              "id": "02f506cf-28fe-46ef-b97e-7ec938805151",
+              "name": "summarized",
+              "type": "string",
+              "value": "YES"
+            },
+            {
+              "id": "e23059bd-8bb2-439a-85bd-f9e191930d1e",
+              "name": "summary",
+              "type": "string",
+              "value": "={{ $json.text }}"
+            },
+            {
+              "id": "552efef4-63cb-448b-bb0c-30ae9666f310",
+              "name": "website",
+              "type": "string",
+              "value": "={{ $('Google Sheets - Get RSS Feed url followed').item.json.website }}"
+            },
+            {
+              "id": "096acb35-4e9e-48fd-8e61-8ceb525591fa",
+              "name": "fetched_at",
+              "type": "string",
+              "value": "={{$now}}"
+            },
+            {
+              "id": "427243d1-01c4-458a-9626-75366e4264cd",
+              "name": "publish_date",
+              "type": "string",
+              "value": "={{ $('Relevance Classification for Topic Monitoring').item.json.pubDate.toDateTime().format('yyyy-MM-dd') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d92e64dc-61ba-41b9-8574-b57f7a174450",
+      "name": "Set Fields - Relevant Articles",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        7020,
+        900
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {},
+      "id": "9c4c942a-70d1-4b13-bb2a-352d4fce33f4",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        3100,
+        1720
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $json.Account }}"
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $json.repo }}"
+        },
+        "filePath": "={{ $json.path }}{{ $json.prompt }}",
+        "additionalParameters": {}
+      },
+      "id": "242ed0ed-b03e-42ae-bd8a-4aa0301b1dd8",
+      "name": "GitHub",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        3780,
+        1720
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "githubApi": {
+          "id": "jbPopdE0FdRZPToq",
+          "name": "WebsterTesting1314"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "text",
+        "options": {}
+      },
+      "id": "c17b09d5-ea78-439c-816c-99f6da9bef32",
+      "name": "Extract from File",
+      "type": "n8n-nodes-base.extractFromFile",
+      "position": [
+        4020,
+        1720
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "150618c5-09b1-4f8b-a7b4-984662bf3381",
+              "name": "Account",
+              "type": "string",
+              "value": "TPGLLC-US"
+            },
+            {
+              "id": "22e8a3b0-bd53-485c-b971-7f1dd0686f0e",
+              "name": "repo",
+              "type": "string",
+              "value": "PeresPrompts"
+            },
+            {
+              "id": "ab94d0a1-ef3a-4fe9-9076-6882c6fda0ac",
+              "name": "path",
+              "type": "string",
+              "value": "SEO/"
+            },
+            {
+              "id": "66f122eb-1cbd-4769-aac8-3f05cdb6c116",
+              "name": "prompt",
+              "type": "string",
+              "value": "keyword_research.md"
+            },
+            {
+              "id": "03fe26a3-04e6-439c-abcb-d438fc5203c0",
+              "name": "company",
+              "type": "string",
+              "value": "South Nassau Physical Therapy"
+            },
+            {
+              "id": "c133d216-a457-4872-a060-0ba4d94549af",
+              "name": "product",
+              "type": "string",
+              "value": "Manual Therapy"
+            },
+            {
+              "id": "584864dd-2518-45e2-b501-02828757fc3a",
+              "name": "features",
+              "type": "string",
+              "value": "pain relief"
+            },
+            {
+              "id": "0c4594cc-302a-4215-bdad-12cf54f57967",
+              "name": "sector",
+              "type": "string",
+              "value": "physical therapy"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a5dcb86e-2cc9-418b-ab4b-6c81ef5cce68",
+      "name": "setVars",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        3360,
+        1720
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "jsCode": "// Fetch the prompt text\nconst prompt = $('SetPrompt').first().json.data;  // Ensure the prompt contains placeholders like {{ some.node.value }}\n\n// Example variables object\nconst variables = {\n  company: $('setVars').first().json.company,\n  features: \"Awesome Software\",\n  keyword: \"2025-02-07\"\n};\n\n// Function to replace placeholders dynamically\nconst replaceVariables = (text, vars) => {\n  return text.replace(/{{(.*?)}}/g, (match, key) => {\n    const trimmedKey = key.trim();\n    \n    // Extract last part after the last dot\n    const finalKey = trimmedKey.split('.').pop();\n\n    // Replace if key exists, otherwise leave placeholder unchanged\n    return vars.hasOwnProperty(finalKey) ? vars[finalKey] : match;\n  });\n};\n\n// Replace and return result\nreturn [{\n  prompt: replaceVariables(prompt, variables)\n}];\n"
+      },
+      "id": "c6c9a221-c692-411a-ad2b-df0c560babf9",
+      "name": "replace variables",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        5080,
+        1700
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get prompt text\nconst prompt = $json.data;\n\n// Extract variables inside {{ }} dynamically\nconst matches = [...prompt.matchAll(/{{(.*?)}}/g)];\nconst uniqueVars = [...new Set(matches.map(match => match[1].trim().split('.').pop()))];\n\n// Get variables from the Set Node\nconst setNodeVariables = $node[\"setVars\"].json || {};\n\n// Log extracted variables and Set Node keys\nconsole.log(\"Extracted Variables:\", uniqueVars);\nconsole.log(\"Set Node Keys:\", Object.keys(setNodeVariables));\n\n// Check if all required variables are present in the Set Node\nconst missingKeys = uniqueVars.filter(varName => !setNodeVariables.hasOwnProperty(varName));\n\nconsole.log(\"Missing Keys:\", missingKeys);\n\n// Return false if any required variable is missing, otherwise return true\nreturn [{\n  success: missingKeys.length === 0,\n  missingKeys: missingKeys\n}];\n"
+      },
+      "id": "b5e0b8b6-c3fe-43d5-b696-7eaa26c2ce33",
+      "name": "Check All Prompt Vars Present",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        4460,
+        1720
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "335b450d-542a-4714-83d8-ccc237188fc5",
+              "name": "data",
+              "type": "string",
+              "value": "={{ $json.data }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6bf522b5-82e5-4ce8-b64d-10552f46cc44",
+      "name": "SetPrompt",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        4240,
+        1720
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "errorMessage": "=Missing Prompt Variables : {{ $('Check All Prompt Vars Present').item.json.missingKeys }}\n"
+      },
+      "id": "7d4095d9-c4fa-4176-a938-1e1c238c3a73",
+      "name": "Stop and Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "position": [
+        5080,
+        1920
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "57a9625b-adea-4ee7-a72a-2be8db15f3d4",
+              "name": "Prompt",
+              "type": "string",
+              "value": "={{ $json.prompt }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6f42a2f0-8fb8-4901-afd2-e2cb8c3d837d",
+      "name": "Set Completed Prompt",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        5400,
+        1700
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.Prompt }}",
+        "options": {}
+      },
+      "id": "3fc20fc1-f5fa-4ba6-a5b7-dcb1596441e6",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        5620,
+        1700
+      ],
+      "typeVersion": 1.7
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "01a30683-c348-4712-a3b1-739fc4a17718",
+              "name": "promptResponse",
+              "type": "string",
+              "value": "={{ $json.output }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "81a85d73-9f38-4bf6-8646-65fe10c5a8ea",
+      "name": "Prompt Output",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        5980,
+        1700
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "ed890402-d9d2-467f-9d8e-0756fdb8de76",
+      "name": "Ollama Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "position": [
+        5660,
+        1920
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "ollamaApi": {
+          "id": "1ymhDBddFSXreuzz",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "2717a7e5-095a-42bf-8b5b-8050c3389ec5",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.success }}",
+              "rightValue": "={{ $('Check All Prompt Vars Present').item.json.keys()}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4fd45b76-89ed-450a-a4eb-7841791a2677",
+      "name": "If1",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        4740,
+        1720
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "content": "# Set The variables in your prompt here",
+        "height": 260,
+        "width": 340
+      },
+      "id": "4d981910-0b89-4563-ab24-cd4cec47fd6c",
+      "name": "Sticky Note13",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3240,
+        1600
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## The repo is currently public for you to test with",
+        "color": 5
+      },
+      "id": "7ef7301e-04af-4629-b7f3-f37e2ac9083d",
+      "name": "Sticky Note14",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3700,
+        1600
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Replaces the values in the prompt with the variables in the \n# 'setVars' Node",
+        "height": 260,
+        "width": 360
+      },
+      "id": "c90b89b7-f1f7-40ad-98d5-7a80bbc0c2ad",
+      "name": "Sticky Note15",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4960,
+        1520
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## If you're missing variables they will be listed here",
+        "color": 3
+      },
+      "id": "f1159021-5ad3-41f6-9fcb-343d0bd8357b",
+      "name": "Sticky Note16",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5220,
+        1940
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1AvfNqJS6cgm2gjiYnNh6xqltJC6Wrez_ELemzEp9m_4",
+          "mode": "list",
+          "cachedResultName": "Available",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1AvfNqJS6cgm2gjiYnNh6xqltJC6Wrez_ELemzEp9m_4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 254336934,
+          "mode": "list",
+          "cachedResultName": "Available",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1AvfNqJS6cgm2gjiYnNh6xqltJC6Wrez_ELemzEp9m_4/edit#gid=254336934"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Key ",
+              "displayName": "Key ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Scheduled Date",
+              "displayName": "Scheduled Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Scheduled Start Time ",
+              "displayName": "Scheduled Start Time ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Scheduled End Time ",
+              "displayName": "Scheduled End Time ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Shift Name",
+              "displayName": "Shift Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Capacity ",
+              "displayName": "Capacity ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Available",
+              "displayName": "Available",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "article_url",
+              "displayName": "article_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "summarized",
+              "displayName": "summarized",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "summary",
+              "displayName": "summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "website",
+              "displayName": "website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "fetched_at",
+              "displayName": "fetched_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "publish_date",
+              "displayName": "publish_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "id": "ed872160-c626-492d-a841-ba075df1264e",
+      "name": "Google 表格 - 添加相關文章 📑",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        7460,
+        900
+      ],
+      "typeVersion": 4.5,
+      "notesInFlow": true,
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "xQDHYwcef9Hk8aIC",
+          "name": "Google Sheets account 2"
+        }
+      },
+      "notes": "Google 表格 - 添加相關文章 📑\n\n將已準備好的資料添加到您複製的 Google 表格模板中的 **\"article_database\"** 工作表。在設定此節點時，請確保選擇正確的 **\"article_database\"** 工作表。⚙️ \n\n讓我們一起確保您的數據能夠正確且有效地儲存！ ✨\n"
+    },
+    {
+      "parameters": {
+        "resource": "database",
+        "databaseId": {
+          "__rl": true,
+          "mode": "url",
+          "value": "={{ $json.chatInput.match(/https?:\\/\\/[^\\s/$.?#].[^\\s]*/g)[0] }}"
+        },
+        "simple": false
+      },
+      "id": "f9dadc31-49f5-4ff0-907e-4be6a1d310f9",
+      "name": "Notion",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        1080,
+        2460
+      ],
+      "typeVersion": 2.2,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "bebcb43c-461d-40d7-af83-436d94733622",
+              "name": "output",
+              "type": "string",
+              "value": "=Created workflow:\n```\n{{ $json.generatedWorkflow }}\n```\n\n☝️ Copy and paste JSON above into an n8n workflow canvas (on v 1.52.0+)"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8c12c4d3-8c33-4b18-bd29-49d5e0465876",
+      "name": "Return success to chat",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        3340,
+        2720
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "bd0f4fdb-53e2-49d5-ba9c-399ca9a23211",
+      "name": "Auto-fixing Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+      "position": [
+        2140,
+        2620
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {
+          "maxTokensToSample": 8192,
+          "temperature": 0.7
+        }
+      },
+      "id": "88e9e864-67eb-483a-8855-c9c34ce58f1d",
+      "name": "Anthropic Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "position": [
+        1900,
+        2620
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f82e26dd-f5c5-43b5-b97d-ee63c3ef124e",
+              "name": "searchNotionDBJsonBody",
+              "type": "string",
+              "value": "={{ $json.output.output.workflowJson.parseJson().nodes.find(node => node.name === \"Search notion database\").parameters.jsonBody }}"
+            },
+            {
+              "id": "a804139b-8bf0-43dc-aa8c-9c0dcb387392",
+              "name": "generatedWorkflow",
+              "type": "string",
+              "value": "={{ $json.output.output.workflowJson }}"
+            },
+            {
+              "id": "1e24fdfe-c31f-43e3-bca2-7124352fd62e",
+              "name": "inputDatabase",
+              "type": "object",
+              "value": "={{ $('Set input data').first().json.inputDatabase }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3d5afad4-f378-4ac2-b4ff-5a4eaffac717",
+      "name": "Set schema for eval",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2520,
+        2420
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b561b640-7fcb-4613-8b66-068dbd115b4e",
+              "name": "sessionId",
+              "type": "string",
+              "value": "={{ $('When chat message received').item.json.sessionId }}"
+            },
+            {
+              "id": "74d91d28-b73a-4341-a037-693468120d2d",
+              "name": "output",
+              "type": "string",
+              "value": "Sorry that doesn't look like a valid notion database url. Try again."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f7482f7c-355a-4975-953a-93b80caa5869",
+      "name": "Return error to chat",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1300,
+        2640
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "options": {
+          "maxTokensToSample": 8192
+        }
+      },
+      "id": "510ab508-5f3f-47ca-98b5-2a1f31d5e88a",
+      "name": "Anthropic Chat Model1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "position": [
+        2100,
+        2780
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8fc7df86-4a47-43ec-baea-f9ee87a899a8",
+              "name": "inputDatabase.id",
+              "type": "string",
+              "value": "={{ $json.id }}"
+            },
+            {
+              "id": "fdeb5b1b-0bf3-46d6-a266-7f85e212a427",
+              "name": "inputDatabase.url",
+              "type": "string",
+              "value": "={{ $json.url }}"
+            },
+            {
+              "id": "b2b06176-b4df-41bd-9422-9c89726fa3fd",
+              "name": "inputDatabase.public_url",
+              "type": "string",
+              "value": "={{ $json.public_url }}"
+            },
+            {
+              "id": "c7b65a70-8af6-4808-aae9-898df9b10340",
+              "name": "inputDatabase.name",
+              "type": "string",
+              "value": "={{ $json.title[0].text.content }}"
+            },
+            {
+              "id": "87c1be85-e180-487b-9c82-61c87c7c460b",
+              "name": "inputDatabase.properties",
+              "type": "object",
+              "value": "={{ $json.properties }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5b377c79-953f-45b4-b072-054346db6689",
+      "name": "standardize schema",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1300,
+        2420
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop through each incoming item\nreturn items.map(item => {\n  const inputDatabase = item.json[\"inputDatabase\"];\n\n  const simplifiedProperties = Object.fromEntries(Object.entries(inputDatabase.properties).map(([key, value]) => {\n    const simplifiedValue = {\n      id: value.id,\n      name: value.name,\n      type: value.type\n    };\n\n    // Simplify based on type\n    if (value.type === 'multi_select' || value.type === 'select') {\n      simplifiedValue.options = value.multi_select?.options?.map(option => option.name) || [];\n    }\n    \n    return [key, simplifiedValue];\n  }));\n\n  // Overwrite the properties object with simplifiedProperties\n  item.json.inputDatabase.properties = simplifiedProperties;\n\n  return item;  // Return the modified item\n});\n"
+      },
+      "id": "fed27def-49d9-45ae-8aaf-9b349eca9776",
+      "name": "Simplify properties object",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        1520,
+        2420
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n\t\"workflowJson\": \"json of workflow\"\n}"
+      },
+      "id": "0c2a5e1e-1efc-4a98-b540-9d1c699bfbd5",
+      "name": "Structured Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "position": [
+        2300,
+        2780
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "jsCode": "\nreturn [{\n  json: {\n    inputDatabase: $input.first().json.inputDatabase,\n    feedbackPrompt: (typeof yourVariable !== 'undefined' && yourVariable) ? yourVariable : \" \",\n    workflowTemplate: {\n  \"nodes\": [\n    {\n      \"parameters\": {\n        \"model\": \"gpt-4o\",\n        \"options\": {\n          \"temperature\": 0.7,\n          \"timeout\": 25000\n        }\n      },\n      \"id\": \"f262c0b4-d627-4fd4-ad78-0aa2f57d963f\",\n      \"name\": \"OpenAI Chat Model\",\n      \"type\": \"@n8n/n8n-nodes-langchain.lmChatOpenAi\",\n      \"typeVersion\": 1,\n      \"position\": [\n        1320,\n        640\n      ],\n      \"credentials\": {\n        \"openAiApi\": {\n          \"id\": \"AzPPV759YPBxJj3o\",\n          \"name\": \"Max's DevRel OpenAI account\"\n        }\n      }\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"055e8a80-4aff-4466-aaa5-ac58bb90f2d0\",\n              \"name\": \"databaseName\",\n              \"value\": \"={{ $json.name }}\",\n              \"type\": \"string\"\n            },\n            {\n              \"id\": \"2a61e473-72e7-46f6-98b0-817508d701c7\",\n              \"name\": \"databaseId\",\n              \"value\": \"={{ $json.id }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"options\": {}\n      },\n      \"id\": \"fb74819f-660e-479c-9519-73cfc41c7ee0\",\n      \"name\": \"workflow vars\",\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.4,\n      \"position\": [\n        940,\n        460\n      ]\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"a8e58791-ba51-46a2-8645-386dd1a0ff6e\",\n              \"name\": \"sessionId\",\n              \"value\": \"={{ $('When chat message received').item.json.sessionId }}\",\n              \"type\": \"string\"\n            },\n            {\n              \"id\": \"434209de-39d5-43d8-a964-0fcb7396306c\",\n              \"name\": \"action\",\n              \"value\": \"={{ $('When chat message received').item.json.action }}\",\n              \"type\": \"string\"\n            },\n            {\n              \"id\": \"cad4c972-51a9-4e16-a627-b00eea77eb30\",\n              \"name\": \"chatInput\",\n              \"value\": \"={{ $('When chat message received').item.json.chatInput }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"options\": {}\n      },\n      \"id\": \"832ec8ce-0f7c-4380-9a24-633f490a60a9\",\n      \"name\": \"format input for agent\",\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.4,\n      \"position\": [\n        1160,\n        460\n      ]\n    },\n    {\n      \"parameters\": {\n        \"toolDescription\": \"=Use this tool to search the \\\"{{ $('workflow vars').item.json.databaseName }}\\\" Notion app database.\\n\\nIt is structured with question and answer format. \\nYou can filter query result by:\\n- By keyword\\n- filter by tag.\\n\\nKeyword and Tag have an OR relationship not AND.\\n\\n\",\n        \"method\": \"POST\",\n        \"url\": \"https://api.notion.com/v1/databases/7ea9697d-4875-441e-b262-1105337d232e/query\",\n        \"authentication\": \"predefinedCredentialType\",\n        \"nodeCredentialType\": \"notionApi\",\n        \"sendBody\": true,\n        \"specifyBody\": \"json\",\n        \"jsonBody\": \"{\\n  \\\"filter\\\": {\\n    \\\"or\\\": [\\n      {\\n        \\\"property\\\": \\\"question\\\",\\n        \\\"rich_text\\\": {\\n          \\\"contains\\\": \\\"{keyword}\\\"\\n        }\\n      },\\n      {\\n        \\\"property\\\": \\\"tags\\\",\\n        \\\"multi_select\\\": {\\n          \\\"contains\\\": \\\"{tag}\\\"\\n        }\\n      }\\n    ]\\n  },\\n  \\\"sorts\\\": [\\n    {\\n      \\\"property\\\": \\\"updated_at\\\",\\n      \\\"direction\\\": \\\"ascending\\\"\\n    }\\n  ]\\n}\",\n        \"placeholderDefinitions\": {\n          \"values\": [\n            {\n              \"name\": \"keyword\",\n              \"description\": \"Searches question of the record. Use one keyword at a time.\"\n            },\n            {\n              \"name\": \"tag\",\n              \"description\": \"Options: PTO, HR Policy, Health Benefits, Direct Deposit, Payroll, Sick Leave, 1:1 Meetings, Scheduling, Internal Jobs, Performance Review, Diversity, Inclusion, Training, Harassment, Discrimination, Product Roadmap, Development, Feature Request, Product Management, Support, Ticket Submission, Password Reset, Email, Slack, GitHub, Team Collaboration, Development Setup, DevOps, GitHub Profile Analyzer, Security Breach, Incident Report, New Software, Software Request, IT, Hardware, Procurement, Software Licenses, JetBrains, Adobe, Data Backup, IT Policy, Security, MFA, Okta, Device Policy, Support Ticket, Phishing, Office Supplies, Operations, Meeting Room, Berlin Office, Travel Expenses, Reimbursement, Facilities, Maintenance, Equipment, Expense Reimbursement, Mobile Phones, SIM Cards, Parking, OKRs, Dashboard, Catering, Office Events\"\n            }\n          ]\n        }\n      },\n      \"id\": \"f16acb7e-f27d-4a95-845c-c990fc334795\",\n      \"name\": \"Search notion database\",\n      \"type\": \"@n8n/n8n-nodes-langchain.toolHttpRequest\",\n      \"typeVersion\": 1.1,\n      \"position\": [\n        1620,\n        640\n      ],\n      \"credentials\": {\n        \"notionApi\": {\n          \"id\": \"gfNp6Jup8rsmFLRr\",\n          \"name\": \"max-bot\"\n        }\n      }\n    },\n    {\n      \"parameters\": {\n        \"public\": true,\n        \"initialMessages\": \"=Happy {{ $today.weekdayLong }}!\\nKnowledge source assistant at your service. How can I help?\",\n        \"options\": {\n          \"subtitle\": \"\",\n          \"title\": \"Notion Knowledge Base\"\n        }\n      },\n      \"id\": \"9fc1ae38-d115-44d0-a088-7cec7036be6f\",\n      \"name\": \"When chat message received\",\n      \"type\": \"@n8n/n8n-nodes-langchain.chatTrigger\",\n      \"typeVersion\": 1.1,\n      \"position\": [\n        560,\n        460\n      ],\n      \"webhookId\": \"b76d02c0-b406-4d21-b6bf-8ad2c623def3\"\n    },\n    {\n      \"parameters\": {\n        \"resource\": \"database\",\n        \"databaseId\": {\n          \"__rl\": true,\n          \"value\": \"7ea9697d-4875-441e-b262-1105337d232e\",\n          \"mode\": \"list\",\n          \"cachedResultName\": \"StarLens Company Knowledge Base\",\n          \"cachedResultUrl\": \"https://www.notion.so/7ea9697d4875441eb2621105337d232e\"\n        }\n      },\n      \"id\": \"9325e0fe-549f-423b-af48-85e802429a7f\",\n      \"name\": \"Get database details\",\n      \"type\": \"n8n-nodes-base.notion\",\n      \"typeVersion\": 2.2,\n      \"position\": [\n        760,\n        460\n      ],\n      \"credentials\": {\n        \"notionApi\": {\n          \"id\": \"gfNp6Jup8rsmFLRr\",\n          \"name\": \"max-bot\"\n        }\n      }\n    },\n    {\n      \"parameters\": {\n        \"contextWindowLength\": 4\n      },\n      \"id\": \"637f5731-4442-42be-9151-30ee29ad97c6\",\n      \"name\": \"Window Buffer Memory\",\n      \"type\": \"@n8n/n8n-nodes-langchain.memoryBufferWindow\",\n      \"typeVersion\": 1.2,\n      \"position\": [\n        1460,\n        640\n      ]\n    },\n    {\n      \"parameters\": {\n        \"toolDescription\": \"=Use this tool to retrieve Notion page content using the page ID. \\n\\nIt is structured with question and answer format. \\nYou can filter query result by:\\n- By keyword\\n- filter by tag.\\n\\nKeyword and Tag have an OR relationship not AND.\\n\\n\",\n        \"url\": \"https://api.notion.com/v1/blocks/{page_id}/children\",\n        \"authentication\": \"predefinedCredentialType\",\n        \"nodeCredentialType\": \"notionApi\",\n        \"placeholderDefinitions\": {\n          \"values\": [\n            {\n              \"name\": \"page_id\",\n              \"description\": \"Notion page id from 'Search notion database' tool results\"\n            }\n          ]\n        },\n        \"optimizeResponse\": true,\n        \"dataField\": \"results\",\n        \"fieldsToInclude\": \"selected\",\n        \"fields\": \"id, type, paragraph.text, heading_1.text, heading_2.text, heading_3.text, bulleted_list_item.text, numbered_list_item.text, to_do.text, children\"\n      },\n      \"id\": \"6b87ae47-fac9-4ef5-aa9a-f1a1ae1adc5f\",\n      \"name\": \"Search inside database record\",\n      \"type\": \"@n8n/n8n-nodes-langchain.toolHttpRequest\",\n      \"typeVersion\": 1.1,\n      \"position\": [\n        1800,\n        640\n      ],\n      \"credentials\": {\n        \"notionApi\": {\n          \"id\": \"gfNp6Jup8rsmFLRr\",\n          \"name\": \"max-bot\"\n        }\n      }\n    },\n    {\n      \"parameters\": {\n        \"promptType\": \"define\",\n        \"text\": \"={{ $json.chatInput }}\",\n        \"options\": {\n          \"systemMessage\": \"=# Role:\\nYou are a helpful agent. Query the \\\"{{ $('workflow vars').item.json.databaseName }}\\\" Notion database to find relevant records or provide insights based on multiple records.\\n\\n# Behavior:\\n\\nBe clear, very concise, efficient, and accurate in responses. Do not hallucinate.\\nIf the request is ambiguous, ask for clarification. Do not embellish, only use facts from the Notion records. Never offer general advice.\\n\\n# Error Handling:\\n\\nIf no matching records are found, try alternative search criteria. Example: Laptop, then Computer, then Equipment. \\nClearly explain any issues with queries (e.g., missing fields or unsupported filters).\\n\\n# Output:\\n\\nReturn concise, user-friendly results or summaries.\\nFor large sets, show top results by default and offer more if needed. Output URLs in markdown format. \\n\\nWhen a record has the answer to user question, always output the URL to that page. Always list links to records separately at the end of the message like this:\\n\\\"Relevant pages: \\n(links in markdown format)\\\"\\nDo not output links twice, only in Relevant pages section\\n\"\n        }\n      },\n      \"id\": \"17f2c426-c48e-48e0-9c5e-e35bdafe5109\",\n      \"name\": \"AI Agent\",\n      \"type\": \"@n8n/n8n-nodes-langchain.agent\",\n      \"typeVersion\": 1.6,\n      \"position\": [\n        1380,\n        460\n      ]\n    }\n  ],\n  \"connections\": {\n    \"OpenAI Chat Model\": {\n      \"ai_languageModel\": [\n        [\n          {\n            \"node\": \"AI Agent\",\n            \"type\": \"ai_languageModel\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"workflow vars\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"format input for agent\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"format input for agent\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"AI Agent\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Search notion database\": {\n      \"ai_tool\": [\n        [\n          {\n            \"node\": \"AI Agent\",\n            \"type\": \"ai_tool\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"When chat message received\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Get database details\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Get database details\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"workflow vars\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Window Buffer Memory\": {\n      \"ai_memory\": [\n        [\n          {\n            \"node\": \"AI Agent\",\n            \"type\": \"ai_memory\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Search inside database record\": {\n      \"ai_tool\": [\n        [\n          {\n            \"node\": \"AI Agent\",\n            \"type\": \"ai_tool\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  },\n  \"pinData\": {}\n}\n  }\n}];"
+      },
+      "id": "5edc6615-1215-446a-9378-88aeafb74b37",
+      "name": "Set input data",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        1780,
+        2420
+      ],
+      "typeVersion": 2,
+      "notes": "This allows different routes to input into our agent (e.g. the retry branch). In the AI Agent, we can use a relative $json reference for data, since it's always the same input schema going in. "
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b4669a2c-7780-4c54-aef6-89a56ddf1d06",
+              "name": "inputDatabase",
+              "type": "object",
+              "value": "={{ $json.inputDatabase }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0fd64a33-50d8-4980-9ff7-fd947320649d",
+      "name": "Set schem for rerun",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        3340,
+        2220
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1243a328-8420-4be0-8932-4e153472a638",
+              "name": "feedbackPrompt",
+              "type": "string",
+              "value": "=You attempted the below task and outputted incorrect JSON. Below is your incorrect attempt and original task prompt. Try again.\n\n# Incorrect task prompt\n"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "c166cceb-a406-411d-92c6-c320eaf2e838",
+      "name": "Add feedback prompt",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        3020,
+        2420
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "leftValue": "={{ $json.searchNotionDBJsonBody }}",
+                    "rightValue": "object Object"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "Placeholder jsonBody in tool"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra",
+          "allMatchingOutputs": false
+        }
+      },
+      "id": "9fa0cda5-1328-48b6-917f-8bfa65b2eaff",
+      "name": "Check for WF JSON errors",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        2720,
+        2420
+      ],
+      "typeVersion": 3.1,
+      "notes": "Placeholder jsonBody in tool - this means the 'Search notion database' tool got [object Object] as it's value (happening ~25% of the time)"
+    },
+    {
+      "parameters": {
+        "agent": "reActAgent",
+        "promptType": "define",
+        "text": "=Your task is to output a modified version of a n8n workflow template so it works with the provided new notion database schema. \n\n\n# new notion database details\n{{ $json.inputDatabase.toJsonString() }}\n\n# n8n workflow template to use as reference\n{{ $json.workflowTemplate.toJsonString() }}\n\nJSON Output:\n- Ensure valid JSON with properly quoted keys and values, no trailing commas, and correctly nested braces `{}` and brackets `[]`. If unable to format, return an error or a valid example.\n- Output linebreaks so user can copy working JSON",
+        "hasOutputParser": true,
+        "options": {
+          "prefix": "You are an n8n expert and understand n8n's workflow JSON Structure. You take n8n workflows and make changes to them based on the user request. \n\nDon't hallucinate. Only output n8n workflow json. \n\n",
+          "returnIntermediateSteps": false
+        }
+      },
+      "id": "fb7eaa8c-00b9-4287-bbc8-3a525896e875",
+      "name": "Generate Workflow Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        2020,
+        2420
+      ],
+      "typeVersion": 1.6,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "options": {
+          "maxTokensToSample": 8192
+        }
+      },
+      "id": "8033a339-13e6-40f6-a203-ddce1e0151a2",
+      "name": "Anthropic Chat Model2",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "position": [
+        2920,
+        2840
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "Hi there, I can help you make an AI Agent assistant that can query a Notion database.\n\nGenerating the workflow may take a few minutes as I check whether it works and try again if I oopsie.\n\nEnter a notion database URL and I'll output the workflow in JSON that you can paste in to the n8n canvas. \n",
+        "options": {
+          "inputPlaceholder": "e.g. https://www.notion.so/n8n/34f67a14195344fda645691c63dc3901",
+          "loadPreviousSession": "manually",
+          "subtitle": "Generates an n8n workflow-based AI Agent that can query any arbitrary Notion database. ",
+          "title": "🤖 Notion database assistant generator"
+        }
+      },
+      "id": "f75bc506-f017-458f-94c1-58196bca1341",
+      "name": "When chat message received",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "position": [
+        900,
+        2460
+      ],
+      "webhookId": "49dfdc22-b4c8-4ed3-baef-6751ec52f278",
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "inputText": "={{ $json.generatedWorkflow }}",
+        "categories": {
+          "categories": [
+            {
+              "category": "invalidJSON",
+              "description": "Any other workflow JSON"
+            },
+            {
+              "category": "validJSON",
+              "description": "A valid n8n workflow JSON"
+            }
+          ]
+        },
+        "options": {
+          "systemPromptTemplate": "You are an expert in n8n workflow automation tool. You know whether the json representation of an n8n workflow is valid. \n\nPlease classify the text provided by the user into one of the following categories: {categories}, and use the provided formatting instructions below. Don't explain, and only output the json."
+        }
+      },
+      "id": "e719fd82-f863-4d94-b1dc-55c849a625e6",
+      "name": "Valid n8n workflow JSON?",
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "position": [
+        2940,
+        2680
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "# Generate new workflow version for specific notion db schema\nInput a Notion database URL and get an AI Assistant chatbot workflow for it based on this template: https://n8n.io/workflows/2413-notion-knowledge-base-ai-assistant/\n\nProject in notion: https://www.notion.so/n8n/Chat-with-notion-database-84eec91b74dd4e36ba97edda17c2c306",
+        "height": 231.27721611949534,
+        "width": 616.7964812508943,
+        "color": 7
+      },
+      "id": "b99aa77b-d0f2-4478-953a-6bdc2e7dcae4",
+      "name": "Sticky Note17",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        180,
+        2220
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## #1 Serve chat, get URL from user, pull new notion DB schema\nUses n8n Chat trigger. Notion node will fail if an invalid URL is used, or if n8n doesn't have access to it. Also attempts to strip non URL text input. Simplifies notion DB outputs for more efficient token usage in AI Agent.",
+        "height": 110.78786136085805,
+        "width": 747.234277816171,
+        "color": 7
+      },
+      "id": "b3ff5d16-346e-4696-becf-25f1609d4c23",
+      "name": "Sticky Note18",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        860,
+        2220
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## #2 GenAI step\nTakes 2 inputs: [original workflow template](https://n8n.io/workflows/2413-notion-knowledge-base-ai-assistant/) and new Notion database details from #1",
+        "height": 114.20873484539783,
+        "width": 638.6509136143742,
+        "color": 7
+      },
+      "id": "f3613357-5efe-4937-9522-472565a2dfa0",
+      "name": "Sticky Note19",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1740,
+        2220
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## #3 Does the new workflow look right?\nChecks for previously identified cases (e.g. LLM outputs placeholder for certain values) then does general LLM check on whether it looks like valid n8n workflow JSON.",
+        "height": 111.9281525223713,
+        "width": 727.8599253628195,
+        "color": 7
+      },
+      "id": "7d9d612d-ade5-45c8-87f9-65151a01b617",
+      "name": "Sticky Note20",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2460,
+        2220
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## #4 Respond to Chat trigger\nEach response to the chat trigger is one run. Data of the last node that runs in the workflow is sent to chat trigger, like `Return success to chat`",
+        "height": 132.30907857627597,
+        "width": 343.3887397891673,
+        "color": 7
+      },
+      "id": "8dce7f77-55a9-4384-86a2-a8c74dcc0af2",
+      "name": "Sticky Note21",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3340,
+        2040
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Watch a quick set up video 👇\n[![Notion AI Assistant Generator](https://uploads.n8n.io/devrel/notion-db-assistant-thumb#full-width)](https://youtu.be/iK87ppcaNgM)\n",
+        "height": 416.2640726760381,
+        "width": 614.8565246662145,
+        "color": 7
+      },
+      "id": "fabd7092-ac1f-41da-9524-e4d0029c1b80",
+      "name": "Sticky Note22",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        180,
+        2480
+      ],
+      "typeVersion": 1
     }
   ],
   "pinData": {},
@@ -222,6 +2350,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-12-06T10:18:19.132Z",
-  "versionId": "7752ccc8-939d-4750-a95e-4077a47a8b57"
+  "updatedAt": "2025-03-10T16:31:48.000Z",
+  "versionId": "e6aba193-d0f9-4c51-9e59-50a008def0cd"
 }
