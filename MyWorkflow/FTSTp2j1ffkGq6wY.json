@@ -299,7 +299,7 @@
       "type": "n8n-nodes-base.stickyNote",
       "position": [
         -1820,
-        980
+        960
       ],
       "typeVersion": 1
     },
@@ -753,7 +753,7 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "position": [
         -520,
-        680
+        660
       ],
       "typeVersion": 1.2,
       "alwaysOutputData": true,
@@ -910,6 +910,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-10T14:52:44.000Z",
-  "versionId": "251bd425-d640-4e06-b665-901140e5d938"
+  "updatedAt": "2025-03-10T16:38:08.000Z",
+  "versionId": "ea5f93a4-4413-49b5-b040-76502fdcb82c"
 }
