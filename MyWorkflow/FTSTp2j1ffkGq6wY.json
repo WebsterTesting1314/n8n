@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "On clicking 'execute'": {
       "main": [
@@ -156,7 +156,13 @@
     },
     "Loop Over Items": {
       "main": [
-        [],
+        [
+          {
+            "node": "Slack",
+            "type": "main",
+            "index": 0
+          }
+        ],
         [
           {
             "node": "Execute Workflow",
@@ -266,6 +272,11 @@
             "index": 0
           }
         ]
+      ]
+    },
+    "Failed Flows": {
+      "main": [
+        []
       ]
     }
   },
@@ -404,8 +415,8 @@
       "name": "If file too large",
       "type": "n8n-nodes-base.if",
       "position": [
-        -480,
-        1080
+        -540,
+        1000
       ],
       "typeVersion": 2
     },
@@ -522,8 +533,8 @@
       "typeVersion": 1,
       "credentials": {
         "githubApi": {
-          "id": "jbPopdE0FdRZPToq",
-          "name": "WebsterTesting1314"
+          "id": "nwTWXLJmlORvI7r1",
+          "name": "GitHub account 2"
         }
       }
     },
@@ -555,8 +566,8 @@
       "typeVersion": 1,
       "credentials": {
         "githubApi": {
-          "id": "jbPopdE0FdRZPToq",
-          "name": "WebsterTesting1314"
+          "id": "nwTWXLJmlORvI7r1",
+          "name": "GitHub account 2"
         }
       }
     },
@@ -649,15 +660,15 @@
       "name": "Get file data",
       "type": "n8n-nodes-base.github",
       "position": [
-        -680,
-        1080
+        -720,
+        1020
       ],
       "typeVersion": 1,
-      "alwaysOutputData": true,
+      "alwaysOutputData": false,
       "credentials": {
         "githubApi": {
-          "id": "jbPopdE0FdRZPToq",
-          "name": "WebsterTesting1314"
+          "id": "nwTWXLJmlORvI7r1",
+          "name": "GitHub account 2"
         }
       },
       "continueOnFail": true
@@ -731,9 +742,8 @@
       "parameters": {
         "workflowId": {
           "__rl": true,
-          "value": "FTSTp2j1ffkGq6wY",
-          "mode": "list",
-          "cachedResultName": "GITHUB備份專家"
+          "value": "={{ $workflow.id }}",
+          "mode": "id"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -756,7 +766,7 @@
         660
       ],
       "typeVersion": 1.2,
-      "alwaysOutputData": true,
+      "alwaysOutputData": false,
       "notesInFlow": false
     },
     {
@@ -794,7 +804,6 @@
                   "caseSensitive": true,
                   "typeValidation": "strict"
                 },
-                "combinator": "and",
                 "conditions": [
                   {
                     "operator": {
@@ -803,9 +812,11 @@
                       "singleValue": true
                     },
                     "leftValue": "={{ $json.tags[0] }}",
-                    "rightValue": ""
+                    "rightValue": "",
+                    "id": "d68d9465-8dcb-4ed5-acae-39f5a70fe249"
                   }
-                ]
+                ],
+                "combinator": "and"
               },
               "renameOutput": true,
               "outputKey": "tag"
@@ -891,6 +902,39 @@
       "typeVersion": 1,
       "id": "672574cb-1a3f-49d6-809a-06876e8210f9",
       "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C08HN1JF11N",
+          "mode": "list",
+          "cachedResultName": "notifications"
+        },
+        "text": " 👌備份已完成—— 工作流程已處理完畢。😍",
+        "otherOptions": {
+          "includeLinkToWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        -520,
+        420
+      ],
+      "id": "59cbbd81-5961-468d-b486-6e181c1b908d",
+      "name": "Slack",
+      "webhookId": "911ca395-50ce-4c12-aeb9-7993e9188707",
+      "alwaysOutputData": true,
+      "notesInFlow": true,
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "L1fBsYCGqxgEdff7",
+          "name": "Slack account 2"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -910,6 +954,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-10T16:38:08.000Z",
-  "versionId": "ea5f93a4-4413-49b5-b040-76502fdcb82c"
+  "updatedAt": "2025-03-10T16:56:00.000Z",
+  "versionId": "e0f972d6-e00c-4a1f-ba5f-fbcb594ad134"
 }
