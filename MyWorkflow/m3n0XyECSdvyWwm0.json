@@ -498,6 +498,1103 @@
           }
         ]
       ]
+    },
+    "On new manual Chat Message": {
+      "main": [
+        [
+          {
+            "node": "ReAct AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Is error?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Exctract HTML Body": {
+      "main": [
+        [
+          {
+            "node": "Remove extra tags",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is error?": {
+      "main": [
+        [
+          {
+            "node": "Stringify error message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Exctract HTML Body",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "QUERY_PARAMS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove extra tags": {
+      "main": [
+        [
+          {
+            "node": "Simplify?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simplify output": {
+      "main": [
+        [
+          {
+            "node": "Convert to Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simplify?": {
+      "main": [
+        [
+          {
+            "node": "Simplify output",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Convert to Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QUERY_PARAMS": {
+      "main": [
+        [
+          {
+            "node": "CONFIG",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CONFIG": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to Markdown": {
+      "main": [
+        [
+          {
+            "node": "Send Page Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP_Request_Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "ReAct AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "ReAct AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch essay list": {
+      "main": [
+        [
+          {
+            "node": "Extract essay names",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract essay names": {
+      "main": [
+        [
+          {
+            "node": "Split out into items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch essay texts": {
+      "main": [
+        [
+          {
+            "node": "Extract title",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Summarization Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract title": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split out into items": {
+      "main": [
+        [
+          {
+            "node": "Limit to first 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit to first 3": {
+      "main": [
+        [
+          {
+            "node": "Fetch essay texts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Summarization Chain",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Clean up",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarization Chain": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Summarization Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Extract individual book price",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sort by price": {
+      "main": [
+        [
+          {
+            "node": "Save to Microsoft Excel 365",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Convert to CSV File",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Save to Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to CSV File": {
+      "main": [
+        [
+          {
+            "node": "Send CSV via e-mail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch website content": {
+      "main": [
+        [
+          {
+            "node": "Extract all books from the page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract individual book price": {
+      "main": [
+        [
+          {
+            "node": "Sort by price",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract all books from the page": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML Extract": {
+      "main": [
+        [
+          {
+            "node": "Prepare countries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SplitInBatches": {
+      "main": [
+        [
+          {
+            "node": "uProc",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML Extract1": {
+      "main": [
+        [
+          {
+            "node": "Prepare Documents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MongoDB1": {
+      "main": [
+        [
+          {
+            "node": "Set More Pages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "uProc": {
+      "main": [
+        [
+          {
+            "node": "Set Page to Scrape",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Documents": {
+      "main": [
+        [
+          {
+            "node": "MongoDB1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "More Countries": {
+      "main": [
+        [],
+        [
+          {
+            "node": "SplitInBatches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Page to Scrape": {
+      "main": [
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "More Pages": {
+      "main": [
+        [
+          {
+            "node": "Set Page to Scrape",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "More Countries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set More Pages": {
+      "main": [
+        [
+          {
+            "node": "More Pages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "Generate filename",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate filename": {
+      "main": [
+        [
+          {
+            "node": "Read Binary File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File": {
+      "main": [
+        [
+          {
+            "node": "File exists?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "File exists?": {
+      "main": [
+        [
+          {
+            "node": "Read Binary File1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write Binary File": {
+      "main": [
+        [
+          {
+            "node": "Read Binary File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Binary File1": {
+      "main": [
+        [
+          {
+            "node": "HTML Extract1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare countries": {
+      "main": [
+        [
+          {
+            "node": "SplitInBatches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "HTML Extract",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All files": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Document PDF": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Insert into Supabase Vectorstore",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create File record2": {
+      "main": [
+        [
+          {
+            "node": "Insert into Supabase Vectorstore",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Files": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Get All files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI2": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Supabase Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vector Store Tool1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Extract Document PDF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert into Supabase Vectorstore": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase Vector Store": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Vector Store Tool1",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader1": {
+      "ai_document": [
+        [
+          {
+            "node": "Insert into Supabase Vectorstore",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter1": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader1",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Download",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model5": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Vector Store Tool1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Create File record2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Table Definition": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chat History": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute SQL Query": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get DB Schema and Tables List": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model6": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ScrapingBee- Get page HTML": {
+      "main": [
+        [
+          {
+            "node": "HTML to Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Vision-based Scraping Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets - Get list of URLs": {
+      "main": [
+        [
+          {
+            "node": "Set fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set fields": {
+      "main": [
+        [
+          {
+            "node": "ScrapingBee - Get page screenshot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ScrapingBee - Get page screenshot": {
+      "main": [
+        [
+          {
+            "node": "Vision-based Scraping Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML-based Scraping Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Vision-based Scraping Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vision-based Scraping Agent": {
+      "main": [
+        [
+          {
+            "node": "Split Out1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set fields - from AI agent query": {
+      "main": [
+        [
+          {
+            "node": "ScrapingBee- Get page HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Vision-based Scraping Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out1": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Create Rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "PreProcessing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CheckCommand": {
+      "main": [
+        [
+          {
+            "node": "Chat_mode",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Greeting",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create an image",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send error message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Settings": {
+      "main": [
+        [
+          {
+            "node": "Send Typing action",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chat_mode": {
+      "main": [
+        [
+          {
+            "node": "Text reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Greeting": {
+      "main": [
+        [
+          {
+            "node": "Text reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Typing action": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Create an image": {
+      "main": [
+        [
+          {
+            "node": "Send image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PreProcessing": {
+      "main": [
+        [
+          {
+            "node": "Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "CheckCommand",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-12-06T10:18:19.132Z",
@@ -1455,7 +2552,7 @@
       "type": "n8n-nodes-base.set",
       "position": [
         4240,
-        1720
+        1740
       ],
       "typeVersion": 3.4
     },
@@ -1581,8 +2678,8 @@
       "name": "If1",
       "type": "n8n-nodes-base.if",
       "position": [
-        4740,
-        1720
+        4760,
+        1800
       ],
       "typeVersion": 2.2
     },
@@ -1847,8 +2944,8 @@
       "name": "Notion",
       "type": "n8n-nodes-base.notion",
       "position": [
-        1080,
-        2460
+        3380,
+        2800
       ],
       "typeVersion": 2.2,
       "onError": "continueErrorOutput"
@@ -1871,8 +2968,8 @@
       "name": "Return success to chat",
       "type": "n8n-nodes-base.set",
       "position": [
-        3340,
-        2720
+        5640,
+        3060
       ],
       "typeVersion": 3.4
     },
@@ -1884,8 +2981,8 @@
       "name": "Auto-fixing Output Parser",
       "type": "@n8n/n8n-nodes-langchain.outputParserAutofixing",
       "position": [
-        2140,
-        2620
+        4440,
+        2960
       ],
       "typeVersion": 1
     },
@@ -1900,8 +2997,8 @@
       "name": "Anthropic Chat Model",
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "position": [
-        1900,
-        2620
+        4200,
+        2960
       ],
       "typeVersion": 1.2
     },
@@ -1935,8 +3032,8 @@
       "name": "Set schema for eval",
       "type": "n8n-nodes-base.set",
       "position": [
-        2520,
-        2420
+        4820,
+        2760
       ],
       "typeVersion": 3.4
     },
@@ -1964,8 +3061,8 @@
       "name": "Return error to chat",
       "type": "n8n-nodes-base.set",
       "position": [
-        1300,
-        2640
+        3600,
+        2980
       ],
       "typeVersion": 3.4
     },
@@ -1979,8 +3076,8 @@
       "name": "Anthropic Chat Model1",
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "position": [
-        2100,
-        2780
+        4400,
+        3120
       ],
       "typeVersion": 1.2
     },
@@ -2026,8 +3123,8 @@
       "name": "standardize schema",
       "type": "n8n-nodes-base.set",
       "position": [
-        1300,
-        2420
+        3600,
+        2760
       ],
       "typeVersion": 3.4
     },
@@ -2039,8 +3136,8 @@
       "name": "Simplify properties object",
       "type": "n8n-nodes-base.code",
       "position": [
-        1520,
-        2420
+        3820,
+        2760
       ],
       "typeVersion": 2
     },
@@ -2052,8 +3149,8 @@
       "name": "Structured Output Parser",
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "position": [
-        2300,
-        2780
+        4600,
+        3120
       ],
       "typeVersion": 1.2
     },
@@ -2065,8 +3162,8 @@
       "name": "Set input data",
       "type": "n8n-nodes-base.code",
       "position": [
-        1780,
-        2420
+        4080,
+        2760
       ],
       "typeVersion": 2,
       "notes": "This allows different routes to input into our agent (e.g. the retry branch). In the AI Agent, we can use a relative $json reference for data, since it's always the same input schema going in. "
@@ -2089,8 +3186,8 @@
       "name": "Set schem for rerun",
       "type": "n8n-nodes-base.set",
       "position": [
-        3340,
-        2220
+        5640,
+        2560
       ],
       "typeVersion": 3.4
     },
@@ -2113,8 +3210,8 @@
       "name": "Add feedback prompt",
       "type": "n8n-nodes-base.set",
       "position": [
-        3020,
-        2420
+        5320,
+        2760
       ],
       "typeVersion": 3.4
     },
@@ -2155,8 +3252,8 @@
       "name": "Check for WF JSON errors",
       "type": "n8n-nodes-base.switch",
       "position": [
-        2720,
-        2420
+        5040,
+        2780
       ],
       "typeVersion": 3.1,
       "notes": "Placeholder jsonBody in tool - this means the 'Search notion database' tool got [object Object] as it's value (happening ~25% of the time)"
@@ -2176,8 +3273,8 @@
       "name": "Generate Workflow Agent",
       "type": "@n8n/n8n-nodes-langchain.agent",
       "position": [
-        2020,
-        2420
+        4320,
+        2760
       ],
       "typeVersion": 1.6,
       "onError": "continueRegularOutput"
@@ -2192,8 +3289,8 @@
       "name": "Anthropic Chat Model2",
       "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
       "position": [
-        2920,
-        2840
+        5220,
+        3180
       ],
       "typeVersion": 1.2
     },
@@ -2212,8 +3309,8 @@
       "name": "When chat message received",
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "position": [
-        900,
-        2460
+        3200,
+        2800
       ],
       "webhookId": "49dfdc22-b4c8-4ed3-baef-6751ec52f278",
       "typeVersion": 1.1
@@ -2241,8 +3338,8 @@
       "name": "Valid n8n workflow JSON?",
       "type": "@n8n/n8n-nodes-langchain.textClassifier",
       "position": [
-        2940,
-        2680
+        5240,
+        3020
       ],
       "typeVersion": 1
     },
@@ -2257,8 +3354,8 @@
       "name": "Sticky Note17",
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        180,
-        2220
+        2140,
+        1500
       ],
       "typeVersion": 1
     },
@@ -2273,8 +3370,8 @@
       "name": "Sticky Note18",
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        860,
-        2220
+        2180,
+        1780
       ],
       "typeVersion": 1
     },
@@ -2289,8 +3386,8 @@
       "name": "Sticky Note19",
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        1740,
-        2220
+        4040,
+        2560
       ],
       "typeVersion": 1
     },
@@ -2305,8 +3402,8 @@
       "name": "Sticky Note20",
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        2460,
-        2220
+        4760,
+        2560
       ],
       "typeVersion": 1
     },
@@ -2321,8 +3418,8 @@
       "name": "Sticky Note21",
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        3340,
-        2040
+        5220,
+        2200
       ],
       "typeVersion": 1
     },
@@ -2337,8 +3434,2897 @@
       "name": "Sticky Note22",
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        180,
-        2480
+        2140,
+        2000
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "ef200670-4710-4a4c-a8cf-98b4167c6b6e",
+      "name": "On new manual Chat Message",
+      "type": "@n8n/n8n-nodes-langchain.manualChatTrigger",
+      "position": [
+        6580,
+        2760
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "url": "={{ encodeURI($json.query.url) }}",
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "31551c9a-947d-4743-8239-b88a3483f551",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        7160,
+        3280
+      ],
+      "typeVersion": 4.1,
+      "alwaysOutputData": false,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "HTML",
+              "stringValue": "={{ $json?.data.match(/<body[^>]*>([\\s\\S]*?)<\\/body>/i)[1] }}"
+            }
+          ]
+        },
+        "include": "selected",
+        "includeFields": "HTML",
+        "options": {}
+      },
+      "id": "07876b87-7f5a-46bd-9889-784e665484d0",
+      "name": "Exctract HTML Body",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        7580,
+        3560
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.hasOwnProperty('error') }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "1e8b52e9-4d56-4ff1-a647-21d22f0d8003",
+      "name": "Is error?",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        7360,
+        3280
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "page_content",
+              "stringValue": "={{ $('QUERY_PARAMS').first()?.json?.query?.url == null ? \"INVALID action_input. This should be an HTTP query string like this: \\\"?url=VALIDURL&method=SELECTEDMETHOD\\\". Only a simple string value is accepted. JSON object as an action_input is NOT supported!\" : JSON.stringify($json.error) }}"
+            }
+          ]
+        },
+        "include": "selected",
+        "includeFields": "HTML",
+        "options": {}
+      },
+      "id": "bf68c075-8a96-4d89-9b5c-b989a9e2a799",
+      "name": "Stringify error message",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        7580,
+        3060
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {},
+      "id": "4105857e-928e-4291-9efb-eb20aa78518a",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        6560,
+        3280
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "HTML",
+              "stringValue": "={{ ($json.HTML || \"HTML BODY CONTENT FOR THIS SEARCH RESULT IS NOT AVAILABLE\").replace(/<script[^>]*>([\\s\\S]*?)<\\/script>|<style[^>]*>([\\s\\S]*?)<\\/style>|<noscript[^>]*>([\\s\\S]*?)<\\/noscript>|<!--[\\s\\S]*?-->|<iframe[^>]*>([\\s\\S]*?)<\\/iframe>|<object[^>]*>([\\s\\S]*?)<\\/object>|<embed[^>]*>([\\s\\S]*?)<\\/embed>|<video[^>]*>([\\s\\S]*?)<\\/video>|<audio[^>]*>([\\s\\S]*?)<\\/audio>|<svg[^>]*>([\\s\\S]*?)<\\/svg>/ig, '')}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ed462155-dadd-4490-9f7b-f5e93fd37868",
+      "name": "Remove extra tags",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        7780,
+        3560
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "HTML",
+              "stringValue": "={{ $json.HTML.replace(/href\\s*=\\s*\"(.+?)\"/gi, 'href=\"NOURL\"').replace(/src\\s*=\\s*\"(.+?)\"/gi, 'src=\"NOIMG\"')}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2689a8ea-a3f9-4ccd-a081-392c67c32774",
+      "name": "Simplify output",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        8160,
+        3460
+      ],
+      "notesInFlow": true,
+      "typeVersion": 3.2,
+      "notes": "remove links and image URLs"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $('CONFIG').first()?.json?.query?.method }}",
+              "operation": "contains",
+              "value2": "simplif"
+            }
+          ]
+        }
+      },
+      "id": "bdd37ddf-223b-4887-8484-b32c8d1082c1",
+      "name": "Simplify?",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        7980,
+        3560
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "query",
+              "type": "objectValue",
+              "objectValue": "={{ $json.query.substring($json.query.indexOf('?') + 1).split('&').reduce((result, item) => (result[item.split('=')[0]] = decodeURIComponent(item.split('=')[1]), result), {}) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dd7dfef5-7c53-44eb-814f-cde90eb9e68c",
+      "name": "QUERY_PARAMS",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        6680,
+        3180
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "query.maxlimit",
+              "type": "numberValue",
+              "numberValue": "={{ $json?.query?.maxlimit == null ? 70000 : Number($json?.query?.maxlimit) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3e5bf5cd-eaae-4ddb-aa36-3d92734e4b77",
+      "name": "CONFIG",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        6960,
+        3280
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "agent": "reActAgent",
+        "options": {
+          "humanMessageTemplate": "{input}\n\n{agent_scratchpad}",
+          "prefix": "Answer the following questions as best you can. You have access to the following tools:",
+          "suffixChat": "Begin! Reminder to always use the exact characters `Final Answer` when responding.",
+          "suffix": "Begin!\n\n\tQuestion: {input}\n\tThought:{agent_scratchpad}"
+        }
+      },
+      "id": "9e213e34-84b4-4217-8e6c-f56d0112b551",
+      "name": "ReAct AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        6800,
+        2760
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "html": "={{ $json.HTML }}",
+        "destinationKey": "page_content",
+        "options": {}
+      },
+      "id": "e0dbe078-294e-478c-8035-542bb66c59b8",
+      "name": "Convert to Markdown",
+      "type": "n8n-nodes-base.markdown",
+      "position": [
+        8340,
+        3560
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "page_content",
+              "stringValue": "={{ $json.page_content.length < $('CONFIG').first()?.json?.query?.maxlimit ? $json.page_content : \"ERROR: PAGE CONTENT TOO LONG\" }}"
+            },
+            {
+              "name": "page_length",
+              "type": "numberValue",
+              "numberValue": "={{ $json.page_content.length }}"
+            }
+          ]
+        },
+        "include": "selected",
+        "options": {}
+      },
+      "id": "4ec2a162-5308-412c-9a0a-8339449952b5",
+      "name": "Send Page Content",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        8540,
+        3560
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "name": "HTTP_Request_Tool",
+        "description": "Call this tool to fetch a webpage content. The input should be a stringified HTTP query parameter like this: \"?url=VALIDURL&method=SELECTEDMETHOD\". \"url\" parameter should contain the valid URL string. \"method\" key can be either \"full\" or \"simplified\". method=full will fetch the whole webpage content in the Markdown format, including page links and image links. method=simplified will return the Markdown content of the page but remove urls and image links from the page content for simplicity. Before calling this tool, think strategically which \"method\" to call. Best of all to use method=simplified. However, if you anticipate that the page request is not final or if you need to extract links from the page, pick method=full.",
+        "workflowId": "={{ $workflow.id }}",
+        "responsePropertyName": "page_content"
+      },
+      "id": "4b6b608f-fd77-4391-86dc-b4265237e915",
+      "name": "HTTP_Request_Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "position": [
+        6920,
+        2980
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "model": "gpt-4-1106-preview",
+        "options": {
+          "frequencyPenalty": 0.3,
+          "temperature": 0.7,
+          "timeout": 300000
+        }
+      },
+      "id": "a4b09695-f4d6-40c3-8a8a-917adb200a02",
+      "name": "OpenAI Chat Model2",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        6800,
+        2980
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Convert the query string into JSON, apply the limit for a page length",
+        "height": 235.79999999999995,
+        "width": 556.25
+      },
+      "id": "882d2044-09d4-453f-9313-29e0c809c59e",
+      "name": "Sticky Note23",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        6540,
+        3220
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Send an error message:\n1. If query param was incorrect, return the instruction. AI Agent should pick up on this and adapt the query on the next iteration.\n2. If the query is OK and an error was during the HTTP Request, then send back the original error message.",
+        "height": 285.7,
+        "width": 491
+      },
+      "id": "2dbe9389-afd0-41a5-aca4-0ed5b0d848af",
+      "name": "Sticky Note24",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        7520,
+        2920
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Post-processing of the HTML page:\n1. Keep only <BODY> content\n2. Remove inline <SCRIPT> tag entirely, as well as: NOSCRIPT, IFRAME, OBJECT, EMBED, VIDEO, AUDIO, SVG, and HTML comments.\n3. In case query parameter method=simplified, replace all page URLs (a href) and IMG (src) with NOURL / NOIMG - this may save up to 20% of the page length\n4. Convert the remaining HTML to Markdown. This step further reduces the length of the page: long HTML tags and styles are eliminated, but the markdown syntax keeps some page structure. This gives much better results compared to just a blank text.\n5. Finally, check the page length. If it's too long, send an \"ERROR: PAGE CONTENT TOO LONG\" instead of the actual page. Of course, you could split the page content in chunks, but sometimes long pages just don't have a needed content, so it makes little sense to burn tokens on them.",
+        "height": 472.5,
+        "width": 1200
+      },
+      "id": "9637a79e-c073-4c9c-bb68-107a4d39e2ef",
+      "name": "Sticky Note25",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        7520,
+        3240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Example ReAct AI Agent\n1. Agent Prompt is default\n2. Check the description of the HTTP_Request_Tool, it guides the agent to provide a query string with several parameters instead of a JSON object",
+        "height": 483.0226244343891,
+        "width": 616.8597285067872
+      },
+      "id": "530c707f-667a-4e6a-8d51-cdff60577a62",
+      "name": "Sticky Note26",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        6520,
+        2620
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "url": "http://www.paulgraham.com/articles.html",
+        "options": {}
+      },
+      "id": "d6db0e64-382d-4cdc-b02c-e9be2238af33",
+      "name": "Fetch essay list",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        480,
+        4000
+      ],
+      "typeVersion": 4.1
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "dataPropertyName": "=data",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "essay",
+              "cssSelector": "table table a",
+              "returnValue": "attribute",
+              "attribute": "href",
+              "returnArray": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9cf5b501-2ce7-4c16-b3f4-23f7061b6e76",
+      "name": "Extract essay names",
+      "type": "n8n-nodes-base.html",
+      "position": [
+        700,
+        4000
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "url": "=http://www.paulgraham.com/{{ $json.essay }}",
+        "options": {}
+      },
+      "id": "a66f6e59-1151-4496-be4f-085fccf16dcb",
+      "name": "Fetch essay texts",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1360,
+        4000
+      ],
+      "typeVersion": 4.1
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "title",
+              "cssSelector": "title"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bc5c945e-e64f-45ba-8f79-4b42e8d46e2f",
+      "name": "Extract title",
+      "type": "n8n-nodes-base.html",
+      "position": [
+        1700,
+        3700
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "title",
+              "stringValue": "={{ $json.title }}"
+            },
+            {
+              "name": "summary",
+              "stringValue": "={{ $json.response.text }}"
+            },
+            {
+              "name": "url",
+              "stringValue": "=http://www.paulgraham.com/{{ $('Limit to first 3').item.json.essay }}"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "87f2945d-7fb5-4fbb-98b8-ebaa9a32dad4",
+      "name": "Clean up",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2360,
+        3980
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "essay",
+        "options": {}
+      },
+      "id": "151769e6-ad5e-4d94-91ed-5b3bdb44c77e",
+      "name": "Split out into items",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        920,
+        4000
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "maxItems": 3
+      },
+      "id": "e890dc4c-50bb-48f7-a711-7e5fcb8b9f5b",
+      "name": "Limit to first 3",
+      "type": "n8n-nodes-base.limit",
+      "position": [
+        1140,
+        4000
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "ba79f00b-2e5e-4371-8536-233eb0b4e1ae",
+      "name": "Default Data Loader",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "position": [
+        1820,
+        4200
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "bf380b3e-68ef-436f-831f-0a27fd6141c8",
+      "name": "Recursive Character Text Splitter",
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "position": [
+        1820,
+        4340
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "id": "cdd6e7a8-c5b1-4a4c-b382-cfd40d44939b",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        2160,
+        3980
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "operationMode": "documentLoader",
+        "options": {}
+      },
+      "id": "39a0c8ef-0fb0-42d9-ba6c-5242a7db72e5",
+      "name": "Summarization Chain",
+      "type": "@n8n/n8n-nodes-langchain.chainSummarization",
+      "position": [
+        1720,
+        4000
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "content": "## Scrape latest Paul Graham essays",
+        "height": 285.66037735849045,
+        "width": 1071.752021563343
+      },
+      "id": "5a529fe8-8135-4830-a352-70bafeca7479",
+      "name": "Sticky Note27",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        420,
+        3920
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Summarize them with GPT",
+        "height": 606.7924528301882,
+        "width": 465.3908355795153
+      },
+      "id": "b3113671-3843-466f-bc1f-8c5f9c5badd7",
+      "name": "Sticky Note28",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1620,
+        3920
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "34224b7a-6603-4e9e-8f26-8c06c86c31f2",
+      "name": "OpenAI Chat Model3",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        1680,
+        4200
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "books",
+        "options": {}
+      },
+      "id": "283154df-6b52-4e9e-8793-621bbfa0f8f9",
+      "name": "Split Out",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        3780,
+        4320
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "aed46ac1-64ff-4d8d-9d4e-4394be1871fd",
+      "name": "Convert to CSV File",
+      "type": "n8n-nodes-base.convertToFile",
+      "position": [
+        4560,
+        4320
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "books",
+              "cssSelector": ".row > li",
+              "returnValue": "html",
+              "returnArray": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ff600580-828b-433a-ad63-fc37fda447ad",
+      "name": "Extract all books from the page",
+      "type": "n8n-nodes-base.html",
+      "position": [
+        3560,
+        4320
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "sortFieldsUi": {
+          "sortField": [
+            {
+              "fieldName": "price",
+              "order": "descending"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4971deb4-5bed-45da-a33d-8fa5537aa4da",
+      "name": "Sort by price",
+      "type": "n8n-nodes-base.sort",
+      "position": [
+        4220,
+        4320
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "dataPropertyName": "books",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "title",
+              "cssSelector": "h3 > a",
+              "returnValue": "attribute",
+              "attribute": "title"
+            },
+            {
+              "key": "price",
+              "cssSelector": ".price_color"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "69af62f6-d065-48ba-ae2f-d8aadd4413bc",
+      "name": "Extract individual book price",
+      "type": "n8n-nodes-base.html",
+      "position": [
+        4000,
+        4320
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1zyiRT7iIlfzZiskC9vDVoAFnW_UNMVXX0-ESVU1yYxY",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zyiRT7iIlfzZiskC9vDVoAFnW_UNMVXX0-ESVU1yYxY/edit?usp=drivesdk",
+          "cachedResultName": "Scraped Data"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gid=0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1zyiRT7iIlfzZiskC9vDVoAFnW_UNMVXX0-ESVU1yYxY/edit#gid=0",
+          "cachedResultName": "Sheet1"
+        },
+        "columns": {
+          "value": {},
+          "schema": [
+            {
+              "id": "title",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "title",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "price",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "price",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "mappingMode": "autoMapInputData",
+          "matchingColumns": []
+        },
+        "options": {}
+      },
+      "id": "904b5919-76b7-4113-8f3c-64c7e6cdf099",
+      "name": "Save to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        4560,
+        4540
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "resource": "worksheet",
+        "operation": "append",
+        "workbook": {
+          "__rl": true,
+          "mode": "id",
+          "value": "=EA8A73F11507ECE9!24392"
+        },
+        "worksheet": {
+          "__rl": true,
+          "mode": "list",
+          "value": "{00000000-0001-0000-0000-000000000000}",
+          "cachedResultName": "Sheet1"
+        },
+        "dataMode": "autoMap",
+        "options": {}
+      },
+      "id": "e4a16721-03f3-476a-9f0e-54850035adf5",
+      "name": "Save to Microsoft Excel 365",
+      "type": "n8n-nodes-base.microsoftExcel",
+      "position": [
+        4560,
+        4100
+      ],
+      "typeVersion": 2.1
+    },
+    {
+      "parameters": {
+        "sendTo": "constact@mihai.ltd",
+        "subject": "bookstore csv",
+        "message": "Hey, here's the scraped data from the online bookstore!",
+        "options": {
+          "attachmentsUi": {
+            "attachmentsBinary": [
+              {}
+            ]
+          }
+        }
+      },
+      "id": "1fefdac1-7bbf-41e0-b5f9-1e3bbb48e650",
+      "name": "Send CSV via e-mail",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        4780,
+        4320
+      ],
+      "typeVersion": 2.1,
+      "webhookId": "29d0cfef-9d54-4000-9ca7-69f84a0328b5"
+    },
+    {
+      "parameters": {
+        "url": "http://books.toscrape.com",
+        "options": {
+          "allowUnauthorizedCerts": true
+        }
+      },
+      "id": "4b75d522-f531-4bad-9340-d5f5db38fe49",
+      "name": "Fetch website content",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        3340,
+        4320
+      ],
+      "typeVersion": 4.1
+    },
+    {
+      "parameters": {
+        "content": "### You need to setup Microsoft Azure credentials with Microsoft Graph permissions.",
+        "height": 184.90255200662574
+      },
+      "id": "d8b0e94c-cb47-4692-89e7-b91f25fadee6",
+      "name": "Sticky Note29",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4360,
+        3880
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Unlike Google Sheets where we did not need to have a certain format, here we need to create the column headers, otherwise the appending to the sheet won't work.",
+        "height": 183.1237982918667
+      },
+      "id": "e9431d37-c361-4c1c-af9c-1360bfc0bfd6",
+      "name": "Sticky Note30",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4640,
+        3880
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### For these steps to work you will need to have Drive, Sheets and Gmail APIs enabled in your Google Cloud Account",
+        "height": 135.09744799337426
+      },
+      "id": "1b322349-5eff-414d-81e6-6e35119517ef",
+      "name": "Sticky Note31",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4760,
+        4520
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Automated Web Scraping: email a CSV, save to Google Sheets & Microsoft Excel\n\nSet-up steps:\n1. Change the website to scrape in the \"Fetch website content\" node\n2. Configure Microsoft Azure credentials with Microsoft Graph permissions (required for the Save to Microsoft Excel 365 node)\n3. Configure Google Cloud credentials with access to Google Drive, Google Sheets and Gmail APIs (the latter is required for the Send CSV via e-mail node).",
+        "height": 297,
+        "width": 579
+      },
+      "id": "0785bb45-3d64-4a81-8f0a-869b7ec05fc2",
+      "name": "Sticky Note32",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3100,
+        3840
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "extractionValues": {
+          "values": [
+            {
+              "key": "countries",
+              "cssSelector": "ol > li > a",
+              "returnValue": "attribute",
+              "attribute": "href",
+              "returnArray": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "HTML Extract",
+      "type": "n8n-nodes-base.htmlExtract",
+      "position": [
+        20,
+        5380
+      ],
+      "typeVersion": 1,
+      "id": "571c7716-1c93-42cf-ab85-1ac5fdd262cd"
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {
+          "reset": false
+        }
+      },
+      "name": "SplitInBatches",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        420,
+        5380
+      ],
+      "typeVersion": 1,
+      "id": "64477203-6800-4141-9e31-392628848de7"
+    },
+    {
+      "parameters": {
+        "sourceData": "binary",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "next_button",
+              "cssSelector": "span.next > a",
+              "returnValue": "attribute",
+              "attribute": "href"
+            },
+            {
+              "key": "names",
+              "cssSelector": "td.table-name",
+              "returnArray": true
+            },
+            {
+              "key": "swifts",
+              "cssSelector": "td.table-swift",
+              "returnArray": true
+            },
+            {
+              "key": "cities",
+              "cssSelector": "td.table-city",
+              "returnArray": true
+            },
+            {
+              "key": "branches",
+              "cssSelector": "td.table-branch",
+              "returnArray": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "HTML Extract1",
+      "type": "n8n-nodes-base.htmlExtract",
+      "position": [
+        2280,
+        5160
+      ],
+      "typeVersion": 1,
+      "id": "e5ed5431-0af9-42c2-8d55-f0397ba18e85"
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "collection": "swifts.meetup",
+        "fields": "iso_code,country,page,name,branch,city,swift_code,createdAt,updatedAt",
+        "options": {
+          "dateFields": "createdAt,updatedAt"
+        }
+      },
+      "name": "MongoDB1",
+      "type": "n8n-nodes-base.mongoDb",
+      "position": [
+        2800,
+        5160
+      ],
+      "typeVersion": 1,
+      "id": "efdbb178-ea5c-477c-a09b-b84e5068f92f"
+    },
+    {
+      "parameters": {
+        "group": "geographic",
+        "tool": "getCountryNormalized",
+        "country": "={{$node[\"SplitInBatches\"].json[\"country\"].replace(/[\\/0-9]/g, \"\")}}",
+        "additionalOptions": {}
+      },
+      "name": "uProc",
+      "type": "n8n-nodes-base.uproc",
+      "position": [
+        620,
+        5380
+      ],
+      "typeVersion": 1,
+      "id": "c38cd042-cb34-4f50-b7b9-f2f89a098953"
+    },
+    {
+      "parameters": {
+        "functionCode": "var newItems = [];\n\nfor (i = 0; i < items[0].json.swifts.length; i++) {\n  var item = {\n    iso_code: $node['uProc'].json.message.code,\n    country: $node['SplitInBatches'].json.country.replace(/[-\\/0-9]/g, \"\"),\n    page: $node['Set Page to Scrape'].json.page,\n    name: items[0].json.names[i],\n    city: items[0].json.cities[i],\n    branch: items[0].json.branches[i],\n    swift_code: items[0].json.swifts[i],\n    createdAt: new Date(),\n    updatedAt: new Date()\n  }\n  newItems.push({json: item});\n}\n\nreturn newItems;\n\n"
+      },
+      "name": "Prepare Documents",
+      "type": "n8n-nodes-base.function",
+      "position": [
+        2460,
+        5160
+      ],
+      "typeVersion": 1,
+      "id": "5574b697-11c1-409c-80c0-5a411a1f8fb5"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$node[\"SplitInBatches\"].context[\"noItemsLeft\"] + \"\"}}",
+              "value2": "true"
+            }
+          ]
+        }
+      },
+      "name": "More Countries",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        2340,
+        5660
+      ],
+      "typeVersion": 1,
+      "id": "6ed26797-54be-4779-92a7-da8ee26e79f9"
+    },
+    {
+      "parameters": {
+        "functionCode": "const staticData = getWorkflowStaticData('global');\n\nitem.page = \"\";\nif (staticData.page && staticData.page.length) {\n  item.page = staticData.page;\n} else {\n  item.page = $node['SplitInBatches'].json.country;\n}\nreturn item;\n"
+      },
+      "name": "Set Page to Scrape",
+      "type": "n8n-nodes-base.functionItem",
+      "position": [
+        800,
+        5240
+      ],
+      "typeVersion": 1,
+      "id": "2cfc0175-9099-4fbc-a28c-edfb152a8042"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json[\"more_pages\"] + \"\"}}",
+              "value2": "true"
+            }
+          ]
+        }
+      },
+      "name": "More Pages",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        2600,
+        5580
+      ],
+      "typeVersion": 1,
+      "id": "3894140d-49ef-4c34-93db-0294eea55947"
+    },
+    {
+      "parameters": {
+        "functionCode": "var next_page = $node['HTML Extract1'].json.next_button && $node['HTML Extract1'].json.next_button.length ? $node['HTML Extract1'].json.next_button : \"\";\nvar more_pages = next_page.length > 0;\nconst staticData = getWorkflowStaticData('global');\n\n//all current items are after date: needs pagination\nif (more_pages) {\n  staticData.page = next_page;\n} else {\n  //don't check more items in previous pages;\n  delete staticData.page;\n}\n\nreturn [\n  {\n    json: {\n      more_pages: more_pages\n    }\n  }\n];\n"
+      },
+      "name": "Set More Pages",
+      "type": "n8n-nodes-base.function",
+      "position": [
+        3000,
+        5160
+      ],
+      "typeVersion": 1,
+      "id": "e7f093b9-2de6-4db1-8825-de30e6729ab9"
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "url",
+              "value": "=https://www.theswiftcodes.com{{$node[\"Set Page to Scrape\"].json[\"page\"]}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        960,
+        5240
+      ],
+      "typeVersion": 1,
+      "id": "f69011bb-9d00-440f-97bc-48bcca276ec2"
+    },
+    {
+      "parameters": {
+        "functionCode": "var generateNameFromUrl = function(url){\n    return url.replace(/[^a-z0-9]/gi, \"_\");\n}\n\nitem.file = generateNameFromUrl(item.url) + \".html\"\nreturn item;"
+      },
+      "name": "Generate filename",
+      "type": "n8n-nodes-base.functionItem",
+      "position": [
+        1120,
+        5180
+      ],
+      "typeVersion": 1,
+      "id": "f74dc64c-3949-4962-b7e5-246a3d5cbe05"
+    },
+    {
+      "parameters": {
+        "filePath": "=/home/node/.cache/scrapper/{{$json[\"file\"]}}"
+      },
+      "name": "Read Binary File",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "position": [
+        1300,
+        5180
+      ],
+      "typeVersion": 1,
+      "alwaysOutputData": true,
+      "id": "8698b4cf-069d-4724-a560-734ddc8f5dd2",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$node[\"Read Binary File\"].binary.data.mimeType}}",
+              "value2": "text/html"
+            }
+          ]
+        }
+      },
+      "name": "File exists?",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1480,
+        5180
+      ],
+      "typeVersion": 1,
+      "id": "0a4313a8-35c3-4188-be4a-e1f049a996c1"
+    },
+    {
+      "parameters": {
+        "fileName": "=/home/node/.cache/scrapper/{{$node[\"Generate filename\"].json[\"file\"]}}",
+        "dataPropertyName": "=data",
+        "options": {}
+      },
+      "name": "Write Binary File",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "position": [
+        2000,
+        5380
+      ],
+      "typeVersion": 1,
+      "id": "b1b959d1-bf8f-49cc-8f82-7a4548d06dfd"
+    },
+    {
+      "parameters": {
+        "filePath": "=/home/node/.cache/scrapper/{{$json[\"file\"]}}"
+      },
+      "name": "Read Binary File1",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "position": [
+        2100,
+        5160
+      ],
+      "typeVersion": 1,
+      "alwaysOutputData": true,
+      "id": "f072a5a6-ad35-4109-8dec-f4262746d505",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "functionCode": "const waitTimeSeconds = 1;\n\nreturn new Promise((resolve) => {\n  setTimeout(() => {\n    resolve([]);\n  }, waitTimeSeconds * 1000);\n});\n"
+      },
+      "name": "Wait",
+      "type": "n8n-nodes-base.function",
+      "position": [
+        1700,
+        5380
+      ],
+      "typeVersion": 1,
+      "alwaysOutputData": true,
+      "id": "c21b4520-d886-4803-9a81-3bc5a72e2753",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "functionCode": "return items[0].json.countries.map(function(country) {\n  return {\n  json: {country: country}\n  }\n});"
+      },
+      "name": "Prepare countries",
+      "type": "n8n-nodes-base.function",
+      "position": [
+        220,
+        5380
+      ],
+      "typeVersion": 1,
+      "id": "d0f18906-d308-4497-9d4d-54cb8d516391"
+    },
+    {
+      "parameters": {},
+      "name": "Create Directory",
+      "type": "n8n-nodes-base.executeCommand",
+      "position": [
+        -420,
+        5380
+      ],
+      "typeVersion": 1,
+      "id": "59a30898-80f3-4c76-b68b-7146a1aa9e1f",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "collection": "swifts.meetup",
+        "options": {},
+        "query": "={\"swift_code\": \"{{$json[\"swift_code\"]}}\"}"
+      },
+      "name": "MongoDB",
+      "type": "n8n-nodes-base.mongoDb",
+      "position": [
+        2620,
+        5080
+      ],
+      "executeOnce": false,
+      "typeVersion": 1,
+      "alwaysOutputData": true,
+      "id": "32de83b4-938a-46d3-9359-702b9e150efe",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "https://www.theswiftcodes.com/browse-by-country/",
+        "responseFormat": "string",
+        "options": {}
+      },
+      "name": "HTTP Request2",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -160,
+        5380
+      ],
+      "typeVersion": 1,
+      "id": "1f340ae6-f1f1-40b7-a9ba-0a895ca02b88"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://yqtvdcvjboenlblgcivl.supabase.co/storage/v1/object/list/private",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "supabaseApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"prefix\": \"\",\n  \"limit\": 100,\n  \"offset\": 0,\n  \"sortBy\": {\n    \"column\": \"name\",\n    \"order\": \"asc\"\n  }\n}",
+        "options": {}
+      },
+      "id": "6cab07ca-19a5-4261-9add-60bc7fc027c6",
+      "name": "Get All files",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2260,
+        -2820
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
+      "id": "bc2218ee-477a-4d1b-8073-b302593fb5ef",
+      "name": "Extract Document PDF",
+      "type": "n8n-nodes-base.extractFromFile",
+      "position": [
+        3100,
+        -2720
+      ],
+      "typeVersion": 1,
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-small",
+        "options": {}
+      },
+      "id": "46ba2346-02ac-4b1c-aa21-7c8228428cc4",
+      "name": "Embeddings OpenAI",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "position": [
+        3460,
+        -2640
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "tableId": "files",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "name",
+              "fieldValue": "={{ $('Loop Over Items').item.json.name }}"
+            },
+            {
+              "fieldId": "storage_id",
+              "fieldValue": "={{ $('Loop Over Items').item.json.id }}"
+            }
+          ]
+        }
+      },
+      "id": "1c61cd52-cb42-4959-8564-78a3989a1bac",
+      "name": "Create File record2",
+      "type": "n8n-nodes-base.supabase",
+      "position": [
+        3400,
+        -2820
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "files"
+      },
+      "id": "bb512132-3207-47c3-9304-67458bddafb1",
+      "name": "Get All Files",
+      "type": "n8n-nodes-base.supabase",
+      "position": [
+        1880,
+        -2820
+      ],
+      "typeVersion": 1,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "url": "=https://yqtvdcvjboenlblgcivl.supabase.co/storage/v1/object/private/{{ $json.name }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "supabaseApi",
+        "options": {}
+      },
+      "id": "0d1a003a-1ad6-44e0-b001-08c824773d18",
+      "name": "Download",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2760,
+        -2820
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "batchSize": "=1",
+        "options": {}
+      },
+      "id": "4ee20956-e95c-45bb-9c1f-f6cb69922b8c",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        2420,
+        -2820
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "402099f5-72de-477d-a56e-d18ba8729117",
+      "name": "Aggregate",
+      "type": "n8n-nodes-base.aggregate",
+      "position": [
+        2080,
+        -2820
+      ],
+      "typeVersion": 1,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-small",
+        "options": {}
+      },
+      "id": "3e3a2818-4ab4-4fd2-b274-1f8dd056e293",
+      "name": "Embeddings OpenAI2",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "position": [
+        2880,
+        -3260
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "name": "knowledge_base",
+        "description": "Retrieve data about user request",
+        "topK": 8
+      },
+      "id": "df8bea62-fafb-496a-9710-33c8532ebde9",
+      "name": "Vector Store Tool1",
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "position": [
+        2960,
+        -3540
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "version": 1,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "operator": {
+                      "type": "boolean",
+                      "operation": "true",
+                      "singleValue": true
+                    },
+                    "leftValue": "={{$binary.data?.fileExtension == undefined }}",
+                    "rightValue": "txt"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "txt"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "version": 1,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "bf04cbec-dd86-4607-988f-4c96b6fd4b58",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{$binary.data.fileExtension  }}",
+                    "rightValue": "pdf"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "pdf"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4bdba8cc-fc8c-4757-b762-9d0d60841343",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        2920,
+        -2820
+      ],
+      "typeVersion": 3.1
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "tableName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "documents",
+          "cachedResultName": "documents"
+        },
+        "options": {
+          "queryName": "match_documents"
+        }
+      },
+      "id": "aaf90445-593c-4a1e-9b60-b5dfec85388c",
+      "name": "Insert into Supabase Vectorstore",
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "position": [
+        3560,
+        -2820
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "tableName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "documents",
+          "cachedResultName": "documents"
+        },
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "file_id",
+                "value": "300b0128-0955-4058-b0d3-a9aefe728432"
+              }
+            ]
+          }
+        }
+      },
+      "id": "e8fcd7d7-1b93-453a-b97b-e726f7838f4e",
+      "name": "Supabase Vector Store",
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "position": [
+        2880,
+        -3380
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $('Merge1').item.json.data ?? $('Merge1').item.json.text }}",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "=file_id",
+                "value": "={{ $json.id }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "92ef6e0b-bb99-47f1-9140-e254dd2181b2",
+      "name": "Default Data Loader1",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "position": [
+        3640,
+        -2620
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "chunkSize": 500,
+        "chunkOverlap": 200,
+        "options": {}
+      },
+      "id": "86201681-2a76-4f6c-86e5-10b562c089b7",
+      "name": "Recursive Character Text Splitter1",
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "position": [
+        3640,
+        -2440
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "9b14e306-a04d-40f7-bc5b-b8eda8d8f7f2",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              },
+              "leftValue": "={{ \n    !$('Aggregate').item.json.data || \n    !Array.isArray($('Aggregate').item.json.data) || \n    !$('Aggregate').item.json.data.some(item => \n        item.storage_id === $('Loop Over Items').item.json.id \n    ) \n}}",
+              "rightValue": ""
+            },
+            {
+              "id": "c3c0af88-9aea-4539-8948-1b69e601c27c",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              },
+              "leftValue": "={{ $json.name }}",
+              "rightValue": ".emptyFolderPlaceholder"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "019f51f6-11a0-456e-8fc7-4990288a3042",
+      "name": "If2",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        2580,
+        -2820
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "b53ccc2d-f805-4ff5-b470-364fdaea5ca6",
+      "name": "OpenAI Chat Model4",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        2800,
+        -3540
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "23df3fba-f91b-493a-bbfc-06b2c0ac76c7",
+      "name": "OpenAI Chat Model5",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        3160,
+        -3400
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "65e4021a-2124-4a8a-8303-a073ed491b89",
+      "name": "Merge1",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        3240,
+        -2820
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "1aea88b5-8e12-4431-aa8b-9561a64ddfb9",
+      "name": "AI Agent1",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        2880,
+        -3740
+      ],
+      "typeVersion": 1.7
+    },
+    {
+      "parameters": {
+        "content": "### Replace Storage name, database ID and credentials.",
+        "height": 89.3775420487804
+      },
+      "id": "47035459-d9d8-4b72-aee1-bd4fff790d9d",
+      "name": "Sticky Note33",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2200,
+        -2940
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Replace credentials.",
+        "height": 80
+      },
+      "id": "82ede63f-76fc-4eb0-8d1e-b34913e6b657",
+      "name": "Sticky Note34",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1840,
+        -2940
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Replace credentials.",
+        "height": 80
+      },
+      "id": "d4214031-2d9f-4d97-a44e-2eac84d6408b",
+      "name": "Sticky Note35",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3400,
+        -2940
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Replace Storage name, database ID and credentials.",
+        "height": 89.3775420487804
+      },
+      "id": "02c067fa-b63c-4ee6-ab82-7ad5abf09c3f",
+      "name": "Sticky Note36",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2700,
+        -2940
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Replace credentials.",
+        "height": 80
+      },
+      "id": "fbd7ca9d-453d-4e2e-8c7c-58eee703b8a6",
+      "name": "Sticky Note37",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3360,
+        -2500
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Replace credentials.",
+        "height": 80
+      },
+      "id": "5cf038b7-0b5a-45c9-9eda-05aba3847a76",
+      "name": "Sticky Note38",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3000,
+        -3240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### ... or watch set up video [10 min]\n[![Youtube Thumbnail](https://res.cloudinary.com/de9jgixzm/image/upload/v1739773273/Youtube%20Thumbs/Chat%20With%20FIles.png)](https://www.youtube.com/watch?v=glWUkdZe_3w)\n",
+        "height": 239.5888196628349,
+        "width": 330.5152611046425,
+        "color": 7
+      },
+      "id": "8e61057a-e982-473a-9a31-82c7680736b6",
+      "name": "Sticky Note39",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1340,
+        -3660
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "![5min Logo](https://res.cloudinary.com/de9jgixzm/image/upload/v1739773200/Skool%20Assets/ejm3hqnvhgwpnu2fv92s.png)\n## AI Agent To Chat With Files In Supabase Storage\n**Made by [Mark Shcherbakov](https://www.linkedin.com/in/marklowcoding/) from community [5minAI](https://www.skool.com/5minai-2861)**\n\nManually retrieving and analyzing specific information from large document repositories is time-consuming and inefficient. This workflow automates the process by vectorizing documents and enabling AI-powered interactions, making it easy to query and retrieve context-based information from uploaded files.\n\nThe workflow integrates Supabase with an AI-powered chatbot to process, store, and query text and PDF files. The steps include:\n- Fetching and comparing files to avoid duplicate processing.\n- Handling file downloads and extracting content based on the file type.\n- Converting documents into vectorized data for contextual information retrieval.\n- Storing and querying vectorized data from a Supabase vector store.\n\n",
+        "height": 497.1532689930921,
+        "width": 636.2128494576581,
+        "color": 7
+      },
+      "id": "ca4564c6-eae3-46ac-81a4-3c56c974e4b4",
+      "name": "Sticky Note40",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        960,
+        -4120
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Set up steps\n\n1. **Fetch File List from Supabase**:\n   - Use Supabase to retrieve the stored file list from a specified bucket.\n   - Add logic to manage empty folder placeholders returned by Supabase, avoiding incorrect processing.\n\n2. **Compare and Filter Files**:\n   - Aggregate the files retrieved from storage and compare them to the existing list in the Supabase `files` table.\n   - Exclude duplicates and skip placeholder files to ensure only unprocessed files are handled.\n\n3. **Handle File Downloads**:\n   - Download new files using detailed storage configurations for public/private access.\n   - Adjust the storage settings and GET requests to match your Supabase setup.\n\n4. **File Type Processing**:\n   - Use a Switch node to target specific file types (e.g., PDFs or text files).\n   - Employ relevant tools to process the content:\n     - For PDFs, extract embedded content.\n     - For text files, directly process the text data.\n\n5. **Content Chunking**:\n   - Break large text data into smaller chunks using the Text Splitter node.\n   - Define chunk size (default: 500 tokens) and overlap to retain necessary context across chunks.\n\n6. **Vector Embedding Creation**:\n   - Generate vectorized embeddings for the processed content using OpenAI's embedding tools.\n   - Ensure metadata, such as file ID, is included for easy data retrieval.\n\n7. **Store Vectorized Data**:\n   - Save the vectorized information into a dedicated Supabase vector store.\n   - Use the default schema and table provided by Supabase for seamless setup.\n\n8. **AI Chatbot Integration**:\n   - Add a chatbot node to handle user input and retrieve relevant document chunks.\n   - Use metadata like file ID for targeted queries, especially when multiple documents are involved.",
+        "height": 545.9087885077763,
+        "width": 280.2462120317618,
+        "color": 7
+      },
+      "id": "f1ac8f8a-1187-44d2-a36b-557caaf34585",
+      "name": "Sticky Note41",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1040,
+        -3660
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Scenario 2 - AI agent",
+        "height": 809.7437181509877,
+        "width": 951.7421645394404,
+        "color": 5
+      },
+      "id": "9d62d6a4-603a-4c2b-91f6-7e7c3887333c",
+      "name": "Sticky Note42",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2400,
+        -3880
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Scenario 1 - Flow for adding new files from Supabase storage",
+        "height": 739.2522526116408,
+        "width": 2304.723519246249,
+        "color": 5
+      },
+      "id": "bd2d18f7-6486-4599-a375-9c3b208ef3a4",
+      "name": "Sticky Note43",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1600,
+        -3000
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Get table definition to find all columns and types",
+        "operation": "executeQuery",
+        "query": "select\n  c.column_name,\n  c.data_type,\n  c.is_nullable,\n  c.column_default,\n  tc.constraint_type,\n  ccu.table_name AS referenced_table,\n  ccu.column_name AS referenced_column\nfrom\n  information_schema.columns c\nLEFT join\n  information_schema.key_column_usage kcu\n  ON c.table_name = kcu.table_name\n  AND c.column_name = kcu.column_name\nLEFT join\n  information_schema.table_constraints tc\n  ON kcu.constraint_name = tc.constraint_name\n  AND tc.constraint_type = 'FOREIGN KEY'\nLEFT join\n  information_schema.constraint_column_usage ccu\n  ON tc.constraint_name = ccu.constraint_name\nwhere\n  c.table_name = '{{ $fromAI(\"table_name\") }}'\n  AND c.table_schema = '{{ $fromAI(\"schema_name\") }}'\norder by\n  c.ordinal_position",
+        "options": {}
+      },
+      "id": "57822949-a3bf-4af3-9378-a8da8c7873f5",
+      "name": "Get Table Definition",
+      "type": "n8n-nodes-base.postgresTool",
+      "position": [
+        1220,
+        -2780
+      ],
+      "typeVersion": 2.5
+    },
+    {
+      "parameters": {},
+      "id": "7306ea5e-6286-46a0-8dae-2dfc67c190aa",
+      "name": "Chat History",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "position": [
+        560,
+        -2760
+      ],
+      "typeVersion": 1.3
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Get all the data from Postgres, make sure you append the tables with correct schema. Every table is associated with some schema in the database.",
+        "operation": "executeQuery",
+        "query": "{{ $fromAI(\"sql_query\", \"SQL Query\") }}",
+        "options": {}
+      },
+      "id": "9e34338f-73b9-4c26-8a3e-48610b6c91b3",
+      "name": "Execute SQL Query",
+      "type": "n8n-nodes-base.postgresTool",
+      "position": [
+        820,
+        -2780
+      ],
+      "typeVersion": 2.5
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Get list of all tables with their schema in the database",
+        "operation": "executeQuery",
+        "query": "SELECT \n    table_schema,\n    table_name\nFROM information_schema.tables\nWHERE table_type = 'BASE TABLE'\n    AND table_schema NOT IN ('pg_catalog', 'information_schema')\nORDER BY table_schema, table_name;",
+        "options": {}
+      },
+      "id": "4b74a1ca-bf12-486a-9646-10a3abdd8404",
+      "name": "Get DB Schema and Tables List",
+      "type": "n8n-nodes-base.postgresTool",
+      "position": [
+        1020,
+        -2780
+      ],
+      "typeVersion": 2.5
+    },
+    {
+      "parameters": {
+        "agent": "openAiFunctionsAgent",
+        "options": {
+          "systemMessage": "You are DB assistant. You need to run queries in DB aligned with user requests.\n\nRun custom SQL query to aggregate data and response to user. Make sure every table has schema prefix to it in sql query which you can get from `Get DB Schema and Tables List` tool.\n\nFetch all data to analyse it for response if needed.\n\n## Tools\n\n- Execute SQL query - Executes any sql query generated by AI\n- Get DB Schema and Tables List - Lists all the tables in database with its schema name\n- Get Table Definition - Gets the table definition from db using table name and schema name"
+        }
+      },
+      "id": "b8af8e5e-7290-47f6-993a-ed29b6d14731",
+      "name": "AI Agent2",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        440,
+        -3000
+      ],
+      "typeVersion": 1.7
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "id": "7c456a0b-2ef5-41c0-832c-590ec9b24fa5",
+      "name": "OpenAI Chat Model6",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        380,
+        -2760
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "content": "### 👨‍🎤 Setup\n1. Add your **postgresql** and **OpenAI** credentials.\n2. Click **Chat** button and start asking questions to your database.\n3. Activate the workflow and you can make the chat publicly available.",
+        "height": 120,
+        "width": 560,
+        "color": 5
+      },
+      "id": "deb3d055-bb11-46db-ac32-2e78ce2d8887",
+      "name": "Sticky Note44",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        380,
+        -3280
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "🛠️ Tools Used:\n1. Execute SQL Query: Used to execute any query generated by the agent.\n2. Get DB Schema and Tables List: It returns the list of all the tables with its schema name.\n3. Get Table Definition: It returns table details like column names, foreign keys and more of a particular table in a schema.",
+        "height": 156,
+        "width": 562,
+        "color": 7
+      },
+      "id": "8e5cf804-d505-4129-904e-845dfb374bd8",
+      "name": "Sticky Note45",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        440,
+        -1780
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "👆 You can exchange this with any other chat model of your choice.",
+        "height": 99,
+        "width": 162,
+        "color": 7
+      },
+      "id": "61c00e03-b223-4296-b486-fca4a2afb765",
+      "name": "Sticky Note46",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        340,
+        -2620
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "👆 You can change how many number of messages to keep using `Context Window Length` option. It's 5 by default.",
+        "height": 159,
+        "width": 162,
+        "color": 7
+      },
+      "id": "a81d4d12-0f0f-455f-a288-f71928b107cf",
+      "name": "Sticky Note47",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        540,
+        -2620
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "url": "https://app.scrapingbee.com/api/v1",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "api_key",
+              "value": "<your_scrapingbee_apikey>"
+            },
+            {
+              "name": "url",
+              "value": "={{$json.url}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "33ea7ce8-ebcb-4154-a20b-aef1023abbbe",
+      "name": "ScrapingBee- Get page HTML",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1180,
+        -760
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-1.5-pro-latest",
+        "options": {}
+      },
+      "id": "f20604ab-6650-4773-880a-d17ed6e63e4e",
+      "name": "Google Gemini Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "position": [
+        700,
+        -1220
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "",
+          "cachedResultUrl": "",
+          "cachedResultName": "Google Sheets - Workflow Vision-Based Scraping"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gid=0",
+          "cachedResultUrl": "",
+          "cachedResultName": "List of URLs"
+        },
+        "options": {}
+      },
+      "id": "58a67f4c-cd7b-4ac0-a2d1-f0cae75aee58",
+      "name": "Google Sheets - Get list of URLs",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        -480,
+        -1660
+      ],
+      "typeVersion": 4.5
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c53c5ed2-9c7b-4365-9953-790264c722ab",
+              "name": "url",
+              "type": "string",
+              "value": "={{ $json.url }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "56a667a8-587b-4c68-a163-7c5081755ddc",
+      "name": "Set fields",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -60,
+        -1660
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "url": "https://app.scrapingbee.com/api/v1",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "api_key",
+              "value": "<your_scrapingbee_apikey>"
+            },
+            {
+              "name": "url",
+              "value": "={{ $json.url }}"
+            },
+            {
+              "name": "screenshot_full_page",
+              "value": "true"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6ddceaf5-c696-403e-b65d-2d6052323cec",
+      "name": "ScrapingBee - Get page screenshot",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        340,
+        -1660
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "name": "HTMLScrapingTool",
+        "description": "=Call this tool ONLY when you need to retrieve the HTML content of a webpage.",
+        "workflowId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "PpFVCrTiYoa35q1m",
+          "cachedResultName": "vb-scraping"
+        },
+        "responsePropertyName": "data"
+      },
+      "id": "6d53f7e4-da1b-4743-9aaa-5a097f329c89",
+      "name": "HTML-based Scraping Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "position": [
+        1060,
+        -1220
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1g81_39MJUlwnInX30ZuBtHUb-Y80WrYyF5lccaRtcu0",
+          "cachedResultUrl": "",
+          "cachedResultName": "Google Sheets - Workflow Vision-Based Scraping"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": 648398171,
+          "cachedResultUrl": "",
+          "cachedResultName": "Results"
+        },
+        "columns": {
+          "value": {
+            "promo": "={{ $json.promo }}",
+            "category": "={{ $('Set fields').item.json.url }}",
+            "product_url": "={{ $json.product_title }}",
+            "product_brand": "={{ $json.product_brand }}",
+            "product_price": "={{ $json.product_price }}",
+            "promo_percent": "={{ $json.promo_percentage }}"
+          },
+          "schema": [
+            {
+              "id": "category",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "category",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "product_url",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "product_url",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "product_price",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "product_price",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "product_brand",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "product_brand",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "promo",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "promo",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "promo_percent",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "promo_percent",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "mappingMode": "defineBelow",
+          "matchingColumns": []
+        },
+        "options": {}
+      },
+      "id": "b5f3f97d-f7c8-4256-9f87-c5addc436d36",
+      "name": "Google Sheets - Create Rows",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        2240,
+        -1660
+      ],
+      "typeVersion": 4.5
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Here is the screenshot you need to use to extract data about the page:\n\n{{ $json.url }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=Extract the following details from the input screenshot:\n\n- Product Titles\n- Product Prices\n- Brands\n- Promotional Information (e.g., if the product is on promo)\n\nStep 1: Image-Based Extraction\nAnalyze the provided screenshot to identify and extract all the required details: product titles, prices, brands, and promotional information.\nEnsure the extraction is thorough and validate the completeness of the information.\nCross-check all products for missing or unclear details.\nHighlight any limitations (e.g., text is unclear, partially cropped, or missing) in the extraction process.\n\nStep 2: HTML-Based Extraction (If Needed)\nIf you determine that any required information is:\n\nIncomplete or missing (e.g., not all titles, prices, or brands could be retrieved).\nAmbiguous or uncertain (e.g., unclear text or potential errors in OCR).\nUnavailable due to the limitations of image processing (e.g., product links).\n\nThen:\n\nCall the HTML-based tool with the input URL to access the page content.\nExtract the required details from the HTML to supplement or replace the image-based results.\nCombine data from both sources (if applicable) to ensure the final result is comprehensive and accurate.\n\nAdditional Notes\nAvoid redundant HTML tool usage—confirm deficiencies in image-based extraction before proceeding.\nFor products on promotion, explicitly label this status in the output.\nReport extraction errors or potential ambiguities (e.g., text illegibility).\n\nIn your output, include all these fields as shown in the example below. If there is no promotion, set \"promo\" to false and \"promo_percent\" to 0.\n\njson\nCopy code\n[{\n  \"product_title\": \"The title of the product\",\n  \"product_price\": \"The price of the product\",\n  \"product_brand\": \"The brand of the product\",\n  \"promo\": true,\n  \"promo_percent\": 25\n}]",
+          "passthroughBinaryImages": true
+        }
+      },
+      "id": "5adeea78-a7ea-465e-a035-1907799bef62",
+      "name": "Vision-based Scraping Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        940,
+        -1660
+      ],
+      "typeVersion": 1.7
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c53c5ed2-9c7b-4365-9953-790264c722ab",
+              "name": "url",
+              "type": "string",
+              "value": "={{ $json.query }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1086a936-60fa-49f5-bbeb-cc413e1dc88b",
+      "name": "Set fields - from AI agent query",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        780,
+        -760
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "html": "={{ $json.data }}",
+        "options": {}
+      },
+      "id": "940934b8-b5d4-4e83-bbaf-a18017867218",
+      "name": "HTML to Markdown",
+      "type": "n8n-nodes-base.markdown",
+      "position": [
+        1640,
+        -760
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "[{\n  \"product_title\":\"The title of the product\",\n  \"product_price\":\"The price of the product\",\n  \"product_brand\": \"The brand of the product\",\n  \"promo\":\"true or false\",\n  \"promo_percentage\":\"NUM %\"\n}]"
+      },
+      "id": "9d142d5d-4024-4779-9635-c41f16ad5e0d",
+      "name": "Structured Output Parser1",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "position": [
+        1380,
+        -1240
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output",
+        "options": {}
+      },
+      "id": "785ff1b0-b3c9-44ff-8061-429ae05022a4",
+      "name": "Split Out1",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        1780,
+        -1660
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Trigger\nThe default trigger is **When clicking ‘Test workflow’**, meaning the workflow will **need to be triggered manually**. \n\nYou can replace this by selecting a **trigger of your choice**.\n",
+        "height": 652.6453488372096,
+        "width": 364.53488372093034,
+        "color": 7
+      },
+      "id": "3ce0c993-e664-4c46-ab60-31f9ba99552e",
+      "name": "Sticky Note48",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1020,
+        -2120
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Google Sheets - List of URLs\n\nThe Google Sheet will contain two sheets:  \n- **List of URLs to** scrape  \n- **Results** page, populated with the scraping results and AI-extracted data.\n\nHere is an **[example Google Sheet](https://docs.google.com/spreadsheets/d/10Gc7ooUeTBbOOE6bgdNe5vSKRkkcAamonsFSjFevkOE/)** you can use. The \"Results\" sheet is pre-configured for e-commerce website scraping. You can adapt it to your specific needs, but remember to adjust the `Structured Output Parser` node accordingly.\n",
+        "height": 664.2441860465121,
+        "width": 364.53488372093034,
+        "color": 7
+      },
+      "id": "0f594635-c23a-4a85-ab2d-3dc6111dbb8c",
+      "name": "Sticky Note49",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -620,
+        -2120
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Set Fields\n\nThis node allows you to **define the fields** that will be sent to the **ScrapingBee HTTP Node** and the AI Agent. \n\nIn this template, **only one field** is pre-configured: **url**. You can customize it by adding additional fields as needed.\n",
+        "height": 667.2965116279074,
+        "width": 364.53488372093034,
+        "color": 7
+      },
+      "id": "f3adb689-1820-48ef-a71a-4ef7ae9e76e0",
+      "name": "Sticky Note50",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -220,
+        -2120
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## ScrapingBee - Get Page Screenshot\n\nThis node uses ScrapingBee, a powerful scraping tool, to capture a screenshot of the desired URL.  \nYou can [try ScrapingBee](https://www.scrapingbee.com/) and enjoy 1,000 free requests (non-affiliate link).  \n\nEnsure the `screenshot_full_page` parameter is set to *`true`* for a full-page screenshot. This is crucial for vision-based scraping with the AI Agent.  \n\nAlternatively, you can **choose to screenshot only a specific part of the page**. However, keep in mind that the **AI Agent will extract data only from the visible section—it has vision**, but not a crystal ball 🔮!\n",
+        "height": 671.8750000000002,
+        "width": 364.53488372093034,
+        "color": 7
+      },
+      "id": "c25e6109-2d3b-4190-9393-435c2f3e5a23",
+      "name": "Sticky Note51",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        220,
+        -2100
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Vision-Based Scraping AI Agent\n\nThis is the central node of the workflow, powered by an AI Agent with two key prompts:\n\n- **System Prompt**: Instructs the AI on how and what data to extract from the screenshot. You can customize this to suit your needs. It also includes fallback instructions to call a tool for retrieving the HTML page if data extraction from the screenshot fails.  \n- **User Message**: Provides the page URL for context.\n\n### Sub-Nodes\n\n1. **Google Gemini Chat Model**  \n   Chosen because tests show that **Gemini-1.5-Pro** outperforms GPT-4 and GPT-4-Vision in visual tasks. *Either my prompt wasn’t optimized for GPT models, or GPT might need glasses 👓*. \n**Other multimodal LLMs haven’t been tested yet**.\n\n2. **HTML-Based Scraping Tool**  \n   A **fallback tool** the agent **uses if it cannot extract data directly from the screenshot**.\n\n3. **Structured Output Parser**  \n   Formats the **extracted data into an easy-to-use structure**, ready to be added to the **results page in Google Sheets**.",
+        "height": 679.5058139534889,
+        "width": 1000.334302325581,
+        "color": 7
+      },
+      "id": "fc9ea6d6-e749-40db-8f17-b0357875e707",
+      "name": "Sticky Note52",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        580,
+        -2140
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Google Gemini Chat Model\n\nThe **default model is gemini-1.5-pro**. It offers excellent performance for this use case, but **it’s not the most cost-effective option—use it judiciously**.\n\n",
+        "height": 337.03488372093034,
+        "width": 305.625,
+        "color": 6
+      },
+      "id": "b4816998-8b49-42ff-8fa2-7e010ec61728",
+      "name": "Sticky Note53",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        580,
+        -1400
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### HTML-Based Scraping Tool\n\nThis tool is **invoked when the AI Agent requires the HTML** (*converted to Markdown*) to extract data because the **screenshot alone wasn’t sufficient**.\n",
+        "height": 337.03488372093034,
+        "width": 305.625,
+        "color": 6
+      },
+      "id": "726cf509-5330-4a00-a503-0ccff1443297",
+      "name": "Sticky Note54",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        920,
+        -1400
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Structured Output Parser\n\nThis node **organizes the extracted data into an easy-to-use JSON format**.  \n\nIn this template, the JSON is **designed for an e-commerce webpage**. Customize it to fit your specific needs.\n",
+        "height": 337.03488372093034,
+        "width": 305.625,
+        "color": 6
+      },
+      "id": "30a7d37f-ab83-40e6-90a0-104c61933b28",
+      "name": "Sticky Note55",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1260,
+        -1400
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Split Out\n\nThis node **splits the array** created by the `Structured Output Parser` into **individual rows**, making them easy to append to the **subsequent Google Sheets node**.\n",
+        "height": 671.8750000000002,
+        "width": 364.53488372093034,
+        "color": 7
+      },
+      "id": "82b88206-308d-4fc6-95eb-ecaffa3da48a",
+      "name": "Sticky Note56",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1640,
+        -2140
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Google Sheets - Create Rows\n\nThis node **creates rows** in the **Results** sheet using the extracted data.  \n\nYou can use the **[example Google Sheet](https://docs.google.com/spreadsheets/d/10Gc7ooUeTBbOOE6bgdNe5vSKRkkcAamonsFSjFevkOE/)** as a template. However, ensure that the **columns in the Results sheet are aligned with the structure of the output** from the `Structured Output Parser node`.\n",
+        "height": 671.8750000000002,
+        "width": 364.53488372093034,
+        "color": 7
+      },
+      "id": "90e08da2-57b8-4542-9bd7-df5d6e91c771",
+      "name": "Sticky Note57",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2100,
+        -2140
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## HTML-Scraping Tool Trigger\n\nThis **node serves as the entry point for the HTML scraping tool.  \n\nIt is triggered by the **AI Agent only when it fails to extract data** from the screenshot. The **URL** is sent as a **parameter for the query**.",
+        "height": 357.10392441860495,
+        "width": 364.53488372093034,
+        "color": 7
+      },
+      "id": "dcfbfd93-8e5c-491f-bf41-89a93b146ec2",
+      "name": "Sticky Note58",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        260,
+        -960
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Set Fields - From AI Agent Query\n\nThis node sets the fields from the AI Agent’s query.  \n\nIn this template, the only field configured is **url**.\n",
+        "height": 357.10392441860495,
+        "width": 364.53488372093034,
+        "color": 7
+      },
+      "id": "ef17a0e5-8af0-4051-8b27-dc365c3a14fd",
+      "name": "Sticky Note59",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        660,
+        -960
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## ScrapingBee - Get Page HTML\n\nThis node utilizes the ScrapingBee API to **retrieve the HTML of the webpage**.\n",
+        "height": 357.10392441860495,
+        "width": 364.53488372093034,
+        "color": 7
+      },
+      "id": "88539453-de42-4c96-8f57-ad8696c20e18",
+      "name": "Sticky Note60",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1080,
+        -960
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## HTML to Markdown\n\nThis node **converts the HTML from the previous node** into Markdown format, **helping to save tokens**.  \n\nThe converted **Markdown is then automatically sent to the AI Agent** through this node.\n",
+        "height": 357.10392441860495,
+        "width": 364.53488372093034,
+        "color": 7
+      },
+      "id": "01b030c9-40af-46c2-8f8e-a1202ea46e44",
+      "name": "Sticky Note61",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1500,
+        -960
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "# ✨ Vision-Based AI Agent Scraper - with Google Sheets, ScrapingBee, and Gemini\n\n## Important notes :\n### Check legal regulations: \nThis workflow involves scraping, so make sure to check the legal regulations around scraping in your country before getting started. Better safe than sorry!\n\n## Workflow description\nThis workflow leverages a **vision-based AI Agent**, integrated with Google Sheets, ScrapingBee, and the Gemini-1.5-Pro model, to **extract structured data from webpages**. The AI Agent primarily **uses screenshots for data extraction** but switches to HTML scraping when necessary, ensuring high accuracy. \n\nKey features include:  \n- **Google Sheets Integration**: Manage URLs to scrape and store structured results.  \n- **ScrapingBee**: Capture full-page screenshots and retrieve HTML data for fallback extraction.  \n- **AI-Powered Data Parsing**: Use Gemini-1.5-Pro for vision-based scraping and a Structured Output Parser to format extracted data into JSON.  \n- **Token Efficiency**: HTML is converted to Markdown to optimize processing costs.\n\nThis template is designed for e-commerce scraping but can be customized for various use cases.  \n",
+        "height": 646.0101744186061,
+        "width": 829.9937466197946
+      },
+      "id": "660503ac-6d50-46df-a91e-5994f27f4a6b",
+      "name": "Sticky Note62",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1980,
+        -2120
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "updates": [
+          "*"
+        ],
+        "additionalFields": {}
+      },
+      "id": "6a023024-8e24-4b74-9b20-3b1a9c82cba6",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "position": [
+        2060,
+        -5920
+      ],
+      "webhookId": "51942fbb-ca0e-4ec4-9423-5fcc7d3c4281",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json.message?.text }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "notStartsWith",
+              "value2": "/"
+            },
+            {
+              "operation": "startsWith",
+              "value2": "/start",
+              "output": 1
+            },
+            {
+              "operation": "startsWith",
+              "value2": "=/image ",
+              "output": 2
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "8b5fcc62-569e-426a-b1b8-697d50857e28",
+      "name": "CheckCommand",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        3020,
+        -5900
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "values": {
+          "number": [
+            {
+              "name": "model_temperature",
+              "value": 0.8
+            },
+            {
+              "name": "token_length",
+              "value": 500
+            }
+          ],
+          "string": [
+            {
+              "name": "system_command",
+              "value": "=You are a friendly chatbot. User name is {{ $json?.message?.from?.first_name }}. User system language is {{ $json?.message?.from?.language_code }}. First, detect user text language. Next, provide your reply in the same language. Include several suitable emojis in your answer."
+            },
+            {
+              "name": "bot_typing",
+              "value": "={{ $json?.message?.text.startsWith('/image') ? \"upload_photo\" : \"typing\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "771d714f-6425-44db-a427-c239a5fd32b0",
+      "name": "Settings",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2420,
+        -5920
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "resource": "chat",
+        "model": "gpt-4",
+        "prompt": {
+          "messages": [
+            {
+              "role": "system",
+              "content": "={{ $json.system_command }}"
+            },
+            {
+              "content": "={{ $json.message.text }}"
+            }
+          ]
+        },
+        "options": {
+          "maxTokens": "={{ $json.token_length }}",
+          "temperature": "={{ $json.model_temperature }}"
+        },
+        "requestOptions": {}
+      },
+      "id": "7eb75d75-20bc-4fa8-a4c1-c4b52eff1319",
+      "name": "Chat_mode",
+      "type": "n8n-nodes-base.openAi",
+      "position": [
+        3380,
+        -6420
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "chat",
+        "prompt": {
+          "messages": [
+            {
+              "role": "system",
+              "content": "={{ $json.system_command }}"
+            },
+            {
+              "content": "=This is the first message from a user. Please welcome a new user in `{{ $json.message.from.language_code }}` language"
+            }
+          ]
+        },
+        "options": {
+          "maxTokens": "={{ $json.token_length }}",
+          "temperature": "={{ $json.model_temperature }}"
+        },
+        "requestOptions": {}
+      },
+      "id": "b5f5070b-5b4c-4ba9-9e5c-2a35df6e20f6",
+      "name": "Greeting",
+      "type": "n8n-nodes-base.openAi",
+      "position": [
+        3380,
+        -6180
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Settings').first().json.message.from.id }}",
+        "text": "={{ $json.message.content }}",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "910dfa84-8855-455f-9c65-5e45dfdb863c",
+      "name": "Text reply",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        3740,
+        -6300
+      ],
+      "typeVersion": 1,
+      "webhookId": "a683733f-47ac-4e6f-8be5-2727fc38d766"
+    },
+    {
+      "parameters": {
+        "operation": "sendChatAction",
+        "chatId": "={{ $json.message.from.id }}",
+        "action": "={{ $json.bot_typing }}"
+      },
+      "id": "aee1c6df-ffd0-48d3-8440-be6b8d5f6614",
+      "name": "Send Typing action",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        2620,
+        -5780
+      ],
+      "typeVersion": 1,
+      "webhookId": "8eba7ecc-a963-48c2-8ec4-4a4554087741"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "prompt": "={{ $json.message.text.split(' ').slice(1).join(' ') }}",
+        "responseFormat": "imageUrl",
+        "options": {
+          "n": 1,
+          "size": "512x512"
+        },
+        "requestOptions": {}
+      },
+      "id": "76e86115-2626-4345-823b-355b56c18e34",
+      "name": "Create an image",
+      "type": "n8n-nodes-base.openAi",
+      "position": [
+        3380,
+        -5900
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.message.from.id }}",
+        "text": "=Sorry, {{ $json.message.from.first_name }}! This command is not supported yet. Please type some text to a chat bot or try this command:\n/image \\[your prompt]\n\nEnter the command, then space and provide your request. Example:\n\n`/image a picture or a cute little kitten with big eyes. Miyazaki studio ghibli style`",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "1eea5be4-fbf0-4193-90cc-67e1761339fe",
+      "name": "Send error message",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        3740,
+        -5600
+      ],
+      "typeVersion": 1,
+      "webhookId": "ffe23e1a-11d1-417b-b0e7-ef73d556f4be"
+    },
+    {
+      "parameters": {
+        "operation": "sendPhoto",
+        "chatId": "={{ $('Settings').first().json.message.from.id }}",
+        "file": "={{ $json.url }}",
+        "additionalFields": {}
+      },
+      "id": "f4bcf575-37d5-4b5e-989e-b52ca342ddbc",
+      "name": "Send image",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        3740,
+        -5900
+      ],
+      "typeVersion": 1,
+      "webhookId": "c63e400f-75d0-4faa-adb7-0b573e24e1f4"
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "message.text",
+              "value": "={{ $json?.message?.text || \"\" }}"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": true
+        }
+      },
+      "id": "ce70623e-8b84-417f-b72a-109f76d56c6a",
+      "name": "PreProcessing",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2240,
+        -5920
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "content": "## Error fallback for unsupported commands",
+        "height": 231.22373949579838,
+        "width": 316.1071428571428
+      },
+      "id": "7e73c0ad-a1a8-42ee-bfa0-a2e43b6428f2",
+      "name": "Sticky Note63",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3640,
+        -5680
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Chatbot mode by default\n### (when no command is provided)",
+        "height": 233,
+        "width": 330.5019024637719
+      },
+      "id": "fc73e6b3-edcc-48a8-81cd-e1e4cde8bba4",
+      "name": "Sticky Note64",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3280,
+        -6500
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Welcome message\n### /start",
+        "height": 219.892857142857,
+        "width": 330.7863484403046
+      },
+      "id": "8cffdbdd-635e-4645-affd-de156e397eb0",
+      "name": "Sticky Note65",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3280,
+        -6240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "mode": "chooseBranch"
+      },
+      "id": "998d9561-6c4c-461f-a1f2-3cb3176ed986",
+      "name": "Merge2",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        2840,
+        -5900
+      ],
+      "typeVersion": 2.1
+    },
+    {
+      "parameters": {
+        "content": "## Create an image\n### /image + request",
+        "height": 233.8785714285713,
+        "width": 329.7428571428562
+      },
+      "id": "14e86860-356b-4086-b42b-10585dd9cbf8",
+      "name": "Sticky Note66",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3280,
+        -5980
       ],
       "typeVersion": 1
     }
@@ -2350,6 +6336,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-10T16:31:48.000Z",
-  "versionId": "e6aba193-d0f9-4c51-9e59-50a008def0cd"
+  "updatedAt": "2025-03-10T16:36:19.000Z",
+  "versionId": "0b491457-8f9a-471b-bd25-7b53f9d89c6c"
 }
