@@ -359,8 +359,8 @@
       "name": "Get File",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        2460,
-        780
+        2580,
+        760
       ],
       "typeVersion": 4.2
     },
@@ -403,8 +403,8 @@
       "name": "If file too large",
       "type": "n8n-nodes-base.if",
       "position": [
-        2260,
-        800
+        2180,
+        740
       ],
       "typeVersion": 2
     },
@@ -414,8 +414,8 @@
       "name": "Merge Items",
       "type": "n8n-nodes-base.merge",
       "position": [
-        2260,
-        1060
+        2060,
+        1320
       ],
       "typeVersion": 2
     },
@@ -650,11 +650,11 @@
       "name": "Get file data",
       "type": "n8n-nodes-base.github",
       "position": [
-        2060,
-        800
+        1920,
+        720
       ],
       "typeVersion": 1,
-      "alwaysOutputData": true,
+      "alwaysOutputData": false,
       "credentials": {
         "githubApi": {
           "id": "nwTWXLJmlORvI7r1",
@@ -693,8 +693,8 @@
       "name": "Globals",
       "type": "n8n-nodes-base.set",
       "position": [
-        1840,
-        960
+        1680,
+        940
       ],
       "typeVersion": 3.4
     },
@@ -709,8 +709,8 @@
       "name": "Sticky Note3",
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        1820,
-        840
+        1660,
+        800
       ],
       "typeVersion": 1
     },
@@ -722,8 +722,8 @@
       "name": "Execute Workflow Trigger",
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "position": [
-        1120,
-        1060
+        980,
+        1220
       ],
       "typeVersion": 1.1,
       "notesInFlow": true
@@ -732,9 +732,8 @@
       "parameters": {
         "workflowId": {
           "__rl": true,
-          "value": "FTSTp2j1ffkGq6wY",
-          "mode": "list",
-          "cachedResultName": "GITHUB備份專家"
+          "value": "={{ $workflow.id }}",
+          "mode": "id"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
@@ -757,7 +756,7 @@
         400
       ],
       "typeVersion": 1.2,
-      "alwaysOutputData": true,
+      "alwaysOutputData": false,
       "notesInFlow": false
     },
     {
@@ -778,8 +777,8 @@
       "name": "/",
       "type": "n8n-nodes-base.set",
       "position": [
-        1680,
-        700
+        1400,
+        740
       ],
       "typeVersion": 3.4
     },
@@ -844,8 +843,8 @@
       "name": "tag?",
       "type": "n8n-nodes-base.switch",
       "position": [
-        1340,
-        720
+        1160,
+        920
       ],
       "typeVersion": 3.2
     },
@@ -911,6 +910,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-10T17:06:05.000Z",
-  "versionId": "b4944136-16e8-45a1-a884-a70391e7ac5a"
+  "updatedAt": "2025-03-10T17:16:52.000Z",
+  "versionId": "ff48ab7c-b5da-4f7c-959c-519f212621b2"
 }
