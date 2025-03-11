@@ -1,0 +1,1367 @@
+{
+  "active": true,
+  "connections": {
+    "n8n | get wf1": {
+      "main": [
+        [
+          {
+            "node": "SetWorkflows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML-UI": {
+      "main": [
+        [
+          {
+            "node": "Respond with UI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook-ideogener8r": {
+      "main": [
+        [
+          {
+            "node": "Set Workflow Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Flows": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "HTML-UI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub": {
+      "main": [
+        [
+          {
+            "node": "Set Flows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set GH Repo and Path3": {
+      "main": [
+        [
+          {
+            "node": "GitHub2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub2": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Set Git Workflow Id",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Git Workflow Id": {
+      "main": [
+        [
+          {
+            "node": "Get n8n Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get n8n Workflow": {
+      "main": [
+        [
+          {
+            "node": "Set n8n Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set n8n Workflow": {
+      "main": [
+        [
+          {
+            "node": "ComapreNodes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ComapreNodes": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "submit-form": {
+      "main": [
+        [
+          {
+            "node": "Workflow Vars",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get-n8n-workflows": {
+      "main": [
+        [
+          {
+            "node": "n8n | get wf1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get-Workflow-Changes": {
+      "main": [
+        [
+          {
+            "node": "Set GH Repo and Path3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SetWorkflows": {
+      "main": [
+        [
+          {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "n8n",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "n8n1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set GH Repo and Path4": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "n8n": {
+      "main": [
+        [
+          {
+            "node": "Commit Workflow Edit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "n8n1": {
+      "main": [
+        [
+          {
+            "node": "Commit New File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Commit Workflow Edit": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Commit New File": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Workflow Variables": {
+      "main": [
+        [
+          {
+            "node": "GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workflow Vars": {
+      "main": [
+        [
+          {
+            "node": "Set GH Repo and Path4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-11T00:14:44.954Z",
+  "id": "l0QqdCeO5X9KfH1A",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "我盤子",
+  "nodes": [
+    {
+      "parameters": {
+        "returnAll": false,
+        "limit": 2,
+        "filters": {
+          "activeWorkflows": true
+        },
+        "requestOptions": {}
+      },
+      "id": "db6317e7-3a8e-4bc1-b889-328628299f9d",
+      "name": "n8n | get wf1",
+      "type": "n8n-nodes-base.n8n",
+      "position": [
+        620,
+        820
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "n8nApi": {
+          "id": "Tp6xOZ8C9VuUYvKS",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.html }}",
+        "options": {}
+      },
+      "id": "480c0cd5-2633-4edf-8de0-44516c6bfe4e",
+      "name": "Respond with UI",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        2200,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>n8n Workflow Repos8r</title>\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css\">\n    <!-- Favicon -->\n<link rel=\"icon\" type=\"image/png\" href=\"https://fillin8n.realsimple.dev/workflow-Repos8r-favicon.jpg\">\n\n<!-- Apple Tags -->\n<link rel=\"apple-touch-icon\" href=\"https://fillin8n.realsimple.dev/workflow-Repos8r-favicon.jpg\">\n<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">\n<meta name=\"apple-mobile-web-app-title\" content=\"Workflow Repos8r\">\n\n<!-- Open Graph / Facebook -->\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:url\" content=\"https://ideogener8r.com/\">\n<meta property=\"og:title\" content=\"Workflow Repos8r\">\n<meta property=\"og:description\" content=\"Workflow Repos8r: Github Version Control User Interface for n8n Workflows\">\n<meta property=\"og:image\" content=\"https://fillin8n.realsimple.dev/workflow-Repos8r-ogmeta.jpg\">\n\n<!-- Twitter -->\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:url\" content=\"https://ideogener8r.com/\">\n<meta name=\"twitter:title\" content=\"Workflow Repos8r\">\n<meta name=\"twitter:description\" content=\"Workflow Repos8r: Github Version Control User Interface for n8n Workflows\">\n<meta name=\"twitter:image\" content=\"https://fillin8n.realsimple.dev/workflow-Repos8r-x-card.jpg\">\n  <style>\n    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');\n\n    :root {\n      --matrix-green: #00ff00;\n      --matrix-dark-green: #003300;\n      --matrix-black: #000000;\n      --matrix-cyan: #00ffff;\n      --matrix-red: #ff4444;\n      --matrix-gray: #888888;\n      --terminal-header: #2f3640;\n      --terminal-border: #353b48;\n    }\n\n    body {\n      background-color: var(--matrix-black);\n      color: var(--matrix-green);\n      font-family: 'VT323', monospace;\n      font-size: 20px;\n      padding: 20px;\n      margin: 0;\n      min-height: 100vh;\n      position: relative;\n    }\n\n    #title {\n      text-align: center;\n      color: var(--matrix-green);\n      font-size: 12px;\n      white-space: pre;\n      margin: 0 auto 30px;\n      text-shadow: 0 0 10px var(--matrix-green);\n      position: relative;\n      z-index: 2;\n    }\n\n    .stop-motion {\n      position: fixed;\n      top: 20px;\n      right: 20px;\n      background: var(--terminal-header);\n      border: 1px solid var(--matrix-green);\n      color: var(--matrix-green);\n      padding: 8px 15px;\n      cursor: pointer;\n      font-family: 'VT323', monospace;\n      font-size: 16px;\n      z-index: 10;\n      transition: all 0.3s ease;\n    }\n\n    .stop-motion:hover {\n      background: var(--matrix-dark-green);\n    }\n\n    .container {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: flex-start;\n      padding-top: 20px;\n      height: 100%;\n      max-width: 1200px;\n      margin: 0 auto;\n      gap: 20px;\n      position: relative;\n      z-index: 1;\n    }\n\n    .terminal-container {\n      display: flex;\n      justify-content: center;\n      align-items: flex-start;\n      gap: 20px;\n      width: 100%;\n    }\n\n    .terminal {\n      background-color: rgba(0, 0, 0, 0.95);\n\n      border: 1px solid var(--terminal-border);\n      border-radius: 5px;\n      overflow: hidden;\n      position: relative;\n      margin: 20px;\n      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);\n      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);\n    }\n\n    #system-console {\n      flex: 0 0 65%;\n      min-width: 0;\n      transform-origin: left center;\n      position: relative;\n      overflow: hidden;\n    }\n\n    #system-console.slide {\n      animation: slideConsole 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;\n    }\n\n    #changes-terminal {\n      display: none;\n      position: relative;\n      overflow: hidden;\n      flex: 0 0 35%;\n      min-width: 0;\n      transform: scale(0.8);\n      opacity: 1;\n      transform-origin: center;\n    }\n\n    #changes-terminal.show {\n      display: block;\n      animation: showChanges 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;\n    }\n\n    @keyframes showChanges {\n      from {\n        transform: scale(0.8);\n        opacity: 0;\n      }\n      to {\n        transform: scale(1);\n        opacity: 1;\n      }\n    }\n\n    @keyframes slideConsole {\n      from {\n        transform: translateX(0);\n      }\n      to {\n        transform: translateX(-10px);\n      }\n    }\n\n    select, input[type=\"text\"] {\n      width: 100%;\n      white-space: normal;\n      word-wrap: break-word;\n      overflow-wrap: break-word;\n      background-color: rgba(0, 0, 0, 0.7);\n      color: var(--matrix-green);\n      border: 1px solid var(--matrix-green);\n      padding: 8px;\n      font-family: 'VT323', monospace;\n      font-size: 18px;\n      box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);\n      transition: all 0.3s ease;\n    }\n\n    select:hover, input[type=\"text\"]:hover {\n      border-color: var(--matrix-cyan);\n      box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);\n    }\n\n    .form-group {\n      margin-bottom: 25px;\n      border-bottom: 1px solid rgba(0, 255, 0, 0.2);\n      padding-bottom: 20px;\n    }\n\n    .form-group:last-child {\n      border-bottom: none;\n      margin-bottom: 0;\n    }\n\n    .form-group label {\n      display: block;\n      margin-bottom: 10px;\n      color: var(--matrix-green);\n      font-weight: bold;\n      text-shadow: 0 0 5px var(--matrix-green);\n    }\n\n    .radio-group {\n      display: flex;\n      gap: 30px;\n      margin: 15px 0;\n      padding: 10px;\n      border: 1px solid rgba(0, 255, 0, 0.2);\n      background: rgba(0, 0, 0, 0.3);\n    }\n\n    .radio-group label {\n      display: flex;\n      align-items: center;\n      gap: 8px;\n      cursor: pointer;\n      width: auto;\n      margin: 0;\n      color: var(--matrix-green);\n      text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);\n    }\n\n    .radio-group input[type=\"radio\"] {\n      appearance: none;\n      width: 16px;\n      height: 16px;\n      border: 2px solid var(--matrix-green);\n      border-radius: 50%;\n      margin: 0;\n      cursor: pointer;\n      position: relative;\n      background: transparent;\n    }\n\n    .radio-group input[type=\"radio\"]:checked::before {\n      content: '';\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      transform: translate(-50%, -50%);\n      width: 8px;\n      height: 8px;\n      background: var(--matrix-green);\n      border-radius: 50%;\n      box-shadow: 0 0 5px var(--matrix-green);\n    }\n\n    span#coming-soon {\n    font-size: 16px !important;\n    font-weight: 400;\n    vertical-align: super;\n    }\n\n\n    .checkbox-group {\n      display: flex;\n      align-items: center;\n      gap: 10px;\n      margin: 15px 0;\n      padding: 10px;\n      border: 1px solid rgba(0, 255, 0, 0.2);\n      background: rgba(0, 0, 0, 0.3);\n    }\n\n    .checkbox-group input[type=\"checkbox\"] {\n      appearance: none;\n      width: 16px;\n      height: 16px;\n      border: 2px solid var(--matrix-green);\n      margin: 0;\n      cursor: pointer;\n      position: relative;\n      background: transparent;\n    }\n\n    .checkbox-group input[type=\"checkbox\"]:checked::before {\n      content: '✓';\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      transform: translate(-50%, -50%);\n      color: var(--matrix-green);\n      font-size: 12px;\n      text-shadow: 0 0 5px var(--matrix-green);\n    }\n\n    .checkbox-group label {\n      margin: 0;\n      width: auto;\n      color: var(--matrix-green);\n      text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);\n    }\n\n    button[type=\"submit\"] {\n      width: 100%;\n      padding: 12px;\n      margin-top: 20px;\n      background: rgba(0, 50, 0, 0.5);\n      border: 2px solid var(--matrix-green);\n      color: var(--matrix-green);\n      font-family: 'VT323', monospace;\n      font-size: 20px;\n      font-weight: bold;\n      cursor: pointer;\n      transition: all 0.3s ease;\n      text-transform: uppercase;\n      letter-spacing: 2px;\n      text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);\n      position: relative;\n      overflow: hidden;\n    }\n\n    button[type=\"submit\"]:hover {\n      background: rgba(0, 80, 0, 0.5);\n      box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);\n    }\n\n    button[type=\"submit\"]:disabled {\n      opacity: 0.5;\n      cursor: not-allowed;\n      box-shadow: none;\n    }\n\n    button[type=\"submit\"]::before {\n      content: '';\n      position: absolute;\n      top: 0;\n      left: -100%;\n      width: 100%;\n      height: 100%;\n      background: linear-gradient(\n        90deg,\n        transparent,\n        rgba(0, 255, 0, 0.2),\n        transparent\n      );\n      transition: 0.5s;\n    }\n\n    button[type=\"submit\"]:hover::before {\n      left: 100%;\n    }\n\n    .changes-list {\n      max-height: 500px;\n      overflow-y: auto;\n      padding-right: 10px;\n      margin: 0;\n      font-size: 14px;\n      white-space: pre-wrap;\n      word-wrap: break-word;\n      overflow-wrap: break-word;\n    }\n\n    .change-item {\n      margin-bottom: 15px;\n      padding: 10px;\n      border: 1px solid var(--terminal-border);\n      background: rgba(0, 0, 0, 0.3);\n      white-space: pre-wrap;\n      word-wrap: break-word;\n      overflow-wrap: break-word;\n    }\n\n    .change-path {\n      word-wrap: break-word;\n      overflow-wrap: break-word;\n      color: var(--matrix-gray);\n      font-size: 0.9em;\n      margin-bottom: 5px;\n    }\n\n    .change-value {\n      word-wrap: break-word;\n      overflow-wrap: break-word;\n      padding-left: 20px;\n    }\n\n    .no-changes {\n      text-align: center;\n      padding: 30px;\n      word-wrap: break-word;\n      overflow-wrap: break-word;\n    }\n\n    .terminal-header {\n      background: var(--terminal-header);\n      padding: 8px;\n      display: flex;\n      align-items: center;\n      border-bottom: 1px solid var(--terminal-border);\n    }\n\n    .terminal-title {\n      color: var(--matrix-green);\n      margin: 0;\n      font-size: 16px;\n      font-weight: normal;\n      padding-left: 10px;\n    }\n\n    .terminal-buttons {\n      display: flex;\n      gap: 5px;\n      margin-right: 10px;\n    }\n\n    .terminal-button {\n      width: 12px;\n      height: 12px;\n      border-radius: 50%;\n      border: none;\n    }\n\n    .terminal-close { background: #ff5f56; }\n    .terminal-minimize { background: #ffbd2e; }\n    .terminal-maximize { background: #27c93f; }\n\n    .matrix-glitch {\n      color: var(--matrix-green);\n      text-shadow: 0 0 5px var(--matrix-green);\n    }\n\n    @keyframes glow {\n      0% {\n        box-shadow: 0 0 5px var(--matrix-green);\n      }\n      100% {\n        box-shadow: 0 0 20px var(--matrix-green);\n      }\n    }\n\n    @keyframes glitch {\n      0% {\n        text-shadow: 2px 2px var(--matrix-green);\n        transform: translate(1px, 1px);\n      }\n      25% {\n        text-shadow: -2px -2px var(--matrix-cyan);\n        transform: translate(-1px, -1px);\n      }\n      50% {\n        text-shadow: 2px -2px var(--matrix-red);\n        transform: translate(1px, -1px);\n      }\n      75% {\n        text-shadow: -2px 2px var(--matrix-green);\n        transform: translate(-1px, 1px);\n      }\n      100% {\n        text-shadow: 2px 2px var(--matrix-green);\n        transform: translate(1px, 1px);\n      }\n    }\n\n    .matrix-glitch {\n      animation: glitch 0.5s infinite;\n    }\n\n    .no-changes {\n      text-align: center;\n      padding: 30px;\n      color: var(--matrix-gray);\n      text-transform: uppercase;\n      letter-spacing: 2px;\n      animation: pulse 2s infinite;\n    }\n\n    @keyframes pulse {\n      0% { opacity: 0.5; }\n      50% { opacity: 1; }\n      100% { opacity: 0.5; }\n    }\n\n    canvas {\n      position: fixed;\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 100%;\n      z-index: -1;\n      opacity: 0.3;\n    }\n\n    .matrix-input {\n      background-color: rgba(0, 0, 0, 0.7);\n      color: var(--matrix-green);\n      border: 1px solid var(--matrix-green);\n      padding: 8px 12px;\n      font-family: 'VT323', monospace;\n      font-size: 18px;\n      width: 100%;\n      margin-bottom: 10px;\n      box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);\n      transition: all 0.3s ease;\n    }\n\n    .matrix-input:focus {\n      outline: none;\n      border-color: var(--matrix-cyan);\n      box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);\n    }\n\n    .matrix-input::placeholder {\n      color: rgba(0, 255, 0, 0.5);\n    }\n\n    /* Matrix text animation styles */\n    .matrix-text {\n      color: var(--matrix-green);\n      font-size: 16px;\n      opacity: 0;\n      text-shadow: 0 0 10px var(--matrix-green);\n      position: absolute;\n      top: 40px;\n      left: 20px;\n      white-space: nowrap;\n      z-index: 10;\n      font-family: monospace;\n      transition: opacity 1s;\n    }\n\n    .hidden {\n      opacity: 0;\n      display: none;\n    }\n\n    #matrixCanvas {\n      display: none;\n    }\n\n    #matrixCanvas.visible {\n      display: block;\n    }\n\n    .attribution {\n      position: fixed;\n      bottom: 10px;\n      left: 50%;\n      transform: translateX(-50%);\n      font-size: 20px;\n      color: var(--matrix-gray);\n      opacity: 0.7;\n      text-align: center;\n      z-index: 1000;\n      text-decoration: none;\n      font-family: 'VT323', monospace;\n    }\n    \n    .attribution:hover {\n      color: var(--matrix-green);\n      opacity: 1;\n    }\n\n    .changes-list {\n      font-family: 'VT323', monospace;\n      padding: 10px;\n      margin: 0;\n      font-size: 16px;\n      line-height: 1.4;\n    }\n\n    .github-links {\n      font-family: 'VT323', monospace;\n      margin-top: 10px;\n      padding: 10px 5px;\n      border-top: 1px solid var(--matrix-green);\n      display: flex;\n      align-items: center;\n    }\n\n    .github-links::before {\n      content: \"$links ~\";\n      color: var(--matrix-green);\n      margin-right: 10px;\n    }\n\n    .github-links a {\n      color: var(--matrix-green);\n      text-decoration: none;\n    }\n\n    .github-links a:hover {\n      text-decoration: underline;\n    }\n\n    .github-links .separator {\n      color: var(--matrix-green);\n      margin: 0 10px;\n    }\n\n    /* Matrix Toast Styles */\n    .matrix-toast {\n      position: fixed;\n      top: 20px;\n      left: 20px;\n      background: rgba(0, 0, 0, 0.95);\n      border: 1px solid var(--matrix-green);\n      color: var(--matrix-green);\n      padding: 0;\n      border-radius: 5px;\n      font-family: 'VT323', monospace;\n      font-size: 18px;\n      z-index: 1000;\n      box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);\n      animation: slideInLeft 0.3s ease-out;\n      max-width: 400px;\n      overflow: hidden;\n    }\n\n    .matrix-toast .terminal-header {\n      padding: 4px 8px;\n      margin: 0;\n      border-bottom: 1px solid var(--matrix-green);\n      display: flex;\n      justify-content: space-between;\n      align-items: center;\n    }\n\n    .matrix-toast .terminal-title {\n      text-shadow: 0 0 10px var(--matrix-green);\n    }\n\n    .matrix-toast .close-button {\n      cursor: pointer;\n      color: var(--matrix-green);\n      font-size: 24px;\n      padding: 0 5px;\n      text-shadow: 0 0 10px var(--matrix-green);\n      transition: all 0.3s ease;\n    }\n\n    .matrix-toast .close-button:hover {\n      color: var(--matrix-red);\n      text-shadow: 0 0 10px var(--matrix-red);\n    }\n\n    .matrix-toast-content {\n      padding: 15px 20px;\n      display: flex;\n      align-items: flex-start;\n      gap: 12px;\n    }\n\n    .matrix-toast.warning {\n      border-color: var(--matrix-red);\n      box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);\n    }\n\n    .matrix-toast.warning .terminal-header {\n      border-bottom-color: var(--matrix-red);\n    }\n\n    .matrix-toast.warning .matrix-toast-title {\n      color: var(--matrix-red);\n      text-shadow: 0 0 10px var(--matrix-red);\n    }\n\n    .matrix-toast-icon {\n      font-size: 24px;\n      margin-top: 2px;\n    }\n\n    .matrix-toast-text {\n      display: flex;\n      flex-direction: column;\n      gap: 5px;\n    }\n\n    .matrix-toast-title {\n      font-weight: bold;\n      font-size: 20px;\n      text-shadow: 0 0 10px var(--matrix-green);\n    }\n\n    .matrix-toast-message {\n      opacity: 0.9;\n      color: var(--matrix-gray);\n    }\n\n    @keyframes slideInLeft {\n      from {\n        transform: translateX(-100%);\n        opacity: 0;\n      }\n      to {\n        transform: translateX(0);\n        opacity: 1;\n      }\n    }\n\n    @keyframes slideOutLeft {\n      from {\n        transform: translateX(0);\n        opacity: 1;\n      }\n      to {\n        transform: translateX(-100%);\n        opacity: 0;\n      }\n    }\n\n    /* ASCII Logo Styles */\n    #logo {\n      font-family: monospace;\n      white-space: pre;\n      color: var(--matrix-green);\n      text-align: center;\n      margin: 0 auto 20px;\n      padding: 0;\n      text-shadow: 0 0 10px var(--matrix-green);\n      line-height: 1.2;\n      font-size: 8px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      width: 100%;\n      max-width: 1200px;\n    }\n\n    #small-logo {\n      font-size: 6px;\n      margin-bottom: 5px;\n      padding-left: 31%;\n      display: block;\n      opacity: 0.9;\n      text-align: left;\n      width: 100%;\n    }\n\n    @media (max-width: 1200px) {\n      #logo {\n        font-size: 6px;\n        margin-bottom: 15px;\n      }\n      #small-logo {\n        font-size: 4px;\n      }\n    }\n\n    .node-change {\n      margin-bottom: 4px;\n      padding: 8px;\n      border: 1px solid rgba(0, 255, 0, 0.3);\n      background: rgba(0, 0, 0, 0.7);\n      font-family: 'VT323', monospace;\n      position: relative;\n      display: flex;\n      flex-direction: column;\n    }\n\n    .node-change::before {\n      content: '>';\n      position: absolute;\n      left: 5px;\n      top: 8px;\n      color: var(--matrix-green);\n      font-size: 1.2em;\n      line-height: 1;\n    }\n\n    .node-change .title-bar {\n      font-size: 1.2em;\n      color: var(--matrix-green);\n      text-shadow: 0 0 8px var(--matrix-green);\n      padding-left: 20px;\n      line-height: 1;\n      margin: 0;\n    }\n\n    .node-change .description {\n      color: rgba(0, 255, 0, 0.8);\n      margin: 4px 0 0 20px;\n      font-size: 1.1em;\n      line-height: 1;\n    }\n\n    .warning-message {\n      margin-bottom: 4px;\n      padding: 8px;\n      border: 1px solid rgba(255, 0, 0, 0.3);\n      background: rgba(20, 0, 0, 0.7);\n      font-family: 'VT323', monospace;\n      font-size: 1.2em;\n      text-shadow: 0 0 8px var(--matrix-red);\n      color: var(--matrix-red);\n      position: relative;\n      line-height: 1;\n      padding-left: 20px;\n    }\n\n    .warning-message::before {\n      content: '!';\n      position: absolute;\n      left: 5px;\n      top: 8px;\n      color: var(--matrix-red);\n      font-weight: bold;\n      line-height: 1;\n    }\n\n    #changesList {\n      padding: 8px;\n      font-size: 16px;\n    }\n\n    .no-changes {\n      padding: 8px;\n      color: rgba(0, 255, 0, 0.6);\n      text-align: center;\n      font-family: 'VT323', monospace;\n      font-size: 1.2em;\n      text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);\n      line-height: 1;\n    }\n  </style>\n</head>\n<body>\n  <canvas id=\"matrixCanvas\"></canvas>\n  <button class=\"stop-motion\" onclick=\"toggleMatrix()\">⏹️ Stop Animation</button>\n  <div class=\"container\">\n    <p id=\"logo\">\n      <span id=\"small-logo\">\n                  ________                                                            \n                 |\\   __  \\                                                           \n        ________ \\ \\  \\|\\  \\  ________                                                                                                                                                    \n       \\ \\   __  \\ \\   __  \\ \\    __  \\                                                                                                                                                    \n        \\ \\  \\\\ \\  \\ \\  \\|\\  \\ \\  \\\\ \\  \\                                                                                                                                                   \n         \\ \\__\\\\ \\__\\ \\_______\\ \\__\\\\ \\__\\                                                                                                                                                  \n          \\|__| \\|__|\\|_______|\\|__| \\|__|                                                                                                                                                  \n        </span>                                                                                                                                                                                     \n___       __   ________  ________  ___  __    ________ ___       ________  ___       __           ________  _______   ________  ________  ________  ________  ________     \n|\\  \\     |\\  \\|\\   __  \\|\\   __  \\|\\  \\|\\  \\ |\\  _____\\\\  \\     |\\   __  \\|\\  \\     |\\  \\        |\\   __  \\|\\  ___ \\ |\\   __  \\|\\   __  \\|\\   ____\\|\\   __  \\|\\   __  \\    \n\\ \\  \\    \\ \\  \\ \\  \\|\\  \\ \\  \\|\\  \\ \\  \\/  /|\\ \\  \\__/\\ \\  \\    \\ \\  \\|\\  \\ \\  \\    \\ \\  \\       \\ \\  \\|\\  \\ \\   __/|\\ \\  \\|\\  \\ \\  \\|\\  \\ \\  \\___|\\ \\  \\|\\  \\ \\  \\|\\  \\   \n \\ \\  \\  __\\ \\  \\ \\  \\\\\\  \\ \\   _  _\\ \\   ___  \\ \\   __\\\\ \\  \\    \\ \\  \\\\\\  \\ \\  \\  __\\ \\  \\       \\ \\   _  _\\ \\  \\_|/_\\ \\   ____\\ \\  \\\\\\  \\ \\_____  \\ \\   __  \\ \\   _  _\\  \n  \\ \\  \\|\\__\\_\\  \\ \\  \\\\\\  \\ \\  \\\\  \\\\ \\  \\\\ \\  \\ \\  \\_| \\ \\  \\____\\ \\  \\\\\\  \\ \\  \\|\\__\\_\\  \\       \\ \\  \\\\  \\\\ \\  \\_|\\ \\ \\  \\___|\\ \\  \\\\\\  \\|____|\\  \\ \\  \\|\\  \\ \\  \\\\  \\| \n   \\ \\____________\\ \\_______\\ \\__\\\\ _\\\\ \\__\\\\ \\__\\ \\__\\   \\ \\_______\\ \\_______\\ \\____________\\       \\ \\__\\\\ _\\\\ \\_______\\ \\__\\    \\ \\_______\\____\\_\\  \\ \\_______\\ \\__\\\\ _\\ \n    \\|____________|\\|_______|\\|__|\\|__|\\|__| \\|__|\\|__|    \\|_______|\\|_______|\\|____________|        \\|__|\\|__|\\|_______|\\|__|     \\|_______|\\_________\\|_______|\\|__|\\|__|</p>\n    <div class=\"terminal-container\">\n      <div class=\"terminal\" id=\"system-console\">\n        <div class=\"terminal-header\">\n          <div class=\"terminal-buttons\">\n            <div class=\"terminal-button terminal-close\"></div>\n            <div class=\"terminal-button terminal-minimize\"></div>\n            <div class=\"terminal-button terminal-maximize\"></div>\n          </div>\n          <span class=\"terminal-title\">System Console</span>\n        </div>\n        <div id=\"matrix-text\" class=\"matrix-text\"></div>\n        <div class=\"terminal-content\">\n          <form id=\"workflowForm\">\n            <div class=\"form-group\">\n              <label>Operation Type:</label>\n              <div class=\"radio-group\">\n                <label>\n                  <input type=\"radio\" name=\"type\" value=\"edit\" checked onchange=\"toggleOperationType()\">\n                  Edit Workflow\n                </label>\n                <label>\n                  <input type=\"radio\" name=\"type\" value=\"create\" onchange=\"toggleOperationType()\">\n                  Create Workflow\n                </label>\n              </div>\n            </div>\n\n            <div id=\"editWorkflowSection\">\n              <div class=\"form-group\">\n                <label for=\"workflow\">Select GitHub Workflow:</label>\n                <select name=\"workflow\" id=\"workflow\" onchange=\"updateGitHubPath()\">\n                  {{$json[\"flows\"].map(f => `<option value=\"${encodeURIComponent(f.path)}\" data-github=\"${encodeURIComponent(f.githubPath)}\" data-filename=\"${encodeURIComponent(f.path.split('/').pop())}\" data-html_url=\"${encodeURIComponent(f.html_url)}\" data-download_url=\"${encodeURIComponent(f.download_url)}\">${f.path}</option>`).join('')}}\n                </select>\n                <input type=\"hidden\" name=\"githubPath\" id=\"githubPath\">\n                <input type=\"hidden\" name=\"editFilename\" id=\"editFilename\">\n              </div>\n\n              <div class=\"form-group\">\n                <label for=\"editN8nWorkflow\">Select n8n Workflow:</label>\n                <select name=\"n8nWorkflow\" id=\"editN8nWorkflow\" class=\"matrix-input\">\n                  <option value=\"\">Loading workflows...</option>\n                </select>\n                <input type=\"hidden\" name=\"editN8nWorkflowId\" id=\"editN8nWorkflowId\">\n              </div>\n            </div>\n\n            <div id=\"createWorkflowSection\" style=\"display: none;\">\n              <div class=\"form-group\">\n                <label for=\"n8nWorkflow\">Select n8n Workflow:</label>\n                <select name=\"n8nWorkflow\" id=\"n8nWorkflow\" class=\"matrix-input\" onchange=\"updateFilename()\">\n                  <option value=\"\">Loading workflows...</option>\n                </select>\n                <input type=\"hidden\" name=\"n8nWorkflowId\" id=\"n8nWorkflowId\">\n              </div>\n\n              <div class=\"form-group\">\n                <label for=\"filename\">Workflow Filename:</label>\n                <input type=\"text\" name=\"filename\" id=\"filename\" class=\"matrix-input\" readonly>\n              </div>\n            </div>\n\n            <div class=\"form-group\">\n              <label for=\"commit\">Do You Want To Commit?</label>\n              <select name=\"commit\" id=\"commit\" disabled>\n                <option value=\"yes\" selected>Yes</option>\n              </select>\n            </div>\n\n            <div class=\"form-group\">\n              <label>Choose an action:</label>\n              <div class=\"radio-group\">\n                <label>\n                  <input type=\"radio\" id=\"push\" name=\"action\" value=\"push\" checked>\n                  Push to GitHub\n                </label>\n                <label class=\"disabled\">\n                  <input type=\"radio\" id=\"pull\" name=\"action\" value=\"pull\" disabled>\n                  <span style=\"color: var(--matrix-gray);\">Pull from GitHub<span id=\"coming-soon\"> (coming soon)</span></span>\n                </label>\n              </div>\n            </div>\n\n            <div class=\"form-group\">\n              <div class=\"checkbox-group\">\n                <input type=\"checkbox\" id=\"confirm\" name=\"confirm\">\n                <label for=\"confirm\">This will <strong>OVERWRITE</strong> uncommited changes in Github. Are you sure?</label>\n              </div>\n              <button type=\"submit\" id=\"submitButton\" disabled>Execute</button>\n            </div>\n          </form>\n        </div>\n      </div>\n\n      <div class=\"terminal\" id=\"changes-terminal\">\n        <div class=\"terminal-header\">\n          <div class=\"terminal-buttons\">\n            <div class=\"terminal-button terminal-close\"></div>\n            <div class=\"terminal-button terminal-minimize\"></div>\n            <div class=\"terminal-button terminal-maximize\"></div>\n          </div>\n          <h3 class=\"terminal-title\">CHANGE DETECTOR</h3>\n        </div>\n        <div class=\"terminal-content\">\n          <p>Last Checked: <span id=\"lastUpdated\"></span></p>\n          <pre class=\"changes-list\" id=\"changesList\" style=\"white-space: pre-wrap;\">No changes detected.</pre>\n        </div>\n      </div>\n    </div>\n\n  <script>\n    const AUTH_TOKEN = '{{ $(\"Set Workflow Variables\").item.json.headerAuth }}';\n    const API_BASE = `${window.location.protocol}//${window.location.host}`;\n\n    // Toast utilities\n    function showMatrixToast(title, message, type = 'info') {\n      // Remove existing toast if any\n      const existingToast = document.querySelector('.matrix-toast');\n      if (existingToast) {\n        existingToast.remove();\n      }\n\n      const toast = document.createElement('div');\n      toast.className = `matrix-toast ${type}`;\n      \n      const icon = type === 'warning' ? '⚠️' : 'ℹ️';\n      \n      toast.innerHTML = `\n        <div class=\"terminal-header\">\n          <h3 class=\"terminal-title\">SYSTEM NOTIFICATION</h3>\n          <span class=\"close-button\">×</span>\n        </div>\n        <div class=\"matrix-toast-content\">\n          <div class=\"matrix-toast-icon\">${icon}</div>\n          <div class=\"matrix-toast-text\">\n            <div class=\"matrix-toast-title\">${title}</div>\n            <div class=\"matrix-toast-message\">${message}</div>\n          </div>\n        </div>\n      `;\n\n      document.body.appendChild(toast);\n\n      // Add click handler for close button\n      const closeButton = toast.querySelector('.close-button');\n      closeButton.addEventListener('click', () => {\n        toast.style.animation = 'slideOutLeft 0.3s ease-in forwards';\n        setTimeout(() => toast.remove(), 300);\n      });\n\n      // Auto remove after 30 seconds\n      const autoRemoveTimeout = setTimeout(() => {\n        if (document.body.contains(toast)) {\n          toast.style.animation = 'slideOutLeft 0.3s ease-in forwards';\n          setTimeout(() => toast.remove(), 300);\n        }\n      }, 30000);\n\n      // Clear timeout if manually closed\n      closeButton.addEventListener('click', () => clearTimeout(autoRemoveTimeout));\n    }\n\n    // Add workflow selection monitoring\n    let workflowSelectionTimer;\n    \n    function startWorkflowSelectionTimer() {\n      clearTimeout(workflowSelectionTimer);\n      workflowSelectionTimer = setTimeout(() => {\n        showMatrixToast(\n          \"Can't find your Flow?\",\n          \"You don't need the oracle for this one, just do a hard refresh to clear the cache\",\n          'warning'\n        );\n      }, 5000);\n    }\n\n    function stopWorkflowSelectionTimer() {\n      clearTimeout(workflowSelectionTimer);\n    }\n\n    // Monitor workflow dropdowns\n    document.getElementById('workflow').addEventListener('focus', startWorkflowSelectionTimer);\n    document.getElementById('workflow').addEventListener('blur', stopWorkflowSelectionTimer);\n    document.getElementById('editN8nWorkflow').addEventListener('focus', startWorkflowSelectionTimer);\n    document.getElementById('editN8nWorkflow').addEventListener('blur', stopWorkflowSelectionTimer);\n    document.getElementById('n8nWorkflow').addEventListener('focus', startWorkflowSelectionTimer);\n    document.getElementById('n8nWorkflow').addEventListener('blur', stopWorkflowSelectionTimer);\n\n    // Cache utilities\n    const CACHE_KEYS = {\n      WORKFLOWS: 'n8nWorkflowsCache',\n      CHANGES: 'workflowChangesCache_'  // Will append workflowId\n    };\n\n    const CACHE_TTL = 10080 * 60 * 1000; // 1 week\n\n    function isForcedReload() {\n      const navigationEntry = performance.getEntriesByType('navigation')[0];\n      return navigationEntry && \n             navigationEntry.type === 'reload' && \n             window.event && \n             window.event.shiftKey && \n             (window.event.metaKey || window.event.ctrlKey);\n    }\n\n    // Helper function to update workflow dropdowns\n    function updateWorkflowDropdowns(workflows) {\n      const createSelect = document.getElementById('n8nWorkflow');\n      const editSelect = document.getElementById('editN8nWorkflow');\n      \n      if (!workflows || !Array.isArray(workflows)) {\n        throw new Error('Invalid workflow data format');\n      }\n\n      // Create options HTML with default option\n      const defaultOption = '<option value=\"\" selected disabled>Select a workflow</option>';\n      const options = workflows.map(workflow => {\n        return `<option value=\"${workflow.name}\" \n          data-id=\"${workflow.id}\"\n          data-html_url=\"${workflow.html_url || ''}\"\n          data-download_url=\"${workflow.download_url || ''}\"\n          >${workflow.name}</option>`;\n      }).join('');\n\n      const fullOptions = defaultOption + options;\n\n      // Update both dropdowns\n      if (createSelect) {\n        createSelect.innerHTML = fullOptions;\n        console.log('Updated create select');\n      }\n      \n      if (editSelect) {\n        editSelect.innerHTML = fullOptions;\n        console.log('Updated edit select');\n      }\n\n      // Set initial values\n      updateFilename();\n      updateEditWorkflowId();\n    }\n\n    function handleWorkflowError() {\n      const errorOption = '<option value=\"\" disabled selected>Error loading workflows</option>';\n      const createSelect = document.getElementById('n8nWorkflow');\n      const editSelect = document.getElementById('editN8nWorkflow');\n      \n      if (createSelect) createSelect.innerHTML = errorOption;\n      if (editSelect) editSelect.innerHTML = errorOption;\n    }\n\n    // Load n8n workflows with caching\n    async function loadN8nWorkflows() {\n      try {\n        // Check cache unless forced reload\n        if (!isForcedReload()) {\n          const cachedData = localStorage.getItem(CACHE_KEYS.WORKFLOWS);\n          if (cachedData) {\n            const { data, timestamp } = JSON.parse(cachedData);\n            if (Date.now() - timestamp < CACHE_TTL) {\n              console.log('Using cached workflow data');\n              updateWorkflowDropdowns(data[0].workflows);\n              return;\n            }\n          }\n        } else {\n          // Clear all caches on forced reload\n          Object.keys(localStorage).forEach(key => {\n            if (key.startsWith(CACHE_KEYS.WORKFLOWS) || key.startsWith(CACHE_KEYS.CHANGES)) {\n              localStorage.removeItem(key);\n            }\n          });\n        }\n\n        console.log('Fetching n8n workflows...');\n        const response = await fetch(`${API_BASE}/webhook/Get-n8n-workflows`, {\n          headers: {\n            'Authorization': `Bearer ${AUTH_TOKEN}`\n          }\n        });\n\n        if (!response.ok) {\n          throw new Error(`HTTP error! status: ${response.status}`);\n        }\n\n        const data = await response.json();\n        console.log('Received workflows data:', data);\n        \n        if (!data || !data[0] || !data[0].workflows || !Array.isArray(data[0].workflows)) {\n          throw new Error('Invalid workflow data format');\n        }\n\n        // Cache the new data\n        localStorage.setItem(CACHE_KEYS.WORKFLOWS, JSON.stringify({\n          data,\n          timestamp: Date.now()\n        }));\n\n        updateWorkflowDropdowns(data[0].workflows);\n\n      } catch (error) {\n        console.error('Error loading n8n workflows:', error);\n        handleWorkflowError();\n      }\n    }\n\n    // Helper functions for changes display\n    function showLoadingChanges() {\n      const changesTerminal = document.getElementById(\"changes-terminal\");\n      const systemConsole = document.getElementById(\"system-console\");\n      const changesList = document.getElementById(\"changesList\");\n      \n      changesTerminal.style.display = \"block\";\n      systemConsole.classList.add('slide');\n      changesList.textContent = \"Loading changes...\";\n    }\n\n    function showChangesError(message) {\n      const changesTerminal = document.getElementById(\"changes-terminal\");\n      const systemConsole = document.getElementById(\"system-console\");\n      const changesList = document.getElementById(\"changesList\");\n      \n      changesList.textContent = `Error: ${message}`;\n      changesTerminal.style.display = \"block\";\n      systemConsole.classList.add('slide');\n    }\n\n    function displayChanges(data) {\n      const changesTerminal = document.getElementById(\"changes-terminal\");\n      const changesList = document.getElementById(\"changesList\");\n      const changes = data.filter(item => item.type !== 'debug');\n      const noChangesInfo = changes.find(item => item.type === 'info' && item.description === 'No changes detected');\n      \n      changesTerminal.style.display = \"block\";\n      document.getElementById(\"system-console\").classList.add('slide');\n\n      if (noChangesInfo) {\n        changesList.innerHTML = `\n          <div class=\"no-changes\">\n            <div>No changes to display</div>\n          </div>\n        `;\n        document.getElementById(\"confirm\").disabled = true;\n        document.getElementById(\"submitButton\").disabled = true;\n      } else {\n        const actualChanges = changes.filter(item => item.type !== 'info');\n        const changesHtml = actualChanges.map(change => `\n          <div class=\"node-change\">\n            <div class=\"title-bar\">${change.name} (${change.type})</div>\n            <div class=\"description\">${change.description}</div>\n          </div>\n        `).join('');\n        \n        changesList.innerHTML = `\n          <div class=\"warning-message\">\n            ${actualChanges.length} changes found\n          </div>\n          ${changesHtml}\n        `;\n        \n        document.getElementById(\"confirm\").disabled = false;\n        document.getElementById(\"submitButton\").disabled = !document.getElementById(\"confirm\").checked;\n      }\n      \n      // Update last updated time\n      const now = new Date();\n      document.getElementById('lastUpdated').textContent = now.toLocaleTimeString();\n    }\n\n    // Fetch changes with caching\n    async function fetchChanges() {\n      const workflowSelect = document.getElementById(\"workflow\");\n      if (!workflowSelect || !workflowSelect.value) {\n        console.log(\"No workflow selected\");\n        return;\n      }\n\n      const selectedOption = workflowSelect.options[workflowSelect.selectedIndex];\n      const workflowId = decodeURIComponent(selectedOption.value);\n      const githubFilePath = selectedOption.dataset.github ? decodeURIComponent(selectedOption.dataset.github) : '';\n      \n      if (!workflowId || !githubFilePath) {\n        console.log(\"Missing required data:\", { workflowId, githubFilePath });\n        displayChanges([{ type: 'error', description: 'Missing workflow data. Make sure both workflow path and GitHub path are set.' }]);\n        return;\n      }\n\n      const cacheKey = `${CACHE_KEYS.CHANGES}${workflowId}`;\n      \n      try {\n        // Check cache unless forced reload\n        if (!isForcedReload()) {\n          const cachedChanges = localStorage.getItem(cacheKey);\n          if (cachedChanges) {\n            const { data, timestamp } = JSON.parse(cachedChanges);\n            if (Date.now() - timestamp < CACHE_TTL) {\n              console.log('Using cached changes data');\n              displayChanges(data);\n              return;\n            }\n          }\n        }\n\n        showLoadingChanges();\n\n        const response = await fetch(`${API_BASE}/webhook/Get-Workflow-Changes`, {\n          method: \"POST\",\n          headers: {\n            'Authorization': `Bearer ${AUTH_TOKEN}`,\n            'Content-Type': 'application/json'\n          },\n          body: JSON.stringify({\n            workflowId: workflowId.trim(),\n            githubFilePath: githubFilePath.trim()\n          })\n        });\n\n        if (response.status === 500) {\n          throw new Error('Workflow not found in n8n. Please make sure the workflow exists and try again.');\n        }\n        if (!response.ok) {\n          throw new Error(`HTTP error! status: ${response.status}`);\n        }\n\n        const data = await response.json();\n        console.log(\"Received response:\", data);\n        \n        // Cache the new changes\n        localStorage.setItem(cacheKey, JSON.stringify({\n          data,\n          timestamp: Date.now()\n        }));\n\n        displayChanges(data);\n\n      } catch (error) {\n        console.error('Error fetching changes:', error);\n        displayChanges([{ type: 'error', description: error.message }]);\n      }\n    }\n\n    // Update filename when workflow is selected\n    function updateFilename() {\n      const workflowSelect = document.getElementById('n8nWorkflow');\n      const filenameInput = document.getElementById('filename');\n      if (workflowSelect && filenameInput && workflowSelect.value) {\n        filenameInput.value = `${workflowSelect.value}.json`;\n      }\n    }\n\n    // Update edit workflow ID when workflow is selected\n    function updateEditWorkflowId() {\n      const editSelect = document.getElementById('editN8nWorkflow');\n      const workflowIdInput = document.getElementById('editN8nWorkflowId');\n      if (editSelect && workflowIdInput) {\n        const selectedOption = editSelect.options[editSelect.selectedIndex];\n        if (selectedOption && selectedOption.dataset.id) {\n          workflowIdInput.value = selectedOption.dataset.id;\n        }\n      }\n    }\n\n    // Modified toggleOperationType to handle workflow loading\n    function toggleOperationType() {\n      const editSection = document.getElementById('editWorkflowSection');\n      const createSection = document.getElementById('createWorkflowSection');\n      const operationType = document.querySelector('input[name=\"type\"]:checked').value;\n      \n      if (operationType === 'create') {\n        editSection.style.display = 'none';\n        createSection.style.display = 'block';\n        document.getElementById('changes-terminal').style.display = 'none';\n      } else {\n        editSection.style.display = 'block';\n        createSection.style.display = 'none';\n        fetchChanges();\n      }\n      // Load n8n workflows for both sections\n      loadN8nWorkflows();\n    }\n\n    // Add event listener for edit n8n workflow changes\n    document.getElementById('editN8nWorkflow').addEventListener('change', updateEditWorkflowId);\n\n    // Modified fetchChanges to use the API base\n    function fetchChanges() {\n      const workflowSelect = document.getElementById(\"workflow\");\n      if (!workflowSelect || !workflowSelect.value) {\n        console.log(\"No workflow selected\");\n        return;\n      }\n\n      const selectedOption = workflowSelect.options[workflowSelect.selectedIndex];\n      const workflowId = decodeURIComponent(selectedOption.value);\n      const githubFilePath = selectedOption.dataset.github ? decodeURIComponent(selectedOption.dataset.github) : '';\n      \n      if (!workflowId || !githubFilePath) {\n        console.log(\"Missing required data:\", { workflowId, githubFilePath });\n        displayChanges([{ type: 'error', description: 'Missing workflow data. Make sure both workflow path and GitHub path are set.' }]);\n        return;\n      }\n\n      showLoadingChanges();\n\n      const payload = {\n        workflowId: workflowId.trim(),\n        githubFilePath: githubFilePath.trim()\n      };\n\n      fetch(`${API_BASE}/webhook/Get-Workflow-Changes`, {\n        method: \"POST\",\n        headers: {\n          'Authorization': `Bearer ${AUTH_TOKEN}`,\n          'Content-Type': 'application/json'\n        },\n        body: JSON.stringify(payload)\n      })\n      .then(response => {\n        if (response.status === 500) {\n          throw new Error('Workflow not found in n8n. Please make sure the workflow exists and try again.');\n        }\n        if (!response.ok) {\n          throw new Error(`HTTP error! status: ${response.status}`);\n        }\n        return response.json();\n      })\n      .then(data => {\n        console.log(\"Received response:\", data);\n        displayChanges(data);\n      })\n      .catch(error => {\n        console.error(\"Error fetching changes:\", error);\n        displayChanges([{ type: 'error', description: error.message }]);\n      });\n    }\n\n    document.getElementById(\"confirm\").addEventListener(\"change\", function() {\n      document.getElementById(\"submitButton\").disabled = !this.checked;\n    });\n    \n    // Update hidden GitHub path when workflow changes\n    document.getElementById(\"workflow\").addEventListener(\"change\", function() {\n      const selectedOption = this.options[this.selectedIndex];\n      document.getElementById(\"githubPath\").value = selectedOption.dataset.github ? decodeURIComponent(selectedOption.dataset.github) : '';\n      \n      // If in edit mode, fetch and show changes\n      const operationType = document.querySelector('input[name=\"type\"]:checked').value;\n      if (operationType === 'edit') {\n        fetchChanges();\n      }\n    });\n\n    // Set initial GitHub path value\n    window.addEventListener(\"load\", function() {\n      const workflowSelect = document.getElementById(\"workflow\");\n      const selectedOption = workflowSelect.options[workflowSelect.selectedIndex];\n      document.getElementById(\"githubPath\").value = selectedOption.dataset.github ? decodeURIComponent(selectedOption.dataset.github) : '';\n      \n      // If in create mode, load n8n workflows\n      if (document.querySelector('input[name=\"type\"]:checked').value === 'create') {\n        loadN8nWorkflows();\n      }\n    });\n\n    // Call loadN8nWorkflows when the page loads\n    window.addEventListener('load', function() {\n      const workflowSelect = document.getElementById(\"workflow\");\n      const selectedOption = workflowSelect.options[workflowSelect.selectedIndex];\n      document.getElementById(\"githubPath\").value = selectedOption.dataset.github ? decodeURIComponent(selectedOption.dataset.github) : '';\n      \n      // Load n8n workflows\n      loadN8nWorkflows();\n    });\n\n    // Matrix Effects\n    const canvas = document.getElementById(\"matrixCanvas\");\n    const ctx = canvas.getContext(\"2d\");\n    canvas.width = window.innerWidth;\n    canvas.height = window.innerHeight;\n\n    const letters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%\".split(\"\");\n    const fontSize = 16;\n    const columns = canvas.width / fontSize;\n    const drops = Array(Math.floor(columns)).fill(1);\n\n    let matrixRunning = true;\n\n    function toggleMatrix() {\n      matrixRunning = !matrixRunning;\n      const button = document.querySelector('.stop-motion');\n      button.textContent = matrixRunning ? '⏹️ Stop' : '▶️ Start';\n    }\n\n    function drawMatrix() {\n      if (!matrixRunning) return;\n      \n      ctx.fillStyle = \"rgba(0, 0, 0, 0.1)\";\n      ctx.fillRect(0, 0, canvas.width, canvas.height);\n      ctx.fillStyle = \"#00ff00\";\n      ctx.font = fontSize + \"px VT323\";\n      for (let i = 0; i < drops.length; i++) {\n        const text = letters[Math.floor(Math.random() * letters.length)];\n        ctx.fillText(text, i * fontSize, drops[i] * fontSize);\n        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {\n          drops[i] = 0;\n        }\n        drops[i]++;\n      }\n    }\n    let matrixInterval;\n    \n    function startMatrixAnimation() {\n      const canvas = document.getElementById('matrixCanvas');\n      canvas.style.display = 'block';\n      if (!matrixInterval) {\n        matrixInterval = setInterval(drawMatrix, 50);\n      }\n    }\n\n    function stopMatrixAnimation() {\n      if (matrixInterval) {\n        clearInterval(matrixInterval);\n        matrixInterval = null;\n      }\n    }\n\n    window.addEventListener('load', () => {\n      const consoleContent = document.querySelector('.terminal-content');\n      const text = document.getElementById('matrix-text');\n      const canvas = document.getElementById('matrixCanvas');\n      \n      // Initially hide console content and matrix\n      consoleContent.style.opacity = \"0\";\n      canvas.style.display = \"none\";\n      \n      // Type out text\n      let message = \"Wake up, n8n...\";\n      let index = 0;\n      text.textContent = \"\";\n      text.style.display = \"block\";\n      \n      setTimeout(() => {\n        text.style.opacity = \"1\";\n        const typeInterval = setInterval(() => {\n          if (index < message.length) {\n            text.textContent += message[index];\n            index++;\n          } else {\n            clearInterval(typeInterval);\n            // Fade out text and show console content\n            setTimeout(() => {\n              text.style.opacity = \"0\";\n              setTimeout(() => {\n                text.style.display = \"none\";\n                consoleContent.style.opacity = \"1\";\n                consoleContent.style.transition = \"opacity 1s\";\n                canvas.style.display = \"block\";\n                startMatrixAnimation();\n              }, 1000);\n            }, 2000);\n          }\n        }, 100);\n      }, 1000);\n    });\n\n    function toggleMatrix() {\n      if (matrixInterval) {\n        stopMatrixAnimation();\n      } else {\n        startMatrixAnimation();\n      }\n    }\n\n    window.addEventListener(\"resize\", () => {\n      const canvas = document.getElementById('matrixCanvas');\n      canvas.width = window.innerWidth;\n      canvas.height = window.innerHeight;\n    });\n\n    // Enable Submit Button only when confirmation is checked\n    document.getElementById(\"confirm\").addEventListener(\"change\", function() {\n      document.getElementById(\"submitButton\").disabled = !this.checked;\n    });\n\n    // Prevent overwriting anything else pending if commit is Yes\n    document.getElementById(\"commit\").addEventListener(\"change\", function() {\n      if (this.value === \"yes\") {\n        alert(\"Ensure no other pending changes will be overwritten.\");\n      }\n    });\n\n    // Add form submit handler to include auth token\n    document.getElementById('workflowForm').addEventListener('submit', function(e) {\n      e.preventDefault();\n      \n      const formData = new FormData(this);\n      const type = formData.get('type');\n      \n      // Get n8n workflow information based on operation type\n      let n8nWorkflow = '';\n      let n8nWorkflowId = '';\n      \n      if (type === 'edit') {\n        const editSelect = document.getElementById('editN8nWorkflow');\n        const selectedOption = editSelect.options[editSelect.selectedIndex];\n        n8nWorkflow = selectedOption.value;\n        n8nWorkflowId = selectedOption.dataset.id;\n        console.log('Selected n8n workflow:', { n8nWorkflow, n8nWorkflowId });\n      } else {\n        const createSelect = document.getElementById('n8nWorkflow');\n        const selectedOption = createSelect.options[createSelect.selectedIndex];\n        n8nWorkflow = selectedOption.value;\n        n8nWorkflowId = selectedOption.dataset.id;\n      }\n      \n      // Extract filename for edit operations\n      let filename = '';\n      if (type === 'edit') {\n        const workflowPath = decodeURIComponent(formData.get('workflow') || '');\n        console.log('Workflow Path:', workflowPath);\n        filename = workflowPath.split('/').pop();\n        console.log('Extracted Filename:', filename);\n      } else {\n        filename = formData.get('filename') || '';\n      }\n      \n      // Prepare request body based on operation type\n      const requestBody = {\n        type: type,\n        workflow: formData.get('workflow') || '',\n        githubPath: formData.get('workflow') || '',\n        n8nWorkflow: n8nWorkflow,\n        n8nWorkflowId: n8nWorkflowId,\n        filename: encodeURIComponent(filename),\n        commit: formData.get('commit') || 'no',\n        action: formData.get('action') || 'push',\n        confirm: formData.get('confirm') ? 'on' : 'off'\n      };\n\n      console.log('Request Body:', requestBody);\n\n      // Make the API request with error handling\n      fetch(`${API_BASE}/webhook/execute-git-action`, {\n        method: 'POST',\n        headers: {\n          'Authorization': `Bearer ${AUTH_TOKEN}`,\n          'Content-Type': 'application/json'\n        },\n        body: JSON.stringify(requestBody)\n      })\n      .then(response => {\n        if (!response.ok) {\n          return response.text().then(text => {\n            console.error('Server Response:', text);\n            throw new Error(`HTTP error! status: ${response.status}`);\n          });\n        }\n        return response.json();\n      })\n      .then(data => {\n        alert('Operation completed successfully!');\n        location.reload(); // Refresh the page to show updated state\n      })\n      .catch(error => {\n        console.error('Error:', error);\n        alert(`Error: ${error.message}`);\n      });\n    });\n\n    // Update GitHub path when workflow changes\n    function updateGitHubPath() {\n      const workflowSelect = document.getElementById('workflow');\n      const githubPathInput = document.getElementById('githubPath');\n      const editN8nSelect = document.getElementById('editN8nWorkflow');\n      \n      if (workflowSelect && githubPathInput) {\n        const selectedOption = workflowSelect.options[workflowSelect.selectedIndex];\n        if (selectedOption && selectedOption.dataset.github) {\n          githubPathInput.value = decodeURIComponent(selectedOption.dataset.github);\n          \n          // Auto-select corresponding n8n workflow in edit mode\n          if (editN8nSelect && document.querySelector('input[name=\"type\"]:checked').value === 'edit') {\n            const workflowName = selectedOption.text;\n            for (let i = 0; i < editN8nSelect.options.length; i++) {\n              if (editN8nSelect.options[i].text === workflowName) {\n                editN8nSelect.selectedIndex = i;\n                updateEditWorkflowId(); // Update the hidden workflow ID input\n                break;\n              }\n            }\n          }\n        }\n      }\n    }\n\n    // Add change listener for workflow select\n    document.getElementById('workflow').addEventListener('change', updateGitHubPath);\n\n    // Set initial values on page load\n    window.addEventListener('load', function() {\n      updateGitHubPath();\n      if (document.querySelector('input[name=\"type\"]:checked').value === 'create') {\n        loadN8nWorkflows();\n      }\n    });\n\n    // Attribution setup\n    const _0x5f2d = ['Y3JlYXRlRWxlbWVudA==', 'YXR0cmlidXRpb24=', 'Q3JlYXRlZCBCeSBKb2UgUGVyZXMgYXQgUmVhbHNpbXBsZSBTb2x1dGlvbnMgfCBTZWUgYWxsIHRlbXBsYXRlcyBieSBKb2UgYW5kIFJlYWwgU2ltcGxlIFNvbHV0aW9ucw==', 'aHR0cHM6Ly9uOG4uaW8vY3JlYXRvcnMvam9lcGVyZXMv', 'YXBwZW5kQ2hpbGQ=', 'X2JsYW5r'];\n    (function() {\n      const _0x4f = function(_0x5f) { return atob(_0x5f); };\n      const _l = document.createElement('a');\n      _l.className = _0x4f(_0x5f2d[1]);\n      _l.href = _0x4f(_0x5f2d[3]);\n      _l.target = _0x4f(_0x5f2d[5]);\n      _l.textContent = _0x4f(_0x5f2d[2]);\n      document.body.appendChild(_l);\n    })();\n  </script>\n</body>\n</html>"
+      },
+      "id": "282b3a0c-a0a1-4824-a35e-2660e3f74448",
+      "name": "HTML-UI",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        1920,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "path": "WorkflowManager",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "7d982e5f-43d2-4983-98f5-af8a39e323b5",
+      "name": "Webhook-ideogener8r",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        60,
+        140
+      ],
+      "webhookId": "e892f1af-d192-40e1-9c27-7fda6539d911"
+    },
+    {
+      "parameters": {
+        "content": "# User Interface",
+        "height": 299,
+        "width": 2436,
+        "color": 6
+      },
+      "id": "0629694b-366e-4c3b-b63c-dee48abf925f",
+      "name": "Sticky Note7",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "12345678-1234-1234-1234-123456789012",
+              "name": "flows",
+              "value": "={{ $json }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "23a817ef-f74f-4e8e-bb5d-0e70a8c3aff2",
+      "name": "Set Flows",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1300,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "flows"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        140
+      ],
+      "id": "36f3a4f4-4e7b-423e-a72b-1f4f71730b46",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "file",
+        "operation": "list",
+        "owner": {
+          "__rl": true,
+          "value": "WebsterTesting1314",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "webster_bot",
+          "mode": "name"
+        },
+        "filePath": "={{ $json.path }}"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        140
+      ],
+      "id": "40378eba-716e-4644-9fca-7dd7d894fbbc",
+      "name": "GitHub",
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "GOcNcYqT1Ql4uTYC",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "execute-git-action",
+        "authentication": "headerAuth",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        60,
+        1280
+      ],
+      "id": "13e58ae0-38b7-43d6-b624-a71c951b7842",
+      "name": "submit-form",
+      "webhookId": "d541171c-731e-4104-ac30-6a32f2c0af03",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "v0jzUOezU1ZDfsyE",
+          "name": "Header Auth account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        2200,
+        480
+      ],
+      "id": "b87f88e0-edb6-413a-82ec-ac843842df13",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $json.owner }}",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $json.repo }}",
+          "mode": "name"
+        },
+        "filePath": "={{ $json.filePath }}",
+        "binaryPropertyName": "gitWorkflow",
+        "additionalParameters": {}
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        520,
+        480
+      ],
+      "id": "e8a783e6-ea2b-41e6-8fe2-f424f1fbd3cb",
+      "name": "GitHub2",
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "GOcNcYqT1Ql4uTYC",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "83291d80-75a8-492d-9d4a-625854656ff9",
+              "name": "repo",
+              "value": "PeresNate",
+              "type": "string"
+            },
+            {
+              "id": "a1ba4116-e872-4283-9869-1ad6967b5991",
+              "name": "path",
+              "value": "autonator/flows",
+              "type": "string"
+            },
+            {
+              "id": "1b653e8d-f706-455b-8040-c194a9db0f44",
+              "name": "owner",
+              "value": "TPGLLC-US",
+              "type": "string"
+            },
+            {
+              "id": "1221eea3-c253-44d3-ac63-812aa4393c5a",
+              "name": "filePath",
+              "value": "={{ $json.body.workflowId }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        320,
+        480
+      ],
+      "id": "afa9a28e-cc66-4a03-a0b0-9fffd486183c",
+      "name": "Set GH Repo and Path3"
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "binaryPropertyName": "gitWorkflow",
+        "destinationKey": "jsonWorkflow",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        740,
+        480
+      ],
+      "id": "994f0454-95fc-4168-9efe-467b9af944c4",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "dc32e95b-bec2-44aa-9c00-2c551ab3b1dd",
+              "name": "gitJsonWorkflowNodes",
+              "value": "={{ $json.jsonWorkflow.nodes }}",
+              "type": "array"
+            },
+            {
+              "id": "2aabcc5b-a21d-48ff-a3e1-21ca8311f7b7",
+              "name": "gitWorkflowId",
+              "value": "={{ $json.jsonWorkflow.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1020,
+        480
+      ],
+      "id": "ba67b6c7-7542-4194-9eb0-7b04d3227ed7",
+      "name": "Set Git Workflow Id"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "workflowId": {
+          "__rl": true,
+          "value": "={{ $json.gitWorkflowId }}",
+          "mode": "id"
+        },
+        "requestOptions": {}
+      },
+      "id": "253ec203-b8d4-49d9-8788-aced6fe6cfae",
+      "name": "Get n8n Workflow",
+      "type": "n8n-nodes-base.n8n",
+      "position": [
+        1320,
+        480
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "n8nApi": {
+          "id": "Tp6xOZ8C9VuUYvKS",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c47912dd-e23e-4fc6-a8fb-592611714722",
+              "name": "n8nWorkflowJson",
+              "value": "={{ $json.nodes }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1640,
+        480
+      ],
+      "id": "7df11191-781e-4864-8dc9-a14d6245f27c",
+      "name": "Set n8n Workflow"
+    },
+    {
+      "parameters": {
+        "jsCode": "/**\n * Compare two values and return differences\n * @param {any} val1 - First value to compare\n * @param {any} val2 - Second value to compare\n * @param {string} path - Current path in the object\n * @returns {Array<{path: string, oldValue: any, newValue: any, type: string}>} Array of differences\n */\nfunction compareValues(val1, val2, path) {\n    // Handle different types\n    if (typeof val1 !== typeof val2) {\n        return [{\n            path,\n            oldValue: val2,\n            newValue: val1,\n            type: 'type_change'\n        }];\n    }\n\n    // Handle arrays\n    if (Array.isArray(val1) && Array.isArray(val2)) {\n        if (val1.length !== val2.length) {\n            return [{\n                path,\n                oldValue: val2,\n                newValue: val1,\n                type: 'array_length_change'\n            }];\n        }\n        \n        const differences = [];\n        val1.forEach((item, index) => {\n            const itemDiffs = compareValues(item, val2[index], `${path}[${index}]`);\n            differences.push(...itemDiffs);\n        });\n        return differences;\n    }\n\n    // Handle objects\n    if (typeof val1 === 'object' && val1 !== null && typeof val2 === 'object' && val2 !== null) {\n        const differences = [];\n        const allKeys = new Set([...Object.keys(val1), ...Object.keys(val2)]);\n        \n        for (const key of allKeys) {\n            const newPath = path ? `${path}.${key}` : key;\n            \n            if (!(key in val1)) {\n                differences.push({\n                    path: newPath,\n                    oldValue: val2[key],\n                    newValue: undefined,\n                    type: 'key_removed'\n                });\n            } else if (!(key in val2)) {\n                differences.push({\n                    path: newPath,\n                    oldValue: undefined,\n                    newValue: val1[key],\n                    type: 'key_added'\n                });\n            } else {\n                const valueDiffs = compareValues(val1[key], val2[key], newPath);\n                differences.push(...valueDiffs);\n            }\n        }\n        return differences;\n    }\n\n    // Handle primitive values\n    if (val1 !== val2) {\n        return [{\n            path,\n            oldValue: val2,\n            newValue: val1,\n            type: 'value_change'\n        }];\n    }\n\n    return [];\n}\n\n/**\n * Compare n8n nodes and return differences\n * @param {Array} n8nNodes - Array of n8n nodes\n * @param {Array} gitNodes - Array of git nodes\n * @returns {Array} Array of differences\n */\nfunction compareNodes(n8nNodes, gitNodes) {\n    const differences = [];\n    const n8nNodesMap = new Map(n8nNodes.map(node => [node.id, node]));\n    const gitNodesMap = new Map(gitNodes.map(node => [node.id, node]));\n    \n    // Compare existing nodes\n    n8nNodes.forEach((n8nNode, index) => {\n        const gitNode = gitNodesMap.get(n8nNode.id);\n        if (gitNode) {\n            const changes = compareValues(n8nNode, gitNode, `[${index}]`);\n            if (changes.length > 0) {\n                differences.push({\n                    type: n8nNode.type?.split('.')[1] || 'unknown',\n                    name: n8nNode.name,\n                    description: `Properties changed in ${n8nNode.name}`,\n                    changes\n                });\n            }\n        } else {\n            differences.push({\n                type: n8nNode.type?.split('.')[1] || 'unknown',\n                name: n8nNode.name,\n                description: `Node added: ${n8nNode.name}`,\n                changes: [{\n                    path: `[${index}]`,\n                    oldValue: null,\n                    newValue: n8nNode,\n                    type: 'node_added'\n                }]\n            });\n        }\n    });\n\n    // Check for deleted nodes\n    gitNodes.forEach((gitNode, index) => {\n        if (!n8nNodesMap.has(gitNode.id)) {\n            differences.push({\n                type: gitNode.type?.split('.')[1] || 'unknown',\n                name: gitNode.name,\n                description: `Node deleted: ${gitNode.name}`,\n                changes: [{\n                    path: `[${index}]`,\n                    oldValue: gitNode,\n                    newValue: null,\n                    type: 'node_deleted'\n                }]\n            });\n        }\n    });\n\n    return differences;\n}\n\n// Get the input data\nconst n8nWorkflowNodes = $input.first().json.n8nWorkflowJson;\nconst gitWorkflowNodes = $('Set Git Workflow Id').first().json.gitJsonWorkflowNodes;\n\n// Add debug info\nconst items = [];\n\n// Add debug information\nitems.push({\n    json: {\n        type: 'debug',\n        description: 'Input data structure',\n        n8nNodesCount: n8nWorkflowNodes.length,\n        gitNodesCount: gitWorkflowNodes.length,\n        n8nNodeIds: n8nWorkflowNodes.map(node => ({ id: node.id, name: node.name })),\n        gitNodeIds: gitWorkflowNodes.map(node => ({ id: node.id, name: node.name }))\n    }\n});\n\n// Compare the workflows\nconst differences = compareNodes(n8nWorkflowNodes, gitWorkflowNodes);\n\n// Add the differences to the output\nif (differences.length === 0) {\n    items.push({\n        json: {\n            type: 'info',\n            description: 'No changes detected',\n            details: 'Deep comparison performed on all node properties'\n        }\n    });\n} else {\n    differences.forEach(diff => {\n        items.push({\n            json: {\n                type: diff.type,\n                name: diff.name,\n                description: diff.description,\n                changes: diff.changes\n            }\n        });\n    });\n}\n\n// Return the items array for n8n\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1920,
+        480
+      ],
+      "id": "92bf6ea3-a045-41f8-b521-1ac9b08999b4",
+      "name": "ComapreNodes"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        2200,
+        1140
+      ],
+      "id": "4ae7481e-cf36-4295-a184-f0ebc7078837",
+      "name": "Respond to Webhook1"
+    },
+    {
+      "parameters": {
+        "path": "Get-n8n-workflows",
+        "authentication": "headerAuth",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "80801d00-5b62-4f7c-8ab7-c350c36f851b",
+      "name": "Get-n8n-workflows",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        60,
+        820
+      ],
+      "webhookId": "e892f1af-d192-40e1-9c27-7fda6539d911",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "v0jzUOezU1ZDfsyE",
+          "name": "Header Auth account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        2200,
+        820
+      ],
+      "id": "5a779ab7-9c4f-43b3-bcd6-a6227ab4ef79",
+      "name": "Respond to Webhook2"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "Get-Workflow-Changes",
+        "authentication": "headerAuth",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "3dff6c6f-e836-4208-a611-90be578c1765",
+      "name": "Get-Workflow-Changes",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        60,
+        480
+      ],
+      "webhookId": "e892f1af-d192-40e1-9c27-7fda6539d911",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "v0jzUOezU1ZDfsyE",
+          "name": "Header Auth account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c82211dd-6f9a-422a-9b87-6cc6e3ddfa1d",
+              "name": "workflows",
+              "value": "={{ JSON.stringify($json, null, 2) }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1060,
+        820
+      ],
+      "id": "36792235-56b2-4f4e-b017-099d8bcbaa49",
+      "name": "SetWorkflows"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2038984e-4782-45c2-9275-803fe9a8733a",
+              "name": "workflows",
+              "value": "={{\n  $json.workflows.map(item => {\n    return {\n      id: item.id,\n      name: item.name\n    };\n  })\n}}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1780,
+        820
+      ],
+      "id": "466ddee1-8621-4479-b246-53e347f7eed5",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "workflows"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        820
+      ],
+      "id": "1d4734c2-da21-4e11-aebe-60a1647f75c3",
+      "name": "Aggregate1"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Workflow Vars').item.json.body.type }}",
+                    "rightValue": "edit",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "5b83cc41-a967-4e63-b1d0-01fd02dfc5fc",
+                    "leftValue": "={{ $('Workflow Vars').item.json.body.type }}",
+                    "rightValue": "create",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1060,
+        1280
+      ],
+      "id": "60c6fa86-8854-484f-80dd-b06ac1b1c280",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "83291d80-75a8-492d-9d4a-625854656ff9",
+              "name": "repo",
+              "value": "n8n",
+              "type": "string"
+            },
+            {
+              "id": "a1ba4116-e872-4283-9869-1ad6967b5991",
+              "name": "path",
+              "value": "autonator/flows",
+              "type": "string"
+            },
+            {
+              "id": "1b653e8d-f706-455b-8040-c194a9db0f44",
+              "name": "owner",
+              "value": "WebsterTesting1314",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        600,
+        1280
+      ],
+      "id": "ff2258fc-e22c-40ec-b046-7aa176a3da66",
+      "name": "Set GH Repo and Path4"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "workflowId": {
+          "__rl": true,
+          "value": "={{ $('Workflow Vars').item.json.body.n8nWorkflowId }}",
+          "mode": "id"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        1140
+      ],
+      "id": "3bcaabc7-e460-4b7d-afec-b2a9f961fcb5",
+      "name": "n8n",
+      "credentials": {
+        "n8nApi": {
+          "id": "Tp6xOZ8C9VuUYvKS",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Set GH Repo and Path4').item.json.owner }}",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Set GH Repo and Path4').item.json.repo }}",
+          "mode": "name"
+        },
+        "filePath": "={{ $('Set GH Repo and Path4').item.json.path }}/{{ $('Workflow Vars').item.json.body.filename.decoded }}",
+        "fileContent": "={{ JSON.stringify($json, null, 2) }}",
+        "commitMessage": "Updated Workflow with Repos8r"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        1780,
+        1140
+      ],
+      "id": "52d7f463-0933-4e85-adc8-4e033b4a458c",
+      "name": "Commit Workflow Edit",
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "GOcNcYqT1Ql4uTYC",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "workflowId": {
+          "__rl": true,
+          "value": "={{ $('Workflow Vars').item.json.body.n8nWorkflowId }}",
+          "mode": "id"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        1360
+      ],
+      "id": "88c4f67a-bb2c-439c-88df-66dbb90e78bf",
+      "name": "n8n1",
+      "credentials": {
+        "n8nApi": {
+          "id": "Tp6xOZ8C9VuUYvKS",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "value": "={{ $('Set GH Repo and Path4').item.json.owner }}",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "={{ $('Set GH Repo and Path4').item.json.repo }}",
+          "mode": "name"
+        },
+        "filePath": "={{ $('Set GH Repo and Path4').item.json.path }}/{{ $('Workflow Vars').item.json.body.filename.decoded }}",
+        "fileContent": "={{ JSON.stringify($json, null, 2) }}",
+        "commitMessage": "initial commit - Created Workflow with Repos8r"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        1780,
+        1360
+      ],
+      "id": "cdec03a8-984b-429f-9df1-5976f01bcc38",
+      "name": "Commit New File",
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "GOcNcYqT1Ql4uTYC",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        2200,
+        1360
+      ],
+      "id": "c14407e2-9a07-4b3a-808b-8fe00379db3d",
+      "name": "Respond to Webhook3"
+    },
+    {
+      "parameters": {
+        "content": "# route Check for Changes",
+        "height": 299,
+        "width": 2436,
+        "color": 6
+      },
+      "id": "779ceebb-9c78-47b7-8c33-335d482adb92",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# route Get workflows from n8n",
+        "height": 299,
+        "width": 2436,
+        "color": 6
+      },
+      "id": "4ab25539-de4b-4c2f-a4a6-4e0b540326b5",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# Create or Edit GitHub",
+        "height": 539,
+        "width": 2436,
+        "color": 6
+      },
+      "id": "8e7c3647-143b-43b4-99cf-ddde4db0a858",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        1060
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Set Variables",
+        "height": 220,
+        "width": 220
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        280,
+        80
+      ],
+      "typeVersion": 1,
+      "id": "e4c5a667-ef6c-4eda-8e27-b82dcb9d21e3",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Set Variables",
+        "height": 220,
+        "width": 220
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        260,
+        440
+      ],
+      "typeVersion": 1,
+      "id": "fb93be23-93ac-4da0-a715-b5941fb5a8ee",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## Set Variables",
+        "height": 220,
+        "width": 220
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        540,
+        1220
+      ],
+      "typeVersion": 1,
+      "id": "5c2e11d2-88d1-46a3-8746-e85cbb5a8e85",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## Set Basic Auth\n## Credentials",
+        "width": 420,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -220,
+        120
+      ],
+      "typeVersion": 1,
+      "id": "14edd3a3-3d14-4676-8705-3f9be8ecaf1b",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "## Set Header Auth\n## Credentials",
+        "width": 420,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -220,
+        800
+      ],
+      "typeVersion": 1,
+      "id": "90a6499b-6a11-4df3-ae8d-18ea10c71f4c",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "content": "## Set Header Auth\n## Credentials",
+        "width": 440,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -240,
+        1260
+      ],
+      "typeVersion": 1,
+      "id": "20a2db3f-65a6-4c90-a768-d4feaea187aa",
+      "name": "Sticky Note10"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1b653e8d-f706-455b-8040-c194a9db0f44",
+              "name": "owner",
+              "value": "TPGLLC-US",
+              "type": "string"
+            },
+            {
+              "id": "83291d80-75a8-492d-9d4a-625854656ff9",
+              "name": "repo",
+              "value": "PeresNate",
+              "type": "string"
+            },
+            {
+              "id": "a1ba4116-e872-4283-9869-1ad6967b5991",
+              "name": "path",
+              "value": "autonator/flows",
+              "type": "string"
+            },
+            {
+              "id": "a4807ec8-ab09-4c92-9183-0831aa95c2a8",
+              "name": "headerAuth",
+              "value": "yXoJIj4LZW294yfisVeEUN42bQpA3PHa",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        320,
+        140
+      ],
+      "id": "0f11a2f4-8b65-42ff-bbcf-84751414f50c",
+      "name": "Set Workflow Variables"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "17390fe2-3acb-4f8a-aad2-204405a6ed74",
+              "name": "body.type",
+              "value": "={{ $json.body.type }}",
+              "type": "string"
+            },
+            {
+              "id": "a097c9d4-cdf6-4cdb-9450-26c526921bbe",
+              "name": "body.workflow.decoded",
+              "value": "={{ $json.body.workflow.urlDecode() }}",
+              "type": "string"
+            },
+            {
+              "id": "024b6f1a-de03-4349-a998-ab9ab7dd2ef5",
+              "name": "body.workflow.encoded",
+              "value": "={{ $json.body.workflow }}",
+              "type": "string"
+            },
+            {
+              "id": "21d7a568-bffb-4d2b-9319-0f1fb862b4e1",
+              "name": "body.githubPath.decdoded",
+              "value": "={{ $json.body.githubPath.urlDecode() }}",
+              "type": "string"
+            },
+            {
+              "id": "6d2a1d3d-f9ff-4aad-afe8-e3cc4f34b3e9",
+              "name": "body.githubPath.encoded",
+              "value": "={{ $json.body.githubPath }}",
+              "type": "string"
+            },
+            {
+              "id": "c532016e-f8ce-4ea3-806d-5bfb49f76a99",
+              "name": "body.n8nWorkflow.decoded",
+              "value": "={{ $json.body.n8nWorkflow.urlDecode() }}",
+              "type": "string"
+            },
+            {
+              "id": "a209a4b5-2358-4651-9431-51ea88bf5779",
+              "name": "body.n8nWorkflow.encoded",
+              "value": "={{ $json.body.n8nWorkflow }}",
+              "type": "string"
+            },
+            {
+              "id": "65161c43-eb2f-4723-9497-8f74a80aa0d4",
+              "name": "body.n8nWorkflowId",
+              "value": "={{ $json.body.n8nWorkflowId.urlDecode() }}",
+              "type": "string"
+            },
+            {
+              "id": "e625042a-49f5-4174-ba75-cd6f8d21fba0",
+              "name": "body.filename.decoded",
+              "value": "={{ $json.body.filename.urlDecode() }}",
+              "type": "string"
+            },
+            {
+              "id": "1d1588fc-f053-43fb-bd53-8d0affa6121c",
+              "name": "body.filename.encoded",
+              "value": "={{ $json.body.filename }}",
+              "type": "string"
+            },
+            {
+              "id": "ff06a06b-c90d-4ac3-af8f-6fc328661be4",
+              "name": "body.commit",
+              "value": "={{ $json.body.commit }}",
+              "type": "string"
+            },
+            {
+              "id": "78688fc2-a493-4786-915d-a0d338c135bf",
+              "name": "body.action",
+              "value": "={{ $json.body.action }}",
+              "type": "string"
+            },
+            {
+              "id": "e405a57b-5a1f-4e9a-a6c3-5d01ad68ff52",
+              "name": "body.confirm",
+              "value": "={{ $json.body.confirm }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        340,
+        1280
+      ],
+      "id": "43a03450-677e-4758-85d2-260991c11aad",
+      "name": "Workflow Vars"
+    },
+    {
+      "parameters": {
+        "content": "# Workflow Repos8r\n## 🔧 **Setup & Usage**\n\n1. **Generate your n8n API key**\n\n2. **Set up GitHub repository & access token**\n\n3. **Create Generic Basic Auth credentials**\n\n4. **Create Generic Header Auth credentials**\n\n5. **Set the workflow variables in the nodes in yellow stickies**\n\n6. **Set the webhook Auths**\n\n7. **Deploy & start tracking your workflow versions**",
+        "height": 400,
+        "width": 520,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        -380
+      ],
+      "typeVersion": 1,
+      "id": "c57f69e9-119f-40bb-8256-a048ae14d836",
+      "name": "Sticky Note11"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-03-11T00:15:00.359Z",
+      "updatedAt": "2025-03-11T00:15:00.359Z",
+      "id": "6s36WBMdQMeptLh5",
+      "name": "utility"
+    }
+  ],
+  "triggerCount": 4,
+  "updatedAt": "2025-03-11T00:26:54.000Z",
+  "versionId": "69089c47-e68c-4230-8b48-b386fd51c500"
+}
