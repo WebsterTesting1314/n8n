@@ -761,17 +761,6 @@
         ]
       ]
     },
-    "Ollama Chat Model": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "If4": {
       "main": [
         [
@@ -800,11 +789,95 @@
           }
         ]
       ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add files": {
+      "main": [
+        [
+          {
+            "node": "Commit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Commit": {
+      "main": [
+        [
+          {
+            "node": "Push",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub get file": {
+      "main": [
+        [
+          {
+            "node": "Decode file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Decode file": {
+      "main": [
+        [
+          {
+            "node": "GitHub push edited file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "config": {
+      "main": [
+        [
+          {
+            "node": "GitHub get file",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Pull",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pull": {
+      "main": [
+        [
+          {
+            "node": "Add files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-03-10T14:24:29.428Z",
   "id": "HOe1bMHArQ8nkrhH",
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "GITHUB notion 專家",
   "nodes": [
     {
@@ -980,8 +1053,8 @@
       "name": "Split In Batches",
       "type": "n8n-nodes-base.splitInBatches",
       "position": [
-        920,
-        -1540
+        560,
+        -1720
       ],
       "typeVersion": 2,
       "id": "1b1180e6-04ed-494f-a092-b13f631c689a"
@@ -1025,8 +1098,8 @@
       "name": "OpenGraph API",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        940,
-        -1000
+        1340,
+        -1520
       ],
       "typeVersion": 4.1,
       "id": "33630843-9e28-4543-b474-e97a11cc0c1f",
@@ -1037,8 +1110,8 @@
       "name": "Meta tags Scraper - dub.sh",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        940,
-        -620
+        760,
+        -500
       ],
       "notesInFlow": true,
       "typeVersion": 4.1,
@@ -1072,8 +1145,8 @@
       "name": "If - Enable ScreenShots (yes to enable)",
       "type": "n8n-nodes-base.if",
       "position": [
-        1820,
-        -860
+        1900,
+        -960
       ],
       "typeVersion": 2,
       "id": "88949a2d-8412-461b-bf3a-1b1c819bf700"
@@ -1094,7 +1167,7 @@
       "name": "API Auth",
       "type": "n8n-nodes-base.set",
       "position": [
-        1380,
+        940,
         -1780
       ],
       "typeVersion": 3.2,
@@ -1116,8 +1189,8 @@
       "name": "Convert to File",
       "type": "n8n-nodes-base.convertToFile",
       "position": [
-        2220,
-        -660
+        2160,
+        -460
       ],
       "typeVersion": 1,
       "id": "6deacd7b-8235-4858-aa27-de2745be0e1d"
@@ -1175,8 +1248,8 @@
       "name": "Final Meta",
       "type": "n8n-nodes-base.aggregate",
       "position": [
-        1660,
-        -860
+        1720,
+        -980
       ],
       "typeVersion": 1,
       "id": "1bed4598-6ffd-4ec6-959c-01f67fd8276b"
@@ -1197,7 +1270,10 @@
           "mode": "list",
           "cachedResultName": "webster_bot",
           "cachedResultUrl": "https://github.com/WebsterTesting1314/webster_bot"
-        }
+        },
+        "filePath": "docs/README.md",
+        "fileContent": "about the project",
+        "commitMessage": "submit the pic"
       },
       "name": "Host Screenshot",
       "type": "n8n-nodes-base.github",
@@ -1298,8 +1374,8 @@
       "name": "Method 3 - META1",
       "type": "n8n-nodes-base.set",
       "position": [
-        1400,
-        -640
+        1360,
+        -520
       ],
       "typeVersion": 3.2,
       "id": "80d147ad-90f3-475b-9f09-4e47906644ba"
@@ -1309,8 +1385,8 @@
       "name": "Method 1 - SCR",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        2220,
-        -1060
+        2180,
+        -1120
       ],
       "notesInFlow": true,
       "typeVersion": 4.1,
@@ -1323,8 +1399,8 @@
       "name": "Method 2 - SCR",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        2220,
-        -840
+        2080,
+        -820
       ],
       "notesInFlow": true,
       "typeVersion": 4.1,
@@ -1370,8 +1446,8 @@
       "name": "n8n Form Trigger",
       "type": "n8n-nodes-base.formTrigger",
       "position": [
-        1000,
-        -1660
+        220,
+        -1600
       ],
       "webhookId": "4d7636c2-aa25-4a90-8f9c-e421166d21ab",
       "typeVersion": 2,
@@ -1382,8 +1458,8 @@
       "name": "Respond to Webhook",
       "type": "n8n-nodes-base.respondToWebhook",
       "position": [
-        920,
-        -1320
+        840,
+        -2140
       ],
       "typeVersion": 1,
       "id": "ef48797f-e960-4231-ba2e-a9a37cc473c2"
@@ -1404,8 +1480,8 @@
       "name": "Scan URL (Community)",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1680,
-        -1760
+        1580,
+        -1740
       ],
       "typeVersion": 4.1,
       "id": "25b85edb-b635-4dc9-9378-3dcd207d581a"
@@ -1527,8 +1603,8 @@
       "name": "If3",
       "type": "n8n-nodes-base.if",
       "position": [
-        1380,
-        -1560
+        1360,
+        -1780
       ],
       "typeVersion": 2,
       "id": "a704540d-e1ec-4b2b-849c-7ac213b8fb5f"
@@ -1560,8 +1636,8 @@
       "name": "Method 4 - META",
       "type": "n8n-nodes-base.set",
       "position": [
-        1620,
-        -620
+        1600,
+        -580
       ],
       "typeVersion": 3.2,
       "id": "f93b1542-1a6d-4690-ad53-c5f8ce2713ae"
@@ -1571,7 +1647,7 @@
       "name": "IF dub invaild",
       "type": "n8n-nodes-base.if",
       "position": [
-        1160,
+        1040,
         -640
       ],
       "typeVersion": 2,
@@ -1670,7 +1746,22 @@
       "typeVersion": 1
     },
     {
-      "parameters": {},
+      "parameters": {
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "value": "WebsterTesting1314",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "webster_bot",
+          "mode": "name"
+        },
+        "filePath": "docs/README.md",
+        "fileContent": "README",
+        "commitMessage": "README"
+      },
       "id": "f0c63be6-1e4b-47b2-a647-8ea1fa7cad2f",
       "name": "GitHub",
       "type": "n8n-nodes-base.github",
@@ -1678,7 +1769,13 @@
         -2780,
         200
       ],
-      "typeVersion": 1
+      "typeVersion": 1,
+      "credentials": {
+        "githubApi": {
+          "id": "nwTWXLJmlORvI7r1",
+          "name": "GitHub account 2"
+        }
+      }
     },
     {
       "parameters": {},
@@ -1692,7 +1789,9 @@
       "typeVersion": 1
     },
     {
-      "parameters": {},
+      "parameters": {
+        "options": {}
+      },
       "id": "ec9b2c90-0475-4625-9540-6391b623813f",
       "name": "setVars",
       "type": "n8n-nodes-base.set",
@@ -1703,7 +1802,10 @@
       "typeVersion": 3.4
     },
     {
-      "parameters": {},
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the JSON of the item\n$input.item.json.myNewField = 1;\n\nreturn $input.item;"
+      },
       "id": "05e3ef8c-b30a-4d29-abc7-a257445ac439",
       "name": "replace variables",
       "type": "n8n-nodes-base.code",
@@ -1769,18 +1871,30 @@
       "typeVersion": 3.4
     },
     {
-      "parameters": {},
-      "id": "13701bcc-edd1-4a67-99c0-80d21afcc443",
-      "name": "Ollama Chat Model",
-      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
-      "position": [
-        -900,
-        400
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6d76eb17-cfa9-40b5-9915-70c2e614b62c",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
       "id": "98fd881b-60b4-44cc-a72a-791b6fd408be",
       "name": "If4",
       "type": "n8n-nodes-base.if",
@@ -1791,7 +1905,9 @@
       "typeVersion": 2.2
     },
     {
-      "parameters": {},
+      "parameters": {
+        "errorMessage": "='something happen'"
+      },
       "id": "19b79691-f816-462f-9df5-ff0999fe5ee8",
       "name": "Stop and Error1",
       "type": "n8n-nodes-base.stopAndError",
@@ -1807,8 +1923,8 @@
       "name": "Sticky Note17",
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -3320,
-        80
+        -3240,
+        140
       ],
       "typeVersion": 1
     },
@@ -1829,8 +1945,8 @@
       "name": "Sticky Note19",
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1600,
-        0
+        -1540,
+        160
       ],
       "typeVersion": 1
     },
@@ -1840,8 +1956,8 @@
       "name": "Sticky Note20",
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1340,
-        420
+        -1540,
+        360
       ],
       "typeVersion": 1
     },
@@ -1881,6 +1997,251 @@
           "name": "GitHub account 3"
         }
       }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -880,
+        400
+      ],
+      "id": "1152b144-949d-4b55-8bb1-fbd04b66d418",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "WOGVxYrpyYNAzjsK",
+          "name": "OpenAi account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "mode": "list",
+          "value": "teds-tech-talks",
+          "cachedResultUrl": "https://github.com/teds-tech-talks",
+          "cachedResultName": "teds-tech-talks"
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "list",
+          "value": "git_push_article",
+          "cachedResultUrl": "https://github.com/teds-tech-talks/git_push_article",
+          "cachedResultName": "git_push_article"
+        },
+        "filePath": "README.md",
+        "fileContent": "={{ $json.data }}\n## Updated at:\n{{ $now.toISO() }}",
+        "commitMessage": "updated from n8n via GitHub node"
+      },
+      "id": "b0db093b-3b2c-473a-8fe7-b32230211f1f",
+      "name": "GitHub push edited file",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        -500,
+        620
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "githubApi": {
+          "id": "nwTWXLJmlORvI7r1",
+          "name": "GitHub account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "add",
+        "repositoryPath": "={{ $('config').item.json.localrepo }}",
+        "pathsToAdd": "."
+      },
+      "id": "699ace0d-76fb-48a8-b74e-ee467c6d2735",
+      "name": "Add files",
+      "type": "n8n-nodes-base.git",
+      "position": [
+        -500,
+        940
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "operation": "commit",
+        "repositoryPath": "={{ $('config').item.json.localrepo }}",
+        "message": "updated from n8n via Git node",
+        "options": {}
+      },
+      "id": "a7195fee-f266-4278-8558-bbbf5340ee52",
+      "name": "Commit",
+      "type": "n8n-nodes-base.git",
+      "position": [
+        -340,
+        940
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "authentication": "gitPassword",
+        "operation": "push",
+        "repositoryPath": "={{ $('config').item.json.localrepo }}",
+        "options": {
+          "targetRepository": "https://github.com/teds-tech-talks/git_push_article.git"
+        }
+      },
+      "id": "00004f02-0f52-4dfe-981d-7e73690b1bc8",
+      "name": "Push",
+      "type": "n8n-nodes-base.git",
+      "position": [
+        -180,
+        940
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "gitPassword": {
+          "id": "6XRdl1urUvcZeKbN",
+          "name": "Git account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "localrepo",
+              "value": "webster_bot/MyWorkflow"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a3c903ba-e634-4da6-a34f-7c9e369ca72f",
+      "name": "config",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -1180,
+        780
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "operation": "pull",
+        "repositoryPath": "={{ $('config').item.json.localrepo }}"
+      },
+      "id": "4b0122d2-c9a1-4988-a9f8-5128fdceaa60",
+      "name": "Pull",
+      "type": "n8n-nodes-base.git",
+      "position": [
+        -820,
+        940
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "mode": "list",
+          "value": "teds-tech-talks",
+          "cachedResultUrl": "https://github.com/teds-tech-talks",
+          "cachedResultName": "teds-tech-talks"
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "list",
+          "value": "git_push_article",
+          "cachedResultUrl": "https://github.com/teds-tech-talks/git_push_article",
+          "cachedResultName": "git_push_article"
+        },
+        "filePath": "README.md",
+        "additionalParameters": {}
+      },
+      "id": "46eccef3-6114-4ac3-82a7-bc6063e2a576",
+      "name": "GitHub get file",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        -820,
+        620
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "githubApi": {
+          "id": "nwTWXLJmlORvI7r1",
+          "name": "GitHub account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "var text = Buffer.from($input.first().binary.data.data, 'base64').toString('utf8');\nreturn {\"data\": text};"
+      },
+      "id": "bcebe3a9-742c-49d0-abb3-103560e8dbe6",
+      "name": "Decode file",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        -660,
+        620
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "content": "## Push a single file via GitHub node directly to the remote GitHub repo",
+        "height": 244.559082047148,
+        "width": 865.0290253216738
+      },
+      "id": "a178b5ee-6f7d-49f1-837d-3873acd74151",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -860,
+        540
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Push all changes via Git node",
+        "height": 251.5433184970501,
+        "width": 870.5619913953059
+      },
+      "id": "41a92d67-9422-468d-b1d2-456166dd4021",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -860,
+        860
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Please update the path to the local repository and connect this node to the upper or lower parts of the workflow",
+        "height": 383.3156992772523,
+        "width": 373.9894195663518
+      },
+      "id": "67af4f65-3ce8-4b13-9282-e7d466fdca9e",
+      "name": "Sticky Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1280,
+        580
+      ],
+      "typeVersion": 1
     }
   ],
   "pinData": {},
@@ -1890,6 +2251,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-11T00:14:29.000Z",
-  "versionId": "6f167ef7-a5c8-4054-a9d1-43073a2dd81a"
+  "updatedAt": "2025-03-11T01:41:35.000Z",
+  "versionId": "f7c3575c-1b5f-4612-ab4b-36bdfff563ad"
 }
