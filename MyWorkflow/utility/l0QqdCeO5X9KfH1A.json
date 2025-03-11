@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "n8n | get wf1": {
       "main": [
@@ -1629,16 +1629,12 @@
         "owner": {
           "__rl": true,
           "value": "WebsterTesting1314",
-          "mode": "list",
-          "cachedResultName": "WebsterTesting1314",
-          "cachedResultUrl": "https://github.com/WebsterTesting1314"
+          "mode": "name"
         },
         "repository": {
           "__rl": true,
           "value": "webster_bot",
-          "mode": "list",
-          "cachedResultName": "webster_bot",
-          "cachedResultUrl": "https://github.com/WebsterTesting1314/webster_bot"
+          "mode": "name"
         },
         "events": [
           "*"
@@ -1664,10 +1660,17 @@
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "saveExecutionProgress": true,
+    "callerPolicy": "workflowsFromSameOwner"
   },
   "staticData": {
-    "node:Github Trigger": {}
+    "node:Github Trigger": {
+      "webhookId": 534571489,
+      "webhookEvents": [
+        "*"
+      ]
+    }
   },
   "tags": [
     {
@@ -1678,6 +1681,6 @@
     }
   ],
   "triggerCount": 5,
-  "updatedAt": "2025-03-11T01:55:55.000Z",
-  "versionId": "f83ae526-12c3-472f-baeb-d50b2c4d1127"
+  "updatedAt": "2025-03-11T02:50:20.000Z",
+  "versionId": "feecb14c-6b47-46ed-a887-b244253feb75"
 }
