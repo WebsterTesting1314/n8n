@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "n8n | get wf1": {
       "main": [
@@ -299,6 +299,89 @@
         [
           {
             "node": "Set GH Repo and Path4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find database page": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Edit issue",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Delete issue",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Close issue",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Reopen issue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Create database page",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create custom Notion filters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create custom Notion filters": {
+      "main": [
+        [
+          {
+            "node": "Find database page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Github Trigger": {
+      "main": [
+        [
+          {
+            "node": "IF",
             "type": "main",
             "index": 0
           }
@@ -1346,13 +1429,246 @@
       "typeVersion": 1,
       "id": "c57f69e9-119f-40bb-8256-a048ae14d836",
       "name": "Sticky Note11"
+    },
+    {
+      "parameters": {
+        "pageId": {
+          "__rl": true,
+          "value": "https://www.notion.so/1932c265190681f59ba4d90ad9c96a69?pvs=4",
+          "mode": "url"
+        },
+        "title": "GITHUB同步查看",
+        "options": {}
+      },
+      "id": "45f4bde0-93da-4cc2-9a41-0240b8255ffe",
+      "name": "Create database page",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        -1060,
+        700
+      ],
+      "typeVersion": 2,
+      "credentials": {
+        "notionApi": {
+          "id": "U4KF8a3zaPaDPRJT",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "1afb0cbc-0cee-454a-927e-7225576be5d2",
+      "name": "Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1060,
+        1100
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "pageId": {
+          "__rl": true,
+          "value": "https://www.notion.so/1932c265190681f59ba4d90ad9c96a69?pvs=4",
+          "mode": "url"
+        },
+        "title": "GITHUB 專案",
+        "options": {}
+      },
+      "id": "3c64bacc-eac2-4e05-a97b-ffba86ac38ef",
+      "name": "Find database page",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        -880,
+        900
+      ],
+      "typeVersion": 2,
+      "credentials": {
+        "notionApi": {
+          "id": "U4KF8a3zaPaDPRJT",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "849b0076-5a8f-45cc-9e2c-d046b3656975",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        -700,
+        900
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "fef144cd-949e-4c1d-99c6-8a4c59d79935",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        -1240,
+        800
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "pageId": {
+          "__rl": true,
+          "value": "https://www.notion.so/1932c265190681f59ba4d90ad9c96a69?pvs=4",
+          "mode": "url"
+        },
+        "title": "GITHUB 項目",
+        "options": {}
+      },
+      "id": "44f995dd-87d9-4277-8310-54312b81b0e5",
+      "name": "Edit issue",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        -520,
+        660
+      ],
+      "typeVersion": 2,
+      "credentials": {
+        "notionApi": {
+          "id": "U4KF8a3zaPaDPRJT",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pageId": {
+          "__rl": true,
+          "value": "https://www.notion.so/1932c265190681f59ba4d90ad9c96a69?pvs=4",
+          "mode": "url"
+        },
+        "title": "GITHUB 專案",
+        "options": {}
+      },
+      "id": "df0f3e77-a4cc-4739-8296-6c6e1b1103da",
+      "name": "Delete issue",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        -520,
+        820
+      ],
+      "typeVersion": 2,
+      "credentials": {
+        "notionApi": {
+          "id": "U4KF8a3zaPaDPRJT",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "a7d1379d-bcfa-4849-b511-d0bca9ce76b9",
+      "name": "Create custom Notion filters",
+      "type": "n8n-nodes-base.function",
+      "position": [
+        -1060,
+        900
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "pageId": {
+          "__rl": true,
+          "value": "https://www.notion.so/1932c265190681f59ba4d90ad9c96a69?pvs=4",
+          "mode": "url"
+        },
+        "title": "GITHUB 專案",
+        "options": {}
+      },
+      "id": "d2ba0b9e-1f39-45af-b013-207ed68e32ff",
+      "name": "Close issue",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        -520,
+        980
+      ],
+      "typeVersion": 2,
+      "credentials": {
+        "notionApi": {
+          "id": "U4KF8a3zaPaDPRJT",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pageId": {
+          "__rl": true,
+          "value": "https://www.notion.so/1932c265190681f59ba4d90ad9c96a69?pvs=4",
+          "mode": "url"
+        },
+        "title": "GITHUB 專案",
+        "options": {}
+      },
+      "id": "6b1e05a3-857f-44ad-b8f2-c5f8946dea51",
+      "name": "Reopen issue",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        -520,
+        1140
+      ],
+      "typeVersion": 2,
+      "credentials": {
+        "notionApi": {
+          "id": "U4KF8a3zaPaDPRJT",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "owner": {
+          "__rl": true,
+          "value": "WebsterTesting1314",
+          "mode": "list",
+          "cachedResultName": "WebsterTesting1314",
+          "cachedResultUrl": "https://github.com/WebsterTesting1314"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "webster_bot",
+          "mode": "list",
+          "cachedResultName": "webster_bot",
+          "cachedResultUrl": "https://github.com/WebsterTesting1314/webster_bot"
+        },
+        "events": [
+          "*"
+        ],
+        "options": {}
+      },
+      "type": "n8n-nodes-base.githubTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1540,
+        840
+      ],
+      "id": "d342d68b-4151-4ebf-9b89-0cdde6f29057",
+      "name": "Github Trigger",
+      "webhookId": "e503d7ba-7c31-4250-8321-107f4efda3a9",
+      "credentials": {
+        "githubApi": {
+          "id": "nwTWXLJmlORvI7r1",
+          "name": "GitHub account 2"
+        }
+      }
     }
   ],
   "pinData": {},
   "settings": {
     "executionOrder": "v1"
   },
-  "staticData": null,
+  "staticData": {
+    "node:Github Trigger": {}
+  },
   "tags": [
     {
       "createdAt": "2025-03-11T00:15:00.359Z",
@@ -1361,7 +1677,7 @@
       "name": "utility"
     }
   ],
-  "triggerCount": 4,
-  "updatedAt": "2025-03-11T00:26:54.000Z",
-  "versionId": "69089c47-e68c-4230-8b48-b386fd51c500"
+  "triggerCount": 5,
+  "updatedAt": "2025-03-11T01:55:55.000Z",
+  "versionId": "f83ae526-12c3-472f-baeb-d50b2c4d1127"
 }
