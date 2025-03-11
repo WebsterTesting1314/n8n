@@ -1,78 +1,6 @@
 {
   "active": false,
   "connections": {
-    "Find database page": {
-      "main": [
-        [
-          {
-            "node": "Switch",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Switch": {
-      "main": [
-        [
-          {
-            "node": "Edit issue",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Delete issue",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Close issue",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Reopen issue",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "IF": {
-      "main": [
-        [
-          {
-            "node": "Create database page",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Create custom Notion filters",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create custom Notion filters": {
-      "main": [
-        [
-          {
-            "node": "Find database page",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Split In Batches": {
       "main": [
         [
@@ -779,17 +707,6 @@
         ]
       ]
     },
-    "Github Trigger": {
-      "main": [
-        [
-          {
-            "node": "IF",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "OpenAI Chat Model": {
       "ai_languageModel": [
         [
@@ -904,152 +821,6 @@
     },
     {
       "parameters": {},
-      "id": "b093025e-2248-4b6b-b635-ad29deed5124",
-      "name": "Create database page",
-      "type": "n8n-nodes-base.notion",
-      "position": [
-        2940,
-        580
-      ],
-      "typeVersion": 2,
-      "credentials": {
-        "notionApi": {
-          "id": "U4KF8a3zaPaDPRJT",
-          "name": "Notion account 2"
-        }
-      }
-    },
-    {
-      "parameters": {},
-      "id": "03a01315-371e-4972-a54b-78c5743ec8f6",
-      "name": "Note",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        2940,
-        980
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
-      "id": "817d21e3-a643-4505-be18-3042134efb2c",
-      "name": "Find database page",
-      "type": "n8n-nodes-base.notion",
-      "position": [
-        3120,
-        780
-      ],
-      "typeVersion": 2,
-      "credentials": {
-        "notionApi": {
-          "id": "U4KF8a3zaPaDPRJT",
-          "name": "Notion account 2"
-        }
-      }
-    },
-    {
-      "parameters": {},
-      "id": "6bb9e05f-99b7-49ac-ad5f-100692761953",
-      "name": "Switch",
-      "type": "n8n-nodes-base.switch",
-      "position": [
-        3300,
-        780
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
-      "id": "7c840772-6594-4c9a-bf63-13b4c9cf07ca",
-      "name": "IF",
-      "type": "n8n-nodes-base.if",
-      "position": [
-        2760,
-        680
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
-      "id": "f8ce3f86-2101-429a-b15c-f30a0fb3dd24",
-      "name": "Edit issue",
-      "type": "n8n-nodes-base.notion",
-      "position": [
-        3480,
-        540
-      ],
-      "typeVersion": 2,
-      "credentials": {
-        "notionApi": {
-          "id": "U4KF8a3zaPaDPRJT",
-          "name": "Notion account 2"
-        }
-      }
-    },
-    {
-      "parameters": {},
-      "id": "fcf43322-f977-40d7-badc-dc60458f3b13",
-      "name": "Delete issue",
-      "type": "n8n-nodes-base.notion",
-      "position": [
-        3480,
-        700
-      ],
-      "typeVersion": 2,
-      "credentials": {
-        "notionApi": {
-          "id": "U4KF8a3zaPaDPRJT",
-          "name": "Notion account 2"
-        }
-      }
-    },
-    {
-      "parameters": {},
-      "id": "5562578c-88d9-4e85-97bb-f55ffef94d54",
-      "name": "Create custom Notion filters",
-      "type": "n8n-nodes-base.function",
-      "position": [
-        2940,
-        780
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {},
-      "id": "1830decc-acd2-432c-bc6f-80ee2cae3bd8",
-      "name": "Close issue",
-      "type": "n8n-nodes-base.notion",
-      "position": [
-        3480,
-        860
-      ],
-      "typeVersion": 2,
-      "credentials": {
-        "notionApi": {
-          "id": "U4KF8a3zaPaDPRJT",
-          "name": "Notion account 2"
-        }
-      }
-    },
-    {
-      "parameters": {},
-      "id": "06742531-69e9-4978-bb1e-9ff5c1d93b91",
-      "name": "Reopen issue",
-      "type": "n8n-nodes-base.notion",
-      "position": [
-        3480,
-        1020
-      ],
-      "typeVersion": 2,
-      "credentials": {
-        "notionApi": {
-          "id": "U4KF8a3zaPaDPRJT",
-          "name": "Notion account 2"
-        }
-      }
-    },
-    {
-      "parameters": {},
       "name": "Split In Batches",
       "type": "n8n-nodes-base.splitInBatches",
       "position": [
@@ -1086,8 +857,8 @@
       "name": "Get Headers",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        940,
-        -800
+        720,
+        -840
       ],
       "typeVersion": 4.1,
       "id": "6ceb8777-f782-455a-b883-5061fd70ece3",
@@ -1099,7 +870,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "position": [
         1340,
-        -1520
+        -1620
       ],
       "typeVersion": 4.1,
       "id": "33630843-9e28-4543-b474-e97a11cc0c1f",
@@ -1110,8 +881,8 @@
       "name": "Meta tags Scraper - dub.sh",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        760,
-        -500
+        1480,
+        -140
       ],
       "notesInFlow": true,
       "typeVersion": 4.1,
@@ -1123,8 +894,8 @@
       "name": "IF OpenGraph invaild",
       "type": "n8n-nodes-base.if",
       "position": [
-        1180,
-        -1020
+        720,
+        -1140
       ],
       "typeVersion": 2,
       "id": "0e5eec31-959d-4620-8425-48c942e12039"
@@ -1134,8 +905,8 @@
       "name": "Parse headers",
       "type": "n8n-nodes-base.html",
       "position": [
-        1140,
-        -840
+        1020,
+        -900
       ],
       "typeVersion": 1,
       "id": "31867b07-5401-4b13-b34b-4531eb5d03a7"
@@ -1163,7 +934,9 @@
       "id": "cb160185-e7b0-4763-b43f-01c8c2077bff"
     },
     {
-      "parameters": {},
+      "parameters": {
+        "options": {}
+      },
       "name": "API Auth",
       "type": "n8n-nodes-base.set",
       "position": [
@@ -1200,8 +973,8 @@
       "name": "Final Data",
       "type": "n8n-nodes-base.set",
       "position": [
-        2760,
-        -1040
+        2780,
+        -1260
       ],
       "typeVersion": 3.2,
       "id": "70ea3352-1566-47e3-8f08-9d506d67aeb6"
@@ -1212,7 +985,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "position": [
         3060,
-        -1040
+        -1300
       ],
       "notesInFlow": true,
       "typeVersion": 4.1,
@@ -1225,8 +998,8 @@
       "name": "UPDATE",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        3060,
-        -880
+        3180,
+        -700
       ],
       "typeVersion": 4.1,
       "alwaysOutputData": true,
@@ -1237,8 +1010,8 @@
       "name": "IF Slug available",
       "type": "n8n-nodes-base.if",
       "position": [
-        3200,
-        -1040
+        3480,
+        -1120
       ],
       "typeVersion": 1,
       "id": "709db399-fa4a-49f2-9198-5ee6ca3c6fa0"
@@ -1249,7 +1022,7 @@
       "type": "n8n-nodes-base.aggregate",
       "position": [
         1720,
-        -980
+        -1040
       ],
       "typeVersion": 1,
       "id": "1bed4598-6ffd-4ec6-959c-01f67fd8276b"
@@ -1352,8 +1125,8 @@
       "name": "Method 2 - META",
       "type": "n8n-nodes-base.set",
       "position": [
-        1280,
-        -840
+        1200,
+        -880
       ],
       "typeVersion": 3.2,
       "id": "fe80d3eb-bddc-488c-b9c6-8950dfea3bdf"
@@ -1435,8 +1208,8 @@
       "name": "Shortened URL",
       "type": "n8n-nodes-base.set",
       "position": [
-        3200,
-        -880
+        3600,
+        -680
       ],
       "typeVersion": 2,
       "id": "d5d8d369-deb5-4a98-89a4-2ffff6fdaeb1"
@@ -1480,8 +1253,8 @@
       "name": "Scan URL (Community)",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1580,
-        -1740
+        1560,
+        -2300
       ],
       "typeVersion": 4.1,
       "id": "25b85edb-b635-4dc9-9378-3dcd207d581a"
@@ -1491,8 +1264,8 @@
       "name": "If",
       "type": "n8n-nodes-base.if",
       "position": [
-        1840,
-        -1780
+        1880,
+        -2080
       ],
       "typeVersion": 2,
       "id": "47896250-c09d-4e21-a019-2cc2dfdcfee2"
@@ -1502,8 +1275,8 @@
       "name": "If1",
       "type": "n8n-nodes-base.if",
       "position": [
-        1680,
-        -1600
+        1520,
+        -1580
       ],
       "typeVersion": 2,
       "id": "c4c3266b-82e6-4f54-8b76-165fb86162d4"
@@ -1513,8 +1286,8 @@
       "name": "Check Reviews (Community)",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1680,
-        -1420
+        1580,
+        -1360
       ],
       "typeVersion": 4.1,
       "id": "95db896c-b82c-43ff-b9c3-ce9e1df10981"
@@ -1525,7 +1298,7 @@
       "type": "n8n-nodes-base.set",
       "position": [
         1840,
-        -1600
+        -1860
       ],
       "typeVersion": 3.2,
       "id": "384af3c9-2efd-48ed-b2d5-51a8e346f505"
@@ -1535,8 +1308,8 @@
       "name": "bitdefender",
       "type": "n8n-nodes-base.set",
       "position": [
-        2200,
-        -1580
+        2440,
+        -1700
       ],
       "typeVersion": 3.2,
       "id": "c36e1193-ef11-4c83-bb9d-7260117e87dd"
@@ -1557,8 +1330,8 @@
       "name": "(Fraud Check)",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        2040,
-        -1760
+        2780,
+        -1940
       ],
       "notesInFlow": true,
       "typeVersion": 4.1,
@@ -1570,8 +1343,8 @@
       "name": "(Others)",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        2200,
-        -1760
+        2400,
+        -2060
       ],
       "typeVersion": 4.1,
       "id": "7dd50136-c19e-4c49-a37a-90d99d909799"
@@ -1592,8 +1365,8 @@
       "name": "set unsafe",
       "type": "n8n-nodes-base.set",
       "position": [
-        2200,
-        -1400
+        2400,
+        -1320
       ],
       "typeVersion": 3.2,
       "id": "55487f01-47dc-41c9-90d1-3e56d4b903b5"
@@ -1603,8 +1376,8 @@
       "name": "If3",
       "type": "n8n-nodes-base.if",
       "position": [
-        1360,
-        -1780
+        1260,
+        -1900
       ],
       "typeVersion": 2,
       "id": "a704540d-e1ec-4b2b-849c-7ac213b8fb5f"
@@ -1614,8 +1387,8 @@
       "name": "PhishTank",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        1840,
-        -1420
+        1820,
+        -1380
       ],
       "typeVersion": 4.1,
       "id": "f46f2a29-7666-486c-9a4d-4caec2b18e30"
@@ -1963,43 +1736,6 @@
     },
     {
       "parameters": {
-        "owner": {
-          "__rl": true,
-          "value": "WebsterTesting1314",
-          "mode": "list",
-          "cachedResultName": "WebsterTesting1314",
-          "cachedResultUrl": "https://github.com/WebsterTesting1314"
-        },
-        "repository": {
-          "__rl": true,
-          "value": "webster_bot",
-          "mode": "list",
-          "cachedResultName": "webster_bot",
-          "cachedResultUrl": "https://github.com/WebsterTesting1314/webster_bot"
-        },
-        "events": [
-          "*"
-        ],
-        "options": {}
-      },
-      "type": "n8n-nodes-base.githubTrigger",
-      "typeVersion": 1,
-      "position": [
-        2460,
-        720
-      ],
-      "id": "32ceeb82-1710-41ec-85d3-8bf54743e80c",
-      "name": "Github Trigger",
-      "webhookId": "e503d7ba-7c31-4250-8321-107f4efda3a9",
-      "credentials": {
-        "githubApi": {
-          "id": "XsmjNygCT5vJqKo3",
-          "name": "GitHub account 3"
-        }
-      }
-    },
-    {
-      "parameters": {
         "model": {
           "__rl": true,
           "mode": "list",
@@ -2251,6 +1987,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-11T01:41:35.000Z",
-  "versionId": "f7c3575c-1b5f-4612-ab4b-36bdfff563ad"
+  "updatedAt": "2025-03-11T02:55:13.000Z",
+  "versionId": "a494b49a-d623-42e6-bb80-01a9d75a40de"
 }
