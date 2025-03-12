@@ -1637,7 +1637,7 @@
           "mode": "name"
         },
         "events": [
-          "*"
+          "repository"
         ],
         "options": {}
       },
@@ -1666,9 +1666,9 @@
   },
   "staticData": {
     "node:Github Trigger": {
-      "webhookId": 534571489,
+      "webhookId": 534697345,
       "webhookEvents": [
-        "*"
+        "repository"
       ]
     }
   },
@@ -1681,6 +1681,6 @@
     }
   ],
   "triggerCount": 5,
-  "updatedAt": "2025-03-11T02:50:20.000Z",
-  "versionId": "feecb14c-6b47-46ed-a887-b244253feb75"
+  "updatedAt": "2025-03-11T17:48:19.000Z",
+  "versionId": "3eddafe3-7fd5-471b-95a0-ec4291c749bc"
 }
