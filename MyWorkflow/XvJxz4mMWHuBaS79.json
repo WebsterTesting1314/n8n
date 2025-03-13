@@ -507,7 +507,7 @@
           "mode": "name",
           "value": "={{ $('Globals').item.json.repo.name }}"
         },
-        "filePath": "={{ $('Globals').item.json.repo.path }}{{$('Execute Workflow Trigger').first().json.id}}.json",
+        "filePath": "={{ $('Globals').item.json.repo.path }}{{$('Globals').item.json.repo.new}}{{$('Execute Workflow Trigger').first().json.id}}.json",
         "fileContent": "={{$('isDiffOrNew').item.json[\"n8n_data_stringy\"]}}",
         "commitMessage": "={{$('Execute Workflow Trigger').first().json.name}} ({{$json.github_status}})"
       },
@@ -578,8 +578,7 @@
         "rule": {
           "interval": [
             {
-              "field": "minutes",
-              "minutesInterval": 30
+              "field": "hours"
             }
           ]
         }
@@ -894,9 +893,7 @@
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1",
-    "saveDataErrorExecution": "all",
-    "callerPolicy": "workflowsFromSameOwner"
+    "executionOrder": "v1"
   },
   "staticData": {
     "node:Schedule Trigger": {
@@ -905,6 +902,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-13T20:04:35.000Z",
-  "versionId": "bfa774f7-a7ab-4285-b775-5edf3f375777"
+  "updatedAt": "2025-03-13T21:48:02.000Z",
+  "versionId": "b5742c9a-7e21-4e97-87b9-835719413007"
 }
