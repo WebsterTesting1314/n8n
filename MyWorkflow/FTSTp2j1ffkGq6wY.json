@@ -621,8 +621,8 @@
       "name": "Sticky Note2",
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        1020,
-        120
+        1080,
+        140
       ],
       "typeVersion": 1
     },
@@ -684,6 +684,12 @@
               "name": "repo.path",
               "type": "string",
               "value": "=MyWorkflow/{{ $json.tags[0].name }}"
+            },
+            {
+              "id": "a26490d1-829f-49d9-bcaa-be4c18030308",
+              "name": "repo.ps",
+              "value": "newworldcoming",
+              "type": "string"
             }
           ]
         },
@@ -885,8 +891,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        0,
-        0
+        80,
+        20
       ],
       "typeVersion": 1,
       "id": "fd0998aa-6db5-438f-988e-13cb6b495cb0",
@@ -910,6 +916,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-12T23:38:12.000Z",
-  "versionId": "ff48ab7c-b5da-4f7c-959c-519f212621b2"
+  "updatedAt": "2025-03-13T09:31:18.000Z",
+  "versionId": "218cdd77-1111-4f03-b9a5-c87d4fc49480"
 }
