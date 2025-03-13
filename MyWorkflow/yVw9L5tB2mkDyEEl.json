@@ -1,0 +1,3765 @@
+{
+  "active": false,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "🤖Primary Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute SQL Query": {
+      "ai_tool": [
+        [
+          {
+            "node": "🤖Secondary Postgres Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "🔀Tool Agent Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "query_db_tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "🤖Primary Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "generate_quickchart_tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "🤖Primary Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create QuickChart": {
+      "main": [
+        [
+          {
+            "node": "Final QuickChart URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QuickChart Object Schema": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "🤖Secondary QuickChart Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "gpt-4o-mini": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "🤖Primary Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "gpt-4o-mini-2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "🤖Secondary QuickChart Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🤖Secondary QuickChart Agent": {
+      "main": [
+        [
+          {
+            "node": "QuickChart GET URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🔀Tool Agent Router": {
+      "main": [
+        [
+          {
+            "node": "🤖Secondary Postgres Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "🤖Secondary QuickChart Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Table Definitions": {
+      "ai_tool": [
+        [
+          {
+            "node": "🤖Secondary Postgres Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "🤖Primary Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QuickChart GET URL": {
+      "main": [
+        [
+          {
+            "node": "Create QuickChart",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DB Schema and Tables": {
+      "ai_tool": [
+        [
+          {
+            "node": "🤖Secondary Postgres Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "gpt-40-mini-1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "🤖Secondary Postgres Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "DeepResearch Learnings",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Variables": {
+      "main": [
+        [
+          {
+            "node": "Clarifying Questions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "DeepResearch Learnings",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "DeepResearch Report",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Clarifying Questions",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Clarifying Questions",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Research Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate SERP Queries": {
+      "main": [
+        [
+          {
+            "node": "SERP to Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser2": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Generate SERP Queries",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Generate SERP Queries",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Initial Query": {
+      "main": [
+        [
+          {
+            "node": "Generate Learnings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SERP to Items": {
+      "main": [
+        [
+          {
+            "node": "For Each Query...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Ref": {
+      "main": [
+        [
+          {
+            "node": "RAG Web Browser",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Research Goal + Learnings": {
+      "main": [
+        [
+          {
+            "node": "For Each Query...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Accumulate Results": {
+      "main": [
+        [
+          {
+            "node": "Is Depth Reached?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepResearch Results": {
+      "main": [
+        [
+          {
+            "node": "Results to Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Results to Items": {
+      "main": [
+        [
+          {
+            "node": "Set Next Queries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Next Queries": {
+      "main": [
+        [
+          {
+            "node": "Generate Learnings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "For Each Query...": {
+      "main": [
+        [
+          {
+            "node": "Combine & Send back to Loop",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Item Ref",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Feedback to Items": {
+      "main": [
+        [
+          {
+            "node": "For Each Question...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ask Clarity Questions": {
+      "main": [
+        [
+          {
+            "node": "For Each Question...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "For Each Question...": {
+      "main": [
+        [
+          {
+            "node": "Get Initial Query",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ask Clarity Questions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clarifying Questions": {
+      "main": [
+        [
+          {
+            "node": "Feedback to Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Initiate DeepResearch": {
+      "main": [
+        [
+          {
+            "node": "Confirmation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execution Data": {
+      "main": [
+        [
+          {
+            "node": "JobType Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JobType Router": {
+      "main": [
+        [
+          {
+            "node": "Get Existing Row",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Generate SERP Queries",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get Existing Row1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Report Page Generator",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Initial Query": {
+      "main": [
+        [
+          {
+            "node": "Report Page Generator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser4": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Report Page Generator",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Row": {
+      "main": [
+        [
+          {
+            "node": "Initiate DeepResearch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Report Page Generator": {
+      "main": [
+        [
+          {
+            "node": "Create Row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Depth Reached?": {
+      "main": [
+        [
+          {
+            "node": "Get Research Results",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "DeepResearch Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Research Results": {
+      "main": [
+        [
+          {
+            "node": "Generate Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Existing Row": {
+      "main": [
+        [
+          {
+            "node": "Set In-Progress",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set In-Progress": {
+      "main": [
+        [
+          {
+            "node": "Set Initial Query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tags to Items": {
+      "main": [
+        [
+          {
+            "node": "Notion Block Generator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to HTML": {
+      "main": [
+        [
+          {
+            "node": "HTML to Array",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML to Array": {
+      "main": [
+        [
+          {
+            "node": "Tags to Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion Block Generator": {
+      "main": [
+        [
+          {
+            "node": "Parse JSON blocks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Notion Block Generator",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse JSON blocks": {
+      "main": [
+        [
+          {
+            "node": "Valid Blocks",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "URL Sources to Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload to Notion Page": {
+      "main": [
+        [
+          {
+            "node": "For Each Block...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Existing Row1": {
+      "main": [
+        [
+          {
+            "node": "DeepResearch Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepResearch Report": {
+      "main": [
+        [
+          {
+            "node": "Convert to HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepResearch Learnings": {
+      "main": [
+        [
+          {
+            "node": "Research Goal + Learnings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Learnings": {
+      "main": [
+        [
+          {
+            "node": "Accumulate Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Confirmation": {
+      "main": [
+        [
+          {
+            "node": "End Form",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Research Request": {
+      "main": [
+        [
+          {
+            "node": "Set Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Valid Blocks": {
+      "main": [
+        [
+          {
+            "node": "Append Blocks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append Blocks": {
+      "main": [
+        [
+          {
+            "node": "For Each Block...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "URL Sources to Lists": {
+      "main": [
+        [
+          {
+            "node": "Append Blocks",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Empty Response": {
+      "main": [
+        [
+          {
+            "node": "For Each Query...",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Content?": {
+      "main": [
+        [
+          {
+            "node": "Get Markdown + URL",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Empty Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "For Each Block...": {
+      "main": [
+        [
+          {
+            "node": "Set Done",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Upload to Notion Page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Valid Results": {
+      "main": [
+        [
+          {
+            "node": "Has Content?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RAG Web Browser": {
+      "main": [
+        [
+          {
+            "node": "Valid Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Markdown + URL": {
+      "main": [
+        [
+          {
+            "node": "DeepResearch Learnings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-12T23:21:06.711Z",
+  "id": "yVw9L5tB2mkDyEEl",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "98f9c00f-2a96-46bd-b0f6-63f074256856",
+      "name": "When chat message received",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "position": [
+        280,
+        120
+      ],
+      "webhookId": "faddb40a-7048-4398-a0f9-d239a19c32ce",
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to query the database with SQL queries",
+        "operation": "executeQuery",
+        "query": "{{ $fromAI(\"sql_query\", \"SQL Query\") }}",
+        "options": {}
+      },
+      "id": "a2c0ce92-8d04-4bdb-8460-c200561c6dff",
+      "name": "Execute SQL Query",
+      "type": "n8n-nodes-base.postgresTool",
+      "position": [
+        920,
+        1040
+      ],
+      "typeVersion": 2.5,
+      "credentials": {
+        "postgres": {
+          "id": "IoVLYkvIEktn7gHv",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "id": "cff6f813-5c24-42f5-af17-19202babe1b4",
+      "name": "When Executed by Another Workflow",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        -40,
+        1180
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "name": "query_database_tool",
+        "description": "Use this tool to query the database",
+        "workflowId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{  $workflow.id }}"
+        },
+        "workflowInputs": {
+          "value": {
+            "route": "query_database_tool",
+            "user_prompt": "={{ $('When chat message received').item.json.chatInput }}"
+          },
+          "schema": [
+            {
+              "id": "user_prompt",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "user_prompt",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "route",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "route",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "user_prompt"
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "id": "b63736d1-33e5-4c04-8fa9-e4efb7b90cca",
+      "name": "query_db_tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "position": [
+        1180,
+        440
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "name": "generate_chart_tool",
+        "description": "Use this tool to generate a chart with QuickChart",
+        "workflowId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{  $workflow.id }}"
+        },
+        "workflowInputs": {
+          "value": {
+            "route": "generate_chart_tool",
+            "db_records": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('db_records', `The database records`, 'string') }}",
+            "user_prompt": "={{ $('When chat message received').item.json.chatInput }}"
+          },
+          "schema": [
+            {
+              "id": "user_prompt",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "user_prompt",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "route",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "route",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "db_records",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "db_records",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "user_prompt"
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "id": "28ab23cc-a1d9-40f8-a55c-1a8545059034",
+      "name": "generate_quickchart_tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "position": [
+        1440,
+        440
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "url": "={{ encodeURI($json.url) }}",
+        "options": {}
+      },
+      "id": "f54ae1a7-c7e5-427f-be98-a3c7b3c97126",
+      "name": "Create QuickChart",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1240,
+        1400
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"type\": \"bar\",\n  \"data\": {\n    \"labels\": [\"R270684\", \"R274295\", \"R276352\", \"R277914\", \"R280108\"],\n    \"datasets\": [\n      {\n        \"label\": \"List Price\",\n        \"data\": [2149000, 924900, 924900, 1288000, 1198000],\n        \"backgroundColor\": \"#FF6384\"\n      },\n      {\n        \"label\": \"Days On Market\",\n        \"data\": [101, 91, 123, 136, 185],\n        \"backgroundColor\": \"#36A2EB\"\n      }\n    ]\n  },\n  \"options\": {\n    \"scales\": {\n      \"y\": {\n        \"min\": 0,\n        \"max\": 2200000\n      }\n    }\n  }\n}"
+      },
+      "id": "6e01ee89-03b2-4c2c-922f-1df24de8f8f0",
+      "name": "QuickChart Object Schema",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "position": [
+        920,
+        1680
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {
+          "responseFormat": "text"
+        }
+      },
+      "id": "75305023-fba7-4c3d-bb3e-335a4e2ab9eb",
+      "name": "gpt-4o-mini",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        660,
+        440
+      ],
+      "typeVersion": 1.2,
+      "credentials": {
+        "openAiApi": {
+          "id": "QEy3y63pHSCkmxVh",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "=gpt-4o-mini"
+        },
+        "options": {
+          "responseFormat": "text"
+        }
+      },
+      "id": "5f78af4b-b168-4b19-a1a8-c7de56db1263",
+      "name": "gpt-4o-mini-2",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        660,
+        1680
+      ],
+      "typeVersion": 1.2,
+      "credentials": {
+        "openAiApi": {
+          "id": "QEy3y63pHSCkmxVh",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## 🤖Primary AI Manager Agent",
+        "height": 600,
+        "width": 1100,
+        "color": 5
+      },
+      "id": "49a21f5b-026a-43ad-962f-6b706863e20d",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        540,
+        40
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a helpful assistant that answers the users questions by using the tools provided.\n\n## TOOLS\n- query_database_tool: Use this tool to query the database\n- generate_chart_tool: Use this tool to generate a chart with QuickChart\n\nAlways provide the results of the database query and the link for the chart when applicable."
+        }
+      },
+      "id": "02cf3e44-bc15-4524-b1d1-784f728efbf1",
+      "name": "🤖Primary Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        940,
+        120
+      ],
+      "typeVersion": 1.7
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.user_prompt }}",
+        "options": {
+          "systemMessage": "You are a helpful assistant with tools for querying a SQL database.  Use the tools provided to query the database."
+        }
+      },
+      "id": "106e4984-44e6-462a-ab92-f74534c268f4",
+      "name": "🤖Secondary Postgres Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        940,
+        760
+      ],
+      "typeVersion": 1.7
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Your task is to generate a Chart.js configuration object with the following specifications:\n- Chart type: bar unless otherwise indicated\n- Labels: Use the ML # from each record unless otherwise indicated\n- Show bar for list price if not otherwise indicated\n- Return only the raw JSON object without code fences or explanations\n\nThis is the user prompt: {{ $json.user_prompt }}\nThis is the result of the SQL query: {{ $json.db_records }}",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "id": "1aee3f38-1f0d-495a-843c-a9599c349515",
+      "name": "🤖Secondary QuickChart Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        700,
+        1400
+      ],
+      "typeVersion": 1.7
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "35b1e13e-6157-48d0-85af-3cd33260eae1",
+                    "operator": {
+                      "name": "filter.operator.equals",
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "=query_database_tool"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "🔍query"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "ff5f97fb-0f18-4bf9-b16c-3d0b3bc3c7f4",
+                    "operator": {
+                      "name": "filter.operator.equals",
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.route }}",
+                    "rightValue": "=generate_chart_tool"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "📊chart"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "245eaf42-048f-4f94-8091-d0d4e17acd87",
+      "name": "🔀Tool Agent Router",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        280,
+        1180
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to get table definition to find all columns and types",
+        "operation": "executeQuery",
+        "query": "select\n  c.column_name,\n  c.data_type,\n  c.is_nullable,\n  c.column_default,\n  tc.constraint_type,\n  ccu.table_name AS referenced_table,\n  ccu.column_name AS referenced_column\nfrom\n  information_schema.columns c\nLEFT join\n  information_schema.key_column_usage kcu\n  ON c.table_name = kcu.table_name\n  AND c.column_name = kcu.column_name\nLEFT join\n  information_schema.table_constraints tc\n  ON kcu.constraint_name = tc.constraint_name\n  AND tc.constraint_type = 'FOREIGN KEY'\nLEFT join\n  information_schema.constraint_column_usage ccu\n  ON tc.constraint_name = ccu.constraint_name\nwhere\n  c.table_name = '{{ $fromAI(\"table_name\") }}'\n  AND c.table_schema = '{{ $fromAI(\"schema_name\") }}'\norder by\n  c.ordinal_position",
+        "options": {}
+      },
+      "id": "1ea77f97-534d-4e70-80d7-ca06d268f285",
+      "name": "Table Definitions",
+      "type": "n8n-nodes-base.postgresTool",
+      "position": [
+        1440,
+        1040
+      ],
+      "typeVersion": 2.5,
+      "credentials": {
+        "postgres": {
+          "id": "IoVLYkvIEktn7gHv",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "tableName": "={{ $workflow.id }}_chat_history"
+      },
+      "id": "410e5deb-5ae8-4b04-8cd6-88d6ba49b246",
+      "name": "Postgres Chat Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "position": [
+        920,
+        440
+      ],
+      "typeVersion": 1.3,
+      "credentials": {
+        "postgres": {
+          "id": "IoVLYkvIEktn7gHv",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## QuickChart Tool",
+        "height": 240,
+        "color": 7
+      },
+      "id": "d768a00a-a1c4-4430-82c9-38ac40252634",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1360,
+        360
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Postgres Tool",
+        "height": 240,
+        "color": 7
+      },
+      "id": "bf7f805d-3156-4eb8-859f-e4c0d64b6eb7",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1100,
+        360
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## LLM",
+        "height": 240,
+        "color": 7
+      },
+      "id": "89fba806-f5da-4985-9557-aa9098009a41",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        580,
+        360
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Chat Memory",
+        "height": 240,
+        "color": 7
+      },
+      "id": "fcedad96-0f79-4696-a7e2-7622ac18adf4",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        840,
+        360
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 👍Start Here",
+        "height": 280,
+        "width": 340,
+        "color": 4
+      },
+      "id": "08c57990-5eab-4b35-8c4a-26f4397f3b7f",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        160,
+        40
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## ⚒️🤖Secondary Postgres Tool Agent ",
+        "height": 560,
+        "width": 1100,
+        "color": 6
+      },
+      "id": "88abbbf3-d0cd-4f94-937c-f8f5a3e2d7da",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        560,
+        680
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 240,
+        "color": 7
+      },
+      "id": "f6d80850-5d51-4cb5-8b53-f3c937629ab3",
+      "name": "Sticky Note7",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        580,
+        960
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 240,
+        "color": 7
+      },
+      "id": "9c16f023-ca38-4db6-b42a-b89934718a81",
+      "name": "Sticky Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1100,
+        960
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 240,
+        "color": 7
+      },
+      "id": "1511a21b-0838-4e9f-93c4-f82e3264507a",
+      "name": "Sticky Note9",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1360,
+        960
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 240,
+        "color": 7
+      },
+      "id": "7b0ba460-7e60-4da0-92ab-82a463ee1f9b",
+      "name": "Sticky Note10",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        840,
+        960
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Tool Agent Router 🔀",
+        "height": 320,
+        "width": 340,
+        "color": 3
+      },
+      "id": "66242cfb-ee91-430b-a446-8df0e86003e5",
+      "name": "Sticky Note11",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        140,
+        1080
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## ⚒️🤖Secondary QuickChart Tool Agent",
+        "height": 600,
+        "width": 1100,
+        "color": 6
+      },
+      "id": "dfb911b0-3768-44b6-bd13-9cd6f2c99d80",
+      "name": "Sticky Note12",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        540,
+        1280
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 240,
+        "color": 7
+      },
+      "id": "3e9164f9-6a4f-4051-8c7a-759474203cf2",
+      "name": "Sticky Note13",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        840,
+        1600
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 240,
+        "color": 7
+      },
+      "id": "ea51ba27-4e37-4f98-95ad-fba8ce4b29fd",
+      "name": "Sticky Note15",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        580,
+        1600
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "63bab42a-9b9b-4756-88d2-f41cff9a1ded",
+              "name": "quickchart_url",
+              "type": "string",
+              "value": "={{ encodeURI($json.url) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fd1cf995-c770-49b1-8a6c-4c702cbefc1e",
+      "name": "Final QuickChart URL",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1440,
+        1400
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d69995ae-413e-49e7-b6ec-17e9e034e4b6",
+              "name": "url",
+              "type": "string",
+              "value": "={{ \"https://quickchart.io/chart?width=250&height=150&chart=\" + $json.output.toJsonString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6780584b-4faa-4140-9c02-841b91058a78",
+      "name": "QuickChart GET URL",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1040,
+        1400
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "content": "# ✨📊Multi-AI Agent Chatbot for Postgres/Supabase DB and QuickCharts + Tool Router",
+        "height": 1980,
+        "width": 1760,
+        "color": 7
+      },
+      "id": "adeaba7d-6dc3-410f-9c55-b538dd63609a",
+      "name": "Sticky Note14",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        -20
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 設定：\n\n1. ** 建立一個** Postgres 資料庫 (例如 Supabase)。\n2. ** 提供您的** Postgres 和 OpenAI 憑證。\n3. **透過「聊天」按鈕開始與您的資料庫聊天**，並產生 QuickCharts 以進行視覺化。",
+        "height": 240,
+        "width": 540
+      },
+      "id": "849402b8-351c-464e-ac58-86c8874ca3f6",
+      "name": "Sticky Note16",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -40,
+        360
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Postgres 工具\n\n1. **執行 SQL 查詢：** 執行代理程式產生的 SQL 查詢。\n2. **資料庫結構和表格：** 列出所有表格及其結構描述名稱。\n3. **表格定義：** 傳回指定表格和結構描述的詳細表格資訊（欄位、外來鍵等）。",
+        "height": 296,
+        "width": 542
+      },
+      "id": "515f39a1-6bb0-4f30-a5bd-9ede9948e12c",
+      "name": "Sticky Note17",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -40,
+        680
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Generate a Quickchart\n\n**Secondary QuickChart Agent Tool**\nThis section handles the chart generation process through several steps by sending the database records and user prompt to OpenAI to create a JSON object based on Chart.js and QuickChart.io definitions\n\n**QuickChart GET URL node**\nThis sections adds chart definitions to a QuickChart.io URL\n\n**Create QuickChart node**\nThis sections sends chart queries to QuickCharts with a defined JSON format\n\n\n\nThis integration allows you to dynamically generate charts based on data queries, with AI assistance for formatting and optimization.\n\n\n",
+        "height": 376,
+        "width": 542
+      },
+      "id": "e4c2f988-e047-467e-9e2d-76348cdde86c",
+      "name": "Sticky Note19",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -40,
+        1500
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to get a list of all tables with their schema in the database",
+        "operation": "executeQuery",
+        "query": "SELECT \n    table_schema,\n    table_name\nFROM information_schema.tables\nWHERE table_type = 'BASE TABLE'\n    AND table_schema NOT IN ('pg_catalog', 'information_schema')\nORDER BY table_schema, table_name;",
+        "options": {}
+      },
+      "id": "39b04cf2-d1c9-46a1-91c3-05e6e2ac2ea0",
+      "name": "DB Schema and Tables",
+      "type": "n8n-nodes-base.postgresTool",
+      "position": [
+        1180,
+        1040
+      ],
+      "typeVersion": 2.5,
+      "credentials": {
+        "postgres": {
+          "id": "IoVLYkvIEktn7gHv",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {
+          "responseFormat": "text"
+        }
+      },
+      "id": "5b4078a7-185b-42e4-a6cd-92f38af4c462",
+      "name": "gpt-40-mini-1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        680,
+        1040
+      ],
+      "typeVersion": 1.2,
+      "credentials": {
+        "openAiApi": {
+          "id": "QEy3y63pHSCkmxVh",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## QuickChart Schema\nAdjust the QuickChart Schema to match your use case.\n\nhttps://quickchart.io/documentation/",
+        "height": 120,
+        "width": 440
+      },
+      "id": "4e622963-0244-48d1-9d6a-5355779a2bcd",
+      "name": "Sticky Note18",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1100,
+        1720
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Chart Size\nAdjust the chart size in the QuickChart GET URL node.\n",
+        "height": 100,
+        "width": 440
+      },
+      "id": "6551a97b-2e2f-4b65-ad32-dd0bc456b282",
+      "name": "Sticky Note20",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1100,
+        1600
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"learnings\": {\n      \"type\": \"array\",\n      \"description\": \"List of learnings, max of 3.\",\n      \"items\": { \"type\": \"string\" }\n    }\n  }\n}"
+      },
+      "id": "59d445ed-c7e2-47ec-b569-4389d0b96c9c",
+      "name": "Structured Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "position": [
+        5220,
+        1580
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "df28b12e-7c20-4ff5-b5b8-dc773aa14d4b",
+              "name": "request_id",
+              "type": "string",
+              "value": "={{ $execution.id }}"
+            },
+            {
+              "id": "9362c1e7-717d-444a-8ea2-6b5f958c9f3f",
+              "name": "prompt",
+              "type": "string",
+              "value": "={{ $json['What would you like to research?'] }}"
+            },
+            {
+              "id": "09094be4-7844-4a9e-af82-cc8e39322398",
+              "name": "depth",
+              "type": "number",
+              "value": "={{ $json.depth }}"
+            },
+            {
+              "id": "3fc30a30-7806-4013-835d-97e27ddd7ae1",
+              "name": "breadth",
+              "type": "number",
+              "value": "={{ $json.breadth }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a1fe0bbe-261e-408d-9eaa-a51e7c77f3d6",
+      "name": "Set Variables",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2720,
+        -60
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "o3-mini"
+        },
+        "options": {}
+      },
+      "id": "ff27db5e-4056-4d6f-b3cb-5b26e9976888",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        5040,
+        1580
+      ],
+      "typeVersion": 1.2,
+      "credentials": {
+        "openAiApi": {
+          "id": "QEy3y63pHSCkmxVh",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "o3-mini"
+        },
+        "options": {}
+      },
+      "id": "0bf6a93e-a3f8-4604-9c47-f6b9f8dd6bca",
+      "name": "OpenAI Chat Model1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        3220,
+        2160
+      ],
+      "typeVersion": 1.2,
+      "credentials": {
+        "openAiApi": {
+          "id": "QEy3y63pHSCkmxVh",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "o3-mini"
+        },
+        "options": {}
+      },
+      "id": "eb07a76f-5a67-490d-8e83-6ead876cc150",
+      "name": "OpenAI Chat Model2",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        3020,
+        100
+      ],
+      "typeVersion": 1.2,
+      "credentials": {
+        "openAiApi": {
+          "id": "QEy3y63pHSCkmxVh",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"questions\": {\n      \"type\": \"array\",\n      \"description\": \"Follow up questions to clarify the research direction, max of 3.\",\n      \"items\": {\n          \"type\": \"string\"\n      }\n    }\n  }\n}"
+      },
+      "id": "a159c2fa-40d1-47c3-a8f7-32f1eecfd909",
+      "name": "Structured Output Parser1",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "position": [
+        3240,
+        100
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "formTitle": " DeepResearcher",
+        "formDescription": "=我會為你研究如何調適 n8n 來抓取 Claude 和 ChatGPT 的網站數據，並與 MCP 工具（如 Browserbase 和更強大的爬蟲工具）配合，以解決 Cloudflare 機器人驗證的問題。\n\n我會考察以下幾點：\n- n8n 節點工作流的 JSON 設計方式，以及如何最佳化來支援 Claude 和 ChatGPT 的數據抓取。\n- MCP 工具如何與 Browserbase、Playwright、Puppeteer 等爬蟲技術整合，以繞過 Cloudflare。\n- 是否有更高效的反 Cloudflare 機器人驗證策略，例如使用已驗證的會話、分布式代理或 AI 輔助解驗證。\n- 整合後的完整抓取方案，確保 n8n 能自動化運行該流程。\n\n我會回報完整的研究結果給你！\n\n# n8n 節點工作流整合 Claude.ai 與 ChatGPT.com 抓取方案研究\n\n## n8n 工作流的 JSON 節點設計\n要在 n8n 中建立自動抓取 Claude.ai 和 ChatGPT.com 內容的工作流，我們需要設計一系列節點來完成「觸發->瀏覽器自動化->資料處理->輸出」的流程。基本步驟如下：\n\n1. **觸發節點**：首先使用觸發節點（如時間排程或手動觸發）來啟動整個工作流。這可讓我們定期或根據需要執行抓取任務。\n\n2. **瀏覽器自動化節點**：由於 Claude 和 ChatGPT 的網頁互動需要執行 JavaScript 且包含登入/對話流程，我們需要透過瀏覽器自動化工具來控制瀏覽器。n8n 本身沒有內建完整的無頭瀏覽器節點，但可以透過 **HTTP 請求節點** 或 **函數節點** 調用外部服務或腳本。例如，可以使用 HTTP 請求節點呼叫 Browserless 或 Browserbase 這類雲端瀏覽器服務的 API ([Browserless and Cloudflare: Automate Workflows with n8n](https://n8n.io/integrations/browserless/and/cloudflare/#:~:text=You%20can%20find%20the%20Cloudflare,output%20data%20on%20the%20right))。這些服務允許我們以程式方式啟動 Chrome 瀏覽器並執行腳本，適合用於動態網頁資料抓取 ([Integrate the Anthropic (Claude) API with the Browserless API - Pipedream](https://pipedream.com/apps/anthropic/integrations/browserless#:~:text=The%20Browserless%20API%20on%20Pipedream,a%20scalable%20and%20efficient%20manner)) ([Integrate the Anthropic (Claude) API with the Browserless API - Pipedream](https://pipedream.com/apps/anthropic/integrations/browserless#:~:text=the%20overhead%20of%20managing%20your,a%20scalable%20and%20efficient%20manner))。\n\n3. **腳本/函數實現互動**：在瀏覽器自動化階段，我們需要編寫腳本來模擬使用者與 AI 網站的互動流程。例如，使用 Puppeteer 或 Playwright 的腳本執行以下動作：\n   - **導航至登入頁**：前往 Claude.ai 或 ChatGPT.com 的登入頁面。\n   - **自動登入**：填入帳號憑證（電子郵件、密碼）。Claude.ai 採用電子郵件 OTP（一次性密碼）驗證，因此腳本需要等待或輸入從電子郵件獲取的驗證碼。ChatGPT 則可能需要通過 OpenAI 的 Auth0 登入流程並處理 CAPTCHA 驗證。\n   - **進入對話頁面**：登入成功後，導航到聊天介面，等待加載。\n   - **發送提問**：自動將預定的提問內容插入對話輸入框並觸發發送動作。\n   - **等待回應並擷取**：等待 AI 模型返回回答，然後從頁面 DOM 中擷取回答內容。\n\n   由於 n8n 可以使用 JavaScript 的函數節點執行自訂程式碼，我們也可以將上述 Puppeteer/Playwright 腳本嵌入在函數節點中執行。需要注意自訂函數節點執行 Puppeteer 時，n8n 執行環境必須已安裝相關套件並具備瀏覽器執行環境（例如在 Docker 映像中加入 Chrome）。另一種方式是讓 n8n 透過執行命令節點（Execute Command）觸發外部腳本或服務，減少在 n8n 本身安裝套件的麻煩。\n\n4. **節點之間的資料傳遞**：將擷取到的 AI 回答內容作為後續節點的輸入。n8n 節點可以串聯，所以瀏覽器自動化節點成功取得資料後，可以傳遞結果（例如回答的文字內容）給後續的處理節點。\n\n5. **資料處理與輸出節點**：最後，使用資料處理節點（如函數節點）將抓取的內容格式化，然後用適當的輸出節點將結果輸出或保存。例如，可將 Claude 或 ChatGPT 的回答解析後存入資料庫，或寫入本地檔案，或發送到其他服務（如通過 HTTP 請求發送到Webhook）。n8n 提供多種節點（資料庫、檔案、Webhook 等）來儲存或傳輸資料，工作流可根據需求配置。\n\n上述工作流核心在於**瀏覽器自動化**步驟，因為一般的 HTTP 請求無法直接取得需要登入或動態載入的內容。我們需要確保 n8n 可以與我們選擇的瀏覽器自動化工具協同工作。例如，可以將 Browserless/Browserbase 當作一個服務，n8n 通過 HTTP API 呼叫它在雲端啟動無頭Chrome並執行預先撰寫的腳本 ([Integrate the Anthropic (Claude) API with the Browserless API - Pipedream](https://pipedream.com/apps/anthropic/integrations/browserless#:~:text=The%20Browserless%20API%20on%20Pipedream,a%20scalable%20and%20efficient%20manner)) ([Integrate the Anthropic (Claude) API with the Browserless API - Pipedream](https://pipedream.com/apps/anthropic/integrations/browserless#:~:text=the%20overhead%20of%20managing%20your,a%20scalable%20and%20efficient%20manner))。也可以自行架設 Model Context Protocol (MCP) 伺服器（例如 Browserbase MCP Server），讓該伺服器負責瀏覽器控制，n8n 則發送指令給它。Browserbase MCP Server 就是一個專為 LLM 互動設計的瀏覽器控制服務，能讓 AI（或我們的腳本）對瀏覽器發出操作指令，如打開網頁、點擊按鈕、填寫表單等 ([GitHub - browserbase/mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase#:~:text=Browserbase%20MCP%20,browserbase))。總之，在工作流設計中，我們會將「瀏覽器自動執行並取得結果」封裝成一個節點或子流程，使其輸出我們需要的Claude/ChatGPT回答內容。\n\n## 繞過 Cloudflare 機器人驗證的方法\n由於 ChatGPT（chat.openai.com）和 Claude.ai 等站點通常使用 Cloudflare 保護，爬蟲在登入或抓取時可能遇到 Cloudflare 的機器人檢測與驗證。我們需要採取對策繞過 Cloudflare的「簡單驗證」和「高度驗證」。\n\n**1. 偽裝為真實瀏覽器以通過簡單驗證**：  \nCloudflare的基本檢測會檢查瀏覽器環境（如 User-Agent、瀏覽器屬性）以及執行一些瀏覽器端JS挑戰。因此，我們應確保自動化工具看起來像真人使用瀏覽器。可採取以下措施：\n- **使用 Stealth 插件**：如果採用 Puppeteer，可使用 `puppeteer-extra-plugin-stealth` 插件。這個插件會隱藏Puppeteer的自動化痕跡，例如修改 `navigator.webdriver` 屬性、將`Chrome`標識替換掉`HeadlessChrome`，模擬真實的瀏覽器環境 ([How to Bypass Cloudflare With Puppeteer: 2 Working Methods - ZenRows](https://www.zenrows.com/blog/puppeteer-cloudflare-bypass#:~:text=The%20puppeteer,appear%20like%20an%20actual%20browser))。Stealth 插件還會模擬真實的瀏覽器屬性（如`chrome.runtime`等），即使在無頭模式下也讓 Cloudflare 認為是一個正常的非自動化瀏覽器 ([How to Bypass Cloudflare With Puppeteer: 2 Working Methods - ZenRows](https://www.zenrows.com/blog/puppeteer-cloudflare-bypass#:~:text=match%20at%20L189%20For%20example%2C,headful%20even%20in%20headless%20mode)) ([How to Bypass Cloudflare With Puppeteer: 2 Working Methods - ZenRows](https://www.zenrows.com/blog/puppeteer-cloudflare-bypass#:~:text=For%20example%2C%20the%20Stealth%20plugin,headful%20even%20in%20headless%20mode))。同時我們應該設定真實的User-Agent和Accept-Language等頭資訊，使請求看起來正常 ([puppeteer bypass cloudflare by enable cookies and Javascript](https://stackoverflow.com/questions/64314346/puppeteer-bypass-cloudflare-by-enable-cookies-and-javascript#:~:text=puppeteer%20bypass%20cloudflare%20by%20enable,real%20person%20who%20is%20browsing))。Playwright 也提供類似的機制，可透過啟用「反自動化」選項或使用其隱身模式來降低被檢測的機率。\n\n- **避免Headless特徵**：在某些情況下，Cloudflare會針對無頭模式進行額外檢測。如果環境允許，可以啟動有頭瀏覽器（非無頭模式）來進行驗證（透過 xvfb 虛擬顯示在伺服器上運行瀏覽器GUI）。不過多數情況下，只要使用了Stealth等手段，無頭模式也能通過一般的JS檢查 ([How to Bypass Cloudflare With Puppeteer: 2 Working Methods - ZenRows](https://www.zenrows.com/blog/puppeteer-cloudflare-bypass#:~:text=The%20puppeteer,appear%20like%20an%20actual%20browser))。\n\n- **IP和代理**：Cloudflare也會檢查請求IP來源是否可疑。儘量使用乾淨的IP（避免數據中心IP，大型雲服務IP往往被Cloudflare判定為機器人） ([GitHub - zjf-plus/chatgpt-browser: Node.js client for the unofficial ChatGPT API. ](https://github.com/zjf-plus/chatgpt-browser#:~:text=There%20are%20some%20restrictions%20to,be%20aware%20of%2C%20however))。必要時可使用住宅代理或頻繁輪換IP的代理服務 ([How To Bypass Cloudflare When Scraping](https://www.browserless.io/blog/how-to-bypass-cloudflare-scraping#:~:text=Rotating%20IP%20Addresses))來降低被封鎖的風險。\n\n以上措施可以對付「輕度」的 Cloudflare 檢查（例如顯示「檢查瀏覽器...」倒數5秒的頁面）。透過執行Cloudflare注入的JS挑戰，我們的自動化瀏覽器通常能拿到 Cloudflare 的通行Cookie，繼續抓取。\n\n**2. 繞過高度驗證（Captcha 等）**：  \n遇到 Cloudflare 的高度驗證（例如要求完成 CAPTCHA 或「請確認您不是機器人」的挑戰）時，需要更進一步的策略：\n- **使用驗證服務**：可以結合第三方驗證服務或 AI 來自動解決 CAPTCHA。比如在 Puppeteer 中使用 **2Captcha** 或 **NopeCHA** 服務完成圖形驗證 ([GitHub - zjf-plus/chatgpt-browser: Node.js client for the unofficial ChatGPT API. ](https://github.com/zjf-plus/chatgpt-browser#:~:text=This%20solution%20is%20not%20lightweight%2C,accounts%20for%20my%20Twitter%20bot))。實際案例中，非官方的 ChatGPT 瀏覽器 API 就結合了 Puppeteer 和自動 CAPTCHA 解題工具，使腳本能自動完成 OpenAI 登入時的 Cloudflare 人機驗證 ([GitHub - zjf-plus/chatgpt-browser: Node.js client for the unofficial ChatGPT API. ](https://github.com/zjf-plus/chatgpt-browser#:~:text=This%20package%20allows%20you%20to,CAPTCHA%20solvers%20under%20the%20hood)) ([GitHub - zjf-plus/chatgpt-browser: Node.js client for the unofficial ChatGPT API. ](https://github.com/zjf-plus/chatgpt-browser#:~:text=This%20solution%20is%20not%20lightweight%2C,accounts%20for%20my%20Twitter%20bot))。這類服務通常透過提供API金鑰，把網頁上的驗證挑戰（如HCaptcha）截圖提交給服務，取得解答後再由瀏覽器填入，從而繞過驗證。Browserbase 等雲端瀏覽器平台甚至內建了「受管理的驗證解決方案」，自動替你處理 Cloudflare 的驗證 ([Browserbase: A web browser for AI agents & applications](https://www.browserbase.com/#:~:text=))。\n\n- **重用已驗證會話**：另一有效方法是**使用已通過驗證的會話**。也就是說，先手動（或半自動）在瀏覽器中通過Cloudflare驗證並登入，然後提取該瀏覽器的Cookie（尤其是 Cloudflare 的 clearance token 等）保存下來。在爬蟲腳本中，載入這些已驗證的Cookies到瀏覽器會話中，Cloudflare就會將後續請求視為已驗證的合法流量。有人實現了讓 Puppeteer 自動取得Cloudflare通過後的Cookies並重用的方案：初次遇到挑戰時啟動實體瀏覽器完成挑戰，拿到通行憑證後緩存起來，之後的請求反覆使用這些Cookie直到失效再更新 ([GitHub - Eltik/Puppeteer-Bypass: Bypassing CloudFlare's anti-bot challenge with Puppeteer optimizations](https://github.com/Eltik/Puppeteer-Bypass#:~:text=Long%20story%20short%2C%20I%20found,repeating%20the%20process%20over%20again))。n8n 可以在工作流中實現這一點：例如第一次執行時觸發人工介入或使用服務解CAPTCHA，獲取cookie後存入資料庫；後續流程執行時從資料庫讀取cookie，附加到HTTP請求頭中繼續抓取，從而避免每次都觸發驗證。\n\n- **Cloudflare Worker/Rendering**：雲廠商也提供一些特殊繞過手段。例如 Cloudflare 自家的無頭瀏覽器渲染服務（Browser Rendering API）允許在其網路內執行瀏覽器操作，由於請求源在 Cloudflare 網路內部，某些驗證會自動通過 ([cloudflare-browser-rendering-mcp - Glama](https://glama.ai/mcp/servers/35u5mo3dm5#:~:text=cloudflare,use%20as%20context%20in%20LLMs))。不過這種方案相對複雜且可能需要企業級帳戶，此處不作重點。\n\n**3. 綜合 Cloudflare 繞過策略**：在實作中，建議結合多種手段以提高成功率：\n- **Puppeteer/Playwright + Stealth + 已驗證Cookie**：腳本啟動時先載入前次保存的cookie，並使用Stealth模式啟動瀏覽器。如果cookie有效就可以直接繞過驗證進入網站；如果仍遇到驗證，再退而求其次使用驗證服務解題，取得新cookie後更新保存。\n- **Browserbase/無頭瀏覽器平台**：如前所述，Browserbase 提供了便利的功能，例如「Contexts API」可以在多次會話間**持久化 cookie 狀態**，等於內建了已驗證會話的重用機制 ([Browserbase: A web browser for AI agents & applications](https://www.browserbase.com/#:~:text=,js%20and%20Python))。同時它也自帶指紋生成和住宅代理，可以降低Cloudflare觸發驗證的機率 ([Browserbase: A web browser for AI agents & applications](https://www.browserbase.com/#:~:text=))。利用這類平台，我們在 n8n 中只需調用其API並傳遞腳本，不用自己處理太細節的反爬，因為平台已經做好了防禦措施。\n\n總之，針對 Cloudflare，我們需要讓自動化流程“偽裝”得足夠像真人，並在必要時接入外部服務來完成機器人驗證。這樣才能順利登入 Claude.ai 和 ChatGPT網站並抓取所需數據。\n\n## MCP 工具的最佳整合方案\n**Model Context Protocol (MCP)** 是 Anthropic (Claude) 推出的開放協議，旨在讓 LLM 模型能與外部工具和數據源互動 ([ How is MCP different from Zapier/Make/n8n? : r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1hdarn1/how_is_mcp_different_from_zapiermaken8n/#:~:text=I%27ve%20been%20seeing%20a%20lot,like%20Zapier%2C%20Make%2C%20and%20n8n)) ([ How is MCP different from Zapier/Make/n8n? : r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1hdarn1/how_is_mcp_different_from_zapiermaken8n/#:~:text=MCP%20is%20more%20about%20letting,to%20data%20sources%20and%20tools))。MCP 工具指的就是實現這種互動的外部服務或插件，例如 Browserbase MCP Server、Puppeteer MCP Server、Stagehand MCP 等。從我們爬取Claude和ChatGPT的角度，整合 MCP 工具可以更方便地完成瀏覽器自動化，特別是在 Claude Desktop 環境下透過 Claude 自己來控制瀏覽器。但即使不走Claude Desktop，我們也能利用這些工具的能力。在本方案中，整合 MCP 工具主要用於**自動登入**和**資料抓取**兩方面：\n\n1. **自動登入 Claude 和 ChatGPT**：  \n   - **Claude.ai 登入**：Claude 網站目前通常採用「輸入 Email -> 發送一次性 OTP 驗證碼 -> 驗證登入」的方式。為了自動化，腳本需要能夠填寫 Email 並提交，然後等待接收OTP碼。這可以透過 n8n 串接電子郵件節點（IMAP 讀取郵件）來實現：當偵測到 Claude 發來的OTP郵件時，自動讀出驗證碼，傳遞給瀏覽器自動化節點。在瀏覽器控制腳本中，使用 Puppeteer/Playwright 的表單填入功能將OTP填入，再提交完成登入。Browserbase MCP 提供的**Web互動**能力（導航、點擊、填表單等）能輕鬆實現上述流程 ([GitHub - browserbase/mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase#:~:text=Browserbase%20MCP%20,browserbase))。我們也可以使用 Puppeteer 的 `page.type()`、`page.click()` 等接口來腳本化地完成 Claude 的登入流程。\n   - **ChatGPT 登入**：ChatGPT（OpenAI）支持多種登入方式（Email/密碼、Google/Microsoft OAuth等），其中Email登入也會涉及驗證碼或CAPTCHA。幸運的是，社群已有成熟的自動登入方案。例如前述的 **chatgpt-browser** 第三方套件直接使用 Puppeteer 自動進行OpenAI Auth0登入，全程處理電子郵件和密碼填寫，以及必要的 Cloudflare HCaptcha 驗證 ([GitHub - zjf-plus/chatgpt-browser: Node.js client for the unofficial ChatGPT API. ](https://github.com/zjf-plus/chatgpt-browser#:~:text=This%20package%20allows%20you%20to,CAPTCHA%20solvers%20under%20the%20hood)) ([GitHub - zjf-plus/chatgpt-browser: Node.js client for the unofficial ChatGPT API. ](https://github.com/zjf-plus/chatgpt-browser#:~:text=This%20solution%20is%20not%20lightweight%2C,accounts%20for%20my%20Twitter%20bot))。在不使用該套件時，我們可以模仿其流程：利用 Puppeteer 導航到 chat.openai.com，模擬點擊「登入」並輸入Email/密碼。如果出現人機驗證，就調用驗證服務自動完成（NopeCHA/2Captcha 等，如上節所述）。登入成功後，取得 ChatGPT 的會話Token（通常為session cookie或Bearer Token），接著即可進入聊天頁面。\n\n   為了簡化流程，**建議**將登入過程腳本化並盡量重用會話：登入一次後可以保存Claude和ChatGPT的身份驗證Cookie/token，在後續爬取時直接使用，避免每次都登入。n8n 可以透過Credential機制安全地保存這些令牌，或存入資料庫供工作流讀取。Browserbase 等也提供**持久化瀏覽器上下文**的功能，允許我們在不同執行階段保留登入狀態 ([Browserbase: A web browser for AI agents & applications](https://www.browserbase.com/#:~:text=,js%20and%20Python))。\n\n2. **數據抓取與互動**：  \n   一旦登入並進入AI對話頁，我們需要自動提交我們的問題，然後收集AI給出的回答。MCP 工具在這裡能發揮作用：比如**Puppeteer MCP Server**可以讓Claude模型自己發出「打開某網站並搜尋...」這樣的指令，不過在我們的應用中，通常我們預先知道要問的問題，所以由腳本執行即可。這裡重點是**模擬輸入提問並獲取回答**：\n   - 在 ChatGPT 網站上，登入後的界面有一個輸入框。我們可以用腳本將問題內容插入該輸入框元素，然後觸發回車或點擊發送按鈕。Puppeteer命令如 `page.type(selector, \"提問內容\")` 然後 `page.click(\"發送按鈕selector\")` 即可完成**發送提問**動作。Claude.ai 網站類似，有輸入區和提交按鈕。Browserbase MCP 伺服器同樣支持類似的點擊與輸入操作 ([GitHub - browserbase/mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase#:~:text=Browserbase%20MCP%20,browserbase))，因此無論使用哪種 MCP 工具，核心都是控制瀏覽器完成這些交互。\n   - **等待與擷取回答**：AI 回答往往是動態逐字顯示的。簡單做法是讓腳本等待一定時間，再抓取整個回答容器的文本內容。更精細的方法是使用 Puppeteer/Playwright 的等待條件，例如等待某個DOM元素（表示回答完成的狀態）出現。ChatGPT的回答容器在回答完成後可能插入一個特殊結束標記，我們可以監聽DOM變化或定時檢查內容是否不再增長。一旦確認回答已完全生成，使用 `page.evaluate()` 或類似方法提取回答文字。MCP 的 **資料提取**功能在這裡派上用場，Browserbase MCP 支援從任意網頁提取結構化數據 ([GitHub - browserbase/mcp-server-browserbase](https://github.com/browserbase/mcp-server-browserbase#:~:text=Browserbase%20MCP%20,browserbase))——例如我們可以讓它返回整個<div>回答內容</div>的innerText。最後將獲得的文字內容作為該節點的輸出返回給 n8n。\n\n   在 n8n 工作流中，我們可以將上述互動過程封裝在一個節點（或子工作流）中實現。例如透過HTTP請求節點調用 Browserbase 的API，傳送一段腳本讓瀏覽器去執行所有這些步驟，並將結果（回答文本）作為回傳值。或者在函數節點中直接撰寫這段流程（需確保 n8n 運行環境可用瀏覽器）。綜合考量，使用已經提供API的 MCP 工具/服務會比較簡潔：我們只需撰寫腳本步驟，它會負責在雲端執行並返回結果給我們。\n\n## 完整抓取流程與數據輸出方案\n將以上元件組合，我們可以構築一個完整的抓取工作流。以下是一個可行的流程總結：\n\n- **步驟1：啟動流程** – 透過時間排程觸發或API呼叫觸發 n8n 工作流開始。  \n\n- **步驟2：取得登入會話** – 確保有有效的 Claude 和 ChatGPT 登入會話。可以在首次執行時觸發子流程進行登入：執行瀏覽器自動化腳本完成登入（如前述），取得 session token/cookie 後保存起來供後續使用。如果之前已登入且token未過期，可跳過此步（或每次執行前先檢查憑證有效性）。\n\n- **步驟3：提交提問並抓取回答** – 對於每一個目標平台（Claude 和 ChatGPT），分別執行瀏覽器自動化：\n  1. 啟動瀏覽器訪問對話頁（帶上已登入的cookie以保持登入狀態）。\n  2. 插入預設的提問內容並發送。\n  3. 等待AI返回完整回答，提取回答文本。\n  4. 將回答結果作為該階段的輸出數據。  \n\n  *（在 n8n 中，可以為 Claude 和 ChatGPT 各建一條平行的支線，同時抓取兩邊的回答；或者串行地先抓一個再抓另一個。）*\n\n- **步驟4：格式化與解析輸出** – 拿到原始的 AI 文本回答後，我們可以根據需要進行解析和整理。例如，如果要求 Claude 以 JSON 格式輸出答案，那麼直接可以用 n8n 的函數節點對 JSON 字串做 `JSON.parse` 轉為結構化資料，然後進一步處理。若輸出是一般純文字，可利用關鍵字或正則表達式從中提取我們關心的片段。還可以在提問時就引導 AI 輸出特定格式（例如 YAML 或 CSV），以簡化後續解析工作。\n\n- **步驟5：保存結果** – 最後，將解析好的結果數據保存或傳輸到目的地。n8n 支持多種輸出：\n  - **資料庫**：使用資料庫節點（如 MySQL、PostgreSQL、MongoDB 等）將結果插入資料庫表中，便於後續查詢分析。\n  - **本地檔案**：使用檔案節點將結果寫入本地檔案（如保存為JSON或CSV檔），或上傳至雲端存儲。\n  - **發送到API**：使用HTTP請求節點，把結果POST到某個Webhook/API，方便與其他系統集成。\n  - **通知**：甚至可以用電子郵件、Telegram等節點將結果發送給相關人員做通知。\n\n在整個流程中，需要注意異常處理和效率：  \n- **異常處理**：例如登入失敗、遇到驗證、AI沒有返回結果等情況。可以在工作流中加入條件節點或重試機制。例如，如果檢測到需要重新驗證，則呼叫二次驗證流程（如觸發 captcha 解決），完畢後重試抓取步驟。對於 AI 可能返回的錯誤訊息，也要做相應處理（如API限流提示，則延遲再試）。由於Cloudflare和登入流程可能失敗，需要實現一定的重試和錯誤告知機制，使工作流穩健。\n\n- **效率**：n8n 可以並行執行部分節點，但瀏覽器啟動相對耗時。可考慮在一次工作流中重用同一個瀏覽器實例抓取多個問題，或者使用 Browserless/Browserbase 的併發能力。同時，如果只需要透過API取得AI結果，其實可以繞過瀏覽器直接調用API（例如OpenAI提供的ChatGPT API、Anthropic的Claude API） ([Integrate the Anthropic (Claude) API with the Browserless API - Pipedream](https://pipedream.com/apps/anthropic/integrations/browserless#:~:text=async%20run%28,)) ([Integrate the Anthropic (Claude) API with the Browserless API - Pipedream](https://pipedream.com/apps/anthropic/integrations/browserless#:~:text=method%3A%20,01%60%2C%20%7D%2C%20data%2C%20%7D%29))。但題目要求的是網站抓取，因此我們假定需模擬真人訪問網站的方式獲取數據。\n\n綜上所述，本方案利用 n8n 的節點工作流設計，結合瀏覽器自動化（MCP 工具如 Browserbase、Puppeteer、Playwright 等）實現了對 Claude.ai 和 ChatGPT.com 的資料抓取。關鍵在於：通過合適的工具自動登入並與網站互動、妥善繞過 Cloudflare 驗證、提取所需的對話內容，最後將資料格式化保存。此過程需要一定的技術細節實作，但依照上述步驟與建議設定，n8n 能夠高效率地完成 Claude 和 ChatGPT 的內容抓取任務。 ([GitHub - zjf-plus/chatgpt-browser: Node.js client for the unofficial ChatGPT API. ](https://github.com/zjf-plus/chatgpt-browser#:~:text=This%20package%20allows%20you%20to,CAPTCHA%20solvers%20under%20the%20hood))",
+        "formFields": {
+          "values": [
+            {
+              "fieldType": "html"
+            }
+          ]
+        },
+        "options": {
+          "buttonLabel": "Next",
+          "path": "deep_research",
+          "ignoreBots": true
+        }
+      },
+      "id": "741bdae9-fabe-412b-8a40-8ef947cf2e7a",
+      "name": "On form submission",
+      "type": "n8n-nodes-base.formTrigger",
+      "position": [
+        2320,
+        -60
+      ],
+      "webhookId": "026629c8-7644-493c-b830-d9c72eea307d",
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Given the following prompt from the user, generate a list of SERP queries to research the topic.\nReduce the number of words in each query to its keywords only.\nReturn a maximum of {{ $('JobType Router').first().json.data.breadth }} queries, but feel free to return less if the original prompt is clear. Make sure each query is unique and not similar to each other: <prompt>{{ $('JobType Router').first().json.data.query.trim() }}</prompt>\n\n{{\n$('JobType Router').first().json.data.learnings.length\n  ? `Here are some learnings from previous research, use them to generate more specific queries:\\n${$('JobType Router').first().json.data.learnings.map(text => `* ${text}`).join('\\n')}`\n  : ''\n}}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "type": "HumanMessagePromptTemplate",
+              "message": "=You are an expert researcher. Today is {{ $now.toLocaleString() }}. Follow these instructions when responding:\n  - You may be asked to research subjects that is after your knowledge cutoff, assume the user is right when presented with news.\n  - The user is a highly experienced analyst, no need to simplify it, be as detailed as possible and make sure your response is correct.\n  - Be highly organized.\n  - Suggest solutions that I didn't think about.\n  - Be proactive and anticipate my needs.\n  - Treat me as an expert in all subject matter.\n  - Mistakes erode my trust, so be accurate and thorough.\n  - Provide detailed explanations, I'm comfortable with lots of detail.\n  - Value good arguments over authorities, the source is irrelevant.\n  - Consider new technologies and contrarian ideas, not just the conventional wisdom.\n  - You may use high levels of speculation or prediction, just flag it for me."
+            }
+          ]
+        }
+      },
+      "id": "72eba2da-c8ba-4a65-848b-b87383a7e5f7",
+      "name": "Generate SERP Queries",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "position": [
+        3040,
+        1220
+      ],
+      "typeVersion": 1.5
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"queries\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"query\": {\n            \"type\": \"string\",\n            \"description\": \"The SERP query\"\n          },\n          \"researchGoal\": {\n            \"type\": \"string\",\n            \"description\": \"First talk about the goal of the research that this query is meant to accomplish, then go deeper into how to advance the research once the results are found, mention additional research directions. Be as specific as possible, especially for additional research directions.\"\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      "id": "f3f5d88e-0824-4110-843f-4a87febc6c7e",
+      "name": "Structured Output Parser2",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "position": [
+        3220,
+        1380
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "o3-mini"
+        },
+        "options": {}
+      },
+      "id": "605fcf96-051c-4d9c-b1fc-b4e79b0ba1d4",
+      "name": "OpenAI Chat Model3",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        3040,
+        1380
+      ],
+      "typeVersion": 1.2,
+      "credentials": {
+        "openAiApi": {
+          "id": "QEy3y63pHSCkmxVh",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "acb41e93-70c6-41a3-be0f-e5a74ec3ec88",
+              "name": "query",
+              "type": "string",
+              "value": "={{ $('JobType Router').first().json.data.query }}"
+            },
+            {
+              "id": "7fc54063-b610-42bc-a250-b1e8847c4d1e",
+              "name": "learnings",
+              "type": "array",
+              "value": "={{ $('JobType Router').first().json.data.learnings }}"
+            },
+            {
+              "id": "e8f1c158-56fb-41c8-8d86-96add16289bb",
+              "name": "breadth",
+              "type": "number",
+              "value": "={{ $('JobType Router').first().json.data.breadth }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9abc63dd-94b1-48e8-b55b-b29a8faf9836",
+      "name": "Set Initial Query",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        3500,
+        580
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output.queries",
+        "options": {}
+      },
+      "id": "361601b0-f9a9-428c-b466-e26891d394fe",
+      "name": "SERP to Items",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        3380,
+        1220
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "ee0dfc67-b99a-432b-905d-bdee64c6f3b6",
+      "name": "Item Ref",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        3860,
+        1420
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9acec2cc-64c8-4e62-bed4-c3d9ffab1379",
+              "name": "researchGoal",
+              "type": "string",
+              "value": "={{ $('Item Ref').first().json.researchGoal }}"
+            },
+            {
+              "id": "1b2d2dad-429b-4fc9-96c5-498f572a85c3",
+              "name": "learnings",
+              "type": "array",
+              "value": "={{ $json.output.learnings }}"
+            },
+            {
+              "id": "c9e34ea4-5606-46d6-8d66-cb42d772a8b4",
+              "name": "urls",
+              "type": "array",
+              "value": "={{\n$('Get Markdown + URL')\n  .all()\n  .map(item => item.json.url)\n}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "77b32965-243e-4070-8e50-6cd17b1eaf36",
+      "name": "Research Goal + Learnings",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        5380,
+        1560
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "db509e90-9a86-431f-8149-4094d22666cc",
+              "name": "should_stop",
+              "type": "boolean",
+              "value": "={{\n$runIndex >= ($('JobType Router').first().json.data.depth)\n}}"
+            },
+            {
+              "id": "90986e2b-8aca-4a22-a9db-ed8809d6284d",
+              "name": "all_learnings",
+              "type": "array",
+              "value": "={{\nArray($runIndex+1)\n  .fill(0)\n  .flatMap((_,idx) => {\n    try {\n      return $('Generate Learnings')\n        .all(0,idx)\n        .flatMap(item => item.json.data.flatMap(d => d.learnings))\n    } catch (e) {\n      return []\n    }\n  })\n}}"
+            },
+            {
+              "id": "3eade958-e8ab-4975-aac4-f4a4a983c163",
+              "name": "all_urls",
+              "type": "array",
+              "value": "={{\nArray($runIndex+1)\n  .fill(0)\n  .flatMap((_,idx) => {\n    try {\n      return $('Generate Learnings')\n        .all(0,idx)\n        .flatMap(item => item.json.data.flatMap(d => d.urls))\n    } catch (e) {\n      return []\n    }\n  })\n}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1d804688-a36d-4e57-96a7-9351be9f2a81",
+      "name": "Accumulate Results",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        3880,
+        580
+      ],
+      "executeOnce": true,
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ $('Generate Learnings').item.json }}",
+        "options": {}
+      },
+      "id": "2090adfd-8e95-4931-a0a5-5827892192f7",
+      "name": "DeepResearch Results",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        4240,
+        760
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "id": "73fbe4c7-28e2-4516-942e-9ad28d20f5d5",
+      "name": "Results to Items",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        4400,
+        760
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d88bfe95-9e73-4d25-b45c-9f164b940b0e",
+              "name": "query",
+              "type": "string",
+              "value": "=Previous research goal: {{ $json.researchGoal }}\nFollow-up research directions: {{ $json.followUpQuestions.map(q => `\\n${q}`).join('') }}"
+            },
+            {
+              "id": "4aa20690-d998-458a-b1e4-0d72e6a68e6b",
+              "name": "learnings",
+              "type": "array",
+              "value": "={{ $('Accumulate Results').item.json.all_learnings }}"
+            },
+            {
+              "id": "89acafae-b04a-4d5d-b08b-656e715654e4",
+              "name": "breadth",
+              "type": "number",
+              "value": "={{ $('JobType Router').first().json.data.breadth }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a1eaa630-518f-4e68-9c12-a91dc36cbfb5",
+      "name": "Set Next Queries",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        4560,
+        760
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "42e80743-e901-45e3-a163-2d1241125b1e",
+      "name": "For Each Query...",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        3660,
+        1260
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output.questions",
+        "options": {}
+      },
+      "id": "37a144f8-11f7-4b2f-acd1-4d4beceb4e38",
+      "name": "Feedback to Items",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        3360,
+        -60
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "={{ $json[\"output.questions\"] }}",
+              "fieldType": "textarea",
+              "placeholder": "=",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "formTitle": "DeepResearcher",
+          "formDescription": "=<img\n  src=\"https://res.cloudinary.com/daglih2g8/image/upload/f_auto,q_auto/v1/n8n-workflows/o4wqztloz3j6okfxpeyw\"\n  width=\"100%\"\n  style=\"border:1px solid #ccc\"\n/>\n<p style=\"text-align:left\">\nAnswer the following clarification questions to assist the DeepResearcher better under the research topic.\n</p>\n<hr style=\"display:block;margin-top:16px;margin-bottom:0\" />\n<p style=\"text-align:left;font-family:sans-serif;font-weight:700;\">\nTotal {{ $('Feedback to Items').all().length }} questions.\n</p>",
+          "buttonLabel": "Answer"
+        }
+      },
+      "id": "58111156-08ef-4f9e-b328-9afab4e048b7",
+      "name": "Ask Clarity Questions",
+      "type": "n8n-nodes-base.form",
+      "position": [
+        3720,
+        20
+      ],
+      "webhookId": "d3375ba6-0008-4fcb-96bc-110374de2603",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "34c6b7eb-1a39-42d9-a0f9-0f32a084fec6",
+      "name": "For Each Question...",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        3540,
+        -60
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Given the following query from the user, ask some follow up questions to clarify the research direction. Return a maximum of 3 questions, but feel free to return less if the original query is clear: <query>{{ $json.prompt }}</query>`",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "type": "HumanMessagePromptTemplate",
+              "message": "=You are an expert researcher. Today is {{ $now.toLocaleString() }}. Follow these instructions when responding:\n  - You may be asked to research subjects that is after your knowledge cutoff, assume the user is right when presented with news.\n  - The user is a highly experienced analyst, no need to simplify it, be as detailed as possible and make sure your response is correct.\n  - Be highly organized.\n  - Suggest solutions that I didn't think about.\n  - Be proactive and anticipate my needs.\n  - Treat me as an expert in all subject matter.\n  - Mistakes erode my trust, so be accurate and thorough.\n  - Provide detailed explanations, I'm comfortable with lots of detail.\n  - Value good arguments over authorities, the source is irrelevant.\n  - Consider new technologies and contrarian ideas, not just the conventional wisdom.\n  - You may use high levels of speculation or prediction, just flag it for me."
+            }
+          ]
+        }
+      },
+      "id": "a7538524-e03f-499e-852f-9e9866c3c244",
+      "name": "Clarifying Questions",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "position": [
+        3040,
+        -60
+      ],
+      "typeVersion": 1.5
+    },
+    {
+      "parameters": {
+        "operation": "completion",
+        "completionTitle": "=Thank you for using DeepResearcher.",
+        "completionMessage": "=You may now close this window.",
+        "options": {}
+      },
+      "id": "35eaaf96-9a2e-446e-83e8-5080f44b3141",
+      "name": "End Form",
+      "type": "n8n-nodes-base.form",
+      "position": [
+        5040,
+        -20
+      ],
+      "webhookId": "88f2534b-2b82-4b40-a4bc-97d96384e8fd",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $workflow.id }}"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "data": "={{\n{\n  \"query\": $('Get Initial Query').first().json.query,\n  \"learnings\": [],\n  \"depth\": $('Set Variables').first().json.depth,\n  \"breadth\": $('Set Variables').first().json.breadth,\n}\n}}",
+            "jobType": "deepresearch_initiate",
+            "requestId": "={{ $('Set Variables').first().json.request_id }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "requestId",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "requestId",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "jobType",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "jobType",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data",
+              "type": "object",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "data",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      },
+      "id": "106a7445-fa06-47db-8831-1c7153ecd08d",
+      "name": "Initiate DeepResearch",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "position": [
+        4680,
+        -20
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "dataToSave": {
+          "values": [
+            {
+              "key": "requestId",
+              "value": "={{ $json.requestId }}"
+            },
+            {
+              "key": "=jobType",
+              "value": "={{ $json.jobType }}"
+            }
+          ]
+        }
+      },
+      "id": "ad4d1315-7d95-4681-98bc-51a65fbd4e84",
+      "name": "Execution Data",
+      "type": "n8n-nodes-base.executionData",
+      "position": [
+        2380,
+        1220
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.jobType }}",
+                    "rightValue": "deepresearch_initiate"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "initiate"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "ecbfa54d-fc97-48c5-8d3d-f0538b8d727b",
+                    "operator": {
+                      "name": "filter.operator.equals",
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.jobType }}",
+                    "rightValue": "deepresearch_learnings"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "learnings"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "392f9a98-ec22-4e57-9c8e-0e1ed6b7dafa",
+                    "operator": {
+                      "name": "filter.operator.equals",
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.jobType }}",
+                    "rightValue": "deepresearch_report"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "report"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4467e181-d64d-49b8-8f90-cfb29a7b154e",
+      "name": "JobType Router",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        2560,
+        1220
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "o3-mini"
+        },
+        "options": {}
+      },
+      "id": "a7684891-03cd-4cd4-99c4-0e366736cb82",
+      "name": "OpenAI Chat Model4",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        4060,
+        120
+      ],
+      "typeVersion": 1.2,
+      "credentials": {
+        "openAiApi": {
+          "id": "QEy3y63pHSCkmxVh",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "14b77741-c3c3-4bd2-be6e-37bd09fcea2b",
+              "name": "query",
+              "type": "string",
+              "value": "=Initial query: {{ $('Set Variables').first().json.prompt }}\nFollow-up Questions and Answers:\n{{\n$input.all()\n  .map(item => {\n    const q = Object.keys(item.json)[0];\n    const a = item.json[q];\n    return `question: ${q}\\nanswer: ${a}`;\n  })\n  .join('\\n')\n}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d66a153b-097e-47fc-be52-60243367669d",
+      "name": "Get Initial Query",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        3720,
+        -140
+      ],
+      "executeOnce": true,
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"description\":\" A short title summarising the research topic\"\n    },\n    \"description\": {\n      \"type\": \"string\",\n      \"description\": \"A short description to summarise the research topic\"\n    }\n  }\n}"
+      },
+      "id": "2cf6db67-5a28-44f6-9aea-3ef7d1836b59",
+      "name": "Structured Output Parser4",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "position": [
+        4240,
+        120
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "1b52c265-1906-80a4-b754-d30fc3d93e45",
+          "mode": "list",
+          "cachedResultName": "n8n DeepResearch",
+          "cachedResultUrl": "https://www.notion.so/1b52c265190680a4b754d30fc3d93e45"
+        },
+        "title": "={{ $json.output.title }}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Name|title",
+              "title": "={{ $json.output.title }}"
+            },
+            {
+              "key": "Description|rich_text",
+              "richText": true
+            },
+            {
+              "key": "Status|status",
+              "statusValue": "In progress"
+            },
+            {
+              "key": "Last Updated|date",
+              "date": "={{ $('On form submission').item.json.submittedAt }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ef319d60-15b2-4b4c-9c7d-276b0bc20084",
+      "name": "Create Row",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        4340,
+        -20
+      ],
+      "typeVersion": 2.2,
+      "credentials": {
+        "notionApi": {
+          "id": "jksMjLL14vM0nIj5",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Create a suitable title for the research report which will be created from the user's query.\n<query>{{ $json.query }}</query>",
+        "hasOutputParser": true
+      },
+      "id": "fdbf13ff-2267-477d-854e-c642c15a328d",
+      "name": "Report Page Generator",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "position": [
+        4060,
+        -20
+      ],
+      "typeVersion": 1.5
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "75d18d88-6ba6-43df-bef7-3e8ad99ad8bd",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.should_stop }}",
+              "rightValue": ""
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1cb4cd69-ecf7-42f4-9cc1-68cd8af3f5be",
+      "name": "Is Depth Reached?",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        4040,
+        580
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "90b3da00-dcd5-4289-bd45-953146a3b0ba",
+              "name": "all_learnings",
+              "type": "array",
+              "value": "={{ $json.all_learnings }}"
+            },
+            {
+              "id": "623dbb3d-83a1-44a9-8ad3-48d92bc42811",
+              "name": "all_urls",
+              "type": "array",
+              "value": "={{ $json.all_urls }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "df7dc9e3-58da-4724-8555-78d264fad12b",
+      "name": "Get Research Results",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        4240,
+        580
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "19486dd6-0c0c-80da-9cb7-eb1468ea9afd",
+          "cachedResultUrl": "https://www.notion.so/19486dd60c0c80da9cb7eb1468ea9afd",
+          "cachedResultName": "n8n DeepResearch"
+        },
+        "limit": 1,
+        "filterType": "manual",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Request ID|rich_text",
+              "condition": "equals",
+              "richTextValue": "={{ $json.requestId.toString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6da96fa8-2d5f-461c-89f5-6770177de573",
+      "name": "Get Existing Row",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        3040,
+        580
+      ],
+      "typeVersion": 2.2,
+      "credentials": {
+        "notionApi": {
+          "id": "jksMjLL14vM0nIj5",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $json.id }}"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Status|status",
+              "statusValue": "In progress"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fa46a85a-dff9-448a-8a93-8771094152c5",
+      "name": "Set In-Progress",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        3240,
+        580
+      ],
+      "typeVersion": 2.2,
+      "credentials": {
+        "notionApi": {
+          "id": "jksMjLL14vM0nIj5",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "https://www.notion.so/N8N-1b52c265190680bf926df35ac6ba9b2a?pvs=4",
+          "mode": "url"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "=Status|status",
+              "statusValue": "Done"
+            },
+            {
+              "key": "Last Updated|date",
+              "date": "={{ $now.toISO() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "366fb9c7-dbb5-438c-b5c6-20bbe0a3974e",
+      "name": "Set Done",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        5760,
+        2000
+      ],
+      "executeOnce": true,
+      "typeVersion": 2.2,
+      "credentials": {
+        "notionApi": {
+          "id": "jksMjLL14vM0nIj5",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "tag",
+        "options": {}
+      },
+      "id": "9b36475d-91f7-421b-af63-befd2da04dd0",
+      "name": "Tags to Items",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        4020,
+        2000
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "mode": "markdownToHtml",
+        "markdown": "={{ $json.text }}",
+        "options": {
+          "tables": true
+        }
+      },
+      "id": "0d4f0028-b9da-4830-877d-1fdd86a8eca4",
+      "name": "Convert to HTML",
+      "type": "n8n-nodes-base.markdown",
+      "position": [
+        3700,
+        2000
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "851b8a3f-c2d3-41ad-bf60-4e0e667f6c58",
+              "name": "tag",
+              "type": "array",
+              "value": "={{ $json.data.match(/<table[\\s\\S]*?<\\/table>|<ul[\\s\\S]*?<\\/ul>|<[^>]+>[^<]*<\\/[^>]+>/g) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bc6c7fcf-3fb0-42d6-8a84-1ad1a333aff6",
+      "name": "HTML to Array",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        3860,
+        2000
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.tag.trim() }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=Convert the following html into its equivalent Notion Block as per Notion's API schema.\n* Ensure the content is always included and remains the same.\n* Return only a json response.\n* Generate child-level blocks. Should not define \"parent\" or \"children\" property.\n* Strongly prefer headings, paragraphs, tables and lists type blocks.\n* available headings are heading_1, heading_2 and heading_3 - h4,h5,h6 should use heading_3 type instead. ensure headings use the rich text definition.\n* ensure lists blocks include all list items.\n\n## Examples\n\n1. headings\n```\n<h3 id=\"references\">References</h3>\n```\nwould convert to \n```\n{\"object\":  \"block\", \"type\": \"heading_3\", \"heading_3\": { \"rich_text\": [{\"type\": \"text\",\"text\": {\"content\": \"References\"}}]}}\n```\n\n2. lists\n```\n<ul><li>hello</li><li>world</li></ul>\n```\nwould convert to\n```\n[\n{\n  \"object\": \"block\",\n  \"type\": \"bulleted_list_item\",\n  \"bulleted_list_item\": {\"rich_text\": [{\"type\": \"text\",\"text\": {\"content\": \"hello\"}}]}\n},\n{\n  \"object\": \"block\",\n  \"type\": \"bulleted_list_item\",\n  \"bulleted_list_item\": {\"rich_text\": [{\"type\": \"text\",\"text\": {\"content\": \"world\"}}]}\n}\n]\n```\n\n3. tables\n```\n<table>\n  <thead>\n    <tr><th>Technology</th><th>Potential Impact</th></tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>5G Connectivity</td><td>Enables faster data speeds and advanced apps</td>\n    </tr>\n  </tbody>\n</table>\n```\nwould convert to\n```\n{\n  \"object\": \"block\",\n  \"type\": \"table\",\n  \"table\": {\n    \"table_width\": 2,\n    \"has_column_header\": true,\n    \"has_row_header\": false,\n    \"children\": [\n      {\n        \"object\": \"block\",\n        \"type\": \"table_row\",\n        \"table_row\": {\n          \"cells\": [\n            [\n              {\n                \"type\": \"text\",\n                \"text\": {\n                  \"content\": \"Technology\",\n                  \"link\": null\n                }\n              },\n              {\n                \"type\": \"text\",\n                \"text\": {\n                  \"content\": \"Potential Impact\",\n                  \"link\": null\n                }\n              }\n            ],\n            [\n              {\n                \"type\": \"text\",\n                \"text\": {\n                  \"content\": \"5G Connectivity\",\n                  \"link\": null\n                }\n              },\n              {\n                \"type\": \"text\",\n                \"text\": {\n                  \"content\": \"Enables faster data speeds and advanced apps\",\n                  \"link\": null\n                }\n              }\n            ]\n          ]\n        }\n      }\n    ]\n  }\n}\n```\n4. anchor links\nSince Notion doesn't support anchor links, just convert them to rich text blocks instead.\n```\n<a href=\"#module-0-pre-course-setup-and-learning-principles\">Module 0: Pre-Course Setup and Learning Principles</a>\n```\nconverts to\n```\n{\n  \"object\": \"block\",\n  \"type\": \"paragraph\",\n  \"paragraph\": {\n    \"rich_text\": [\n      {\n        \"type\": \"text\",\n        \"text\": {\n          \"content\": \"Module 0: Pre-Course Setup and Learning Principles\"\n        }\n      }\n    ]\n  }\n}\n```\n5. Invalid html parts\nWhen the html is not syntax valid eg. orphaned closing tags, then just skip the conversion and use an empty rich text block.\n```\n</li>\\n</ol>\n```\ncan be substituted with\n```\n{\n  \"object\": \"block\",\n  \"type\": \"paragraph\",\n  \"paragraph\": {\n    \"rich_text\": [\n      {\n        \"type\": \"text\",\n        \"text\": {\n          \"content\": \" \"\n        }\n      }\n    ]\n  }\n}\n```"
+            }
+          ]
+        }
+      },
+      "id": "7a91386e-aa3e-4b8c-8b1a-b663a5c13104",
+      "name": "Notion Block Generator",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "position": [
+        4180,
+        2000
+      ],
+      "typeVersion": 1.5
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-pro-exp",
+        "options": {}
+      },
+      "id": "e6e828ab-10e3-48fd-ae11-d1a2dfe8cd7d",
+      "name": "Google Gemini Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "position": [
+        4160,
+        2160
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "C1lFcn9O4FLqvvqv",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "73fcb8a0-2672-4bd5-86de-8075e1e02baf",
+              "name": "=block",
+              "type": "array",
+              "value": "={{\n(function(){\n  const block = $json.text\n    .replace('```json', '')\n    .replace('```', '')\n    .trim()\n    .parseJson();\n  if (Array.isArray(block)) return block;\n  if (block.type.startsWith('heading_')) {\n    const prev = Number(block.type.split('_')[1]);\n    const next = Math.max(1, prev - 1);\n    if (next !== prev) {\n      block.type = `heading_${next}`;\n      block[`heading_${next}`] = Object.assign({}, block[`heading_${prev}`]);\n      block[`heading_${prev}`] = undefined;\n    }\n  }\n  return [block];\n})()\n}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2bf2eaa8-fc40-41c9-a06b-ce5fa40bb60f",
+      "name": "Parse JSON blocks",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        4500,
+        2000
+      ],
+      "executeOnce": false,
+      "typeVersion": 3.4,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.notion.com/v1/blocks/{{ $('Get Existing Row1').first().json.id }}/children",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "notionApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Notion-Version",
+              "value": "2022-06-28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{\n{\n  \"children\": $json.block\n}\n}}",
+        "options": {
+          "timeout": "={{ 1000 * 60 }}"
+        }
+      },
+      "id": "6fab7f3c-9392-4a54-911d-2f834b151abf",
+      "name": "Upload to Notion Page",
+      "type": "n8n-nodes-base.httpRequest",
+      "maxTries": 2,
+      "position": [
+        5760,
+        2160
+      ],
+      "retryOnFail": true,
+      "typeVersion": 4.2,
+      "waitBetweenTries": 3000,
+      "credentials": {
+        "notionApi": {
+          "id": "jksMjLL14vM0nIj5",
+          "name": "Notion account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "19486dd6-0c0c-80da-9cb7-eb1468ea9afd",
+          "cachedResultUrl": "https://www.notion.so/19486dd60c0c80da9cb7eb1468ea9afd",
+          "cachedResultName": "n8n DeepResearch"
+        },
+        "limit": 1,
+        "filterType": "manual",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Request ID|rich_text",
+              "condition": "equals",
+              "richTextValue": "={{ $json.requestId.toString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a3707662-b7df-48cc-b271-0f8394ed9ce5",
+      "name": "Get Existing Row1",
+      "type": "n8n-nodes-base.notion",
+      "position": [
+        3060,
+        2000
+      ],
+      "typeVersion": 2.2,
+      "credentials": {
+        "notionApi": {
+          "id": "jksMjLL14vM0nIj5",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are are an expert and insightful researcher.\n* Given the following prompt from the user, write a final report on the topic using the learnings from research.\n* Make it as as detailed as possible, aim for 3 or more pages, include ALL the learnings from research.\n* Format the report in markdown. Use headings, lists and tables only and where appropriate.\n\n<prompt>{{ $('JobType Router').first().json.data.query }}</prompt>\n\nHere are all the learnings from previous research:\n\n<learnings>\n{{\n$('JobType Router').first().json.data\n  .all_learnings\n  .map(item => `<learning>${item}</learning>`)  \n  .join('\\n')\n}}\n</learnings>"
+      },
+      "id": "48174afd-32fc-43c2-ad88-1d13581084f3",
+      "name": "DeepResearch Report",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "position": [
+        3220,
+        2000
+      ],
+      "typeVersion": 1.5
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Given the following contents from a SERP search for the query <query>{{ $('Item Ref').first().json.query }}</query>, generate a list of learnings from the contents. Return a maximum of 3 learnings, but feel free to return less if the contents are clear. Make sure each learning is unique and not similar to each other. The learnings should be concise and to the point, as detailed and infromation dense as possible. Make sure to include any entities like people, places, companies, products, things, etc in the learnings, as well as any exact metrics, numbers, or dates. The learnings will be used to research the topic further.\n\n<contents>\n{{\n$input\n  .all()\n  .map(item =>`<content>\\n${item.json.markdown.substr(0, 25_000)}\\n</content>`)\n  .join('\\n')\n}}\n</contents>",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "type": "HumanMessagePromptTemplate",
+              "message": "=You are an expert researcher. Today is {{ $now.toLocaleString() }}. Follow these instructions when responding:\n  - You may be asked to research subjects that is after your knowledge cutoff, assume the user is right when presented with news.\n  - The user is a highly experienced analyst, no need to simplify it, be as detailed as possible and make sure your response is correct.\n  - Be highly organized.\n  - Suggest solutions that I didn't think about.\n  - Be proactive and anticipate my needs.\n  - Treat me as an expert in all subject matter.\n  - Mistakes erode my trust, so be accurate and thorough.\n  - Provide detailed explanations, I'm comfortable with lots of detail.\n  - Value good arguments over authorities, the source is irrelevant.\n  - Consider new technologies and contrarian ideas, not just the conventional wisdom.\n  - You may use high levels of speculation or prediction, just flag it for me."
+            }
+          ]
+        }
+      },
+      "id": "a9f27ead-3e91-4b8e-aba6-68fd6e3ccf7e",
+      "name": "DeepResearch Learnings",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "position": [
+        5040,
+        1420
+      ],
+      "executeOnce": true,
+      "typeVersion": 1.5
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $workflow.id }}"
+        },
+        "workflowInputs": {
+          "value": {
+            "data": "={{\n{\n  ...Object.assign({}, $json),\n  query: $('JobType Router').first().json.data.query\n}\n}}",
+            "jobType": "deepresearch_report",
+            "requestId": "={{ $('JobType Router').first().json.requestId }}"
+          },
+          "schema": [
+            {
+              "id": "requestId",
+              "display": true,
+              "required": false,
+              "displayName": "requestId",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "jobType",
+              "type": "string",
+              "display": true,
+              "required": false,
+              "displayName": "jobType",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data",
+              "type": "object",
+              "display": true,
+              "required": false,
+              "displayName": "data",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "mappingMode": "defineBelow",
+          "matchingColumns": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      },
+      "id": "0c8ef397-e794-493d-aa43-2463b421c5a5",
+      "name": "Generate Report",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "position": [
+        4560,
+        580
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $workflow.id }}"
+        },
+        "workflowInputs": {
+          "value": {
+            "data": "={{ $json }}",
+            "jobType": "deepresearch_learnings",
+            "requestId": "={{ $('JobType Router').first().json.requestId }}"
+          },
+          "schema": [
+            {
+              "id": "requestId",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "requestId",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "jobType",
+              "type": "string",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "jobType",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data",
+              "type": "object",
+              "display": true,
+              "removed": false,
+              "required": false,
+              "displayName": "data",
+              "defaultMatch": false,
+              "canBeUsedToMatch": true
+            }
+          ],
+          "mappingMode": "defineBelow",
+          "matchingColumns": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "515d5ed2-c006-4cd7-8161-4d8778a9f822",
+      "name": "Generate Learnings",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "position": [
+        3700,
+        580
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "formFields": {
+          "values": [
+            {
+              "fieldType": "html",
+              "html": "=<a href=\"{{ $json.url }}\" style=\"text-decoration:none\" target=\"_blank\">\n<div style=\"display:flex;text-align:left;font-family:sans-serif;\">\n  <div style=\"width:150px;height:150px;padding:12px;\">\n    <img src=\"https://res.cloudinary.com/daglih2g8/image/upload/f_auto,q_auto/v1/n8n-workflows/cajjymprexcoesu4gg9g\" width=\"100%\" />\n  </div>\n  <div style=\"width:100%;padding:12px;\">\n    <div style=\"font-size:14px;font-weight:700\">{{ $json.name }}</div>\n    <div style=\"font-size:12px;color:#666\">\n      {{ $json.property_description }}\n    </div>\n  </div>\n</div>\n</a>"
+            }
+          ]
+        },
+        "options": {
+          "formTitle": "DeepResearcher",
+          "formDescription": "=<img\n  src=\"https://res.cloudinary.com/daglih2g8/image/upload/f_auto,q_auto/v1/n8n-workflows/o4wqztloz3j6okfxpeyw\"\n  width=\"100%\"\n  style=\"border:1px solid #ccc\"\n/>\n<p style=\"text-align:left\">\n<strong style=\"display:block;font-family:sans-serif;font-weight:700;font-size:16px;margin-top:12px;margin-bottom:0;\">Your Report Is On Its Way!</strong>\n<br/>\nDeepResearcher will now work independently to conduct the research and the compiled report will be uploaded to the following Notion page below when finished.\n<br/><br/>\nPlease click the \"Done\" button to complete the form.\n</p>\n<hr style=\"display:block;margin-top:16px;margin-bottom:0\" />",
+          "buttonLabel": "Done"
+        }
+      },
+      "id": "19c19b33-0663-4439-af2f-0b899ab8aa90",
+      "name": "Confirmation",
+      "type": "n8n-nodes-base.form",
+      "position": [
+        4860,
+        -20
+      ],
+      "webhookId": "2eb17c47-c887-4e95-8641-1b3796452ab9",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "What would you like to research?",
+              "fieldType": "textarea",
+              "requiredField": true
+            },
+            {
+              "fieldType": "html",
+              "html": "<div class=\"form-group\" style=\"margin-bottom:16px;\">\n  <label class=\"form-label\" for=\"depth\">\n    Enter research depth (Default 1)\n  </label>\n  <p style=\"font-size:12px;color:#666;text-align:left\">\n    This value determines how many sub-queries to generate.\n  </p>\n  <input\n    class=\"form-input\"\n    type=\"range\"\n    id=\"depth\"\n    name=\"depth\"\n    value=\"1\"\n    step=\"1\"\n    max=\"3\"\n    min=\"0\"\n    list=\"depth-markers\"\n    onChange=\"document.querySelector(`input[name='field-4']`).value = this.value\"\n\n  >\n  <datalist\n    id=\"depth-markers\"\n    style=\"display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    writing-mode: horizontal-tb;\n    margin-top: -10px;\n    text-align: center;\n    font-size: 10px;\n    margin-left: 16px;\n    margin-right: 16px;\"\n  >\n    <option style=\"padding:0\" value=\"0\" label=\"0\"></option>\n    <option style=\"padding:0\" value=\"1\" label=\"1\"></option>\n    <option style=\"padding:0\" value=\"2\" label=\"2\"></option>\n    <option style=\"padding:0\" value=\"3\" label=\"3\"></option>\n  </datalist>\n</div>"
+            },
+            {
+              "fieldType": "html",
+              "html": "<div class=\"form-group\" style=\"margin-bottom:16px;\">\n  <label class=\"form-label\" for=\"breadth\">\n    Enter research breadth (Default 2)\n  </label>\n  <p style=\"font-size:12px;color:#666;text-align:left\">\n    This value determines how many sources to explore.\n  </p>\n  <input\n    class=\"form-input\"\n    type=\"range\"\n    id=\"breadth\"\n    name=\"breadth\"\n    value=\"2\"\n    step=\"1\"\n    max=\"5\"\n    min=\"1\"\n    list=\"breadth-markers\"\n    onChange=\"document.querySelector(`input[name='field-5']`).value = this.value\"\n  >\n  <datalist\n    id=\"breadth-markers\"\n    style=\"display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    writing-mode: horizontal-tb;\n    margin-top: -10px;\n    text-align: center;\n    font-size: 10px;\n    margin-left: 16px;\n    margin-right: 16px;\"\n  >\n    <option value=\"1\" label=\"1\"></option>\n    <option value=\"2\" label=\"2\"></option>\n    <option value=\"3\" label=\"3\"></option>\n    <option value=\"4\" label=\"4\"></option>\n    <option value=\"5\" label=\"5\"></option>\n  </datalist>\n</div>\n\n"
+            },
+            {
+              "fieldLabel": "={{ \"\" }}",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "=I understand higher depth and breath values I've selected may incur longer wait times and higher costs. I acknowledging this and wish to proceed with the research request."
+                  }
+                ]
+              },
+              "multiselect": true,
+              "requiredField": true
+            },
+            {
+              "fieldType": "hiddenField",
+              "fieldName": "depth",
+              "fieldValue": "1"
+            },
+            {
+              "fieldType": "hiddenField",
+              "fieldName": "breadth",
+              "fieldValue": "2"
+            }
+          ]
+        },
+        "options": {
+          "formTitle": "DeepResearcher",
+          "formDescription": "=<img\n  src=\"https://res.cloudinary.com/daglih2g8/image/upload/f_auto,q_auto/v1/n8n-workflows/o4wqztloz3j6okfxpeyw\"\n  width=\"100%\"\n  style=\"border:1px solid #ccc\"\n/>"
+        }
+      },
+      "id": "7e47011e-2261-4341-9479-2c66c1f3364b",
+      "name": "Research Request",
+      "type": "n8n-nodes-base.form",
+      "position": [
+        2520,
+        -60
+      ],
+      "webhookId": "46142c14-3692-40f6-80e5-f3d976e95191",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "f68cefe0-e109-4d41-9aa3-043f3bc6c449",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.error }}",
+              "rightValue": ""
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "86e73e74-3500-4873-8d2d-eecdc7bb7bcc",
+      "name": "Valid Blocks",
+      "type": "n8n-nodes-base.filter",
+      "position": [
+        4820,
+        2000
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {},
+      "id": "b049ce1a-4de3-42bf-8ad3-f9e4d1159f7a",
+      "name": "Append Blocks",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        5080,
+        2160
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "jsCode": "const urls = Object.values($('JobType Router').first().json.data.all_urls\n  .reduce((acc, url) => ({ ...acc, [url]: url }),{}));\nconst chunksize = 50;\nconst splits = Math.max(1, Math.floor(urls.length/chunksize));\n\nconst blocks = Array(splits).fill(0)\n  .map((_, idx) => {\n    const block = urls\n      .slice(\n        idx * chunksize, \n        (idx * chunksize) + chunksize - 1\n      )\n      .map(url => {\n        return {\n          object: \"block\",\n          type: \"bulleted_list_item\",\n          bulleted_list_item: {\n            rich_text: [\n              { type: \"text\", text: { content: url } }\n            ]\n          }\n        }\n      });\n    return { json: { block } }\n  });\n\nreturn [\n  { json: {\n    block:[{\n      \"object\": \"block\",\n      \"type\": \"heading_2\",\n      \"heading_2\": {\n        \"rich_text\": [\n          {\n            \"type\": \"text\",\n            \"text\": {\n              \"content\": \"Sources\"\n            }\n          }\n        ]\n      }\n    }]\n  } },\n  ...blocks\n];"
+      },
+      "id": "ccbefedb-af74-48b4-8f96-e8f739b59105",
+      "name": "URL Sources to Lists",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        4820,
+        2160
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1de40158-338b-4db3-9e22-6fd63b21f825",
+              "name": "ResearchGoal",
+              "type": "string",
+              "value": "={{ $('Item Ref').first().json.researchGoal }}"
+            },
+            {
+              "id": "9f59a2d4-5e5a-4d0b-8adf-2832ce746f0f",
+              "name": "learnings",
+              "type": "array",
+              "value": "={{ [] }}"
+            },
+            {
+              "id": "972ab5f5-0537-4755-afcb-d1db4f09ad60",
+              "name": "followUpQuestions",
+              "type": "array",
+              "value": "={{ [] }}"
+            },
+            {
+              "id": "90cef471-76b0-465d-91a4-a0e256335cd3",
+              "name": "urls",
+              "type": "array",
+              "value": "={{ [] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d7fca459-3434-4d8d-aa29-510172dae8b6",
+      "name": "Empty Response",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        4540,
+        1560
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "1ef1039a-4792-47f9-860b-d2ffcffd7129",
+              "operator": {
+                "type": "object",
+                "operation": "notEmpty",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json }}",
+              "rightValue": ""
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8f03da9d-ebd1-412c-a2e0-1e0529627c4b",
+      "name": "Has Content?",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        4380,
+        1420
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "01f777ea-ed80-4873-b371-de0ac6404283",
+      "name": "Combine & Send back to Loop",
+      "type": "n8n-nodes-base.aggregate",
+      "position": [
+        3860,
+        1260
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "1baacd76-b9e8-44c5-b3e5-2668205edf21",
+      "name": "For Each Block...",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        5520,
+        2000
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "f44691e4-f753-47b0-b66a-068a723b6beb",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.crawl.requestStatus }}",
+              "rightValue": "handled"
+            },
+            {
+              "id": "8e05df2b-0d4a-47da-9aab-da7e8907cbca",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.markdown }}",
+              "rightValue": ""
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1c3c0b5c-82ff-46ae-a254-9453fc0b1756",
+      "name": "Valid Results",
+      "type": "n8n-nodes-base.filter",
+      "position": [
+        4220,
+        1420
+      ],
+      "typeVersion": 2.2,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/apify~rag-web-browser/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "memory",
+              "value": "4096"
+            },
+            {
+              "name": "timeout",
+              "value": "180"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "query",
+              "value": "={{\n`${$json.query} -filetype:pdf (-site:tiktok.com OR -site:instagram.com OR -site:youtube.com OR -site:linkedin.com OR -site:reddit.com)`\n}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "404f6e52-d1a1-4235-8009-b8b8d9485c93",
+      "name": "RAG Web Browser",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        4040,
+        1420
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "g7eJkruhsKPFGTNn",
+          "name": "Header Auth account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c41592db-f9f0-4228-b6d8-0514c9a21fca",
+              "name": "markdown",
+              "type": "string",
+              "value": "={{ $json.markdown }}"
+            },
+            {
+              "id": "5579a411-94dc-4b10-a276-24adf775be1d",
+              "name": "url",
+              "type": "string",
+              "value": "={{ $json.searchResult.url }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bd711c32-4a66-4226-8a95-f81a81dd4971",
+      "name": "Get Markdown + URL",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        4860,
+        1420
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "content": "## 2. Ask Clarifying Questions\n[Read more about form nodes](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.form/)\n\nTo handle the clarification questions generated by the LLM, I used the same technique found in my \"AI Interviewer\" template ([link](https://n8n.io/workflows/2566-conversational-interviews-with-ai-agents-and-n8n-forms/)).\nThis involves a looping of dynamically generated forms to collect answers from the user.",
+        "height": 560,
+        "width": 1000,
+        "color": 7
+      },
+      "id": "0399db6c-28dd-4f29-b52b-bc80d5eec3f6",
+      "name": "Sticky Note21",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2940,
+        -280
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 6. Perform DeepSearch Loop\n[Learn more about the Looping in n8n](https://docs.n8n.io/flow-logic/looping/#creating-loops)\n\nThe key of the Deep Research flow is its extensive data collection capability. In this implementation, this capability is represented by a recursive web search & scrape loop which starts with the original query and extended by AI-generated subqueries. How many subqueries to generate are determined the depth and breadth parameters specified.\n\n\"Learnings\" are generated for each subquery and accumulate on each iteration of the loop. When the loop finishes when depth limit is reached, all learnings are collected and it's these learnings are what we use to generate the report.",
+        "height": 640,
+        "width": 1360,
+        "color": 7
+      },
+      "id": "c4cddda5-8fa6-444e-b2d1-84428583263c",
+      "name": "Sticky Note22",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3380,
+        320
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 3. Create Empty Report Page in Notion\n[Read more about the Notion node](https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.notion/)\n\nSome thought was given where to upload the final report and Notion was selected due to familiarity. This can be easily changed to whatever wiki tools you prefer.\n\nIf you're following along however, here's the Notion database you need to replicate - [Jim's n8n DeepResearcher Database](https://jimleuk.notion.site/19486dd60c0c80da9cb7eb1468ea9afd?v=19486dd60c0c805c8e0c000ce8c87acf).",
+        "height": 560,
+        "width": 600,
+        "color": 7
+      },
+      "id": "3b09a229-1fe7-4f80-b795-63c8db4aba2f",
+      "name": "Sticky Note23",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3920,
+        -280
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 4. 非同步觸發 DeepResearch\n\n[了解更多關於執行觸發節點](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executeworkflow/)\n\nn8n 透過將非同步任務分拆為個別的執行個體來處理它們。 這基本上意味著使用者不必等待或保持瀏覽器視窗開啟，我們的研究人員即可完成其工作。\n\n一旦我們啟動 Deepresearcher 工作，我們就可以結束導入流程，以獲得良好的使用者體驗。",
+        "height": 560,
+        "width": 640,
+        "color": 7
+      },
+      "id": "56f485c7-1c5d-411a-861c-fee738f84685",
+      "name": "Sticky Note24",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4580,
+        -280
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 7. Generate Search Queries\n[Learn more about the Basic LLM node](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainllm/)\n\nMuch like a human researcher, the DeepResearcher will rely on web search and content as the preferred source of information. To ensure it can cover a wide range of sources, the AI can first generate relevant research queries of which each can be explored separately.",
+        "height": 540,
+        "width": 620,
+        "color": 7
+      },
+      "id": "ef5bcf19-0a99-4e0f-b013-0be26f77ad99",
+      "name": "Sticky Note25",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1680,
+        560
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 8. Web Search and Extracting Web Page Contents using [APIFY.com](https://www.apify.com?fpr=414q6)\n[Read more about the HTTP Request node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/)\n\nHere is where I deviated a little from the reference implementation. I opted not to use Firecrawl.ai due to (1) high cost of the service and (2) a regular non-ai crawler would work just as well and probably quicker. Instead I'm using [APIFY.com](https://www.apify.com?fpr=414q6) which is a more performant, cost-effective and reliable web scraper service. If you don't want to use Apify, feel free to swap this out with your preferred service.\n\nThis step is the most exciting in terms of improvements and optimisations eg. mix in internal data sources! Add in Perplexity.ai or Jina.ai! Possibilities are endless.",
+        "height": 740,
+        "width": 1180,
+        "color": 7
+      },
+      "id": "94a2e7b7-6c6f-4d9b-97a1-954454bcf2a0",
+      "name": "Sticky Note26",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3500,
+        1060
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 5. Set Report to In-Progress\n[Read more about the Notion node](https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.notion/)",
+        "height": 360,
+        "width": 460,
+        "color": 7
+      },
+      "id": "a548e5c9-cc6d-40df-b34f-3fb83df9fb15",
+      "name": "Sticky Note27",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2940,
+        460
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 9. Compile Learnings with Reasoning Model\n[Read more about the Basic LLM node](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainllm/)\n\nWith our gathered sources, it's now just a case of giving it to our LLM to compile a list of \"learnings\" from them. For our DeepResearcher, we'll use OpenAI's o3-mini which is the latest reasoning model at time of writing. Reasoning perform better than regular chat models due their chain-of-thought or \"thinking\" process that they perform.\n\nThe \"Learnings\" are then combined with the generated research goal to complete one loop.",
+        "height": 580,
+        "width": 800,
+        "color": 7
+      },
+      "id": "a5ba9b31-bfe7-4b7c-acdd-2c17f02f1aa9",
+      "name": "Sticky Note28",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4780,
+        1180
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 10. Generate DeepSearch Report using Learnings\n[Read more about the Basic LLM node](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainllm/)\n\nFinally! After all learnings have been gathered - which may have taken up to an hour or more on the higher settings! - they are given to our LLM to generate the final research report in markdown format. Technically, the DeepResearch ends here but for this template, we need to push the output to Notion. If you're not using Notion, feel free to ignore the last few steps.",
+        "height": 540,
+        "width": 660,
+        "color": 7
+      },
+      "id": "db2784c8-9f3c-4a39-bc04-ca6b57e42882",
+      "name": "Sticky Note29",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2940,
+        1800
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 11. Reformat Report as Notion Blocks\n[Learn more about the Markdown node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.markdown/)\n\nTo write our report to our Notion page, we'll have to convert it to Notion \"blocks\" - these are specialised json objects which are required by the Notion API. There are quite a number of ways to do this conversion not involving the use of AI but for kicks, I decided to do so anyway. In this step, we first convert to HTML as it allows us to split the report semantically and makes for easier parsing for the LLM.",
+        "height": 540,
+        "width": 1060,
+        "color": 7
+      },
+      "id": "012bfbd4-b856-4ace-8bb9-f816eb18c9f9",
+      "name": "Sticky Note30",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3620,
+        1800
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 13. Update Report in Notion\n[Read more about the HTTP request node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/)\n\nIn this step, we can use the Notion API to add the blocks to our page sequentially. A loop is used due to the unstable Notion API - the loop allows retries for blocks that require it.",
+        "height": 580,
+        "width": 800,
+        "color": 7
+      },
+      "id": "62db921a-5e23-4f5a-9d94-06ec4a138007",
+      "name": "Sticky Note31",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5300,
+        1800
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 1. Let's Research!\n[Learn more about the form trigger node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.formtrigger)\n\nn8n forms are a really nice way to get our frontend up and running quickly and compared to chat, offers a superior user interface for user input. I've gone perhaps a little extra with the custom html fields but I do enjoy adding a little customisation now and then.",
+        "height": 560,
+        "width": 680,
+        "color": 7
+      },
+      "id": "6eb7d746-f4ed-45a4-96e5-a7d513a6e77c",
+      "name": "Sticky Note32",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2240,
+        -280
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 12. Append URL Sources List\n[Read more about the Code node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code)\n\nFor our source URLs, we'll manually compose the Notion blocks for them - this is because there's usually a lot of them! We'll then append to the end of the other blocks.",
+        "height": 580,
+        "width": 580,
+        "color": 7
+      },
+      "id": "8cda44f8-2400-4878-8f44-bdc048c52ad4",
+      "name": "Sticky Note33",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4700,
+        1800
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Not using forms?\nFeel free ot swap this out for chat or even webhooks to fit your existing workflows.",
+        "height": 100,
+        "width": 300,
+        "color": 5
+      },
+      "id": "7ba28d51-6f45-4390-905f-98beb5089744",
+      "name": "Sticky Note34",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2260,
+        160
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### 🚏 The Subworkflow Event Pattern \nIf you're new to n8n, this advanced technique might need some explaining but in gist, we're using subworkflows to run different parts of our DeepResearcher workflow as separate executions.\n\n* Necessary to implement the recursive loop mechanism needed to enable this workflow.\n* Negates the need to split this workflow into multiple templates.\n* Great generally for building high performance n8n workflows (a topic for a future post!)",
+        "height": 240,
+        "width": 460,
+        "color": 5
+      },
+      "id": "2575c5ee-490c-468a-a4c0-75895edce10b",
+      "name": "Sticky Note35",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2200,
+        940
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Recursive Looping\nThe recursive looping implemented for this workflow is an advanced item-linking technique. It works by specifically controlling which nodes \"execute once\" vs\" execute for each item\" because of this becareful of ermoving nodes! Always check the settings of the node you're replacing and ensure the settings match. ",
+        "height": 200,
+        "width": 340,
+        "color": 5
+      },
+      "id": "29b3a1a4-3543-4b67-b80a-80d8eb2de279",
+      "name": "Sticky Note36",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4800,
+        340
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "# n8n DeepResearcher：複製 OpenAI 的 DeepResearch\n\n此範本透過利用 n8n 的網路搜尋、抓取和推理能力，來模仿 OpenAI 的 DeepResearch 功能（目前僅限專業版訂閱者）。\n\n## 運作方式：\n\n1.  **表單擷取：** 使用者輸入研究查詢和所需的搜尋深度。\n2.  **建立 Notion 頁面：** 建立一個空白的 Notion 頁面，用於存放最終報告。\n3.  **迭代的網路搜尋與抓取：** 查詢會經過迭代的網路搜尋和抓取，以收集相關資料並產生初步學習。\n4.  **彙整與推理：** 這些學習會被彙整並輸入到推理 LLM，以建立一份綜合報告。\n5.  **寫入報告：** 最終報告會寫入指定的 Notion 頁面。\n\n## 使用方法：\n\n*   **複製 Notion 資料庫：** [https://jimleuk.notion.site/19486dd60c0c80da9cb7eb1468ea9afd?v=19486dd60c0c805c8e0c000ce8c87acf](https://jimleuk.notion.site/19486dd60c0c80da9cb7eb1468ea9afd?v=19486dd60c0c805c8e0c000ce8c87acf)\n*   **取得 Apify.com API 金鑰：** ([https://www.apify.com?fpr=414q6](https://www.apify.com?fpr=414q6)) 以進行網路搜尋和抓取。\n*   **存取 OpenAI 模型：** 確保可以存取 OpenAI 的 `o3-mini` 模型（或替換為 `o1` 系列）。\n*   **發佈工作流程：** 發佈工作流程並確保表單 URL 可公開存取。\n\n## 深度與廣度配置：\n\n較高的深度和廣度設定會產生更詳細的報告，但會顯著增加處理時間和成本。預設設定通常就已足夠。\n\n*   **深度 = 1 & 廣度 = 2：** 約 5-10 分鐘\n*   **深度 = 1 & 廣度 = 3：** 約 15-20 分鐘\n*   **深度 = 3 & 廣度 = 5：** 2 小時以上\n\n## 需要幫忙嗎？\n\n加入 Discord ([https://discord.com/invite/XPKeKXeB7d](https://discord.com/invite/XPKeKXeB7d)) 或在論壇 ([https://community.n8n.io/](https://community.n8n.io/)) 中提問！\n\n祝您駭客愉快！",
+        "height": 1060,
+        "width": 520
+      },
+      "id": "1eb44dcb-a2f2-45bd-a26f-b4f04f990b8a",
+      "name": "Sticky Note37",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1660,
+        -520
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "![](https://res.cloudinary.com/daglih2g8/image/upload/f_auto,q_auto/v1/n8n-workflows/o4wqztloz3j6okfxpeyw#full-width)",
+        "height": 240,
+        "width": 520,
+        "color": 7
+      },
+      "id": "9240da61-b5f9-410c-85b0-af5c4c334aab",
+      "name": "Sticky Note38",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1740,
+        -740
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n### UPDATE APIFY CREDENTIAL HERE!",
+        "height": 260,
+        "width": 180
+      },
+      "id": "838f0488-585a-4623-affd-02a53e211231",
+      "name": "Sticky Note39",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4080,
+        1480
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "\n\n\n\n\n\n\n\n\n\n\n\n### UPDATE NOTION CREDENTIAL HERE!",
+        "height": 260,
+        "width": 180
+      },
+      "id": "0b17aec8-9d7e-47b8-ae4b-fe6e9c901e78",
+      "name": "Sticky Note40",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5800,
+        2220
+      ],
+      "typeVersion": 1
+    }
+  ],
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "route": "generate_chart_tool",
+          "db_records": "[{\"mls_num\":\"R292309\",\"list_price\":1148000},{\"mls_num\":\"R292302\",\"list_price\":1298000},{\"mls_num\":\"R294786\",\"list_price\":1280000},{\"mls_num\":\"V17840\",\"list_price\":939000},{\"mls_num\":\"V10178\",\"list_price\":420000},{\"mls_num\":\"V18007\",\"list_price\":296500},{\"mls_num\":\"V18136\",\"list_price\":379000},{\"mls_num\":\"V18643\",\"list_price\":329000},{\"mls_num\":\"V17755\",\"list_price\":236000},{\"mls_num\":\"V19126\",\"list_price\":245500}]",
+          "user_prompt": "provide a bar chart showing mls# and list price"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 4,
+  "updatedAt": "2025-03-13T16:25:01.000Z",
+  "versionId": "0fcfb5e5-c547-4cdc-b24a-a5ae1bbe12cf"
+}
