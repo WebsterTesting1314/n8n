@@ -254,8 +254,20 @@
     },
     {
       "parameters": {
-        "owner": "YOUR_GITHUB_OWNER",
-        "repository": "YOUR_REPOSITORY_NAME",
+        "owner": {
+          "__rl": true,
+          "value": "WebsterTesting1314",
+          "mode": "list",
+          "cachedResultName": "WebsterTesting1314",
+          "cachedResultUrl": "https://github.com/WebsterTesting1314"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "prompt",
+          "mode": "list",
+          "cachedResultName": "prompt",
+          "cachedResultUrl": "https://github.com/WebsterTesting1314/prompt"
+        },
         "labels": [],
         "assignees": []
       },
@@ -326,6 +338,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-14T00:15:56.000Z",
-  "versionId": "57f45f86-d71e-4080-b81f-f9ee61267f37"
+  "updatedAt": "2025-03-14T03:51:58.000Z",
+  "versionId": "25a9479b-f983-428c-ae5b-9c6d2d400c83"
 }
