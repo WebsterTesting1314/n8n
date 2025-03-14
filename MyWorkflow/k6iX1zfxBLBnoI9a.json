@@ -1,0 +1,331 @@
+{
+  "active": false,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Merge Triggers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Merge Triggers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Triggers": {
+      "main": [
+        [
+          {
+            "node": "Fetch ChatGPT History",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch Claude History",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch API Logs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch ChatGPT History": {
+      "main": [
+        [
+          {
+            "node": "Merge Conversation Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Claude History": {
+      "main": [
+        [
+          {
+            "node": "Merge Conversation Data",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge Conversation Data": {
+      "main": [
+        [
+          {
+            "node": "Process Conversation Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Conversation Data": {
+      "main": [
+        [
+          {
+            "node": "Store to GitHub",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch SEO Data",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Update RAG Index",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Store to GitHub": {
+      "main": [
+        [
+          {
+            "node": "Respond Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch SEO Data": {
+      "main": [
+        [
+          {
+            "node": "Respond Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update RAG Index": {
+      "main": [
+        [
+          {
+            "node": "Respond Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-14T00:15:06.600Z",
+  "id": "k6iX1zfxBLBnoI9a",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "LLM測試環境",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -380,
+        20
+      ],
+      "id": "2327ea78-ef14-43a9-b1f6-59f12c1c1f16"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "manual-scan",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -380,
+        220
+      ],
+      "id": "ce6ee579-0f48-490b-81e5-d873b3563e0c",
+      "webhookId": "0137d5cc-4e21-4c81-a6a1-1167ece7b6c5"
+    },
+    {
+      "parameters": {
+        "mode": "passThrough"
+      },
+      "name": "Merge Triggers",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        120
+      ],
+      "id": "e9a430a7-e613-4cad-9545-2ff69f101ff4"
+    },
+    {
+      "parameters": {
+        "url": "https://api.example.com/chatgpt/history",
+        "options": {}
+      },
+      "name": "Fetch ChatGPT History",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        20,
+        -80
+      ],
+      "id": "0a356c5f-a5dc-477b-9ed2-7801645219dd"
+    },
+    {
+      "parameters": {
+        "url": "https://api.example.com/claude/history",
+        "options": {}
+      },
+      "name": "Fetch Claude History",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        20,
+        120
+      ],
+      "id": "8d4d442d-46df-4be9-86a6-cfb0914385cb"
+    },
+    {
+      "parameters": {
+        "url": "https://api.example.com/gpt-claude/logs",
+        "options": {}
+      },
+      "name": "Fetch API Logs",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        20,
+        320
+      ],
+      "id": "6156678c-e716-4402-97cd-8f37ebd21e72"
+    },
+    {
+      "parameters": {},
+      "name": "Merge Conversation Data",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 1,
+      "position": [
+        220,
+        120
+      ],
+      "id": "70752308-c476-4cc3-8ea4-0661ef9fd0f7"
+    },
+    {
+      "parameters": {
+        "functionCode": "// 將各來源的 conversation 數組扁平化，並補充來源與時間戳\nconst allData = items.map(item => item.json);\n// 假設各來源均返回 { conversations: [ { id, content, timestamp, source } ] }\nlet conversations = [];\nallData.forEach(sourceData => {\n  if (sourceData.conversations && Array.isArray(sourceData.conversations)) {\n    conversations = conversations.concat(sourceData.conversations);\n  }\n});\n// 如有需要，可在此處為每條記錄補充來源信息\nconst processed = conversations.map(conv => ({\n  id: conv.id || Date.now().toString(),\n  content: conv.content,\n  source: conv.source || 'unknown',\n  timestamp: conv.timestamp || new Date().toISOString()\n}));\nreturn processed.map(conv => ({ json: conv }));"
+      },
+      "name": "Process Conversation Data",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        420,
+        120
+      ],
+      "id": "32350abe-913b-4deb-a09c-e4eb9d5723d7"
+    },
+    {
+      "parameters": {
+        "owner": "YOUR_GITHUB_OWNER",
+        "repository": "YOUR_REPOSITORY_NAME",
+        "labels": [],
+        "assignees": []
+      },
+      "name": "Store to GitHub",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        620,
+        20
+      ],
+      "id": "30381597-83d7-4ff3-a871-b9c8b203422c",
+      "credentials": {
+        "githubApi": {
+          "id": "5SU2ktziIo6YAAaf",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://api.perplexity.ai/search",
+        "options": {}
+      },
+      "name": "Fetch SEO Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        620,
+        220
+      ],
+      "id": "b013ece9-d63f-4c5f-95c2-651a07e64d94"
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "http://qdrant.example.com/collections/conversations/points",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "={{ JSON.stringify({\n  points: [\n    {\n      id: $json.id,\n      vector: [0.1, 0.2, 0.3],\n      payload: { content: $json.content, timestamp: $json.timestamp, source: $json.source }\n    }\n  ]\n}) }}"
+      },
+      "name": "Update RAG Index",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        820,
+        120
+      ],
+      "id": "749a9f75-0f4e-4381-af72-179ad3f9ce36"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "name": "Respond Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        120
+      ],
+      "id": "9ebb66bd-b039-4622-8129-8df349aa997e"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-14T00:15:56.000Z",
+  "versionId": "57f45f86-d71e-4080-b81f-f9ee61267f37"
+}
