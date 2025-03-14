@@ -188,8 +188,15 @@
     },
     {
       "parameters": {
-        "url": "https://api.example.com/chatgpt/history",
-        "options": {}
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "url": "https://api.openai.com/v1/conversations",
+        "options": {},
+        "headerParametersUi": {
+          "parameter": [
+            {}
+          ]
+        }
       },
       "name": "Fetch ChatGPT History",
       "type": "n8n-nodes-base.httpRequest",
@@ -198,7 +205,13 @@
         20,
         -80
       ],
-      "id": "0a356c5f-a5dc-477b-9ed2-7801645219dd"
+      "id": "0a356c5f-a5dc-477b-9ed2-7801645219dd",
+      "credentials": {
+        "openAiApi": {
+          "id": "QEy3y63pHSCkmxVh",
+          "name": "OpenAi account"
+        }
+      }
     },
     {
       "parameters": {
@@ -329,6 +342,156 @@
         120
       ],
       "id": "9ebb66bd-b039-4622-8129-8df349aa997e"
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 1,
+              "unit": "days"
+            }
+          ]
+        }
+      },
+      "id": "71c6f700-3ddb-4274-a467-eb5de0f234e8",
+      "type": "n8n-nodes-base.cron",
+      "position": [
+        -520,
+        660
+      ],
+      "name": "Cron",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/threads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "limit",
+              "value": "100"
+            },
+            {
+              "name": "order",
+              "value": "desc"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "OpenAI-Beta",
+              "value": "assistants=v2"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "abed9010-22cb-4a3d-8936-e262040b580f",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -320,
+        660
+      ],
+      "name": "HTTP Request",
+      "typeVersion": 4.2,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "g7eJkruhsKPFGTNn",
+          "name": "OPENAI chatHistory"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "3e212679-46a0-429a-9b25-a0943ec48844",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        -120,
+        660
+      ],
+      "name": "Loop Over Items (Split in Batches)",
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "url": "=https://api.openai.com/v1/threads/{{$json[\"id\"]}}/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "limit",
+              "value": "100"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0f72ba79-167b-4123-9252-57c44bb88c35",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        80,
+        660
+      ],
+      "name": "HTTP Request1",
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "functionCode": "// 組織對話數據\nconst thread = $('processThreads').item.json;\nconst messages = $input.item.json.data || [];\n\nreturn {\n  json: {\n    thread_id: thread.id,\n    created_at: thread.created_at,\n    messages: messages.map(msg => ({\n      role: msg.role,\n      content: msg.content[0].text.value,\n      created_at: msg.created_at\n    })),\n    filename: `openai_thread_${thread.id}_${new Date().toISOString().split('T')[0]}.json`\n  }\n};"
+      },
+      "id": "6d597191-db93-4b87-8384-2421aa0ee4a7",
+      "type": "n8n-nodes-base.function",
+      "position": [
+        280,
+        660
+      ],
+      "name": "Function",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "name": "={{$json.filename}}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": "YOUR_FOLDER_ID",
+        "options": {}
+      },
+      "id": "c02acaee-a2ef-4027-8b3e-a803ff6535f7",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        480,
+        660
+      ],
+      "name": "Google Drive",
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "deeb3d08-7a1c-48dd-b14a-a14e38bfe58b",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        480,
+        860
+      ],
+      "name": "Edit Fields (Set)",
+      "typeVersion": 3.4
     }
   ],
   "pinData": {},
@@ -338,6 +501,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-14T03:51:58.000Z",
-  "versionId": "25a9479b-f983-428c-ae5b-9c6d2d400c83"
+  "updatedAt": "2025-03-14T21:47:07.000Z",
+  "versionId": "00c151d7-3991-4897-98b8-ae62aeda27fb"
 }
