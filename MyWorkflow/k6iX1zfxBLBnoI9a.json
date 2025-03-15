@@ -135,34 +135,7 @@
       "main": [
         [
           {
-            "node": "Set Params",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Params": {
-      "main": [
-        [
-          {
-            "node": "Perplexity Request",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Puppeteer",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Perplexity Request": {
-      "main": [
-        [
-          {
-            "node": "Clean Output",
+            "node": "When clicking 'Test workflow'",
             "type": "main",
             "index": 0
           }
@@ -173,6 +146,90 @@
       "main": [
         [
           {
+            "node": "Check Registration Success1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configure Registration Data1": {
+      "main": [
+        [
+          {
+            "node": "Split Account List1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Account List1": {
+      "main": [
+        [
+          {
+            "node": "Prepare Data1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Data1": {
+      "main": [
+        [
+          {
+            "node": "Puppeteer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Registration Success1": {
+      "main": [
+        [
+          {
+            "node": "Slack Notification1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Slack Error Notification1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configure Registration Data": {
+      "main": [
+        [
+          {
+            "node": "Split Account List",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Account List": {
+      "main": [
+        [
+          {
+            "node": "Prepare Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Data": {
+      "main": [
+        [
+          {
             "node": "Puppeteer1",
             "type": "main",
             "index": 0
@@ -180,22 +237,40 @@
         ]
       ]
     },
-    "設置變量": {
+    "Check Registration Success": {
       "main": [
         [
           {
-            "node": "獲取GPT歷史API",
+            "node": "Slack Notification",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Slack Error Notification",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "啟動瀏覽器": {
+    "When clicking 'Test workflow'": {
       "main": [
         [
           {
-            "node": "獲取ChatGPT歷史",
+            "node": "Configure Registration Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Puppeteer1": {
+      "main": [
+        [
+          {
+            "node": "Check Registration Success",
             "type": "main",
             "index": 0
           }
@@ -415,388 +490,310 @@
       "id": "9ebb66bd-b039-4622-8129-8df349aa997e"
     },
     {
-      "parameters": {
-        "triggerTimes": {
-          "item": [
-            {
-              "mode": "everyX",
-              "value": 1,
-              "unit": "days"
-            }
-          ]
-        }
-      },
-      "id": "71c6f700-3ddb-4274-a467-eb5de0f234e8",
-      "type": "n8n-nodes-base.cron",
-      "position": [
-        -520,
-        660
-      ],
-      "name": "Cron",
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://api.openai.com/v1/threads",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "sendQuery": true,
-        "queryParameters": {
-          "parameters": [
-            {
-              "name": "limit",
-              "value": "100"
-            },
-            {
-              "name": "order",
-              "value": "desc"
-            }
-          ]
-        },
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "OpenAI-Beta",
-              "value": "assistants=v2"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "abed9010-22cb-4a3d-8936-e262040b580f",
-      "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        -320,
-        660
-      ],
-      "name": "HTTP Request",
-      "typeVersion": 4.2,
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "g7eJkruhsKPFGTNn",
-          "name": "OPENAI chatHistory"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "3e212679-46a0-429a-9b25-a0943ec48844",
-      "type": "n8n-nodes-base.splitInBatches",
-      "position": [
-        -120,
-        660
-      ],
-      "name": "Loop Over Items (Split in Batches)",
-      "typeVersion": 3
-    },
-    {
-      "parameters": {
-        "url": "=https://api.openai.com/v1/threads/{{$json[\"id\"]}}/messages",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "sendQuery": true,
-        "queryParameters": {
-          "parameters": [
-            {
-              "name": "limit",
-              "value": "100"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "0f72ba79-167b-4123-9252-57c44bb88c35",
-      "type": "n8n-nodes-base.httpRequest",
-      "position": [
-        80,
-        660
-      ],
-      "name": "HTTP Request1",
-      "typeVersion": 4.2,
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "g7eJkruhsKPFGTNn",
-          "name": "OPENAI chatHistory"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "functionCode": "// 組織對話數據\nconst thread = $('processThreads').item.json;\nconst messages = $input.item.json.data || [];\n\nreturn {\n  json: {\n    thread_id: thread.id,\n    created_at: thread.created_at,\n    messages: messages.map(msg => ({\n      role: msg.role,\n      content: msg.content[0].text.value,\n      created_at: msg.created_at\n    })),\n    filename: `openai_thread_${thread.id}_${new Date().toISOString().split('T')[0]}.json`\n  }\n};"
-      },
-      "id": "6d597191-db93-4b87-8384-2421aa0ee4a7",
-      "type": "n8n-nodes-base.function",
-      "position": [
-        280,
-        660
-      ],
-      "name": "Function",
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "name": "={{$json.filename}}",
-        "driveId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "My Drive"
-        },
-        "folderId": "YOUR_FOLDER_ID",
-        "options": {}
-      },
-      "id": "c02acaee-a2ef-4027-8b3e-a803ff6535f7",
-      "type": "n8n-nodes-base.googleDrive",
-      "position": [
-        480,
-        660
-      ],
-      "name": "Google Drive",
-      "typeVersion": 3
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "deeb3d08-7a1c-48dd-b14a-a14e38bfe58b",
-      "type": "n8n-nodes-base.set",
-      "position": [
-        480,
-        860
-      ],
-      "name": "Edit Fields (Set)",
-      "typeVersion": 3.4
-    },
-    {
       "parameters": {},
-      "id": "b3ee5a9e-29f5-4722-be4a-6680761453d4",
-      "name": "When clicking ‘Test workflow’",
       "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
       "position": [
-        -440,
-        -620
+        -2380,
+        720
       ],
-      "typeVersion": 1
+      "id": "a6093fd5-17b7-4848-af5d-3d3c32decad6",
+      "name": "When clicking ‘Test workflow’"
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
+        "operation": "runCustomScript",
+        "scriptCode": "// Import required libraries\nconst puppeteer = require('puppeteer-extra');\nconst StealthPlugin = require('puppeteer-extra-plugin-stealth');\nconst { executablePath } = require('puppeteer');\nconst path = require('path');\nconst fs = require('fs');\nconst delay = ms => new Promise(resolve => setTimeout(resolve, ms));\n\n// Use Stealth plugin to avoid detection\npuppeteer.use(StealthPlugin());\n\n// Main registration function\nasync function registerInstagram(account, proxyUrl, twoCaptchaApiKey) {\n  console.log(`Starting registration for ${account.username}...`);\n  \n  // 2Captcha extension path configuration\n  const pathToExtension = path.join(__dirname, '2captcha-solver');\n  \n  // Ensure extension directory exists\n  if (!fs.existsSync(pathToExtension)) {\n    fs.mkdirSync(pathToExtension, { recursive: true });\n    \n    // Configure 2captcha-solver extension\n    const configPath = path.join(pathToExtension, 'common/config.js');\n    if (fs.existsSync(configPath)) {\n      let configContent = fs.readFileSync(configPath, 'utf8');\n      configContent = configContent.replace(/apiKey: \"\"/g, `apiKey: \"${twoCaptchaApiKey}\"`);\n      configContent = configContent.replace(/autoSolveRecaptchaV2: false/g, 'autoSolveRecaptchaV2: true');\n      fs.writeFileSync(configPath, configContent);\n    }\n  }\n  \n  // Browser launch options\n  const launchOptions = {\n    headless: true,\n    args: [\n      '--no-sandbox',\n      '--disable-setuid-sandbox',\n      '--disable-infobars',\n      '--window-size=1280,800',\n      '--disable-blink-features=AutomationControlled',\n      `--disable-extensions-except=${pathToExtension}`,\n      `--load-extension=${pathToExtension}`\n    ],\n    executablePath: executablePath()\n  };\n  \n  // Set proxy if provided\n  if (proxyUrl) {\n    launchOptions.args.push(`--proxy-server=${proxyUrl}`);\n  }\n  \n  const browser = await puppeteer.launch(launchOptions);\n  const page = await browser.newPage();\n  \n  // Set realistic user agent\n  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36');\n  \n  // Handle proxy authentication\n  if (proxyUrl && proxyUrl.includes('@')) {\n    const proxyAuth = proxyUrl.split('@')[0].split('//')[1];\n    const [username, password] = proxyAuth.split(':');\n    await page.authenticate({ username, password });\n  }\n  \n  try {\n    // Visit Instagram signup page\n    console.log('Visiting Instagram signup page...');\n    await page.goto('https://www.instagram.com/accounts/emailsignup/', { \n      waitUntil: 'networkidle2',\n      timeout: 60000 \n    });\n    \n    // Random delay\n    await delay(Math.floor(Math.random() * 2000) + 3000);\n    \n    // Handle cookie consent popup\n    const cookieButtons = await page.$x('//button[contains(text(), \"Allow\") or contains(text(), \"Accept\") or contains(text(), \"允許\") or contains(text(), \"接受\")]');\n    if (cookieButtons.length > 0) {\n      await cookieButtons[0].click();\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n    }\n    \n    // Input email\n    console.log('Entering email address...');\n    await page.type('input[name=\"emailOrPhone\"]', account.email, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Input full name\n    console.log('Entering full name...');\n    await page.type('input[name=\"fullName\"]', account.fullName, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Input username\n    console.log('Entering username...');\n    await page.type('input[name=\"username\"]', account.username, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Input password\n    console.log('Entering password...');\n    await page.type('input[name=\"password\"]', account.password, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Click signup button\n    console.log('Clicking signup button...');\n    const signupButtons = await page.$x('//button[contains(text(), \"註冊\") or contains(text(), \"Sign up\")]');\n    if (signupButtons.length > 0) {\n      // Add mouse movement to simulate human behavior\n      const button = signupButtons[0];\n      const buttonBox = await button.boundingBox();\n      \n      // Move to button vicinity, then to button\n      await page.mouse.move(\n        buttonBox.x + Math.random() * buttonBox.width,\n        buttonBox.y - 10 + Math.random() * 10\n      );\n      await delay(Math.floor(Math.random() * 500) + 300);\n      await page.mouse.move(\n        buttonBox.x + buttonBox.width / 2,\n        buttonBox.y + buttonBox.height / 2\n      );\n      await delay(Math.floor(Math.random() * 500) + 300);\n      \n      // Click the button\n      await button.click();\n      console.log('Signup button clicked');\n    } else {\n      throw new Error('Signup button not found');\n    }\n    \n    // Wait for next phase of registration\n    await delay(Math.floor(Math.random() * 2000) + 4000);\n    \n    // Handle birthday selection page\n    console.log('Checking if birthday selection is required...');\n    const birthdayForm = await page.$('select[title=\"月:\"], select[aria-label*=\"Month\"]');\n    if (birthdayForm) {\n      console.log('Handling birthday selection...');\n      \n      // Select month\n      await page.select('select[title=\"月:\"], select[aria-label*=\"Month\"]', account.birthMonth);\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n      \n      // Select day\n      await page.select('select[title=\"日:\"], select[aria-label*=\"Day\"]', account.birthDay);\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n      \n      // Select year\n      await page.select('select[title=\"年:\"], select[aria-label*=\"Year\"]', account.birthYear);\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n      \n      // Click next button\n      const nextButtons = await page.$x('//button[contains(text(), \"下一步\") or contains(text(), \"Next\")]');\n      if (nextButtons.length > 0) {\n        await nextButtons[0].click();\n        console.log('Next button clicked');\n      }\n      await delay(Math.floor(Math.random() * 2000) + 3000);\n    }\n    \n    // Handle captcha challenge\n    console.log('Checking and handling captcha challenges...');\n    \n    // Wait for 2captcha extension to load\n    await delay(5000);\n    \n    // Check if captcha element exists\n    const captchaFrame = await page.$('iframe[src*=\"captcha\"]');\n    if (captchaFrame) {\n      console.log('Captcha challenge detected, using 2Captcha to solve...');\n      \n      // Wait for 2Captcha extension to auto-process captcha\n      // Check for .captcha-solver element\n      await page.waitForSelector('.captcha-solver', { timeout: 10000 }).catch(() => {});\n      \n      // If element exists but hasn't auto-started solving, click it\n      const captchaSolverState = await page.evaluate(() => {\n        const solver = document.querySelector('.captcha-solver');\n        return solver ? solver.getAttribute('data-state') : null;\n      }).catch(() => null);\n      \n      if (captchaSolverState && captchaSolverState !== 'solving') {\n        await page.click('.captcha-solver').catch(() => {});\n        console.log('Clicked 2Captcha solver button');\n      }\n      \n      // Wait for captcha to be solved\n      console.log('Waiting for captcha to be solved...');\n      await page.waitForSelector('.captcha-solver[data-state=\"solved\"]', { timeout: 180000 }).catch(() => {});\n      console.log('Captcha solved');\n      \n      // Continue registration flow\n      await delay(2000);\n      \n      // Click submit button (if any)\n      const submitButtons = await page.$x('//button[contains(text(), \"提交\") or contains(text(), \"Submit\")]').catch(() => []);\n      if (submitButtons.length > 0) {\n        await submitButtons[0].click().catch(() => {});\n        console.log('Submit button clicked');\n      }\n    }\n    \n    // Wait for registration to complete\n    await delay(10000);\n    \n    // Check if email verification is required\n    const emailVerificationText = await page.evaluate(() => {\n      const elements = Array.from(document.querySelectorAll('*'));\n      return elements.find(el => el.textContent.includes('驗證您的電子郵件') || \n                              el.textContent.includes('Verify your email') || \n                              el.textContent.includes('確認您的電子郵件地址'))?.textContent || '';\n    }).catch(() => '');\n    \n    let registrationResult = {\n      success: true,\n      message: 'Registration successful',\n      account: account\n    };\n    \n    if (emailVerificationText) {\n      registrationResult.message += ', email verification required';\n      registrationResult.requiresEmailVerification = true;\n    }\n    \n    // Check for error messages\n    const errorText = await page.evaluate(() => {\n      const elements = Array.from(document.querySelectorAll('*'));\n      return elements.find(el => el.textContent.includes('錯誤') || \n                              el.textContent.includes('Error') || \n                              el.textContent.includes('請稍後再試'))?.textContent || '';\n    }).catch(() => '');\n    \n    if (errorText) {\n      registrationResult.success = false;\n      registrationResult.message = `Registration failed: ${errorText}`;\n    }\n    \n    // Check for feedback required error\n    const feedbackRequired = await page.evaluate(() => {\n      return document.body.innerText.includes('feedback_required') || \n             document.body.innerText.includes('Feedback Required') ||\n             document.body.innerText.includes('請稍後再試');\n    }).catch(() => false);\n    \n    if (feedbackRequired) {\n      registrationResult.success = false;\n      registrationResult.message = 'Registration failed: Feedback Required error, possible automation detection';\n    }\n    \n    // Take screenshot as evidence\n    const screenshotPath = `/tmp/${account.username}_${Date.now()}.png`;\n    await page.screenshot({ path: screenshotPath, fullPage: true }).catch(() => {});\n    registrationResult.screenshotPath = screenshotPath;\n    \n    return registrationResult;\n    \n  } catch (error) {\n    console.error('Error during registration process:', error);\n    return {\n      success: false,\n      message: `Registration failed: ${error.message}`,\n      account: account\n    };\n  } finally {\n    // Close browser\n    await browser.close().catch(() => {});\n  }\n}\n\n// Execute function and return result\nreturn await registerInstagram($input.item.json.account, $input.item.json.proxy, $input.item.json.twoCaptchaApiKey);",
+        "options": {}
+      },
+      "id": "4e1863e2-429b-485f-b626-1daa8f345148",
+      "name": "Puppeteer",
+      "type": "n8n-nodes-puppeteer.puppeteer",
+      "typeVersion": 1,
+      "position": [
+        -2220,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
             {
-              "id": "8b5c6ca0-5ca8-4f67-abc1-44341cf419bc",
-              "name": "system_prompt",
-              "type": "string",
-              "value": "You are an n8n fanboy."
+              "name": "accounts",
+              "value": "={{ Array(5).fill().map((_, i) => { return { email: `test${i+1}@example.org`, fullName: `Test User ${i+1}`, username: `testuser${i+1}_${Date.now().toString().slice(-5)}`, password: `SecureP@ss${i+1}${Math.floor(Math.random() * 1000)}`, birthMonth: \"1\", birthDay: \"1\", birthYear: \"1990\" } }) }}"
             },
             {
-              "id": "7c36c362-6269-4564-b6fe-f82126bc8f5e",
-              "name": "user_prompt",
-              "type": "string",
-              "value": "What are the differences between n8n and Make?"
+              "name": "proxyList",
+              "value": "=[\"http://username:password@proxy1.example.com:8080\", \"http://username:password@proxy2.example.com:8080\"]"
             },
             {
-              "id": "4366d2b5-ad22-445a-8589-fddab1caa1ab",
-              "name": "domains",
-              "type": "string",
-              "value": "n8n.io, make.com"
+              "name": "twoCaptchaApiKey",
+              "value": "YOUR_2CAPTCHA_API_KEY"
             }
           ]
         },
         "options": {}
       },
-      "id": "a87ef4b0-e0f2-4f8d-b32c-d26280d63bf5",
-      "name": "Set Params",
+      "id": "bcc9487e-0218-4ddf-b6d2-228bbff8da48",
+      "name": "Configure Registration Data1",
       "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
       "position": [
-        -140,
-        -760
-      ],
-      "typeVersion": 3.4
+        -2640,
+        80
+      ]
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
+        "fieldToSplitOut": "accounts",
+        "options": {}
+      },
+      "id": "568c34fb-0278-4652-a1a9-ac1459f07bd9",
+      "name": "Split Account List1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        -2520,
+        -200
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add proxy to each item\nconst proxyList = $json['Configure Registration Data1'].json.proxyList;\n\n// Use username to deterministically select a proxy (same account = same proxy)\nconst username = $input.item.json.username;\nconst charSum = [...username].reduce((sum, char) => sum + char.charCodeAt(0), 0);\nconst proxyIndex = charSum % proxyList.length;\n\n$input.item.json.proxy = proxyList[proxyIndex];\n$input.item.json.account = $input.item.json;\n$input.item.json.twoCaptchaApiKey = $json['Configure Registration Data1'].json.twoCaptchaApiKey;\n\nreturn $input.item;"
+      },
+      "id": "b099ceb6-b15e-4114-8e25-78893c4d5d1f",
+      "name": "Prepare Data1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -2440,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
             {
-              "id": "5859093c-6b22-41db-ac6c-9a9f6f18b7e3",
-              "name": "output",
-              "type": "string",
-              "value": "={{ $json.choices[0].message.content }}"
-            },
+              "value1": "={{ $json.success }}",
+              "value2": "true"
+            }
+          ]
+        }
+      },
+      "id": "60f1432f-da26-4b1a-acb2-039e5fee7e7f",
+      "name": "Check Registration Success1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -2040,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "YOUR_CHANNEL_ID",
+          "mode": "list",
+          "cachedResultName": "registered-accounts"
+        },
+        "text": "=Account `{{$json.account.username}}` registered successfully!",
+        "otherOptions": {}
+      },
+      "id": "2b1f526c-019c-4f71-8255-375b761bc565",
+      "name": "Slack Notification1",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        -1820,
+        -20
+      ],
+      "webhookId": "b6d600ec-2972-4c8d-9ac4-9727e6427ea0"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "YOUR_CHANNEL_ID",
+          "mode": "list",
+          "cachedResultName": "failed-accounts"
+        },
+        "text": "=Registration failed for `{{$json.account.username}}`. Error: {{$json.message}}",
+        "otherOptions": {}
+      },
+      "id": "102ed294-3fd7-49f9-9d64-355b926cdf9f",
+      "name": "Slack Error Notification1",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        -1820,
+        180
+      ],
+      "webhookId": "e2b51d51-de5e-4695-a1c5-41dddd9dd0db"
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
             {
-              "id": "13208fff-5153-45a7-a1cb-fe49e32d9a03",
-              "name": "citations",
-              "type": "array",
-              "value": "={{ $json.citations }}"
+              "name": "accounts",
+              "value": "={{ Array(5).fill().map((_, i) => { return { email: `test${i+1}@example.org`, fullName: `Test User ${i+1}`, username: `testuser${i+1}_${Date.now().toString().slice(-5)}`, password: `SecureP@ss${i+1}${Math.floor(Math.random() * 1000)}`, birthMonth: \"1\", birthDay: \"1\", birthYear: \"1990\" } }) }}"
             }
           ]
         },
-        "options": {}
+        "options": {
+          "dotNotation": true
+        }
       },
-      "id": "e788896b-cd87-4cb6-8c3c-3814ecefc708",
-      "name": "Clean Output",
+      "id": "c68cb82b-956d-400b-ba24-65eaf4ed492b",
+      "name": "Configure Registration Data",
       "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
       "position": [
-        600,
-        -800
-      ],
-      "typeVersion": 3.4
+        -1580,
+        780
+      ]
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "https://api.perplexity.ai/chat/completions",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"sonar-pro\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"{{ $json.system_prompt }}\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"{{ $json.user_prompt }}\"\n    }\n  ],\n  \"temperature\": 0.2,\n  \"top_p\": 0.9,\n  \"search_domain_filter\": {{ (JSON.stringify($json.domains.split(','))) }},\n  \"return_images\": false,\n  \"return_related_questions\": false,\n  \"search_recency_filter\": \"month\",\n  \"top_k\": 0,\n  \"stream\": false,\n  \"presence_penalty\": 0,\n  \"frequency_penalty\": 1,\n  \"response_format\": null\n}",
+        "fieldToSplitOut": "accounts",
         "options": {}
       },
-      "id": "04eb7dfc-cf1e-4cba-b5e7-f8c0958db304",
-      "name": "Perplexity Request",
-      "type": "n8n-nodes-base.httpRequest",
+      "id": "611c0070-9de0-4d3d-bd13-6b01190342d9",
+      "name": "Split Account List",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
       "position": [
-        260,
-        -660
+        -1460,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add proxy to each item\n// First, get the proxy list from a global variable\nlet proxyList = [];\ntry {\n  // Try to get from the workflow data\n  proxyList = $workflow.variables.proxyList || [\"http://default:default@proxy.example.com:8080\"];\n} catch (e) {\n  // Fallback to a default proxy\n  proxyList = [\"http://default:default@proxy.example.com:8080\"];\n}\n\n// Use username to deterministically select a proxy\nconst username = $input.item.json.username;\nconst charSum = [...username].reduce((sum, char) => sum + char.charCodeAt(0), 0);\nconst proxyIndex = charSum % proxyList.length;\n\n// Add needed data to the item\n$input.item.json.proxy = proxyList[proxyIndex];\n$input.item.json.account = $input.item.json;\n\n// Set a default 2Captcha API key if not available from workflow variables\ntry {\n  $input.item.json.twoCaptchaApiKey = $workflow.variables.twoCaptchaApiKey || \"YOUR_DEFAULT_2CAPTCHA_KEY\";\n} catch (e) {\n  $input.item.json.twoCaptchaApiKey = \"YOUR_DEFAULT_2CAPTCHA_KEY\";\n}\n\nreturn $input.item;"
+      },
+      "id": "6e14ac7f-32a0-4fb0-a349-01cf80686218",
+      "name": "Prepare Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -1380,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.success }}",
+              "value2": "true"
+            }
+          ]
+        }
+      },
+      "id": "484d3511-26b9-46e2-a877-36da7ae67928",
+      "name": "Check Registration Success",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -980,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "YOUR_CHANNEL_ID",
+          "mode": "list",
+          "cachedResultName": "registered-accounts"
+        },
+        "text": "=Account `{{$json.account.username}}` registered successfully!",
+        "otherOptions": {}
+      },
+      "id": "3a20c2f6-632f-4178-9902-a42a39832222",
+      "name": "Slack Notification",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        -760,
+        680
       ],
-      "typeVersion": 4.2,
+      "webhookId": "f2c3f781-e84e-49a4-84fd-f197d03de4de",
       "credentials": {
-        "httpHeaderAuth": {
-          "id": "654bqyKWAGCO9lJe",
-          "name": "perplexity auth"
+        "slackOAuth2Api": {
+          "id": "nOrw22LKiQmU0USm",
+          "name": "Slack account"
         }
       }
     },
     {
       "parameters": {
-        "content": "## Credentials Setup\n\n1/ Go to the perplexity dashboard, purchase some credits and create an API Key\n\nhttps://www.perplexity.ai/settings/api\n\n2/ In the perplexity Request node, use Generic Credentials, Header Auth. \n\nFor the name, use the value \"Authorization\"\nAnd for the value \"Bearer pplx-e4...59ea\" (Your Perplexity Api Key)\n\n",
-        "height": 300,
-        "width": 480
+        "jsCode": "// Set workflow variables\n$workflow.variables.proxyList = [\n  \"http://username:password@proxy1.example.com:8080\", \n  \"http://username:password@proxy2.example.com:8080\"\n];\n$workflow.variables.twoCaptchaApiKey = \"YOUR_2CAPTCHA_API_KEY\";\n\nreturn [{json: {success: true}}];"
       },
-      "id": "2775e0df-9356-408e-abb9-19bb2330a837",
-      "name": "Sticky Note",
-      "type": "n8n-nodes-base.stickyNote",
+      "id": "3dfe7ddb-92da-4a08-a691-d4e0fabede8d",
+      "name": "When clicking 'Test workflow'",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
       "position": [
-        -120,
-        -1140
-      ],
-      "typeVersion": 1
+        -1860,
+        740
+      ]
     },
     {
       "parameters": {
-        "content": "**Sonar Pro** is the current top model used by perplexity. \nIf you want to use a different one, check this page: \n\nhttps://docs.perplexity.ai/guides/model-cards",
-        "height": 120,
-        "width": 480,
-        "color": 5
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "YOUR_CHANNEL_ID",
+          "mode": "list",
+          "cachedResultName": "failed-accounts"
+        },
+        "text": "=Registration failed for `{{$json.account.username}}`. Error: {{$json.message}}",
+        "otherOptions": {}
       },
-      "id": "6642eb59-3852-408b-a458-046579ae2efa",
-      "name": "Sticky Note1",
-      "type": "n8n-nodes-base.stickyNote",
+      "id": "6606df60-857b-4f0e-aca9-3424d72dffcb",
+      "name": "Slack Error Notification",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
       "position": [
-        160,
-        -400
+        -760,
+        880
       ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "n8n-nodes-puppeteer.puppeteer",
-      "typeVersion": 1,
-      "position": [
-        80,
-        -760
-      ],
-      "id": "dbeb61f8-7f8f-4fd7-b08f-00b7bb11262d",
-      "name": "Puppeteer"
+      "webhookId": "db804ea5-da5f-4181-b9e6-1da69953a15c",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "nOrw22LKiQmU0USm",
+          "name": "Slack account"
+        }
+      }
     },
     {
       "parameters": {
         "operation": "runCustomScript",
+        "scriptCode": "// Import required libraries\nconst puppeteer = require('puppeteer-extra');\nconst StealthPlugin = require('puppeteer-extra-plugin-stealth');\nconst { executablePath } = require('puppeteer');\nconst path = require('path');\nconst fs = require('fs');\nconst delay = ms => new Promise(resolve => setTimeout(resolve, ms));\n\n// Use Stealth plugin to avoid detection\npuppeteer.use(StealthPlugin());\n\n// Main registration function\nasync function registerInstagram(account, proxyUrl, twoCaptchaApiKey) {\n  console.log(`Starting registration for ${account.username}...`);\n  \n  // 2Captcha extension path configuration\n  const pathToExtension = path.join(__dirname, '2captcha-solver');\n  \n  // Ensure extension directory exists\n  if (!fs.existsSync(pathToExtension)) {\n    fs.mkdirSync(pathToExtension, { recursive: true });\n    \n    // Configure 2captcha-solver extension\n    const configPath = path.join(pathToExtension, 'common/config.js');\n    if (fs.existsSync(configPath)) {\n      let configContent = fs.readFileSync(configPath, 'utf8');\n      configContent = configContent.replace(/apiKey: \"\"/g, `apiKey: \"${twoCaptchaApiKey}\"`);\n      configContent = configContent.replace(/autoSolveRecaptchaV2: false/g, 'autoSolveRecaptchaV2: true');\n      fs.writeFileSync(configPath, configContent);\n    }\n  }\n  \n  // Browser launch options\n  const launchOptions = {\n    headless: true,\n    args: [\n      '--no-sandbox',\n      '--disable-setuid-sandbox',\n      '--disable-infobars',\n      '--window-size=1280,800',\n      '--disable-blink-features=AutomationControlled',\n      `--disable-extensions-except=${pathToExtension}`,\n      `--load-extension=${pathToExtension}`\n    ],\n    executablePath: executablePath()\n  };\n  \n  // Set proxy if provided\n  if (proxyUrl) {\n    launchOptions.args.push(`--proxy-server=${proxyUrl}`);\n  }\n  \n  const browser = await puppeteer.launch(launchOptions);\n  const page = await browser.newPage();\n  \n  // Set realistic user agent\n  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36');\n  \n  // Handle proxy authentication\n  if (proxyUrl && proxyUrl.includes('@')) {\n    const proxyAuth = proxyUrl.split('@')[0].split('//')[1];\n    const [username, password] = proxyAuth.split(':');\n    await page.authenticate({ username, password });\n  }\n  \n  try {\n    // Visit Instagram signup page\n    console.log('Visiting Instagram signup page...');\n    await page.goto('https://www.instagram.com/accounts/emailsignup/', { \n      waitUntil: 'networkidle2',\n      timeout: 60000 \n    });\n    \n    // Random delay\n    await delay(Math.floor(Math.random() * 2000) + 3000);\n    \n    // Handle cookie consent popup\n    const cookieButtons = await page.$x('//button[contains(text(), \"Allow\") or contains(text(), \"Accept\") or contains(text(), \"允許\") or contains(text(), \"接受\")]');\n    if (cookieButtons.length > 0) {\n      await cookieButtons[0].click();\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n    }\n    \n    // Input email\n    console.log('Entering email address...');\n    await page.type('input[name=\"emailOrPhone\"]', account.email, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Input full name\n    console.log('Entering full name...');\n    await page.type('input[name=\"fullName\"]', account.fullName, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Input username\n    console.log('Entering username...');\n    await page.type('input[name=\"username\"]', account.username, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Input password\n    console.log('Entering password...');\n    await page.type('input[name=\"password\"]', account.password, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Click signup button\n    console.log('Clicking signup button...');\n    const signupButtons = await page.$x('//button[contains(text(), \"註冊\") or contains(text(), \"Sign up\")]');\n    if (signupButtons.length > 0) {\n      // Add mouse movement to simulate human behavior\n      const button = signupButtons[0];\n      const buttonBox = await button.boundingBox();\n      \n      // Move to button vicinity, then to button\n      await page.mouse.move(\n        buttonBox.x + Math.random() * buttonBox.width,\n        buttonBox.y - 10 + Math.random() * 10\n      );\n      await delay(Math.floor(Math.random() * 500) + 300);\n      await page.mouse.move(\n        buttonBox.x + buttonBox.width / 2,\n        buttonBox.y + buttonBox.height / 2\n      );\n      await delay(Math.floor(Math.random() * 500) + 300);\n      \n      // Click the button\n      await button.click();\n      console.log('Signup button clicked');\n    } else {\n      throw new Error('Signup button not found');\n    }\n    \n    // Wait for next phase of registration\n    await delay(Math.floor(Math.random() * 2000) + 4000);\n    \n    // Handle birthday selection page\n    console.log('Checking if birthday selection is required...');\n    const birthdayForm = await page.$('select[title=\"月:\"], select[aria-label*=\"Month\"]');\n    if (birthdayForm) {\n      console.log('Handling birthday selection...');\n      \n      // Select month\n      await page.select('select[title=\"月:\"], select[aria-label*=\"Month\"]', account.birthMonth);\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n      \n      // Select day\n      await page.select('select[title=\"日:\"], select[aria-label*=\"Day\"]', account.birthDay);\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n      \n      // Select year\n      await page.select('select[title=\"年:\"], select[aria-label*=\"Year\"]', account.birthYear);\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n      \n      // Click next button\n      const nextButtons = await page.$x('//button[contains(text(), \"下一步\") or contains(text(), \"Next\")]');\n      if (nextButtons.length > 0) {\n        await nextButtons[0].click();\n        console.log('Next button clicked');\n      }\n      await delay(Math.floor(Math.random() * 2000) + 3000);\n    }\n    \n    // Handle captcha challenge\n    console.log('Checking and handling captcha challenges...');\n    \n    // Wait for 2captcha extension to load\n    await delay(5000);\n    \n    // Check if captcha element exists\n    const captchaFrame = await page.$('iframe[src*=\"captcha\"]');\n    if (captchaFrame) {\n      console.log('Captcha challenge detected, using 2Captcha to solve...');\n      \n      // Wait for 2Captcha extension to auto-process captcha\n      // Check for .captcha-solver element\n      await page.waitForSelector('.captcha-solver', { timeout: 10000 }).catch(() => {});\n      \n      // If element exists but hasn't auto-started solving, click it\n      const captchaSolverState = await page.evaluate(() => {\n        const solver = document.querySelector('.captcha-solver');\n        return solver ? solver.getAttribute('data-state') : null;\n      }).catch(() => null);\n      \n      if (captchaSolverState && captchaSolverState !== 'solving') {\n        await page.click('.captcha-solver').catch(() => {});\n        console.log('Clicked 2Captcha solver button');\n      }\n      \n      // Wait for captcha to be solved\n      console.log('Waiting for captcha to be solved...');\n      await page.waitForSelector('.captcha-solver[data-state=\"solved\"]', { timeout: 180000 }).catch(() => {});\n      console.log('Captcha solved');\n      \n      // Continue registration flow\n      await delay(2000);\n      \n      // Click submit button (if any)\n      const submitButtons = await page.$x('//button[contains(text(), \"提交\") or contains(text(), \"Submit\")]').catch(() => []);\n      if (submitButtons.length > 0) {\n        await submitButtons[0].click().catch(() => {});\n        console.log('Submit button clicked');\n      }\n    }\n    \n    // Wait for registration to complete\n    await delay(10000);\n    \n    // Check if email verification is required\n    const emailVerificationText = await page.evaluate(() => {\n      const elements = Array.from(document.querySelectorAll('*'));\n      return elements.find(el => el.textContent.includes('驗證您的電子郵件') || \n                              el.textContent.includes('Verify your email') || \n                              el.textContent.includes('確認您的電子郵件地址'))?.textContent || '';\n    }).catch(() => '');\n    \n    let registrationResult = {\n      success: true,\n      message: 'Registration successful',\n      account: account\n    };\n    \n    if (emailVerificationText) {\n      registrationResult.message += ', email verification required';\n      registrationResult.requiresEmailVerification = true;\n    }\n    \n    // Check for error messages\n    const errorText = await page.evaluate(() => {\n      const elements = Array.from(document.querySelectorAll('*'));\n      return elements.find(el => el.textContent.includes('錯誤') || \n                              el.textContent.includes('Error') || \n                              el.textContent.includes('請稍後再試'))?.textContent || '';\n    }).catch(() => '');\n    \n    if (errorText) {\n      registrationResult.success = false;\n      registrationResult.message = `Registration failed: ${errorText}`;\n    }\n    \n    // Check for feedback required error\n    const feedbackRequired = await page.evaluate(() => {\n      return document.body.innerText.includes('feedback_required') || \n             document.body.innerText.includes('Feedback Required') ||\n             document.body.innerText.includes('請稍後再試');\n    }).catch(() => false);\n    \n    if (feedbackRequired) {\n      registrationResult.success = false;\n      registrationResult.message = 'Registration failed: Feedback Required error, possible automation detection';\n    }\n    \n    // Take screenshot as evidence\n    const screenshotPath = `/tmp/${account.username}_${Date.now()}.png`;\n    await page.screenshot({ path: screenshotPath, fullPage: true }).catch(() => {});\n    registrationResult.screenshotPath = screenshotPath;\n    \n    return registrationResult;\n    \n  } catch (error) {\n    console.error('Error during registration process:', error);\n    return {\n      success: false,\n      message: `Registration failed: ${error.message}`,\n      account: account\n    };\n  } finally {\n    // Close browser\n    await browser.close().catch(() => {});\n  }\n}\n\n// Execute function and return result\nreturn await registerInstagram($input.item.json.account, $input.item.json.proxy, $input.item.json.twoCaptchaApiKey);",
         "options": {}
       },
-      "type": "n8n-nodes-puppeteer.puppeteer",
-      "typeVersion": 1,
-      "position": [
-        300,
-        -760
-      ],
-      "id": "ce7c055d-633d-4e9a-b18f-cacd29e9f0f6",
+      "id": "b78d8000-93ad-47e7-83d8-6084faa6765c",
       "name": "Puppeteer1",
-      "alwaysOutputData": true
-    },
-    {
-      "parameters": {
-        "authentication": "headerAuth",
-        "url": "https://api.openai.com/v1/conversations",
-        "options": {
-          "timeout": 30000
-        }
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 1,
-      "position": [
-        -360,
-        -360
-      ],
-      "id": "ecff6a37-ae28-4b34-a13d-62cd1275318b",
-      "name": "獲取GPT歷史API",
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "654bqyKWAGCO9lJe",
-          "name": "perplexity auth"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "url": "https://chatgpt.com/c/",
-        "options": {}
-      },
       "type": "n8n-nodes-puppeteer.puppeteer",
       "typeVersion": 1,
       "position": [
-        -580,
-        -360
-      ],
-      "id": "0a56736f-20e4-43bf-9525-39bf5580c984",
-      "name": "設置變量"
-    },
-    {
-      "parameters": {
-        "operation": "runCustomScript",
-        "options": {
-          "headless": false
-        }
-      },
-      "type": "n8n-nodes-puppeteer.puppeteer",
-      "typeVersion": 1,
-      "position": [
-        -900,
-        -180
-      ],
-      "id": "1cc2849d-49fb-4b1a-b5c4-63d12218e95b",
-      "name": "啟動瀏覽器"
-    },
-    {
-      "parameters": {
-        "operation": "runCustomScript",
-        "options": {}
-      },
-      "type": "n8n-nodes-puppeteer.puppeteer",
-      "typeVersion": 1,
-      "position": [
-        -680,
-        -180
-      ],
-      "id": "5146a8b1-148b-479d-b396-9f2076b7d9c7",
-      "name": "獲取ChatGPT歷史",
-      "alwaysOutputData": true
+        -1160,
+        840
+      ]
     }
   ],
   "pinData": {},
@@ -806,6 +803,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-14T22:58:26.000Z",
-  "versionId": "a74d6edc-fb53-4394-a79f-4b0eefbc12c4"
+  "updatedAt": "2025-03-15T18:36:01.000Z",
+  "versionId": "764a8c6a-1909-4a3e-a48e-cd8c7711d9ac"
 }
