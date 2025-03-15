@@ -131,146 +131,280 @@
         ]
       ]
     },
-    "When clicking ‘Test workflow’": {
+    "Text": {
+      "ai_tool": [
+        [
+          {
+            "node": "Crawl website",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "URLs": {
+      "ai_tool": [
+        [
+          {
+            "node": "Crawl website",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Crawl website",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JSON Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Crawl website",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map company name and website": {
       "main": [
         [
           {
-            "node": "When clicking 'Test workflow'",
+            "node": "Merge all data",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Puppeteer": {
+    "Execute workflow": {
       "main": [
         [
           {
-            "node": "Check Registration Success1",
+            "node": "Get companies",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Configure Registration Data1": {
+    "Get companies": {
       "main": [
         [
           {
-            "node": "Split Account List1",
+            "node": "Select company name and website",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Split Account List1": {
+    "Select company name and website": {
       "main": [
         [
           {
-            "node": "Prepare Data1",
+            "node": "Crawl website",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Map company name and website",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Prepare Data1": {
+    "Set social media array": {
       "main": [
         [
           {
-            "node": "Puppeteer",
+            "node": "Merge all data",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge all data": {
+      "main": [
+        [
+          {
+            "node": "Insert new row",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Check Registration Success1": {
+    "Convert HTML to Markdown": {
       "main": [
         [
           {
-            "node": "Slack Notification1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Slack Error Notification1",
+            "node": "Set response (text)",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Configure Registration Data": {
+    "Retrieve URLs": {
       "main": [
         [
           {
-            "node": "Split Account List",
+            "node": "Split out URLs",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Split Account List": {
+    "Split out URLs": {
       "main": [
         [
           {
-            "node": "Prepare Data",
+            "node": "Filter out empty hrefs",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Prepare Data": {
+    "Remove duplicated": {
       "main": [
         [
           {
-            "node": "Puppeteer1",
+            "node": "Set domain to path",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Check Registration Success": {
+    "Set domain to path": {
       "main": [
         [
           {
-            "node": "Slack Notification",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Slack Error Notification",
+            "node": "Filter out invalid URLs",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "When clicking 'Test workflow'": {
+    "Filter out invalid URLs": {
       "main": [
         [
           {
-            "node": "Configure Registration Data",
+            "node": "Aggregate URLs",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Puppeteer1": {
+    "Aggregate URLs": {
       "main": [
         [
           {
-            "node": "Check Registration Success",
+            "node": "Set response (URL)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter out empty hrefs": {
+      "main": [
+        [
+          {
+            "node": "Remove duplicated",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set domain (text)": {
+      "main": [
+        [
+          {
+            "node": "Add protocool to domain (text)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add protocool to domain (text)": {
+      "main": [
+        [
+          {
+            "node": "Get website (text)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get website (text)": {
+      "main": [
+        [
+          {
+            "node": "Convert HTML to Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set domain (URL)": {
+      "main": [
+        [
+          {
+            "node": "Add protocool to domain (URL)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get website (URL)": {
+      "main": [
+        [
+          {
+            "node": "Retrieve URLs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add protocool to domain (URL)": {
+      "main": [
+        [
+          {
+            "node": "Get website (URL)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Crawl website": {
+      "main": [
+        [
+          {
+            "node": "Set social media array",
             "type": "main",
             "index": 0
           }
@@ -490,319 +624,741 @@
       "id": "9ebb66bd-b039-4622-8129-8df349aa997e"
     },
     {
-      "parameters": {},
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        -2380,
-        720
-      ],
-      "id": "a6093fd5-17b7-4848-af5d-3d3c32decad6",
-      "name": "When clicking ‘Test workflow’"
-    },
-    {
       "parameters": {
-        "operation": "runCustomScript",
-        "scriptCode": "// Import required libraries\nconst puppeteer = require('puppeteer-extra');\nconst StealthPlugin = require('puppeteer-extra-plugin-stealth');\nconst { executablePath } = require('puppeteer');\nconst path = require('path');\nconst fs = require('fs');\nconst delay = ms => new Promise(resolve => setTimeout(resolve, ms));\n\n// Use Stealth plugin to avoid detection\npuppeteer.use(StealthPlugin());\n\n// Main registration function\nasync function registerInstagram(account, proxyUrl, twoCaptchaApiKey) {\n  console.log(`Starting registration for ${account.username}...`);\n  \n  // 2Captcha extension path configuration\n  const pathToExtension = path.join(__dirname, '2captcha-solver');\n  \n  // Ensure extension directory exists\n  if (!fs.existsSync(pathToExtension)) {\n    fs.mkdirSync(pathToExtension, { recursive: true });\n    \n    // Configure 2captcha-solver extension\n    const configPath = path.join(pathToExtension, 'common/config.js');\n    if (fs.existsSync(configPath)) {\n      let configContent = fs.readFileSync(configPath, 'utf8');\n      configContent = configContent.replace(/apiKey: \"\"/g, `apiKey: \"${twoCaptchaApiKey}\"`);\n      configContent = configContent.replace(/autoSolveRecaptchaV2: false/g, 'autoSolveRecaptchaV2: true');\n      fs.writeFileSync(configPath, configContent);\n    }\n  }\n  \n  // Browser launch options\n  const launchOptions = {\n    headless: true,\n    args: [\n      '--no-sandbox',\n      '--disable-setuid-sandbox',\n      '--disable-infobars',\n      '--window-size=1280,800',\n      '--disable-blink-features=AutomationControlled',\n      `--disable-extensions-except=${pathToExtension}`,\n      `--load-extension=${pathToExtension}`\n    ],\n    executablePath: executablePath()\n  };\n  \n  // Set proxy if provided\n  if (proxyUrl) {\n    launchOptions.args.push(`--proxy-server=${proxyUrl}`);\n  }\n  \n  const browser = await puppeteer.launch(launchOptions);\n  const page = await browser.newPage();\n  \n  // Set realistic user agent\n  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36');\n  \n  // Handle proxy authentication\n  if (proxyUrl && proxyUrl.includes('@')) {\n    const proxyAuth = proxyUrl.split('@')[0].split('//')[1];\n    const [username, password] = proxyAuth.split(':');\n    await page.authenticate({ username, password });\n  }\n  \n  try {\n    // Visit Instagram signup page\n    console.log('Visiting Instagram signup page...');\n    await page.goto('https://www.instagram.com/accounts/emailsignup/', { \n      waitUntil: 'networkidle2',\n      timeout: 60000 \n    });\n    \n    // Random delay\n    await delay(Math.floor(Math.random() * 2000) + 3000);\n    \n    // Handle cookie consent popup\n    const cookieButtons = await page.$x('//button[contains(text(), \"Allow\") or contains(text(), \"Accept\") or contains(text(), \"允許\") or contains(text(), \"接受\")]');\n    if (cookieButtons.length > 0) {\n      await cookieButtons[0].click();\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n    }\n    \n    // Input email\n    console.log('Entering email address...');\n    await page.type('input[name=\"emailOrPhone\"]', account.email, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Input full name\n    console.log('Entering full name...');\n    await page.type('input[name=\"fullName\"]', account.fullName, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Input username\n    console.log('Entering username...');\n    await page.type('input[name=\"username\"]', account.username, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Input password\n    console.log('Entering password...');\n    await page.type('input[name=\"password\"]', account.password, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Click signup button\n    console.log('Clicking signup button...');\n    const signupButtons = await page.$x('//button[contains(text(), \"註冊\") or contains(text(), \"Sign up\")]');\n    if (signupButtons.length > 0) {\n      // Add mouse movement to simulate human behavior\n      const button = signupButtons[0];\n      const buttonBox = await button.boundingBox();\n      \n      // Move to button vicinity, then to button\n      await page.mouse.move(\n        buttonBox.x + Math.random() * buttonBox.width,\n        buttonBox.y - 10 + Math.random() * 10\n      );\n      await delay(Math.floor(Math.random() * 500) + 300);\n      await page.mouse.move(\n        buttonBox.x + buttonBox.width / 2,\n        buttonBox.y + buttonBox.height / 2\n      );\n      await delay(Math.floor(Math.random() * 500) + 300);\n      \n      // Click the button\n      await button.click();\n      console.log('Signup button clicked');\n    } else {\n      throw new Error('Signup button not found');\n    }\n    \n    // Wait for next phase of registration\n    await delay(Math.floor(Math.random() * 2000) + 4000);\n    \n    // Handle birthday selection page\n    console.log('Checking if birthday selection is required...');\n    const birthdayForm = await page.$('select[title=\"月:\"], select[aria-label*=\"Month\"]');\n    if (birthdayForm) {\n      console.log('Handling birthday selection...');\n      \n      // Select month\n      await page.select('select[title=\"月:\"], select[aria-label*=\"Month\"]', account.birthMonth);\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n      \n      // Select day\n      await page.select('select[title=\"日:\"], select[aria-label*=\"Day\"]', account.birthDay);\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n      \n      // Select year\n      await page.select('select[title=\"年:\"], select[aria-label*=\"Year\"]', account.birthYear);\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n      \n      // Click next button\n      const nextButtons = await page.$x('//button[contains(text(), \"下一步\") or contains(text(), \"Next\")]');\n      if (nextButtons.length > 0) {\n        await nextButtons[0].click();\n        console.log('Next button clicked');\n      }\n      await delay(Math.floor(Math.random() * 2000) + 3000);\n    }\n    \n    // Handle captcha challenge\n    console.log('Checking and handling captcha challenges...');\n    \n    // Wait for 2captcha extension to load\n    await delay(5000);\n    \n    // Check if captcha element exists\n    const captchaFrame = await page.$('iframe[src*=\"captcha\"]');\n    if (captchaFrame) {\n      console.log('Captcha challenge detected, using 2Captcha to solve...');\n      \n      // Wait for 2Captcha extension to auto-process captcha\n      // Check for .captcha-solver element\n      await page.waitForSelector('.captcha-solver', { timeout: 10000 }).catch(() => {});\n      \n      // If element exists but hasn't auto-started solving, click it\n      const captchaSolverState = await page.evaluate(() => {\n        const solver = document.querySelector('.captcha-solver');\n        return solver ? solver.getAttribute('data-state') : null;\n      }).catch(() => null);\n      \n      if (captchaSolverState && captchaSolverState !== 'solving') {\n        await page.click('.captcha-solver').catch(() => {});\n        console.log('Clicked 2Captcha solver button');\n      }\n      \n      // Wait for captcha to be solved\n      console.log('Waiting for captcha to be solved...');\n      await page.waitForSelector('.captcha-solver[data-state=\"solved\"]', { timeout: 180000 }).catch(() => {});\n      console.log('Captcha solved');\n      \n      // Continue registration flow\n      await delay(2000);\n      \n      // Click submit button (if any)\n      const submitButtons = await page.$x('//button[contains(text(), \"提交\") or contains(text(), \"Submit\")]').catch(() => []);\n      if (submitButtons.length > 0) {\n        await submitButtons[0].click().catch(() => {});\n        console.log('Submit button clicked');\n      }\n    }\n    \n    // Wait for registration to complete\n    await delay(10000);\n    \n    // Check if email verification is required\n    const emailVerificationText = await page.evaluate(() => {\n      const elements = Array.from(document.querySelectorAll('*'));\n      return elements.find(el => el.textContent.includes('驗證您的電子郵件') || \n                              el.textContent.includes('Verify your email') || \n                              el.textContent.includes('確認您的電子郵件地址'))?.textContent || '';\n    }).catch(() => '');\n    \n    let registrationResult = {\n      success: true,\n      message: 'Registration successful',\n      account: account\n    };\n    \n    if (emailVerificationText) {\n      registrationResult.message += ', email verification required';\n      registrationResult.requiresEmailVerification = true;\n    }\n    \n    // Check for error messages\n    const errorText = await page.evaluate(() => {\n      const elements = Array.from(document.querySelectorAll('*'));\n      return elements.find(el => el.textContent.includes('錯誤') || \n                              el.textContent.includes('Error') || \n                              el.textContent.includes('請稍後再試'))?.textContent || '';\n    }).catch(() => '');\n    \n    if (errorText) {\n      registrationResult.success = false;\n      registrationResult.message = `Registration failed: ${errorText}`;\n    }\n    \n    // Check for feedback required error\n    const feedbackRequired = await page.evaluate(() => {\n      return document.body.innerText.includes('feedback_required') || \n             document.body.innerText.includes('Feedback Required') ||\n             document.body.innerText.includes('請稍後再試');\n    }).catch(() => false);\n    \n    if (feedbackRequired) {\n      registrationResult.success = false;\n      registrationResult.message = 'Registration failed: Feedback Required error, possible automation detection';\n    }\n    \n    // Take screenshot as evidence\n    const screenshotPath = `/tmp/${account.username}_${Date.now()}.png`;\n    await page.screenshot({ path: screenshotPath, fullPage: true }).catch(() => {});\n    registrationResult.screenshotPath = screenshotPath;\n    \n    return registrationResult;\n    \n  } catch (error) {\n    console.error('Error during registration process:', error);\n    return {\n      success: false,\n      message: `Registration failed: ${error.message}`,\n      account: account\n    };\n  } finally {\n    // Close browser\n    await browser.close().catch(() => {});\n  }\n}\n\n// Execute function and return result\nreturn await registerInstagram($input.item.json.account, $input.item.json.proxy, $input.item.json.twoCaptchaApiKey);",
-        "options": {}
+        "name": "text_retrieval_tool",
+        "description": "Call this tool to return all text from the given website. Query should be full website URL.",
+        "source": "parameter",
+        "workflowJson": "{\n  \"nodes\": [\n    {\n      \"parameters\": {},\n      \"id\": \"05107436-c9cb-419b-ae8a-b74d309a130d\",\n      \"name\": \"Execute workflow\",\n      \"type\": \"n8n-nodes-base.manualTrigger\",\n      \"typeVersion\": 1,\n      \"position\": [\n        2220,\n        620\n      ]\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"253c2b17-c749-4f0a-93e8-5ff74f1ce49b\",\n              \"name\": \"domain\",\n              \"value\": \"={{ $json.query }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"options\": {}\n      },\n      \"id\": \"bb8be616-3227-4705-8520-1827069faacd\",\n      \"name\": \"Set domain\",\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.3,\n      \"position\": [\n        2440,\n        620\n      ]\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"ed0f1505-82b6-4393-a0d8-088055137ec9\",\n              \"name\": \"domain\",\n              \"value\": \"={{ $json.domain.startsWith(\\\"http\\\") ? $json.domain : \\\"http://\\\" + $json.domain }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"options\": {}\n      },\n      \"id\": \"bdf29340-f135-489f-848e-1c7fa43a01df\",\n      \"name\": \"Add protocool to domain\",\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.3,\n      \"position\": [\n        2640,\n        620\n      ]\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"2b1c7ff8-06a7-448b-99b7-5ede4b2e0bf0\",\n              \"name\": \"response\",\n              \"value\": \"={{ $json.data }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"options\": {}\n      },\n      \"id\": \"9f0aa264-08c1-459a-bb99-e28599fe8f76\",\n      \"name\": \"Set response\",\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.3,\n      \"position\": [\n        3300,\n        620\n      ]\n    },\n    {\n      \"parameters\": {\n        \"url\": \"={{ $json.domain }}\",\n        \"options\": {}\n      },\n      \"id\": \"cec7c8e8-bf5e-43d5-aa41-876293dbec78\",\n      \"name\": \"Get website\",\n      \"type\": \"n8n-nodes-base.httpRequest\",\n      \"typeVersion\": 4.2,\n      \"position\": [\n        2860,\n        620\n      ]\n    },\n    {\n      \"parameters\": {\n        \"html\": \"={{ $json.data }}\",\n        \"options\": {\n          \"ignore\": \"a,img\"\n        }\n      },\n      \"id\": \"1af94fcb-bca3-45c4-9277-18878c75d417\",\n      \"name\": \"Convert HTML to Markdown\",\n      \"type\": \"n8n-nodes-base.markdown\",\n      \"typeVersion\": 1,\n      \"position\": [\n        3080,\n        620\n      ]\n    }\n  ],\n  \"connections\": {\n    \"Execute workflow\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Set domain\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Set domain\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Add protocool to domain\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Add protocool to domain\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Get website\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Get website\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Convert HTML to Markdown\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Convert HTML to Markdown\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Set response\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  },\n  \"pinData\": {}\n}"
       },
-      "id": "4e1863e2-429b-485f-b626-1daa8f345148",
-      "name": "Puppeteer",
-      "type": "n8n-nodes-puppeteer.puppeteer",
-      "typeVersion": 1,
+      "id": "a5608f73-e111-4c63-95a3-0ed0c69a066a",
+      "name": "Text",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
       "position": [
-        -2220,
-        140
-      ]
+        -2100,
+        1840
+      ],
+      "typeVersion": 1.1
     },
     {
       "parameters": {
-        "values": {
-          "string": [
+        "name": "url_retrieval_tool",
+        "description": "Call this tool to return all URLs from the given website. Query should be full website URL.",
+        "source": "parameter",
+        "workflowJson": "{\n  \"nodes\": [\n    {\n      \"parameters\": {},\n      \"id\": \"05107436-c9cb-419b-ae8a-b74d309a130d\",\n      \"name\": \"Execute workflow\",\n      \"type\": \"n8n-nodes-base.manualTrigger\",\n      \"typeVersion\": 1,\n      \"position\": [\n        2200,\n        740\n      ]\n    },\n    {\n      \"parameters\": {\n        \"operation\": \"extractHtmlContent\",\n        \"extractionValues\": {\n          \"values\": [\n            {\n              \"key\": \"output\",\n              \"cssSelector\": \"a\",\n              \"returnValue\": \"attribute\",\n              \"returnArray\": true\n            }\n          ]\n        },\n        \"options\": {}\n      },\n      \"id\": \"1972e13e-d923-45e8-9752-e4bf45faaccf\",\n      \"name\": \"Retrieve URLs\",\n      \"type\": \"n8n-nodes-base.html\",\n      \"typeVersion\": 1.2,\n      \"position\": [\n        3060,\n        740\n      ]\n    },\n    {\n      \"parameters\": {\n        \"fieldToSplitOut\": \"output\",\n        \"options\": {}\n      },\n      \"id\": \"19703fbc-05ff-4d80-ab53-85ba6d39fc3f\",\n      \"name\": \"Split out URLs\",\n      \"type\": \"n8n-nodes-base.splitOut\",\n      \"typeVersion\": 1,\n      \"position\": [\n        3280,\n        740\n      ]\n    },\n    {\n      \"parameters\": {\n        \"compare\": \"selectedFields\",\n        \"fieldsToCompare\": \"href\",\n        \"options\": {}\n      },\n      \"id\": \"5cc988e7-de9b-4177-b5e7-edb3842202c8\",\n      \"name\": \"Remove duplicated\",\n      \"type\": \"n8n-nodes-base.removeDuplicates\",\n      \"typeVersion\": 1,\n      \"position\": [\n        3720,\n        740\n      ]\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"04ced063-09f0-496c-9b28-b8095f9e2297\",\n              \"name\": \"href\",\n              \"value\": \"={{ $json.href.startsWith(\\\"/\\\") ? $('Add protocool to domain (URL)').item.json[\\\"domain\\\"] + $json.href : $json.href }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"includeOtherFields\": true,\n        \"include\": \"selected\",\n        \"includeFields\": \"title\",\n        \"options\": {}\n      },\n      \"id\": \"4715a25d-93a7-4056-8768-e3f886a1a0c9\",\n      \"name\": \"Set domain to path\",\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.3,\n      \"position\": [\n        3940,\n        740\n      ]\n    },\n    {\n      \"parameters\": {\n        \"conditions\": {\n          \"options\": {\n            \"caseSensitive\": true,\n            \"leftValue\": \"\",\n            \"typeValidation\": \"strict\"\n          },\n          \"conditions\": [\n            {\n              \"id\": \"d01ea6a8-7e75-40d4-98f2-25d42b245f36\",\n              \"leftValue\": \"={{ $json.href.isUrl() }}\",\n              \"rightValue\": \"\",\n              \"operator\": {\n                \"type\": \"boolean\",\n                \"operation\": \"true\",\n                \"singleValue\": true\n              }\n            }\n          ],\n          \"combinator\": \"and\"\n        },\n        \"options\": {}\n      },\n      \"id\": \"353deefb-ae69-440c-95b6-fdadacf4bf91\",\n      \"name\": \"Filter out invalid URLs\",\n      \"type\": \"n8n-nodes-base.filter\",\n      \"typeVersion\": 2,\n      \"position\": [\n        4160,\n        740\n      ]\n    },\n    {\n      \"parameters\": {\n        \"aggregate\": \"aggregateAllItemData\",\n        \"include\": \"specifiedFields\",\n        \"fieldsToInclude\": \"title,href\",\n        \"options\": {}\n      },\n      \"id\": \"9f87be8c-72d7-4ab1-b297-dc7069b2dd11\",\n      \"name\": \"Aggregate URLs\",\n      \"type\": \"n8n-nodes-base.aggregate\",\n      \"typeVersion\": 1,\n      \"position\": [\n        4380,\n        740\n      ]\n    },\n    {\n      \"parameters\": {\n        \"conditions\": {\n          \"options\": {\n            \"caseSensitive\": true,\n            \"leftValue\": \"\",\n            \"typeValidation\": \"strict\"\n          },\n          \"conditions\": [\n            {\n              \"id\": \"5b9b7353-bd04-4af2-9480-8de135ff4223\",\n              \"leftValue\": \"={{ $json.href }}\",\n              \"rightValue\": \"\",\n              \"operator\": {\n                \"type\": \"string\",\n                \"operation\": \"exists\",\n                \"singleValue\": true\n              }\n            }\n          ],\n          \"combinator\": \"and\"\n        },\n        \"options\": {}\n      },\n      \"id\": \"35c8323a-5350-403a-9c2d-114b0527e395\",\n      \"name\": \"Filter out empty hrefs\",\n      \"type\": \"n8n-nodes-base.filter\",\n      \"typeVersion\": 2,\n      \"position\": [\n        3500,\n        740\n      ]\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"253c2b17-c749-4f0a-93e8-5ff74f1ce49b\",\n              \"name\": \"domain\",\n              \"value\": \"={{ $json.query }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"options\": {}\n      },\n      \"id\": \"d9f6a148-6c8c-4a58-89f5-4e9cfcd8d910\",\n      \"name\": \"Set domain (URL)\",\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.3,\n      \"position\": [\n        2400,\n        740\n      ]\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"ed0f1505-82b6-4393-a0d8-088055137ec9\",\n              \"name\": \"domain\",\n              \"value\": \"={{ $json.domain.startsWith(\\\"http\\\") ? $json.domain : \\\"http://\\\" + $json.domain }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"options\": {}\n      },\n      \"id\": \"1f974444-da58-4a47-a9c3-ba3091fc1e96\",\n      \"name\": \"Add protocool to domain (URL)\",\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.3,\n      \"position\": [\n        2620,\n        740\n      ]\n    },\n    {\n      \"parameters\": {\n        \"url\": \"={{ $json.domain }}\",\n        \"options\": {}\n      },\n      \"id\": \"31d7c7d4-8f61-402b-858d-63dd68ac69ee\",\n      \"name\": \"Get website (URL)\",\n      \"type\": \"n8n-nodes-base.httpRequest\",\n      \"typeVersion\": 4.2,\n      \"position\": [\n        2840,\n        740\n      ]\n    },\n    {\n      \"parameters\": {\n        \"assignments\": {\n          \"assignments\": [\n            {\n              \"id\": \"53c1c016-7983-4eba-a91d-da2a0523d805\",\n              \"name\": \"response\",\n              \"value\": \"={{ JSON.stringify($json.data) }}\",\n              \"type\": \"string\"\n            }\n          ]\n        },\n        \"options\": {}\n      },\n      \"id\": \"f4b6df77-96be-4b12-9a8b-ae9b7009f13d\",\n      \"name\": \"Set response (URL)\",\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3.3,\n      \"position\": [\n        4600,\n        740\n      ]\n    }\n  ],\n  \"connections\": {\n    \"Execute workflow\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Set domain (URL)\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Retrieve URLs\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Split out URLs\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Split out URLs\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Filter out empty hrefs\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Remove duplicated\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Set domain to path\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Set domain to path\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Filter out invalid URLs\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Filter out invalid URLs\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Aggregate URLs\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Aggregate URLs\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Set response (URL)\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Filter out empty hrefs\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Remove duplicated\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Set domain (URL)\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Add protocool to domain (URL)\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Add protocool to domain (URL)\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Get website (URL)\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Get website (URL)\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Retrieve URLs\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  },\n  \"pinData\": {}\n}"
+      },
+      "id": "4283967a-5f24-48ba-87ff-26652fccf77f",
+      "name": "URLs",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "position": [
+        -1920,
+        1840
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o",
+        "options": {
+          "responseFormat": "json_object",
+          "temperature": 0
+        }
+      },
+      "id": "aa0ff848-264c-487a-8160-191ec93e0e4d",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        -2260,
+        1840
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "QEy3y63pHSCkmxVh",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"social_media\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"platform\": {\n            \"type\": \"string\",\n            \"description\": \"The name of the social media platform (e.g., LinkedIn, Instagram)\"\n          },\n          \"urls\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"type\": \"string\",\n              \"format\": \"uri\",\n              \"description\": \"A URL for the social media platform\"\n            }\n          }\n        },\n        \"required\": [\"platform\", \"urls\"],\n        \"additionalProperties\": false\n      }\n    }\n  },\n  \"required\": [\"platforms\"],\n  \"additionalProperties\": false\n}\n"
+      },
+      "id": "cf317d1e-bf38-4624-9fce-530e0684e7db",
+      "name": "JSON Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "position": [
+        -1760,
+        1840
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
             {
-              "name": "accounts",
-              "value": "={{ Array(5).fill().map((_, i) => { return { email: `test${i+1}@example.org`, fullName: `Test User ${i+1}`, username: `testuser${i+1}_${Date.now().toString().slice(-5)}`, password: `SecureP@ss${i+1}${Math.floor(Math.random() * 1000)}`, birthMonth: \"1\", birthDay: \"1\", birthYear: \"1990\" } }) }}"
+              "id": "ae484e44-36bc-4d88-9772-545e579a261c",
+              "name": "company_name",
+              "type": "string",
+              "value": "={{ $json.name }}"
             },
             {
-              "name": "proxyList",
-              "value": "=[\"http://username:password@proxy1.example.com:8080\", \"http://username:password@proxy2.example.com:8080\"]"
-            },
-            {
-              "name": "twoCaptchaApiKey",
-              "value": "YOUR_2CAPTCHA_API_KEY"
+              "id": "c426ab19-649c-4443-aabb-eb0826680452",
+              "name": "company_website",
+              "type": "string",
+              "value": "={{ $json.website }}"
             }
           ]
         },
         "options": {}
       },
-      "id": "bcc9487e-0218-4ddf-b6d2-228bbff8da48",
-      "name": "Configure Registration Data1",
+      "id": "88a6b076-5ee6-41b9-8bc2-95222f3ea7ba",
+      "name": "Map company name and website",
       "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
       "position": [
-        -2640,
-        80
-      ]
+        -2160,
+        1160
+      ],
+      "typeVersion": 3.3
+    },
+    {
+      "parameters": {},
+      "id": "ee94b909-f2f2-4d30-a656-fafdb2d626de",
+      "name": "Execute workflow",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        -3020,
+        1480
+      ],
+      "typeVersion": 1
     },
     {
       "parameters": {
-        "fieldToSplitOut": "accounts",
+        "operation": "getAll",
+        "tableId": "companies_input"
+      },
+      "id": "04771405-1a59-4df6-82b4-cc79a09b7839",
+      "name": "Get companies",
+      "type": "n8n-nodes-base.supabase",
+      "position": [
+        -2780,
+        1480
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": []
+        },
+        "includeOtherFields": true,
+        "include": "selected",
+        "includeFields": "name,website",
         "options": {}
       },
-      "id": "568c34fb-0278-4652-a1a9-ac1459f07bd9",
-      "name": "Split Account List1",
-      "type": "n8n-nodes-base.itemLists",
-      "typeVersion": 1,
+      "id": "124c540c-bf07-41b9-baba-15ea10e4b924",
+      "name": "Select company name and website",
+      "type": "n8n-nodes-base.set",
       "position": [
         -2520,
-        -200
-      ]
-    },
-    {
-      "parameters": {
-        "mode": "runOnceForEachItem",
-        "jsCode": "// Add proxy to each item\nconst proxyList = $json['Configure Registration Data1'].json.proxyList;\n\n// Use username to deterministically select a proxy (same account = same proxy)\nconst username = $input.item.json.username;\nconst charSum = [...username].reduce((sum, char) => sum + char.charCodeAt(0), 0);\nconst proxyIndex = charSum % proxyList.length;\n\n$input.item.json.proxy = proxyList[proxyIndex];\n$input.item.json.account = $input.item.json;\n$input.item.json.twoCaptchaApiKey = $json['Configure Registration Data1'].json.twoCaptchaApiKey;\n\nreturn $input.item;"
-      },
-      "id": "b099ceb6-b15e-4114-8e25-78893c4d5d1f",
-      "name": "Prepare Data1",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 1,
-      "position": [
-        -2440,
-        80
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $json.success }}",
-              "value2": "true"
-            }
-          ]
-        }
-      },
-      "id": "60f1432f-da26-4b1a-acb2-039e5fee7e7f",
-      "name": "Check Registration Success1",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        -2040,
-        80
-      ]
-    },
-    {
-      "parameters": {
-        "authentication": "oAuth2",
-        "select": "channel",
-        "channelId": {
-          "__rl": true,
-          "value": "YOUR_CHANNEL_ID",
-          "mode": "list",
-          "cachedResultName": "registered-accounts"
-        },
-        "text": "=Account `{{$json.account.username}}` registered successfully!",
-        "otherOptions": {}
-      },
-      "id": "2b1f526c-019c-4f71-8255-375b761bc565",
-      "name": "Slack Notification1",
-      "type": "n8n-nodes-base.slack",
-      "typeVersion": 2.3,
-      "position": [
-        -1820,
-        -20
+        1480
       ],
-      "webhookId": "b6d600ec-2972-4c8d-9ac4-9727e6427ea0"
+      "typeVersion": 3.3
     },
     {
       "parameters": {
-        "authentication": "oAuth2",
-        "select": "channel",
-        "channelId": {
-          "__rl": true,
-          "value": "YOUR_CHANNEL_ID",
-          "mode": "list",
-          "cachedResultName": "failed-accounts"
-        },
-        "text": "=Registration failed for `{{$json.account.username}}`. Error: {{$json.message}}",
-        "otherOptions": {}
-      },
-      "id": "102ed294-3fd7-49f9-9d64-355b926cdf9f",
-      "name": "Slack Error Notification1",
-      "type": "n8n-nodes-base.slack",
-      "typeVersion": 2.3,
-      "position": [
-        -1820,
-        180
-      ],
-      "webhookId": "e2b51d51-de5e-4695-a1c5-41dddd9dd0db"
-    },
-    {
-      "parameters": {
-        "values": {
-          "string": [
+        "assignments": {
+          "assignments": [
             {
-              "name": "accounts",
-              "value": "={{ Array(5).fill().map((_, i) => { return { email: `test${i+1}@example.org`, fullName: `Test User ${i+1}`, username: `testuser${i+1}_${Date.now().toString().slice(-5)}`, password: `SecureP@ss${i+1}${Math.floor(Math.random() * 1000)}`, birthMonth: \"1\", birthDay: \"1\", birthYear: \"1990\" } }) }}"
+              "id": "a6e109b7-9333-44e8-aa13-590aeb91a56b",
+              "name": "social_media",
+              "type": "array",
+              "value": "={{ $json.output.social_media }}"
             }
           ]
         },
-        "options": {
-          "dotNotation": true
-        }
-      },
-      "id": "c68cb82b-956d-400b-ba24-65eaf4ed492b",
-      "name": "Configure Registration Data",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        -1580,
-        780
-      ]
-    },
-    {
-      "parameters": {
-        "fieldToSplitOut": "accounts",
         "options": {}
       },
-      "id": "611c0070-9de0-4d3d-bd13-6b01190342d9",
-      "name": "Split Account List",
-      "type": "n8n-nodes-base.itemLists",
+      "id": "14114c97-af5c-427a-833c-13d08d4e8cfc",
+      "name": "Set social media array",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -1760,
+        1580
+      ],
+      "typeVersion": 3.3
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "mergeByPosition",
+        "options": {}
+      },
+      "id": "024f6b4d-dfa9-4520-9d4c-6ce63af57ee0",
+      "name": "Merge all data",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        -1520,
+        1480
+      ],
+      "typeVersion": 2.1
+    },
+    {
+      "parameters": {
+        "tableId": "companies_output",
+        "dataToSend": "autoMapInputData"
+      },
+      "id": "e669deaa-87dc-4e98-8771-805a71695653",
+      "name": "Insert new row",
+      "type": "n8n-nodes-base.supabase",
+      "position": [
+        -1300,
+        1480
+      ],
       "typeVersion": 1,
+      "credentials": {
+        "supabaseApi": {
+          "id": "lnGPjPM0Vd6mPF2o",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "html": "={{ $json.data }}",
+        "options": {
+          "ignore": "a,img"
+        }
+      },
+      "id": "673249dd-bb99-4fa9-aeef-b131fe603b88",
+      "name": "Convert HTML to Markdown",
+      "type": "n8n-nodes-base.markdown",
       "position": [
         -1460,
-        500
-      ]
+        2180
+      ],
+      "typeVersion": 1
     },
     {
       "parameters": {
-        "mode": "runOnceForEachItem",
-        "jsCode": "// Add proxy to each item\n// First, get the proxy list from a global variable\nlet proxyList = [];\ntry {\n  // Try to get from the workflow data\n  proxyList = $workflow.variables.proxyList || [\"http://default:default@proxy.example.com:8080\"];\n} catch (e) {\n  // Fallback to a default proxy\n  proxyList = [\"http://default:default@proxy.example.com:8080\"];\n}\n\n// Use username to deterministically select a proxy\nconst username = $input.item.json.username;\nconst charSum = [...username].reduce((sum, char) => sum + char.charCodeAt(0), 0);\nconst proxyIndex = charSum % proxyList.length;\n\n// Add needed data to the item\n$input.item.json.proxy = proxyList[proxyIndex];\n$input.item.json.account = $input.item.json;\n\n// Set a default 2Captcha API key if not available from workflow variables\ntry {\n  $input.item.json.twoCaptchaApiKey = $workflow.variables.twoCaptchaApiKey || \"YOUR_DEFAULT_2CAPTCHA_KEY\";\n} catch (e) {\n  $input.item.json.twoCaptchaApiKey = \"YOUR_DEFAULT_2CAPTCHA_KEY\";\n}\n\nreturn $input.item;"
+        "content": "",
+        "height": 166.55000000000004,
+        "width": 157.8125,
+        "color": 5
       },
-      "id": "6e14ac7f-32a0-4fb0-a349-01cf80686218",
-      "name": "Prepare Data",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 1,
+      "id": "5dd9112a-1e70-4ac0-a1ea-0b278e02e572",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1380,
-        780
-      ]
+        -2020,
+        1920
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 166.55000000000004,
+        "width": 157.8125,
+        "color": 4
+      },
+      "id": "4d662bca-1d93-466e-a1bf-dcd0fe327ed4",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1840,
+        1920
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Text scraper tool\nThis tool is designed to return all text from the given webpage.\n\n💡 **Consider adding proxy for better crawling accuracy.**\n",
+        "height": 329.45390772033636,
+        "width": 1117.5005339977713,
+        "color": 5
+      },
+      "id": "7404f28b-2ac7-40d6-8c52-cc7759f94ce1",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2140,
+        2040
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "output",
+              "cssSelector": "a",
+              "returnValue": "attribute",
+              "returnArray": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ecd7e916-c04d-4272-8414-9734e517697f",
+      "name": "Retrieve URLs",
+      "type": "n8n-nodes-base.html",
+      "position": [
+        -1440,
+        2560
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output",
+        "options": {}
+      },
+      "id": "aa695b14-6c84-41b0-8b4b-8e7a23a9a334",
+      "name": "Split out URLs",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        -1220,
+        2560
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "compare": "selectedFields",
+        "fieldsToCompare": "href",
+        "options": {}
+      },
+      "id": "70d4b9f8-b2c4-4c30-8ccf-e0e55f8618b4",
+      "name": "Remove duplicated",
+      "type": "n8n-nodes-base.removeDuplicates",
+      "position": [
+        -780,
+        2560
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "04ced063-09f0-496c-9b28-b8095f9e2297",
+              "name": "href",
+              "type": "string",
+              "value": "={{ $json.href.startsWith(\"/\") ? $('Add protocool to domain (URL)').item.json[\"domain\"] + $json.href : $json.href }}"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "include": "selected",
+        "includeFields": "title",
+        "options": {}
+      },
+      "id": "c183374e-eb59-4dc9-9968-98fab8122f6d",
+      "name": "Set domain to path",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -560,
+        2560
+      ],
+      "typeVersion": 3.3
     },
     {
       "parameters": {
         "conditions": {
-          "string": [
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
             {
-              "value1": "={{ $json.success }}",
-              "value2": "true"
+              "id": "d01ea6a8-7e75-40d4-98f2-25d42b245f36",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.href.isUrl() }}",
+              "rightValue": ""
             }
           ]
-        }
-      },
-      "id": "484d3511-26b9-46e2-a877-36da7ae67928",
-      "name": "Check Registration Success",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        -980,
-        780
-      ]
-    },
-    {
-      "parameters": {
-        "authentication": "oAuth2",
-        "select": "channel",
-        "channelId": {
-          "__rl": true,
-          "value": "YOUR_CHANNEL_ID",
-          "mode": "list",
-          "cachedResultName": "registered-accounts"
         },
-        "text": "=Account `{{$json.account.username}}` registered successfully!",
-        "otherOptions": {}
-      },
-      "id": "3a20c2f6-632f-4178-9902-a42a39832222",
-      "name": "Slack Notification",
-      "type": "n8n-nodes-base.slack",
-      "typeVersion": 2.3,
-      "position": [
-        -760,
-        680
-      ],
-      "webhookId": "f2c3f781-e84e-49a4-84fd-f197d03de4de",
-      "credentials": {
-        "slackOAuth2Api": {
-          "id": "nOrw22LKiQmU0USm",
-          "name": "Slack account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "jsCode": "// Set workflow variables\n$workflow.variables.proxyList = [\n  \"http://username:password@proxy1.example.com:8080\", \n  \"http://username:password@proxy2.example.com:8080\"\n];\n$workflow.variables.twoCaptchaApiKey = \"YOUR_2CAPTCHA_API_KEY\";\n\nreturn [{json: {success: true}}];"
-      },
-      "id": "3dfe7ddb-92da-4a08-a691-d4e0fabede8d",
-      "name": "When clicking 'Test workflow'",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        -1860,
-        740
-      ]
-    },
-    {
-      "parameters": {
-        "authentication": "oAuth2",
-        "select": "channel",
-        "channelId": {
-          "__rl": true,
-          "value": "YOUR_CHANNEL_ID",
-          "mode": "list",
-          "cachedResultName": "failed-accounts"
-        },
-        "text": "=Registration failed for `{{$json.account.username}}`. Error: {{$json.message}}",
-        "otherOptions": {}
-      },
-      "id": "6606df60-857b-4f0e-aca9-3424d72dffcb",
-      "name": "Slack Error Notification",
-      "type": "n8n-nodes-base.slack",
-      "typeVersion": 2.3,
-      "position": [
-        -760,
-        880
-      ],
-      "webhookId": "db804ea5-da5f-4181-b9e6-1da69953a15c",
-      "credentials": {
-        "slackOAuth2Api": {
-          "id": "nOrw22LKiQmU0USm",
-          "name": "Slack account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "runCustomScript",
-        "scriptCode": "// Import required libraries\nconst puppeteer = require('puppeteer-extra');\nconst StealthPlugin = require('puppeteer-extra-plugin-stealth');\nconst { executablePath } = require('puppeteer');\nconst path = require('path');\nconst fs = require('fs');\nconst delay = ms => new Promise(resolve => setTimeout(resolve, ms));\n\n// Use Stealth plugin to avoid detection\npuppeteer.use(StealthPlugin());\n\n// Main registration function\nasync function registerInstagram(account, proxyUrl, twoCaptchaApiKey) {\n  console.log(`Starting registration for ${account.username}...`);\n  \n  // 2Captcha extension path configuration\n  const pathToExtension = path.join(__dirname, '2captcha-solver');\n  \n  // Ensure extension directory exists\n  if (!fs.existsSync(pathToExtension)) {\n    fs.mkdirSync(pathToExtension, { recursive: true });\n    \n    // Configure 2captcha-solver extension\n    const configPath = path.join(pathToExtension, 'common/config.js');\n    if (fs.existsSync(configPath)) {\n      let configContent = fs.readFileSync(configPath, 'utf8');\n      configContent = configContent.replace(/apiKey: \"\"/g, `apiKey: \"${twoCaptchaApiKey}\"`);\n      configContent = configContent.replace(/autoSolveRecaptchaV2: false/g, 'autoSolveRecaptchaV2: true');\n      fs.writeFileSync(configPath, configContent);\n    }\n  }\n  \n  // Browser launch options\n  const launchOptions = {\n    headless: true,\n    args: [\n      '--no-sandbox',\n      '--disable-setuid-sandbox',\n      '--disable-infobars',\n      '--window-size=1280,800',\n      '--disable-blink-features=AutomationControlled',\n      `--disable-extensions-except=${pathToExtension}`,\n      `--load-extension=${pathToExtension}`\n    ],\n    executablePath: executablePath()\n  };\n  \n  // Set proxy if provided\n  if (proxyUrl) {\n    launchOptions.args.push(`--proxy-server=${proxyUrl}`);\n  }\n  \n  const browser = await puppeteer.launch(launchOptions);\n  const page = await browser.newPage();\n  \n  // Set realistic user agent\n  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36');\n  \n  // Handle proxy authentication\n  if (proxyUrl && proxyUrl.includes('@')) {\n    const proxyAuth = proxyUrl.split('@')[0].split('//')[1];\n    const [username, password] = proxyAuth.split(':');\n    await page.authenticate({ username, password });\n  }\n  \n  try {\n    // Visit Instagram signup page\n    console.log('Visiting Instagram signup page...');\n    await page.goto('https://www.instagram.com/accounts/emailsignup/', { \n      waitUntil: 'networkidle2',\n      timeout: 60000 \n    });\n    \n    // Random delay\n    await delay(Math.floor(Math.random() * 2000) + 3000);\n    \n    // Handle cookie consent popup\n    const cookieButtons = await page.$x('//button[contains(text(), \"Allow\") or contains(text(), \"Accept\") or contains(text(), \"允許\") or contains(text(), \"接受\")]');\n    if (cookieButtons.length > 0) {\n      await cookieButtons[0].click();\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n    }\n    \n    // Input email\n    console.log('Entering email address...');\n    await page.type('input[name=\"emailOrPhone\"]', account.email, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Input full name\n    console.log('Entering full name...');\n    await page.type('input[name=\"fullName\"]', account.fullName, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Input username\n    console.log('Entering username...');\n    await page.type('input[name=\"username\"]', account.username, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Input password\n    console.log('Entering password...');\n    await page.type('input[name=\"password\"]', account.password, { delay: Math.floor(Math.random() * 50) + 70 });\n    await delay(Math.floor(Math.random() * 1000) + 1000);\n    \n    // Click signup button\n    console.log('Clicking signup button...');\n    const signupButtons = await page.$x('//button[contains(text(), \"註冊\") or contains(text(), \"Sign up\")]');\n    if (signupButtons.length > 0) {\n      // Add mouse movement to simulate human behavior\n      const button = signupButtons[0];\n      const buttonBox = await button.boundingBox();\n      \n      // Move to button vicinity, then to button\n      await page.mouse.move(\n        buttonBox.x + Math.random() * buttonBox.width,\n        buttonBox.y - 10 + Math.random() * 10\n      );\n      await delay(Math.floor(Math.random() * 500) + 300);\n      await page.mouse.move(\n        buttonBox.x + buttonBox.width / 2,\n        buttonBox.y + buttonBox.height / 2\n      );\n      await delay(Math.floor(Math.random() * 500) + 300);\n      \n      // Click the button\n      await button.click();\n      console.log('Signup button clicked');\n    } else {\n      throw new Error('Signup button not found');\n    }\n    \n    // Wait for next phase of registration\n    await delay(Math.floor(Math.random() * 2000) + 4000);\n    \n    // Handle birthday selection page\n    console.log('Checking if birthday selection is required...');\n    const birthdayForm = await page.$('select[title=\"月:\"], select[aria-label*=\"Month\"]');\n    if (birthdayForm) {\n      console.log('Handling birthday selection...');\n      \n      // Select month\n      await page.select('select[title=\"月:\"], select[aria-label*=\"Month\"]', account.birthMonth);\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n      \n      // Select day\n      await page.select('select[title=\"日:\"], select[aria-label*=\"Day\"]', account.birthDay);\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n      \n      // Select year\n      await page.select('select[title=\"年:\"], select[aria-label*=\"Year\"]', account.birthYear);\n      await delay(Math.floor(Math.random() * 1000) + 1000);\n      \n      // Click next button\n      const nextButtons = await page.$x('//button[contains(text(), \"下一步\") or contains(text(), \"Next\")]');\n      if (nextButtons.length > 0) {\n        await nextButtons[0].click();\n        console.log('Next button clicked');\n      }\n      await delay(Math.floor(Math.random() * 2000) + 3000);\n    }\n    \n    // Handle captcha challenge\n    console.log('Checking and handling captcha challenges...');\n    \n    // Wait for 2captcha extension to load\n    await delay(5000);\n    \n    // Check if captcha element exists\n    const captchaFrame = await page.$('iframe[src*=\"captcha\"]');\n    if (captchaFrame) {\n      console.log('Captcha challenge detected, using 2Captcha to solve...');\n      \n      // Wait for 2Captcha extension to auto-process captcha\n      // Check for .captcha-solver element\n      await page.waitForSelector('.captcha-solver', { timeout: 10000 }).catch(() => {});\n      \n      // If element exists but hasn't auto-started solving, click it\n      const captchaSolverState = await page.evaluate(() => {\n        const solver = document.querySelector('.captcha-solver');\n        return solver ? solver.getAttribute('data-state') : null;\n      }).catch(() => null);\n      \n      if (captchaSolverState && captchaSolverState !== 'solving') {\n        await page.click('.captcha-solver').catch(() => {});\n        console.log('Clicked 2Captcha solver button');\n      }\n      \n      // Wait for captcha to be solved\n      console.log('Waiting for captcha to be solved...');\n      await page.waitForSelector('.captcha-solver[data-state=\"solved\"]', { timeout: 180000 }).catch(() => {});\n      console.log('Captcha solved');\n      \n      // Continue registration flow\n      await delay(2000);\n      \n      // Click submit button (if any)\n      const submitButtons = await page.$x('//button[contains(text(), \"提交\") or contains(text(), \"Submit\")]').catch(() => []);\n      if (submitButtons.length > 0) {\n        await submitButtons[0].click().catch(() => {});\n        console.log('Submit button clicked');\n      }\n    }\n    \n    // Wait for registration to complete\n    await delay(10000);\n    \n    // Check if email verification is required\n    const emailVerificationText = await page.evaluate(() => {\n      const elements = Array.from(document.querySelectorAll('*'));\n      return elements.find(el => el.textContent.includes('驗證您的電子郵件') || \n                              el.textContent.includes('Verify your email') || \n                              el.textContent.includes('確認您的電子郵件地址'))?.textContent || '';\n    }).catch(() => '');\n    \n    let registrationResult = {\n      success: true,\n      message: 'Registration successful',\n      account: account\n    };\n    \n    if (emailVerificationText) {\n      registrationResult.message += ', email verification required';\n      registrationResult.requiresEmailVerification = true;\n    }\n    \n    // Check for error messages\n    const errorText = await page.evaluate(() => {\n      const elements = Array.from(document.querySelectorAll('*'));\n      return elements.find(el => el.textContent.includes('錯誤') || \n                              el.textContent.includes('Error') || \n                              el.textContent.includes('請稍後再試'))?.textContent || '';\n    }).catch(() => '');\n    \n    if (errorText) {\n      registrationResult.success = false;\n      registrationResult.message = `Registration failed: ${errorText}`;\n    }\n    \n    // Check for feedback required error\n    const feedbackRequired = await page.evaluate(() => {\n      return document.body.innerText.includes('feedback_required') || \n             document.body.innerText.includes('Feedback Required') ||\n             document.body.innerText.includes('請稍後再試');\n    }).catch(() => false);\n    \n    if (feedbackRequired) {\n      registrationResult.success = false;\n      registrationResult.message = 'Registration failed: Feedback Required error, possible automation detection';\n    }\n    \n    // Take screenshot as evidence\n    const screenshotPath = `/tmp/${account.username}_${Date.now()}.png`;\n    await page.screenshot({ path: screenshotPath, fullPage: true }).catch(() => {});\n    registrationResult.screenshotPath = screenshotPath;\n    \n    return registrationResult;\n    \n  } catch (error) {\n    console.error('Error during registration process:', error);\n    return {\n      success: false,\n      message: `Registration failed: ${error.message}`,\n      account: account\n    };\n  } finally {\n    // Close browser\n    await browser.close().catch(() => {});\n  }\n}\n\n// Execute function and return result\nreturn await registerInstagram($input.item.json.account, $input.item.json.proxy, $input.item.json.twoCaptchaApiKey);",
         "options": {}
       },
-      "id": "b78d8000-93ad-47e7-83d8-6084faa6765c",
-      "name": "Puppeteer1",
-      "type": "n8n-nodes-puppeteer.puppeteer",
-      "typeVersion": 1,
+      "id": "811e3a13-80ed-4e02-bc5a-8cec8fa97f95",
+      "name": "Filter out invalid URLs",
+      "type": "n8n-nodes-base.filter",
       "position": [
-        -1160,
-        840
-      ]
+        -340,
+        2560
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "include": "specifiedFields",
+        "fieldsToInclude": "title,href",
+        "options": {}
+      },
+      "id": "f64591d2-f2c2-43b7-bd72-c4a98048f5c0",
+      "name": "Aggregate URLs",
+      "type": "n8n-nodes-base.aggregate",
+      "position": [
+        -120,
+        2560
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "5b9b7353-bd04-4af2-9480-8de135ff4223",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.href }}",
+              "rightValue": ""
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ccd8004e-2d8c-43cc-b7fc-014989079558",
+      "name": "Filter out empty hrefs",
+      "type": "n8n-nodes-base.filter",
+      "position": [
+        -1000,
+        2560
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "253c2b17-c749-4f0a-93e8-5ff74f1ce49b",
+              "name": "domain",
+              "type": "string",
+              "value": "={{ $json.query }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "54ac09b6-ffa0-4419-81fe-e2a88691389a",
+      "name": "Set domain (text)",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -2100,
+        2180
+      ],
+      "typeVersion": 3.3
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ed0f1505-82b6-4393-a0d8-088055137ec9",
+              "name": "domain",
+              "type": "string",
+              "value": "={{ $json.domain.startsWith(\"http\") ? $json.domain : \"http://\" + $json.domain }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4839a425-f7c8-432d-a41d-8ed5f3de205c",
+      "name": "Add protocool to domain (text)",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -1900,
+        2180
+      ],
+      "typeVersion": 3.3
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.domain }}",
+        "options": {}
+      },
+      "id": "b8e766a7-3a82-4343-b92b-403581221b5e",
+      "name": "Get website (text)",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1680,
+        2180
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2b1c7ff8-06a7-448b-99b7-5ede4b2e0bf0",
+              "name": "response",
+              "type": "string",
+              "value": "={{ $json.data }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d54e28a4-e27d-44fc-aab8-1e958a2ae6ca",
+      "name": "Set response (text)",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -1240,
+        2180
+      ],
+      "typeVersion": 3.3
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "253c2b17-c749-4f0a-93e8-5ff74f1ce49b",
+              "name": "domain",
+              "type": "string",
+              "value": "={{ $json.query }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "60c4e40d-8780-42c2-8bf4-9d50570cac56",
+      "name": "Set domain (URL)",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -2100,
+        2560
+      ],
+      "typeVersion": 3.3
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.domain }}",
+        "options": {}
+      },
+      "id": "33dcc0fb-1d12-4122-814c-a95ba56e8467",
+      "name": "Get website (URL)",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -1660,
+        2560
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "53c1c016-7983-4eba-a91d-da2a0523d805",
+              "name": "response",
+              "type": "string",
+              "value": "={{ JSON.stringify($json.data) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "374ea41a-cddc-4631-921b-47a530560bb4",
+      "name": "Set response (URL)",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        100,
+        2560
+      ],
+      "typeVersion": 3.3
+    },
+    {
+      "parameters": {
+        "content": "### URL scraper tool\nThis tool is designed to return all links (URLs) from the given webpage.\n\n💡 **Consider adding proxy for better crawling accuracy.**",
+        "height": 328.79842054012374,
+        "width": 2467.2678721043376,
+        "color": 4
+      },
+      "id": "4fc92151-d82f-4c08-b56d-841e2fa9ec9e",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2140,
+        2420
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Get companies from database\nRetrieve names and websites of companies from Supabase table to process crawling.\n\n💡 **You can replace Supabase with other database of your choice.**",
+        "height": 400.16865185185225,
+        "width": 221.7729148148145
+      },
+      "id": "59c7129a-8993-4444-806a-da8c5316713d",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2840,
+        1260
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Set parameters for execution\nPass only `name` and `website` values from database. \n\n⚠️ **If you use other field namings, update this node.**",
+        "height": 370.14757037037066,
+        "width": 221.7729148148145
+      },
+      "id": "eb13c6a1-6128-407c-9fa2-2b278f1205dd",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2580,
+        1300
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Crawling agent (retrieve social media profile links)\nCrawl website to extract social media profile links and return them in unified JSON format.\n\n💡 **You can change type of retrieved data by editing prompt and parser schema.**",
+        "height": 328.4957622370491,
+        "width": 339.7128777777775
+      },
+      "id": "57ee5bc7-12f7-4e51-85f2-789e2991dff5",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2200,
+        1400
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "### Insert data to database\nAdd new rows in database table with extracted data.\n\n💡 **You can replace Supabase with other database of your choice.**",
+        "height": 364.786662962963,
+        "width": 221.7729148148145
+      },
+      "id": "493a1a0f-25ae-4c8c-8217-4e3444afcb71",
+      "name": "Sticky Note7",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1360,
+        1300
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ed0f1505-82b6-4393-a0d8-088055137ec9",
+              "name": "domain",
+              "type": "string",
+              "value": "={{ $json.domain.startsWith(\"http\") ? $json.domain : \"http://\" + $json.domain }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f4dc1514-ccc6-45ba-875c-af35233df36a",
+      "name": "Add protocool to domain (URL)",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -1880,
+        2560
+      ],
+      "typeVersion": 3.3
+    },
+    {
+      "parameters": {
+        "content": "## ⚠️ Note\n\n1. Complete video guide for this workflow is available [on my YouTube](https://youtu.be/2W09puFZwtY). \n2. Remember to add your credentials and configure nodes.\n3. If you like this workflow, please subscribe to [my YouTube channel](https://www.youtube.com/@workfloows) and/or [my newsletter](https://workfloows.com/).\n\n**Thank you for your support!**",
+        "height": 256.26672065702303,
+        "width": 369.60264559047334,
+        "color": 3
+      },
+      "id": "c5f4d93b-ea77-48bc-a9d0-38f731e5dd5e",
+      "name": "Sticky Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -3560,
+        1520
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Autonomous AI crawler\nThis workflow autonomously navigates through given websites and retrieves social media profile links. \n\n💡 **You can modify this workflow to retrieve other type of data (e.g. contact details or company profile summary).**",
+        "height": 212.09880341753203,
+        "width": 369.93062670813185,
+        "color": 7
+      },
+      "id": "81de2c37-8a3c-4a2c-b85b-e809674ba48a",
+      "name": "Sticky Note9",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -3560,
+        1280
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Retrieve social media profile URLs from this website: {{ $json.website }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are an automated web crawler tasked with extracting social media URLs from a webpage provided by the user. You have access to a text retrieval tool to gather all text content from the page and a URL retrieval tool to identify and navigate through links on the page. Utilize the URLs retrieved to crawl additional pages. Your objective is to provide a unified JSON output containing the extracted data (links to all possible social media profiles from the website)."
+        }
+      },
+      "id": "f5fc4e44-879c-4716-ac7f-b707ca4b6b23",
+      "name": "Crawl website",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        -2160,
+        1580
+      ],
+      "retryOnFail": true,
+      "typeVersion": 1.6
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "Get companies": [
+      {
+        "json": {
+          "id": 1,
+          "name": "n8n",
+          "website": "https://n8n.io"
+        }
+      }
+    ]
+  },
   "settings": {
     "executionOrder": "v1"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-15T18:36:01.000Z",
-  "versionId": "764a8c6a-1909-4a3e-a48e-cd8c7711d9ac"
+  "updatedAt": "2025-03-15T22:20:58.000Z",
+  "versionId": "9e2050d2-88e3-4c75-8d69-5be179735f90"
 }
