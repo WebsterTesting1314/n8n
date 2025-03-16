@@ -537,7 +537,13 @@
         1320
       ],
       "typeVersion": 1.2,
-      "webhookId": "048bdff1-3c38-4fc4-b0df-a884967c7d8f"
+      "webhookId": "048bdff1-3c38-4fc4-b0df-a884967c7d8f",
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
     },
     {
       "parameters": {
@@ -553,7 +559,13 @@
         980
       ],
       "typeVersion": 1.2,
-      "webhookId": "b1d98da4-e36d-4325-8a78-5b87f2b1a7c2"
+      "webhookId": "b1d98da4-e36d-4325-8a78-5b87f2b1a7c2",
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
     },
     {
       "parameters": {
@@ -924,6 +936,12 @@
       ],
       "typeVersion": 2.5,
       "alwaysOutputData": true,
+      "credentials": {
+        "postgres": {
+          "id": "uZkUmQVJB558YvEn",
+          "name": "Postgres account"
+        }
+      },
       "onError": "continueErrorOutput"
     },
     {
@@ -1900,6 +1918,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-16T16:32:59.000Z",
-  "versionId": "9d69b375-2fb7-45a7-92a1-c3a85f99ab46"
+  "updatedAt": "2025-03-16T19:16:45.000Z",
+  "versionId": "502c4bc6-00ea-4e85-946e-7f89a757b31c"
 }
