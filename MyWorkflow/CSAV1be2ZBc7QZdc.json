@@ -1157,7 +1157,13 @@
         3880,
         1120
       ],
-      "typeVersion": 1.8
+      "typeVersion": 1.8,
+      "credentials": {
+        "openAiApi": {
+          "id": "WOGVxYrpyYNAzjsK",
+          "name": "OpenAi account 2"
+        }
+      }
     },
     {
       "parameters": {
@@ -1477,8 +1483,8 @@
       "name": "Sticky Note14",
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        620,
-        -60
+        -700,
+        -600
       ],
       "typeVersion": 1
     },
@@ -1524,8 +1530,8 @@
       "name": "Webhook",
       "type": "n8n-nodes-base.webhook",
       "position": [
-        560,
-        60
+        -760,
+        -480
       ],
       "webhookId": "9024e29e-9080-4cf5-9a6b-0d918468f195",
       "typeVersion": 2
@@ -1536,8 +1542,8 @@
       "name": "YouTube Transcript",
       "type": "n8n-nodes-youtube-transcription.youtubeTranscripter",
       "position": [
-        1360,
-        60
+        40,
+        -480
       ],
       "typeVersion": 1
     },
@@ -1550,8 +1556,8 @@
       "name": "Split Out",
       "type": "n8n-nodes-base.splitOut",
       "position": [
-        760,
-        320
+        -560,
+        -220
       ],
       "typeVersion": 1
     },
@@ -1563,8 +1569,8 @@
       "name": "Respond to Webhook",
       "type": "n8n-nodes-base.respondToWebhook",
       "position": [
-        1760,
-        200
+        440,
+        -340
       ],
       "typeVersion": 1.1
     },
@@ -1586,8 +1592,8 @@
       "name": "Get YouTube URL",
       "type": "n8n-nodes-base.set",
       "position": [
-        760,
-        60
+        -560,
+        -480
       ],
       "typeVersion": 3.4
     },
@@ -1599,8 +1605,8 @@
       "name": "YouTube Video ID",
       "type": "n8n-nodes-base.code",
       "position": [
-        960,
-        60
+        -360,
+        -480
       ],
       "typeVersion": 2
     },
@@ -1615,8 +1621,8 @@
       "name": "Get YouTube Video",
       "type": "n8n-nodes-base.youTube",
       "position": [
-        1160,
-        60
+        -160,
+        -480
       ],
       "typeVersion": 1
     },
@@ -1628,8 +1634,8 @@
       "name": "gpt-4o-mini",
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "position": [
-        1180,
-        500
+        -140,
+        -40
       ],
       "typeVersion": 1
     },
@@ -1642,8 +1648,8 @@
       "name": "Summarize & Analyze Transcript",
       "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "position": [
-        1160,
-        320
+        -160,
+        -220
       ],
       "typeVersion": 1.4
     },
@@ -1664,8 +1670,8 @@
       "name": "Concatenate",
       "type": "n8n-nodes-base.summarize",
       "position": [
-        960,
-        320
+        -360,
+        -220
       ],
       "typeVersion": 1
     },
@@ -1717,8 +1723,8 @@
       "name": "Response Object",
       "type": "n8n-nodes-base.set",
       "position": [
-        1520,
-        320
+        200,
+        -220
       ],
       "typeVersion": 3.4
     },
@@ -1734,8 +1740,8 @@
       "name": "Telegram3",
       "type": "n8n-nodes-base.telegram",
       "position": [
-        1760,
-        440
+        440,
+        -100
       ],
       "typeVersion": 1.2,
       "webhookId": "d05d6f99-5b28-4c55-80d9-dfac736a48ad"
@@ -1894,6 +1900,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-02-05T05:23:51.000Z",
-  "versionId": "d98cd7de-e740-48da-92c0-138ca4d2abaa"
+  "updatedAt": "2025-03-16T16:32:59.000Z",
+  "versionId": "9d69b375-2fb7-45a7-92a1-c3a85f99ab46"
 }
