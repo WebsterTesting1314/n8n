@@ -581,7 +581,13 @@
         1320
       ],
       "typeVersion": 1.2,
-      "webhookId": "1e5c11d1-862f-4917-a183-791904d2c469"
+      "webhookId": "1e5c11d1-862f-4917-a183-791904d2c469",
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
     },
     {
       "parameters": {
@@ -1152,7 +1158,13 @@
         3540,
         1120
       ],
-      "typeVersion": 2.5
+      "typeVersion": 2.5,
+      "credentials": {
+        "postgres": {
+          "id": "uZkUmQVJB558YvEn",
+          "name": "Postgres account"
+        }
+      }
     },
     {
       "parameters": {
@@ -1207,7 +1219,13 @@
         4080,
         1120
       ],
-      "typeVersion": 1.8
+      "typeVersion": 1.8,
+      "credentials": {
+        "openAiApi": {
+          "id": "WOGVxYrpyYNAzjsK",
+          "name": "OpenAi account 2"
+        }
+      }
     },
     {
       "parameters": {
@@ -1555,17 +1573,6 @@
       "typeVersion": 2
     },
     {
-      "parameters": {},
-      "id": "a2ab115e-262d-4256-a2df-f82e09799bc3",
-      "name": "YouTube Transcript",
-      "type": "n8n-nodes-youtube-transcription.youtubeTranscripter",
-      "position": [
-        40,
-        -480
-      ],
-      "typeVersion": 1
-    },
-    {
       "parameters": {
         "fieldToSplitOut": "transcript",
         "options": {}
@@ -1642,7 +1649,13 @@
         -160,
         -480
       ],
-      "typeVersion": 1
+      "typeVersion": 1,
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "khEhT0Q2DPosZyD2",
+          "name": "YouTube account"
+        }
+      }
     },
     {
       "parameters": {
@@ -1655,7 +1668,13 @@
         -140,
         -40
       ],
-      "typeVersion": 1
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "WOGVxYrpyYNAzjsK",
+          "name": "OpenAi account 2"
+        }
+      }
     },
     {
       "parameters": {
@@ -1762,7 +1781,13 @@
         -100
       ],
       "typeVersion": 1.2,
-      "webhookId": "d05d6f99-5b28-4c55-80d9-dfac736a48ad"
+      "webhookId": "d05d6f99-5b28-4c55-80d9-dfac736a48ad",
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
     },
     {
       "parameters": {
@@ -1918,6 +1943,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-16T19:16:45.000Z",
-  "versionId": "502c4bc6-00ea-4e85-946e-7f89a757b31c"
+  "updatedAt": "2025-03-16T20:53:58.000Z",
+  "versionId": "90a3442e-07bc-4ecb-9789-16a5081fcee0"
 }
