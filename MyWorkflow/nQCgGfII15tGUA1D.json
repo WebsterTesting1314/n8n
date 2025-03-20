@@ -142,6 +142,13 @@
   "name": "IT Support Chatbot with Google Drive, Pinecone & Gemini | AI Doc Processing",
   "nodes": [
     {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}",
+        "options": {
+          "systemMessage": "You are a knowledgeable and helpful assistant. Respond with clear, concise, and detailed answers formatted in markdown. Use proper markdown formatting including headings, bullet points, numbered lists, code blocks, and other structures as needed to improve readability and clarity."
+        }
+      },
       "id": "e7769ee7-a247-426e-b792-c095597ada54",
       "name": "AI Agent",
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -149,26 +156,10 @@
         1220,
         1180
       ],
-      "parameters": {
-        "text": "={{ $json.prompt }}",
-        "options": {
-          "systemMessage": "You are a knowledgeable and helpful assistant. Respond with clear, concise, and detailed answers formatted in markdown. Use proper markdown formatting including headings, bullet points, numbered lists, code blocks, and other structures as needed to improve readability and clarity."
-        },
-        "promptType": "define"
-      },
       "typeVersion": 1.7
     },
     {
-      "id": "72ca46ad-891f-42f2-81d7-00e04e1c6f5f",
-      "name": "Monitor Google Drive for New Files",
-      "type": "n8n-nodes-base.googleDriveTrigger",
-      "position": [
-        380,
-        240
-      ],
       "parameters": {
-        "event": "fileCreated",
-        "options": {},
         "pollTimes": {
           "item": [
             {}
@@ -181,17 +172,35 @@
           "value": "1RQvAHIw8cQbtwI9ZvdVV0k0x6TM6HZwP",
           "cachedResultUrl": "https://drive.google.com/drive/folders/1RQvAHIw8cQbtwI9ZvdVV0k0x6TM6HZwP",
           "cachedResultName": "RAG_Files"
-        }
+        },
+        "event": "fileCreated",
+        "options": {}
       },
+      "id": "72ca46ad-891f-42f2-81d7-00e04e1c6f5f",
+      "name": "Monitor Google Drive for New Files",
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "position": [
+        380,
+        240
+      ],
+      "typeVersion": 1,
       "credentials": {
         "googleDriveOAuth2Api": {
           "id": "3U67UsWezGHsiT2u",
           "name": "Unnamed credential"
         }
-      },
-      "typeVersion": 1
+      }
     },
     {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $json.id }}"
+        },
+        "options": {}
+      },
       "id": "03e9dc61-bdba-49d7-859e-73b8adebae41",
       "name": "Download File from Google Drive",
       "type": "n8n-nodes-base.googleDrive",
@@ -199,24 +208,19 @@
         600,
         240
       ],
-      "parameters": {
-        "fileId": {
-          "__rl": true,
-          "mode": "id",
-          "value": "={{ $json.id }}"
-        },
-        "options": {},
-        "operation": "download"
-      },
+      "typeVersion": 3,
       "credentials": {
         "googleDriveOAuth2Api": {
           "id": "3U67UsWezGHsiT2u",
           "name": "Unnamed credential"
         }
-      },
-      "typeVersion": 3
+      }
     },
     {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
       "id": "782fc162-0c3f-40fc-af92-455c1250ede0",
       "name": "Extract PDF Content",
       "type": "n8n-nodes-base.extractFromFile",
@@ -224,13 +228,19 @@
         820,
         240
       ],
-      "parameters": {
-        "options": {},
-        "operation": "pdf"
-      },
       "typeVersion": 1
     },
     {
+      "parameters": {
+        "mode": "insert",
+        "pineconeIndex": {
+          "__rl": true,
+          "mode": "list",
+          "value": "n8n-rag-demo",
+          "cachedResultName": "n8n-rag-demo"
+        },
+        "options": {}
+      },
       "id": "b8da9cff-756b-419e-b39a-4ad1020092d0",
       "name": "Insert Document into Pinecone Vector Store",
       "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
@@ -238,25 +248,18 @@
         1260,
         240
       ],
-      "parameters": {
-        "mode": "insert",
-        "options": {},
-        "pineconeIndex": {
-          "__rl": true,
-          "mode": "list",
-          "value": "n8n-rag-demo",
-          "cachedResultName": "n8n-rag-demo"
-        }
-      },
+      "typeVersion": 1,
       "credentials": {
         "pineconeApi": {
           "id": "XZtNWARuzqEcEoGb",
           "name": "PineconeApi account"
         }
-      },
-      "typeVersion": 1
+      }
     },
     {
+      "parameters": {
+        "modelName": "models/text-embedding-004"
+      },
       "id": "f5b93646-b466-4cd7-aec9-6fae62023fa3",
       "name": "Generate Document Embeddings (Google Gemini)",
       "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
@@ -264,18 +267,18 @@
         1160,
         500
       ],
-      "parameters": {
-        "modelName": "models/text-embedding-004"
-      },
+      "typeVersion": 1,
       "credentials": {
         "googlePalmApi": {
           "id": "6C5RcxgyvDl0rt7v",
           "name": "Google Gemini(PaLM) Api account"
         }
-      },
-      "typeVersion": 1
+      }
     },
     {
+      "parameters": {
+        "jsCode": "const rawData = $json[\"text\"];\nconst cleanedData = rawData\n  .replace(/(\\r\\n|\\n|\\r)/gm, \" \")   // remove line breaks\n  .trim()                           // remove extra spaces\n  .replace(/[^\\w\\s]/gi, \"\");         // remove special characters\nreturn { cleanedData };\n"
+      },
       "id": "b5277663-3120-4614-85e3-f7dc05c4e1c2",
       "name": "Clean and Normalize PDF Text",
       "type": "n8n-nodes-base.code",
@@ -283,12 +286,12 @@
         1040,
         240
       ],
-      "parameters": {
-        "jsCode": "const rawData = $json[\"text\"];\nconst cleanedData = rawData\n  .replace(/(\\r\\n|\\n|\\r)/gm, \" \")   // remove line breaks\n  .trim()                           // remove extra spaces\n  .replace(/[^\\w\\s]/gi, \"\");         // remove special characters\nreturn { cleanedData };\n"
-      },
       "typeVersion": 2
     },
     {
+      "parameters": {
+        "options": {}
+      },
       "id": "68aa5515-6b58-4e98-ab08-4d9516e1f2a3",
       "name": "Load Document Data for Processing",
       "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
@@ -296,12 +299,14 @@
         1380,
         500
       ],
-      "parameters": {
-        "options": {}
-      },
       "typeVersion": 1
     },
     {
+      "parameters": {
+        "chunkSize": 3000,
+        "chunkOverlap": 300,
+        "options": {}
+      },
       "id": "3f463338-c692-4b7b-a888-8c00d190c441",
       "name": "Split Document Text into Chunks",
       "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
@@ -309,14 +314,12 @@
         1280,
         720
       ],
-      "parameters": {
-        "options": {},
-        "chunkSize": 3000,
-        "chunkOverlap": 300
-      },
       "typeVersion": 1
     },
     {
+      "parameters": {
+        "options": {}
+      },
       "id": "9c4a7ec9-0808-443f-9e12-9ec12c7288b9",
       "name": "Chat Message Trigger",
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
@@ -325,12 +328,20 @@
         1180
       ],
       "webhookId": "d36e67b9-a789-4801-b624-64bf8b88d702",
-      "parameters": {
-        "options": {}
-      },
       "typeVersion": 1.1
     },
     {
+      "parameters": {
+        "mode": "load",
+        "pineconeIndex": {
+          "__rl": true,
+          "mode": "list",
+          "value": "n8n-rag-demo",
+          "cachedResultName": "n8n-rag-demo"
+        },
+        "prompt": "={{ $json.chatInput }}",
+        "options": {}
+      },
       "id": "ee62efc9-60b2-40ec-a10c-8897d24b1429",
       "name": "Retrieve Relevant Documents from Pinecone",
       "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
@@ -338,26 +349,18 @@
         640,
         1180
       ],
-      "parameters": {
-        "mode": "load",
-        "prompt": "={{ $json.chatInput }}",
-        "options": {},
-        "pineconeIndex": {
-          "__rl": true,
-          "mode": "list",
-          "value": "n8n-rag-demo",
-          "cachedResultName": "n8n-rag-demo"
-        }
-      },
+      "typeVersion": 1,
       "credentials": {
         "pineconeApi": {
           "id": "XZtNWARuzqEcEoGb",
           "name": "PineconeApi account"
         }
-      },
-      "typeVersion": 1
+      }
     },
     {
+      "parameters": {
+        "modelName": "models/text-embedding-004"
+      },
       "id": "8d479b6b-3c87-40c6-8a68-4390e6bafac8",
       "name": "Generate Query Embeddings (Google Gemini)",
       "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
@@ -365,18 +368,18 @@
         620,
         1420
       ],
-      "parameters": {
-        "modelName": "models/text-embedding-004"
-      },
+      "typeVersion": 1,
       "credentials": {
         "googlePalmApi": {
           "id": "6C5RcxgyvDl0rt7v",
           "name": "Google Gemini(PaLM) Api account"
         }
-      },
-      "typeVersion": 1
+      }
     },
     {
+      "parameters": {
+        "jsCode": "const userQuery =  $('Chat Message Trigger').first().json.chatInput\n// Retrieve the user query from the previous node output.\n// Assuming the Pinecone node has passed an array of items where each item has a document and score:\nlet documents = items.map(item => {\n  return {\n    pageContent: item.json.document.pageContent,\n    score: item.json.score\n  };\n});\n\n// Sort the documents by their score in descending order.\ndocuments.sort((a, b) => b.score - a.score);\n\n// Pick the top 3 documents to use as context.\nconst topDocuments = documents.slice(0, 3);\n\n// Combine the top documents into one context string.\nconst contextContent = topDocuments\n  .map((doc, index) => `Document ${index + 1}:\\n${doc.pageContent}`)\n  .join(\"\\n\\n\");\n\n// Build the final prompt that combines the context with the user query.\nconst prompt = `Using the following context from documents:\\n\\n${contextContent}\\n\\nAnswer the following question:\\n${userQuery}\\n\\nAnswer:`;\n\n// Return the prompt so it can be passed to a Chat/AI node for further processing.\nreturn [{ json: { prompt } }];\n"
+      },
       "id": "f521d243-1b62-4bc5-972d-736c65c48818",
       "name": "Generate Chat Prompt with Context",
       "type": "n8n-nodes-base.code",
@@ -384,12 +387,13 @@
         1000,
         1180
       ],
-      "parameters": {
-        "jsCode": "const userQuery =  $('Chat Message Trigger').first().json.chatInput\n// Retrieve the user query from the previous node output.\n// Assuming the Pinecone node has passed an array of items where each item has a document and score:\nlet documents = items.map(item => {\n  return {\n    pageContent: item.json.document.pageContent,\n    score: item.json.score\n  };\n});\n\n// Sort the documents by their score in descending order.\ndocuments.sort((a, b) => b.score - a.score);\n\n// Pick the top 3 documents to use as context.\nconst topDocuments = documents.slice(0, 3);\n\n// Combine the top documents into one context string.\nconst contextContent = topDocuments\n  .map((doc, index) => `Document ${index + 1}:\\n${doc.pageContent}`)\n  .join(\"\\n\\n\");\n\n// Build the final prompt that combines the context with the user query.\nconst prompt = `Using the following context from documents:\\n\\n${contextContent}\\n\\nAnswer the following question:\\n${userQuery}\\n\\nAnswer:`;\n\n// Return the prompt so it can be passed to a Chat/AI node for further processing.\nreturn [{ json: { prompt } }];\n"
-      },
       "typeVersion": 2
     },
     {
+      "parameters": {
+        "model": "google/gemini-2.0-flash-exp:free",
+        "options": {}
+      },
       "id": "208057c8-8672-41d2-9c99-89e52856a742",
       "name": "OpenRouter Chat Model Interface",
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
@@ -397,24 +401,35 @@
         1180,
         1420
       ],
-      "parameters": {
-        "model": "google/gemini-2.0-flash-exp:free",
-        "options": {}
-      },
+      "typeVersion": 1,
       "credentials": {
         "openRouterApi": {
           "id": "KvLN09ld1aVoeaih",
           "name": "OpenRouter account"
         }
+      }
+    },
+    {
+      "parameters": {
+        "content": "這個n8n自動化模板通過結合文件處理和AI驅動的查詢解決方案來簡化IT支持。它整合了Google Drive、Pinecone和聊天AI代理（Google Gemini/OpenRouter）將靜態文檔轉換為動態的、可搜索的知識庫。系統包含兩個工作流程：文件處理和聊天查詢處理。\n\n文件處理工作流程：\n- 監控Google Drive中的新支持文檔\n- 下載並提取文本內容\n- 清理和分段文本數據\n- 創建並將嵌入存儲在Pinecone中\n\n聊天查詢工作流程：\n- 接收用戶問題\n- 搜索相關文檔段落\n- 通過AI生成上下文相關的回應\n\n優點：\n- 即時、準確回應IT支持查詢\n- 減輕支持團隊工作負擔\n- 一致的信息傳遞\n- 可擴展的知識管理\n\n需求：\n- Google Drive帳戶\n- Pinecone帳戶\n- Google Gemini/OpenRouter訪問權限\n- n8n實例\n\n實施步驟：\n1. 將模板導入n8n\n2. 配置Google Drive連接\n3. 設置Pinecone整合\n4. 添加AI服務憑證\n5. 測試兩個工作流程\n\n該系統可根據不同的文檔大小和結構進行定制，非常適合尋求自動化IT支持同時保持高質量服務的組織。當員工需要幫助時（例如：「如何重置VPN？」），他們會立即收到從官方文檔中提取的相關答案。\n\n注意：部署前請驗證所有整合和憑證，並根據需要調整參數以獲得最佳性能。",
+        "height": 1020,
+        "width": 1360
       },
-      "typeVersion": 1
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        -100
+      ],
+      "typeVersion": 1,
+      "id": "9ab13d06-3f5a-492b-8de0-321c96caa88e",
+      "name": "Sticky Note"
     }
   ],
-  "pinData": null,
-  "settings": null,
+  "pinData": {},
+  "settings": {},
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-20T19:12:48.368Z",
-  "versionId": "e9fda126-deb9-49eb-b467-7b8052d1b7cb"
+  "updatedAt": "2025-03-20T20:58:04.000Z",
+  "versionId": "b932aa3e-b8b6-4afc-a72d-76d809b1acd6"
 }
