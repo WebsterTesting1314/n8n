@@ -1,0 +1,377 @@
+{
+  "active": true,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram1": {
+      "main": [
+        [
+          {
+            "node": "OpenAI2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Auto-detect and translate",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Input Error Handling": {
+      "main": [
+        [
+          {
+            "node": "Telegram1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Settings": {
+      "main": [
+        [
+          {
+            "node": "Input Error Handling",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Auto-detect and translate": {
+      "main": [
+        [
+          {
+            "node": "Text reply",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI2": {
+      "main": [
+        [
+          {
+            "node": "Auto-detect and translate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Audio reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-20T00:29:38.903Z",
+  "id": "u2Na10Y7SS5KQYB3",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 6",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "id": "4706b90e-028e-437f-afa9-82f002513c83",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "position": [
+        580,
+        220
+      ],
+      "webhookId": "c537cfcc-6c4a-436a-8871-d32f8ce016cb",
+      "typeVersion": 1,
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## 翻譯\n\n- 將語音轉換為文字。\n\n- 將母語翻譯成翻譯語言（如設定節點中所指定）",
+        "height": 586.6978417266175,
+        "width": 556.5162909529794
+      },
+      "id": "4244c1ea-255c-4461-a5dc-30a47701f7b0",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1380,
+        0
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.text }}",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "fe44ad72-52f4-4669-8f55-58fc5c280c99",
+      "name": "Text reply",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        2380,
+        220
+      ],
+      "typeVersion": 1,
+      "webhookId": "fdcf2a91-2426-4ca9-9318-90719a3efb2e",
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $('Telegram Trigger').item.json.message.voice.file_id }}"
+      },
+      "id": "1eaa222f-e2c5-4f22-8af4-0d19be179a8e",
+      "name": "Telegram1",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        1200,
+        220
+      ],
+      "typeVersion": 1.1,
+      "webhookId": "68cc0151-a743-4b7a-8724-d220e8a944eb",
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "85e80103-4188-4c2f-9694-4c107d757a6f",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        1660,
+        400
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "WOGVxYrpyYNAzjsK",
+          "name": "OpenAi account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "message.text",
+              "stringValue": "={{ $json?.message?.text || \"\" }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b94f70a4-a1f3-486d-80b3-6c2d0a91fca2",
+      "name": "Input Error Handling",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1000,
+        220
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "content": "## Telegram 輸出\n\n- 提供文字和語音輸出。\n\n- 支援多種語言，包括英語、法語、德語、西班牙語、中文、日語。\n\n完整清單請參閱：\nhttps://platform.openai.com/docs/guides/speech-to-text/supported-languages",
+        "height": 583.7625899280566,
+        "width": 585.8688089385912
+      },
+      "id": "b19822dd-26ce-4877-b292-a11e2c32f9e7",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2060,
+        0
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 多語言 AI 驅動通用翻譯機（含語音） ⭐\n\n### 主要功能\n此工作流程可啟用一個 Telegram 機器人，該機器人可以：\n- 接收55種語言中任一種的語音輸入\n- 將其翻譯成另一種語言並以語音形式返回結果\n\n### 使用場景：\n- 學習新語言\n- 在外國旅行時與他人溝通\n\n### 設置\n- 開啟設定節點並指定您想要使用的語言",
+        "height": 573.4892086330929,
+        "width": 489.00549958607303,
+        "color": 4
+      },
+      "id": "96cb477b-9199-49e9-aa22-949d1302e928",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "501ac5cc-73e8-4e9c-bf91-df312aa9ff88",
+              "name": "language_native",
+              "type": "string",
+              "value": "english"
+            },
+            {
+              "id": "efb9a7b2-5baa-44cc-b94d-c8030f17e890",
+              "name": "language_translate",
+              "type": "string",
+              "value": "french"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9fcb1d3c-8f32-48b4-9a5c-b0badf50706d",
+      "name": "Settings",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        800,
+        220
+      ],
+      "typeVersion": 3.3
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Detect the language of the text that follows.  \n- If it is  {{ $('Settings').item.json.language_native }} translate to {{ $('Settings').item.json.language_translate }}.  \n- If it is in  {{ $('Settings').item.json.language_translate }} translate to {{ $('Settings').item.json.language_native }} .  \n- In the output just provide the translation and do not explain it.  Just provide the translation without anything else.\n\nText:\n {{ $json.text }}\n"
+      },
+      "id": "e6d50d12-f4cc-461a-bdf0-1cc9f899fda5",
+      "name": "Auto-detect and translate",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "position": [
+        1640,
+        220
+      ],
+      "typeVersion": 1.4
+    },
+    {
+      "parameters": {
+        "operation": "sendAudio",
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "binaryData": true,
+        "additionalFields": {}
+      },
+      "id": "484c4fc6-2a01-4fb4-ab5a-758925b3919a",
+      "name": "Audio reply",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        2380,
+        400
+      ],
+      "typeVersion": 1.1,
+      "webhookId": "9472d2b6-0aaf-4137-a5cb-695831b57e3b",
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "options": {}
+      },
+      "id": "e7fbf970-ed4f-49d5-999f-8acc766d105d",
+      "name": "OpenAI2",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "position": [
+        1440,
+        220
+      ],
+      "typeVersion": 1.3,
+      "credentials": {
+        "openAiApi": {
+          "id": "WOGVxYrpyYNAzjsK",
+          "name": "OpenAi account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "input": "={{ $json.text }}",
+        "options": {}
+      },
+      "id": "f884fd28-e6e9-4c42-a89d-553697bcd600",
+      "name": "OpenAI",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "position": [
+        2160,
+        400
+      ],
+      "typeVersion": 1.3,
+      "credentials": {
+        "openAiApi": {
+          "id": "WOGVxYrpyYNAzjsK",
+          "name": "OpenAi account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-20T00:45:22.000Z",
+  "versionId": "5327bf8f-3b3a-4ece-bd9d-fa68921b0fb5"
+}
