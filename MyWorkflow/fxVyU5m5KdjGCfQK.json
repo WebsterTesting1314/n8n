@@ -1,0 +1,833 @@
+{
+  "active": true,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Command Check",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send Typing action",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch (Command Routing)": {
+      "main": [
+        [
+          {
+            "node": "Set waitingForContent1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set waitingForContent2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set waitingForContent3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Check State": {
+      "main": [
+        [
+          {
+            "node": "Command1 processing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Command2 processing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Command3 processing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Command check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set waitingForContent1": {
+      "main": [
+        [
+          {
+            "node": "Command1 content request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set waitingForContent2": {
+      "main": [
+        [
+          {
+            "node": "Command2 content request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare IF Value": {
+      "main": [
+        [
+          {
+            "node": "Check State",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Command Check": {
+      "main": [
+        [
+          {
+            "node": "Switch (Command Routing)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Prepare IF Value",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set waitingForContent3": {
+      "main": [
+        [
+          {
+            "node": "Command3 content request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Command1 result": {
+      "main": [
+        [
+          {
+            "node": "Clear State",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Command2 result": {
+      "main": [
+        [
+          {
+            "node": "Clear State",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Command3 result": {
+      "main": [
+        [
+          {
+            "node": "Clear State",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Command1 processing": {
+      "main": [
+        [
+          {
+            "node": "Command1 result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Command2 processing": {
+      "main": [
+        [
+          {
+            "node": "Command2 result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Command3 processing": {
+      "main": [
+        [
+          {
+            "node": "Command3 result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-22T13:38:03.628Z",
+  "id": "fxVyU5m5KdjGCfQK",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "翻譯專家",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "id": "7d8cdabf-8e60-41b1-9b93-3bde45f97c59",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "position": [
+        100,
+        780
+      ],
+      "webhookId": "30a3f361-4607-40f0-bc7e-d1fb385430d2",
+      "typeVersion": 1,
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/start",
+                    "id": "aad0323b-ca65-4412-bdcb-e37332dbbac9"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "1"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "d09b6282-e9f8-4e43-b3db-9edae88cd634",
+                    "operator": {
+                      "name": "filter.operator.equals",
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/help"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "2"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "89a078b3-c2f3-47ff-9136-5de7bd05fb98",
+                    "operator": {
+                      "name": "filter.operator.equals",
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/thai"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "3"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "604d9d8e-2668-4c4c-8568-0f161afdf27f",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/english",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "id": "4d3589a7-4701-484a-9016-70684c818a06",
+      "name": "Switch (Command Routing)",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        520,
+        740
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "jsCode": "let workflowStaticData = $getWorkflowStaticData('global');\nif (!workflowStaticData.telegramStates) {\n    workflowStaticData.telegramStates = {}; // Create the nested object\n}\nreturn workflowStaticData;"
+      },
+      "id": "90843cc3-29be-4741-8613-aa87c72a08e6",
+      "name": "Temp to Initiate Static Data",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        100,
+        280
+      ],
+      "notesInFlow": false,
+      "typeVersion": 2,
+      "notes": "You only need to run the initialization step once per workflow, regardless of the number of Telegram chat IDs. The initialization creates the telegramStates object within the global static data of the workflow. Once that object exists, the workflow will use it to store the state for any chat ID."
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.state }}",
+                    "rightValue": "waitingForContent1",
+                    "id": "2d839e1b-33e8-4198-84fc-85fa6202fc62"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "1"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "1a145782-de66-496c-aa5e-5fa5b93614f9",
+                    "operator": {
+                      "name": "filter.operator.equals",
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.state }}",
+                    "rightValue": "waitingForContent2"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "2"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "version": 2,
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "e83e025f-2758-4baa-a868-bdc0f2bd7ac2",
+                    "operator": {
+                      "name": "filter.operator.equals",
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.state }}",
+                    "rightValue": "waitingForContent3"
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "3"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "id": "69deed25-0ef3-4549-acf3-ec42345fcc63",
+      "name": "Check State",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        540,
+        1460
+      ],
+      "typeVersion": 3.2
+    },
+    {
+      "parameters": {
+        "jsCode": "let workflowStaticData = $getWorkflowStaticData('global');\nif (workflowStaticData.telegramStates) {\n    delete workflowStaticData.telegramStates[$('Telegram Trigger').first().json.message.chat.id.toString()];\n}\nreturn $input.all();"
+      },
+      "id": "21ada2de-8eb3-4552-abd8-9c78cad03492",
+      "name": "Clear State",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        1480,
+        1340
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "jsCode": "let workflowStaticData = $getWorkflowStaticData('global');\nif (!workflowStaticData.telegramStates) {\n    workflowStaticData.telegramStates = {};\n}\nworkflowStaticData.telegramStates[$json.message.chat.id.toString()] = { waitingForContent1: true };\nreturn $input.all();"
+      },
+      "id": "702e529f-50d3-4f91-8e8b-750c98ddccda",
+      "name": "Set waitingForContent1",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        800,
+        240
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "jsCode": "let workflowStaticData = $getWorkflowStaticData('global');\nif (!workflowStaticData.telegramStates) {\n    workflowStaticData.telegramStates = {};\n}\nworkflowStaticData.telegramStates[$json.message.chat.id.toString()] = { waitingForContent2: true };\nreturn $input.all();"
+      },
+      "id": "594fba21-b56b-47b3-bfd7-476cc5f36423",
+      "name": "Set waitingForContent2",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        800,
+        460
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "jsCode": "let globalData = $getWorkflowStaticData('global');\nlet state = \"none\"; // Default state\n\nif (globalData && globalData.telegramStates) {\n    let chatData = globalData.telegramStates[$json.message.chat.id.toString()];\n    if (chatData) {\n        if (chatData.waitingForContent1 === true) {\n            state = \"waitingForContent1\";\n        } else if (chatData.waitingForContent2 === true) {\n            state = \"waitingForContent2\";\n        } else if (chatData.waitingForContent3 === true) {\n            state = \"waitingForContent3\";\n        }\n    }\n}\nreturn { state };"
+      },
+      "id": "692c0887-23a8-40b5-884e-4d4a1feaf671",
+      "name": "Prepare IF Value",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        380,
+        1480
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json['message']['text']}}",
+              "operation": "startsWith",
+              "value2": "/command"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "3a327cbc-8d84-496d-905c-4f535941bcaa",
+      "name": "Command Check",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        320,
+        780
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "jsCode": "let workflowStaticData = $getWorkflowStaticData('global');\nif (!workflowStaticData.telegramStates) {\n    workflowStaticData.telegramStates = {};\n}\nworkflowStaticData.telegramStates[$json.message.chat.id.toString()] = { waitingForContent3: true };\nreturn $input.all();"
+      },
+      "id": "88128098-4a1a-4e25-98be-cf3ff79c18e3",
+      "name": "Set waitingForContent3",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        800,
+        680
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "operation": "sendChatAction",
+        "chatId": "={{ $json.message.chat.id }}"
+      },
+      "id": "07397dcb-1912-4585-b0b7-c13e8056ffb2",
+      "name": "Send Typing action",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        320,
+        520
+      ],
+      "webhookId": "425443f1-117e-4aaa-84d5-74ce2a1a1b64",
+      "typeVersion": 1.2,
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{$json.message.chat.id}}",
+        "text": "直接輸入中英文翻譯成自然道地泰文",
+        "replyMarkup": "inlineKeyboard",
+        "additionalFields": {}
+      },
+      "id": "c5f1d228-50eb-49be-b47e-ae9d3a6a3064",
+      "name": "Command1 content request",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        1060,
+        240
+      ],
+      "webhookId": "e6222973-c851-4ee3-88e7-114eb59193e6",
+      "typeVersion": 1,
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{$json['message']['chat']['id']}}",
+        "text": "Please enter the content for command2:",
+        "additionalFields": {}
+      },
+      "id": "ff51b479-f98b-42ca-8f67-6331b9d8bade",
+      "name": "Command2 content request",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        1060,
+        460
+      ],
+      "webhookId": "4b6373cf-99db-4fd9-8665-bc8dbba64c32",
+      "typeVersion": 1,
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{$json['message']['chat']['id']}}",
+        "text": "Please enter the content for command2:",
+        "additionalFields": {}
+      },
+      "id": "4c37612f-1ec9-4833-87ce-2ccf0c3be359",
+      "name": "Command3 content request",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        1060,
+        680
+      ],
+      "webhookId": "8e2fb397-4b82-4a5d-a358-32ed6c18ac22",
+      "typeVersion": 1,
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "Please choose a command from the menu.",
+        "additionalFields": {}
+      },
+      "id": "0689d419-6448-41b1-b2f9-b85970e7228a",
+      "name": "No Command check",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        800,
+        1860
+      ],
+      "webhookId": "2814cc4c-0392-43f4-bbb4-fd096e61ac13",
+      "typeVersion": 1,
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Command processing",
+        "height": 829,
+        "width": 573,
+        "color": 4
+      },
+      "id": "8e339fdc-8237-4a2a-a6e3-d6d1a1382b60",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        720,
+        980
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "=This is the generated result for command1: {{ $json.text }}",
+        "additionalFields": {}
+      },
+      "id": "8279de57-00b1-4a55-b15d-c83a387554ae",
+      "name": "Command1 result",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        1080,
+        1080
+      ],
+      "webhookId": "05e84345-6d19-42cf-bc8c-afdfd87339f1",
+      "typeVersion": 1,
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "=This is the generated result for command2: {{ $json.text }}",
+        "additionalFields": {}
+      },
+      "id": "d54cac51-3ba8-4edd-bcab-5e697e2b07d7",
+      "name": "Command2 result",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        1080,
+        1340
+      ],
+      "webhookId": "55ee4a03-2d14-4caa-94f8-b11db34ddabd",
+      "typeVersion": 1,
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "=This is the generated result for command3: {{ $json.text }}",
+        "additionalFields": {}
+      },
+      "id": "93b155c9-39a6-4735-af10-31173569cfe0",
+      "name": "Command3 result",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        1080,
+        1600
+      ],
+      "webhookId": "55ee4a03-2d14-4caa-94f8-b11db34ddabd",
+      "typeVersion": 1,
+      "credentials": {
+        "telegramApi": {
+          "id": "wnMrcs0Xnj762sB2",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## 全域靜態資料初始化\n無論有多少個 Telegram 聊天室 ID，你只需要執行一次初始化步驟。初始化會在工作流程的全域靜態資料中建立 telegramStates 物件。一旦該物件存在，工作流程就會使用它來儲存任何聊天室 ID 的狀態。",
+        "height": 469,
+        "width": 313,
+        "color": 7
+      },
+      "id": "e599724e-a7ae-478e-8f92-5d1e44fb31b6",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Command content requesting",
+        "height": 789,
+        "width": 573,
+        "color": 2
+      },
+      "id": "4ce535fc-e675-4eba-a632-bb45c99298e8",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        720,
+        140
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "77d32648-bf2b-4e77-9c01-7354ac0dae59",
+      "name": "Command1 processing",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        800,
+        1080
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "bee9be43-c376-4c54-ac37-3f889257acfa",
+      "name": "Command2 processing",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        800,
+        1340
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "8105574b-0e37-4c5b-bcea-aaafe49372a7",
+      "name": "Command3 processing",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        800,
+        1600
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 添加更多指令\n本模板設計可輕鬆延伸。要新增更多指令：\n\n1. 在「Switch (Command Routing)」節點中為新指令（例如/command4）新增輸出。\n\n2. 複製其中一組「Set waitingForContentX」和「CommandX content request」節點對。將「Set」節點重新命名以反映新的指令編號（例如「Set waitingForContent4」），並相應更新程式碼中的變數名稱。同時重新命名請求節點（例如 Command4 content request）。\n\n3. 在「Check State」節點中新增相對應的輸出。\n\n4. 為新指令建立新的處理分支，將其連接到「Check State」節點的適當輸出，以及「Clear State」節點的入口。",
+        "height": 309,
+        "width": 573,
+        "color": 7
+      },
+      "id": "6be38ea9-8b3d-4bd4-8d5c-29aa9220f623",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        720,
+        2060
+      ],
+      "typeVersion": 1
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "global": {}
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-22T13:55:44.000Z",
+  "versionId": "0bece009-556c-416c-be68-d5d36e3f51ed"
+}
